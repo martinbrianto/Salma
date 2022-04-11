@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F1C2804499900A95A03 /* AppDelegate.swift */; };
+		E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F1E2804499900A95A03 /* SceneDelegate.swift */; };
+		E6545F212804499900A95A03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F202804499900A95A03 /* ViewController.swift */; };
+		E6545F242804499900A95A03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6545F222804499900A95A03 /* Main.storyboard */; };
+		E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6545F252804499900A95A03 /* Salma.xcdatamodeld */; };
+		E6545F292804499B00A95A03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6545F282804499B00A95A03 /* Assets.xcassets */; };
+		E6545F2C2804499B00A95A03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6545F2A2804499B00A95A03 /* LaunchScreen.storyboard */; };
+		E6545F372804499B00A95A03 /* SalmaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F362804499B00A95A03 /* SalmaTests.swift */; };
+		E6545F412804499B00A95A03 /* SalmaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F402804499B00A95A03 /* SalmaUITests.swift */; };
+		E6545F432804499C00A95A03 /* SalmaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F422804499C00A95A03 /* SalmaUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E6545F332804499B00A95A03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6545F112804499900A95A03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6545F182804499900A95A03;
+			remoteInfo = Salma;
+		};
+		E6545F3D2804499B00A95A03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6545F112804499900A95A03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6545F182804499900A95A03;
+			remoteInfo = Salma;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E6545F192804499900A95A03 /* Salma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salma.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6545F1C2804499900A95A03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E6545F1E2804499900A95A03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E6545F202804499900A95A03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6545F232804499900A95A03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E6545F262804499900A95A03 /* Salma.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Salma.xcdatamodel; sourceTree = "<group>"; };
+		E6545F282804499B00A95A03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E6545F2B2804499B00A95A03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E6545F2D2804499B00A95A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6545F322804499B00A95A03 /* SalmaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalmaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6545F362804499B00A95A03 /* SalmaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmaTests.swift; sourceTree = "<group>"; };
+		E6545F3C2804499B00A95A03 /* SalmaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalmaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6545F402804499B00A95A03 /* SalmaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmaUITests.swift; sourceTree = "<group>"; };
+		E6545F422804499C00A95A03 /* SalmaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E6545F162804499900A95A03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6545F2F2804499B00A95A03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6545F392804499B00A95A03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E6545F102804499900A95A03 = {
+			isa = PBXGroup;
+			children = (
+				E6545F1B2804499900A95A03 /* Salma */,
+				E6545F352804499B00A95A03 /* SalmaTests */,
+				E6545F3F2804499B00A95A03 /* SalmaUITests */,
+				E6545F1A2804499900A95A03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E6545F1A2804499900A95A03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6545F192804499900A95A03 /* Salma.app */,
+				E6545F322804499B00A95A03 /* SalmaTests.xctest */,
+				E6545F3C2804499B00A95A03 /* SalmaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6545F1B2804499900A95A03 /* Salma */ = {
+			isa = PBXGroup;
+			children = (
+				E6545F1C2804499900A95A03 /* AppDelegate.swift */,
+				E6545F1E2804499900A95A03 /* SceneDelegate.swift */,
+				E6545F202804499900A95A03 /* ViewController.swift */,
+				E6545F222804499900A95A03 /* Main.storyboard */,
+				E6545F282804499B00A95A03 /* Assets.xcassets */,
+				E6545F2A2804499B00A95A03 /* LaunchScreen.storyboard */,
+				E6545F2D2804499B00A95A03 /* Info.plist */,
+				E6545F252804499900A95A03 /* Salma.xcdatamodeld */,
+			);
+			path = Salma;
+			sourceTree = "<group>";
+		};
+		E6545F352804499B00A95A03 /* SalmaTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6545F362804499B00A95A03 /* SalmaTests.swift */,
+			);
+			path = SalmaTests;
+			sourceTree = "<group>";
+		};
+		E6545F3F2804499B00A95A03 /* SalmaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E6545F402804499B00A95A03 /* SalmaUITests.swift */,
+				E6545F422804499C00A95A03 /* SalmaUITestsLaunchTests.swift */,
+			);
+			path = SalmaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E6545F182804499900A95A03 /* Salma */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6545F462804499C00A95A03 /* Build configuration list for PBXNativeTarget "Salma" */;
+			buildPhases = (
+				E6545F152804499900A95A03 /* Sources */,
+				E6545F162804499900A95A03 /* Frameworks */,
+				E6545F172804499900A95A03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Salma;
+			productName = Salma;
+			productReference = E6545F192804499900A95A03 /* Salma.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E6545F312804499B00A95A03 /* SalmaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6545F492804499C00A95A03 /* Build configuration list for PBXNativeTarget "SalmaTests" */;
+			buildPhases = (
+				E6545F2E2804499B00A95A03 /* Sources */,
+				E6545F2F2804499B00A95A03 /* Frameworks */,
+				E6545F302804499B00A95A03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6545F342804499B00A95A03 /* PBXTargetDependency */,
+			);
+			name = SalmaTests;
+			productName = SalmaTests;
+			productReference = E6545F322804499B00A95A03 /* SalmaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E6545F3B2804499B00A95A03 /* SalmaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6545F4C2804499C00A95A03 /* Build configuration list for PBXNativeTarget "SalmaUITests" */;
+			buildPhases = (
+				E6545F382804499B00A95A03 /* Sources */,
+				E6545F392804499B00A95A03 /* Frameworks */,
+				E6545F3A2804499B00A95A03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6545F3E2804499B00A95A03 /* PBXTargetDependency */,
+			);
+			name = SalmaUITests;
+			productName = SalmaUITests;
+			productReference = E6545F3C2804499B00A95A03 /* SalmaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E6545F112804499900A95A03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					E6545F182804499900A95A03 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					E6545F312804499B00A95A03 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = E6545F182804499900A95A03;
+					};
+					E6545F3B2804499B00A95A03 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = E6545F182804499900A95A03;
+					};
+				};
+			};
+			buildConfigurationList = E6545F142804499900A95A03 /* Build configuration list for PBXProject "Salma" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E6545F102804499900A95A03;
+			productRefGroup = E6545F1A2804499900A95A03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E6545F182804499900A95A03 /* Salma */,
+				E6545F312804499B00A95A03 /* SalmaTests */,
+				E6545F3B2804499B00A95A03 /* SalmaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E6545F172804499900A95A03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6545F2C2804499B00A95A03 /* LaunchScreen.storyboard in Resources */,
+				E6545F292804499B00A95A03 /* Assets.xcassets in Resources */,
+				E6545F242804499900A95A03 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6545F302804499B00A95A03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6545F3A2804499B00A95A03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6545F152804499900A95A03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */,
+				E6545F212804499900A95A03 /* ViewController.swift in Sources */,
+				E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */,
+				E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6545F2E2804499B00A95A03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6545F372804499B00A95A03 /* SalmaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6545F382804499B00A95A03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6545F412804499B00A95A03 /* SalmaUITests.swift in Sources */,
+				E6545F432804499C00A95A03 /* SalmaUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E6545F342804499B00A95A03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6545F182804499900A95A03 /* Salma */;
+			targetProxy = E6545F332804499B00A95A03 /* PBXContainerItemProxy */;
+		};
+		E6545F3E2804499B00A95A03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6545F182804499900A95A03 /* Salma */;
+			targetProxy = E6545F3D2804499B00A95A03 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E6545F222804499900A95A03 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6545F232804499900A95A03 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E6545F2A2804499B00A95A03 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6545F2B2804499B00A95A03 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E6545F442804499C00A95A03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E6545F452804499C00A95A03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E6545F472804499C00A95A03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Salma/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SMS.Salma;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E6545F482804499C00A95A03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Salma/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SMS.Salma;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E6545F4A2804499C00A95A03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SMS.SalmaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Salma.app/Salma";
+			};
+			name = Debug;
+		};
+		E6545F4B2804499C00A95A03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SMS.SalmaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Salma.app/Salma";
+			};
+			name = Release;
+		};
+		E6545F4D2804499C00A95A03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SMS.SalmaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Salma;
+			};
+			name = Debug;
+		};
+		E6545F4E2804499C00A95A03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SMS.SalmaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Salma;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6545F142804499900A95A03 /* Build configuration list for PBXProject "Salma" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6545F442804499C00A95A03 /* Debug */,
+				E6545F452804499C00A95A03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6545F462804499C00A95A03 /* Build configuration list for PBXNativeTarget "Salma" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6545F472804499C00A95A03 /* Debug */,
+				E6545F482804499C00A95A03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6545F492804499C00A95A03 /* Build configuration list for PBXNativeTarget "SalmaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6545F4A2804499C00A95A03 /* Debug */,
+				E6545F4B2804499C00A95A03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6545F4C2804499C00A95A03 /* Build configuration list for PBXNativeTarget "SalmaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6545F4D2804499C00A95A03 /* Debug */,
+				E6545F4E2804499C00A95A03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E6545F252804499900A95A03 /* Salma.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E6545F262804499900A95A03 /* Salma.xcdatamodel */,
+			);
+			currentVersion = E6545F262804499900A95A03 /* Salma.xcdatamodel */;
+			path = Salma.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E6545F112804499900A95A03 /* Project object */;
+}

@@ -9,14 +9,15 @@
 /* Begin PBXBuildFile section */
 		E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F1C2804499900A95A03 /* AppDelegate.swift */; };
 		E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F1E2804499900A95A03 /* SceneDelegate.swift */; };
-		E6545F212804499900A95A03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F202804499900A95A03 /* ViewController.swift */; };
-		E6545F242804499900A95A03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6545F222804499900A95A03 /* Main.storyboard */; };
 		E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6545F252804499900A95A03 /* Salma.xcdatamodeld */; };
 		E6545F292804499B00A95A03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6545F282804499B00A95A03 /* Assets.xcassets */; };
 		E6545F2C2804499B00A95A03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6545F2A2804499B00A95A03 /* LaunchScreen.storyboard */; };
 		E6545F372804499B00A95A03 /* SalmaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F362804499B00A95A03 /* SalmaTests.swift */; };
 		E6545F412804499B00A95A03 /* SalmaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F402804499B00A95A03 /* SalmaUITests.swift */; };
 		E6545F432804499C00A95A03 /* SalmaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F422804499C00A95A03 /* SalmaUITestsLaunchTests.swift */; };
+		E6545F5328044E0C00A95A03 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F5128044E0C00A95A03 /* DashboardViewController.swift */; };
+		E6545F5428044E0C00A95A03 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6545F5228044E0C00A95A03 /* DashboardViewController.xib */; };
+		E6545F682804546300A95A03 /* DashboardVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F672804546300A95A03 /* DashboardVCViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +41,6 @@
 		E6545F192804499900A95A03 /* Salma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6545F1C2804499900A95A03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6545F1E2804499900A95A03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E6545F202804499900A95A03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E6545F232804499900A95A03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6545F262804499900A95A03 /* Salma.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Salma.xcdatamodel; sourceTree = "<group>"; };
 		E6545F282804499B00A95A03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6545F2B2804499B00A95A03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +50,9 @@
 		E6545F3C2804499B00A95A03 /* SalmaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalmaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6545F402804499B00A95A03 /* SalmaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmaUITests.swift; sourceTree = "<group>"; };
 		E6545F422804499C00A95A03 /* SalmaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E6545F5128044E0C00A95A03 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		E6545F5228044E0C00A95A03 /* DashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
+		E6545F672804546300A95A03 /* DashboardVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVCViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +103,13 @@
 		E6545F1B2804499900A95A03 /* Salma */ = {
 			isa = PBXGroup;
 			children = (
-				E6545F1C2804499900A95A03 /* AppDelegate.swift */,
-				E6545F1E2804499900A95A03 /* SceneDelegate.swift */,
-				E6545F202804499900A95A03 /* ViewController.swift */,
-				E6545F222804499900A95A03 /* Main.storyboard */,
-				E6545F282804499B00A95A03 /* Assets.xcassets */,
-				E6545F2A2804499B00A95A03 /* LaunchScreen.storyboard */,
+				E6545F582804521700A95A03 /* Core */,
+				E6545F5A2804522E00A95A03 /* Extension */,
+				E6545F5E2804531200A95A03 /* Helper */,
+				E6545F5C2804529500A95A03 /* Model */,
+				E6545F4F28044C6600A95A03 /* Module */,
+				E6545F5B2804523D00A95A03 /* Resources */,
 				E6545F2D2804499B00A95A03 /* Info.plist */,
-				E6545F252804499900A95A03 /* Salma.xcdatamodeld */,
 			);
 			path = Salma;
 			sourceTree = "<group>";
@@ -128,6 +129,152 @@
 				E6545F422804499C00A95A03 /* SalmaUITestsLaunchTests.swift */,
 			);
 			path = SalmaUITests;
+			sourceTree = "<group>";
+		};
+		E6545F4F28044C6600A95A03 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				E6545F2A2804499B00A95A03 /* LaunchScreen.storyboard */,
+				E6545F612804538500A95A03 /* Cek Ongkir */,
+				E6545F5028044C7300A95A03 /* Dashboard */,
+				E6545F66280453FA00A95A03 /* Onboarding */,
+				E6545F65280453B400A95A03 /* Transaction */,
+				E6545F64280453AC00A95A03 /* Settings */,
+				E6545F63280453A400A95A03 /* Autotext */,
+				E6545F622804538B00A95A03 /* Product */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		E6545F5028044C7300A95A03 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				E6545F572804520600A95A03 /* View */,
+				E6545F56280451F900A95A03 /* ViewModel */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		E6545F56280451F900A95A03 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E6545F672804546300A95A03 /* DashboardVCViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E6545F572804520600A95A03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E6545F5128044E0C00A95A03 /* DashboardViewController.swift */,
+				E6545F5228044E0C00A95A03 /* DashboardViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E6545F582804521700A95A03 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E6545F592804521B00A95A03 /* App */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E6545F592804521B00A95A03 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E6545F1C2804499900A95A03 /* AppDelegate.swift */,
+				E6545F1E2804499900A95A03 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E6545F5A2804522E00A95A03 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E6545F5B2804523D00A95A03 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E6545F5D280452AE00A95A03 /* Custom View */,
+				E6545F282804499B00A95A03 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E6545F5C2804529500A95A03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E6545F5D280452AE00A95A03 /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom View";
+			sourceTree = "<group>";
+		};
+		E6545F5E2804531200A95A03 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E6545F5F2804531A00A95A03 /* Core Data Manager */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E6545F5F2804531A00A95A03 /* Core Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E6545F252804499900A95A03 /* Salma.xcdatamodeld */,
+			);
+			path = "Core Data Manager";
+			sourceTree = "<group>";
+		};
+		E6545F612804538500A95A03 /* Cek Ongkir */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Cek Ongkir";
+			sourceTree = "<group>";
+		};
+		E6545F622804538B00A95A03 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		E6545F63280453A400A95A03 /* Autotext */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Autotext;
+			sourceTree = "<group>";
+		};
+		E6545F64280453AC00A95A03 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E6545F65280453B400A95A03 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		E6545F66280453FA00A95A03 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +383,7 @@
 			files = (
 				E6545F2C2804499B00A95A03 /* LaunchScreen.storyboard in Resources */,
 				E6545F292804499B00A95A03 /* Assets.xcassets in Resources */,
-				E6545F242804499900A95A03 /* Main.storyboard in Resources */,
+				E6545F5428044E0C00A95A03 /* DashboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,8 +408,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6545F682804546300A95A03 /* DashboardVCViewModel.swift in Sources */,
 				E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */,
-				E6545F212804499900A95A03 /* ViewController.swift in Sources */,
+				E6545F5328044E0C00A95A03 /* DashboardViewController.swift in Sources */,
 				E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */,
 				E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */,
 			);
@@ -301,14 +449,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E6545F222804499900A95A03 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E6545F232804499900A95A03 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E6545F2A2804499B00A95A03 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,9 +587,10 @@
 				INFOPLIST_FILE = Salma/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,7 +600,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -474,9 +615,10 @@
 				INFOPLIST_FILE = Salma/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,7 +628,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

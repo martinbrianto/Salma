@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7E1DA38280498CA006C9D27 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1DA37280498CA006C9D27 /* UIView+Extension.swift */; };
+		B7E1DA3B2804990F006C9D27 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7E1DA3A2804990E006C9D27 /* Colors.xcassets */; };
+		B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1DA4328049CE6006C9D27 /* Enum.swift */; };
+		B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1DA4528049CFB006C9D27 /* Constant.swift */; };
 		E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F1C2804499900A95A03 /* AppDelegate.swift */; };
 		E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F1E2804499900A95A03 /* SceneDelegate.swift */; };
 		E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6545F252804499900A95A03 /* Salma.xcdatamodeld */; };
@@ -38,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B7E1DA37280498CA006C9D27 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "../../../../PegiPegiRepo/pegipegi-ios-v2/PegiPegi/Module/Main/Product/Flight/FlightHome/View/UIView+Extension.swift"; sourceTree = "<group>"; };
+		B7E1DA3A2804990E006C9D27 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B7E1DA4328049CE6006C9D27 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		B7E1DA4528049CFB006C9D27 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E6545F192804499900A95A03 /* Salma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6545F1C2804499900A95A03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6545F1E2804499900A95A03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +88,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7E1DA36280497E6006C9D27 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B7E1DA37280498CA006C9D27 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B7E1DA39280498F6006C9D27 /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom View";
+			sourceTree = "<group>";
+		};
+		B7E1DA3C28049C92006C9D27 /* Cek Ongkir */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Cek Ongkir";
+			sourceTree = "<group>";
+		};
+		B7E1DA3D28049C99006C9D27 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B7E1DA3E28049C9F006C9D27 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		B7E1DA3F28049CA9006C9D27 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B7E1DA4028049CAF006C9D27 /* Autotext */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Autotext;
+			sourceTree = "<group>";
+		};
+		B7E1DA4128049CB5006C9D27 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		B7E1DA4228049CD5006C9D27 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B7E1DA4328049CE6006C9D27 /* Enum.swift */,
+				B7E1DA4528049CFB006C9D27 /* Constant.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		E6545F102804499900A95A03 = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				E6545F582804521700A95A03 /* Core */,
-				E6545F5A2804522E00A95A03 /* Extension */,
+				B7E1DA4228049CD5006C9D27 /* Utility */,
+				B7E1DA36280497E6006C9D27 /* Extension */,
 				E6545F5E2804531200A95A03 /* Helper */,
 				E6545F5C2804529500A95A03 /* Model */,
 				E6545F4F28044C6600A95A03 /* Module */,
@@ -135,13 +210,13 @@
 			isa = PBXGroup;
 			children = (
 				E6545F2A2804499B00A95A03 /* LaunchScreen.storyboard */,
-				E6545F612804538500A95A03 /* Cek Ongkir */,
 				E6545F5028044C7300A95A03 /* Dashboard */,
-				E6545F66280453FA00A95A03 /* Onboarding */,
-				E6545F65280453B400A95A03 /* Transaction */,
-				E6545F64280453AC00A95A03 /* Settings */,
-				E6545F63280453A400A95A03 /* Autotext */,
-				E6545F622804538B00A95A03 /* Product */,
+				B7E1DA4128049CB5006C9D27 /* Product */,
+				B7E1DA4028049CAF006C9D27 /* Autotext */,
+				B7E1DA3F28049CA9006C9D27 /* Settings */,
+				B7E1DA3E28049C9F006C9D27 /* Transaction */,
+				B7E1DA3D28049C99006C9D27 /* Onboarding */,
+				B7E1DA3C28049C92006C9D27 /* Cek Ongkir */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -189,18 +264,12 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		E6545F5A2804522E00A95A03 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		E6545F5B2804523D00A95A03 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E6545F5D280452AE00A95A03 /* Custom View */,
+				B7E1DA39280498F6006C9D27 /* Custom View */,
 				E6545F282804499B00A95A03 /* Assets.xcassets */,
+				B7E1DA3A2804990E006C9D27 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -210,13 +279,6 @@
 			children = (
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		E6545F5D280452AE00A95A03 /* Custom View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Custom View";
 			sourceTree = "<group>";
 		};
 		E6545F5E2804531200A95A03 /* Helper */ = {
@@ -233,48 +295,6 @@
 				E6545F252804499900A95A03 /* Salma.xcdatamodeld */,
 			);
 			path = "Core Data Manager";
-			sourceTree = "<group>";
-		};
-		E6545F612804538500A95A03 /* Cek Ongkir */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Cek Ongkir";
-			sourceTree = "<group>";
-		};
-		E6545F622804538B00A95A03 /* Product */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Product;
-			sourceTree = "<group>";
-		};
-		E6545F63280453A400A95A03 /* Autotext */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Autotext;
-			sourceTree = "<group>";
-		};
-		E6545F64280453AC00A95A03 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		E6545F65280453B400A95A03 /* Transaction */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Transaction;
-			sourceTree = "<group>";
-		};
-		E6545F66280453FA00A95A03 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6545F2C2804499B00A95A03 /* LaunchScreen.storyboard in Resources */,
+				B7E1DA3B2804990F006C9D27 /* Colors.xcassets in Resources */,
 				E6545F292804499B00A95A03 /* Assets.xcassets in Resources */,
 				E6545F5428044E0C00A95A03 /* DashboardViewController.xib in Resources */,
 			);
@@ -408,9 +429,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E1DA38280498CA006C9D27 /* UIView+Extension.swift in Sources */,
 				E6545F682804546300A95A03 /* DashboardVCViewModel.swift in Sources */,
 				E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */,
+				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
 				E6545F5328044E0C00A95A03 /* DashboardViewController.swift in Sources */,
+				B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */,
 				E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */,
 				E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */,
 			);

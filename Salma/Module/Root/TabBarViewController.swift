@@ -37,21 +37,21 @@ private extension TabBarViewController {
     func setupProductTabBarItem() -> UINavigationController {
         let productVC = ProductViewController(nibName: "ProductViewController", bundle: nil)
         let navigationController = UINavigationController(rootViewController: productVC)
-        navigationController.tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(systemName: "shippingbox.fill"), tag: 1)
+        navigationController.tabBarItem = UITabBarItem(title: "Product", image: UIImage(systemName: "shippingbox.fill"), tag: 1)
         return navigationController
     }
     
     func setupAutotextTabBarItem() -> UINavigationController {
         let autotextVC = AutotextViewController(nibName: "AutotextViewController", bundle: nil)
         let navigationController = UINavigationController(rootViewController: autotextVC)
-        navigationController.tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(systemName: "rectangle.3.offgrid.bubble.left.fill"), tag: 2)
+        navigationController.tabBarItem = UITabBarItem(title: "Autotext", image: UIImage(systemName: "rectangle.3.offgrid.bubble.left.fill"), tag: 2)
         return navigationController
     }
     
     func setupTransactionTabBarItem() -> UINavigationController {
         let transactionVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
         let navigationController = UINavigationController(rootViewController: transactionVC)
-        navigationController.tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(systemName: "newspaper.fill"), tag: 3)
+        navigationController.tabBarItem = UITabBarItem(title: "Transaction", image: UIImage(systemName: "newspaper.fill"), tag: 3)
         return navigationController
     }
 }

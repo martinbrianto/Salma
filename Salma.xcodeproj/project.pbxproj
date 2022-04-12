@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B76E2A9428059DCC003E349F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E2A9228059DCC003E349F /* TabBarViewController.swift */; };
+		B76E2A9528059DCC003E349F /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E2A9328059DCC003E349F /* TabBarViewController.xib */; };
 		B7E1DA38280498CA006C9D27 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1DA37280498CA006C9D27 /* UIView+Extension.swift */; };
 		B7E1DA3B2804990F006C9D27 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7E1DA3A2804990E006C9D27 /* Colors.xcassets */; };
 		B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1DA4328049CE6006C9D27 /* Enum.swift */; };
 		B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1DA4528049CFB006C9D27 /* Constant.swift */; };
+		B7E1DA5028049F74006C9D27 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1DA4E28049F74006C9D27 /* ProductViewController.swift */; };
+		B7E1DA5128049F74006C9D27 /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7E1DA4F28049F74006C9D27 /* ProductViewController.xib */; };
+		B7E1DA5428049F86006C9D27 /* AutotextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1DA5228049F86006C9D27 /* AutotextViewController.swift */; };
+		B7E1DA5528049F86006C9D27 /* AutotextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7E1DA5328049F86006C9D27 /* AutotextViewController.xib */; };
+		B7E1DA5828049FB7006C9D27 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1DA5628049FB7006C9D27 /* TransactionViewController.swift */; };
+		B7E1DA5928049FB7006C9D27 /* TransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7E1DA5728049FB7006C9D27 /* TransactionViewController.xib */; };
 		E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F1C2804499900A95A03 /* AppDelegate.swift */; };
 		E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F1E2804499900A95A03 /* SceneDelegate.swift */; };
 		E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6545F252804499900A95A03 /* Salma.xcdatamodeld */; };
@@ -42,10 +50,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B76E2A9228059DCC003E349F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		B76E2A9328059DCC003E349F /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		B7E1DA37280498CA006C9D27 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "../../../../PegiPegiRepo/pegipegi-ios-v2/PegiPegi/Module/Main/Product/Flight/FlightHome/View/UIView+Extension.swift"; sourceTree = "<group>"; };
 		B7E1DA3A2804990E006C9D27 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B7E1DA4328049CE6006C9D27 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		B7E1DA4528049CFB006C9D27 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		B7E1DA4E28049F74006C9D27 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductViewController.swift; path = Salma/Module/Root/ProductViewController.swift; sourceTree = SOURCE_ROOT; };
+		B7E1DA4F28049F74006C9D27 /* ProductViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProductViewController.xib; path = Salma/Module/Root/ProductViewController.xib; sourceTree = SOURCE_ROOT; };
+		B7E1DA5228049F86006C9D27 /* AutotextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AutotextViewController.swift; path = Salma/Module/Root/AutotextViewController.swift; sourceTree = SOURCE_ROOT; };
+		B7E1DA5328049F86006C9D27 /* AutotextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AutotextViewController.xib; path = Salma/Module/Root/AutotextViewController.xib; sourceTree = SOURCE_ROOT; };
+		B7E1DA5628049FB7006C9D27 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionViewController.swift; path = Salma/Module/Root/TransactionViewController.swift; sourceTree = SOURCE_ROOT; };
+		B7E1DA5728049FB7006C9D27 /* TransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TransactionViewController.xib; path = Salma/Module/Root/TransactionViewController.xib; sourceTree = SOURCE_ROOT; };
 		E6545F192804499900A95A03 /* Salma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6545F1C2804499900A95A03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6545F1E2804499900A95A03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +136,8 @@
 		B7E1DA3E28049C9F006C9D27 /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
+				B7E1DA5628049FB7006C9D27 /* TransactionViewController.swift */,
+				B7E1DA5728049FB7006C9D27 /* TransactionViewController.xib */,
 			);
 			path = Transaction;
 			sourceTree = "<group>";
@@ -134,6 +152,8 @@
 		B7E1DA4028049CAF006C9D27 /* Autotext */ = {
 			isa = PBXGroup;
 			children = (
+				B7E1DA5228049F86006C9D27 /* AutotextViewController.swift */,
+				B7E1DA5328049F86006C9D27 /* AutotextViewController.xib */,
 			);
 			path = Autotext;
 			sourceTree = "<group>";
@@ -141,6 +161,8 @@
 		B7E1DA4128049CB5006C9D27 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				B7E1DA4E28049F74006C9D27 /* ProductViewController.swift */,
+				B7E1DA4F28049F74006C9D27 /* ProductViewController.xib */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -152,6 +174,15 @@
 				B7E1DA4528049CFB006C9D27 /* Constant.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		B7E1DA4728049F31006C9D27 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				B76E2A9228059DCC003E349F /* TabBarViewController.swift */,
+				B76E2A9328059DCC003E349F /* TabBarViewController.xib */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		E6545F102804499900A95A03 = {
@@ -209,6 +240,7 @@
 		E6545F4F28044C6600A95A03 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				B7E1DA4728049F31006C9D27 /* Root */,
 				E6545F2A2804499B00A95A03 /* LaunchScreen.storyboard */,
 				E6545F5028044C7300A95A03 /* Dashboard */,
 				B7E1DA4128049CB5006C9D27 /* Product */,
@@ -404,7 +436,11 @@
 				E6545F2C2804499B00A95A03 /* LaunchScreen.storyboard in Resources */,
 				B7E1DA3B2804990F006C9D27 /* Colors.xcassets in Resources */,
 				E6545F292804499B00A95A03 /* Assets.xcassets in Resources */,
+				B7E1DA5928049FB7006C9D27 /* TransactionViewController.xib in Resources */,
+				B76E2A9528059DCC003E349F /* TabBarViewController.xib in Resources */,
 				E6545F5428044E0C00A95A03 /* DashboardViewController.xib in Resources */,
+				B7E1DA5128049F74006C9D27 /* ProductViewController.xib in Resources */,
+				B7E1DA5528049F86006C9D27 /* AutotextViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,12 +466,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7E1DA38280498CA006C9D27 /* UIView+Extension.swift in Sources */,
+				B7E1DA5428049F86006C9D27 /* AutotextViewController.swift in Sources */,
 				E6545F682804546300A95A03 /* DashboardVCViewModel.swift in Sources */,
 				E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */,
+				B76E2A9428059DCC003E349F /* TabBarViewController.swift in Sources */,
 				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
 				E6545F5328044E0C00A95A03 /* DashboardViewController.swift in Sources */,
+				B7E1DA5828049FB7006C9D27 /* TransactionViewController.swift in Sources */,
 				B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */,
 				E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */,
+				B7E1DA5028049F74006C9D27 /* ProductViewController.swift in Sources */,
 				E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,6 +647,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Salma/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -635,6 +676,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Salma/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

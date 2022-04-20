@@ -30,6 +30,9 @@
 		E6545F372804499B00A95A03 /* SalmaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F362804499B00A95A03 /* SalmaTests.swift */; };
 		E6545F412804499B00A95A03 /* SalmaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F402804499B00A95A03 /* SalmaUITests.swift */; };
 		E6545F432804499C00A95A03 /* SalmaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F422804499C00A95A03 /* SalmaUITestsLaunchTests.swift */; };
+		E6FE835528102773000AD0C1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835428102773000AD0C1 /* Transaction.swift */; };
+		E6FE835A28102B13000AD0C1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835828102B13000AD0C1 /* SettingViewController.swift */; };
+		E6FE835B28102B13000AD0C1 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FE835928102B13000AD0C1 /* SettingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		E6545F3C2804499B00A95A03 /* SalmaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalmaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6545F402804499B00A95A03 /* SalmaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmaUITests.swift; sourceTree = "<group>"; };
 		E6545F422804499C00A95A03 /* SalmaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E6FE835428102773000AD0C1 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		E6FE835828102B13000AD0C1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		E6FE835928102B13000AD0C1 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,8 @@
 		B76E2AA12805AB61003E349F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				E6FE835728102AE5000AD0C1 /* View */,
+				E6FE835628102ADD000AD0C1 /* ViewModel */,
 				B76E2AA22805AB61003E349F /* ViewModel */,
 				B76E2AA32805AB61003E349F /* View */,
 			);
@@ -365,6 +373,7 @@
 		E6545F5C2804529500A95A03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E6FE835428102773000AD0C1 /* Transaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -383,6 +392,22 @@
 				E6545F252804499900A95A03 /* Salma.xcdatamodeld */,
 			);
 			path = "Core Data Manager";
+			sourceTree = "<group>";
+		};
+		E6FE835628102ADD000AD0C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E6FE835728102AE5000AD0C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E6FE835828102B13000AD0C1 /* SettingViewController.swift */,
+				E6FE835928102B13000AD0C1 /* SettingViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B76E2ACA2805AB61003E349F /* AutotextViewController.xib in Resources */,
+				E6FE835B28102B13000AD0C1 /* SettingViewController.xib in Resources */,
 				B7E1DA3B2804990F006C9D27 /* Colors.xcassets in Resources */,
 				B76E2AC02805AB61003E349F /* TabBarViewController.xib in Resources */,
 				B76E2AC32805AB61003E349F /* ProductViewController.xib in Resources */,
@@ -526,6 +552,8 @@
 				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
 				B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */,
 				B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */,
+				E6FE835A28102B13000AD0C1 /* SettingViewController.swift in Sources */,
+				E6FE835528102773000AD0C1 /* Transaction.swift in Sources */,
 				B76E2AC12805AB61003E349F /* TabBarViewController.swift in Sources */,
 				E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */,
 				B76E2AC62805AB61003E349F /* DashboardViewController.swift in Sources */,

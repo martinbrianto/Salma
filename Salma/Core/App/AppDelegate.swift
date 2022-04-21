@@ -17,8 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         let viewController = TabBarViewController()
-        let navigationBar = UINavigationController(rootViewController: viewController)
-        window?.rootViewController = navigationBar
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         return true
     }

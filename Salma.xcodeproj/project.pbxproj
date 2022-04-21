@@ -33,6 +33,9 @@
 		E6FE835528102773000AD0C1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835428102773000AD0C1 /* Transaction.swift */; };
 		E6FE835A28102B13000AD0C1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835828102B13000AD0C1 /* SettingViewController.swift */; };
 		E6FE835B28102B13000AD0C1 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FE835928102B13000AD0C1 /* SettingViewController.xib */; };
+		E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835E2810362B000AD0C1 /* TransactionTableViewCell.swift */; };
+		E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FE835F2810362B000AD0C1 /* TransactionTableViewCell.xib */; };
+		E6FE836328114F67000AD0C1 /* Formatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE836228114F66000AD0C1 /* Formatter+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		E6FE835428102773000AD0C1 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		E6FE835828102B13000AD0C1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E6FE835928102B13000AD0C1 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		E6FE835E2810362B000AD0C1 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		E6FE835F2810362B000AD0C1 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
+		E6FE836228114F66000AD0C1 /* Formatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B76E2A972805A905003E349F /* UIView+Extension.swift */,
+				E6FE836228114F66000AD0C1 /* Formatter+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -315,6 +322,7 @@
 		E6545F1B2804499900A95A03 /* Salma */ = {
 			isa = PBXGroup;
 			children = (
+				E6FE835C28103606000AD0C1 /* Reusable Component */,
 				E6545F582804521700A95A03 /* Core */,
 				E6545F5E2804531200A95A03 /* Helper */,
 				B7E1DA4228049CD5006C9D27 /* Utility */,
@@ -408,6 +416,23 @@
 				E6FE835928102B13000AD0C1 /* SettingViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E6FE835C28103606000AD0C1 /* Reusable Component */ = {
+			isa = PBXGroup;
+			children = (
+				E6FE835D28103610000AD0C1 /* Transaction Table View Cell */,
+			);
+			path = "Reusable Component";
+			sourceTree = "<group>";
+		};
+		E6FE835D28103610000AD0C1 /* Transaction Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E6FE835E2810362B000AD0C1 /* TransactionTableViewCell.swift */,
+				E6FE835F2810362B000AD0C1 /* TransactionTableViewCell.xib */,
+			);
+			path = "Transaction Table View Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,6 +539,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */,
 				B76E2ACA2805AB61003E349F /* AutotextViewController.xib in Resources */,
 				E6FE835B28102B13000AD0C1 /* SettingViewController.xib in Resources */,
 				B7E1DA3B2804990F006C9D27 /* Colors.xcassets in Resources */,
@@ -547,7 +573,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6FE836328114F67000AD0C1 /* Formatter+Extension.swift in Sources */,
 				E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */,
+				E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */,
 				B76E2AC52805AB61003E349F /* DashboardVCViewModel.swift in Sources */,
 				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
 				B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */,

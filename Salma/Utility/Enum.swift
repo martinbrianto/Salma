@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum Status: String {
+    case notPaid = "Not Paid"
+    case inProgress = "In Progress"
+    case completed = "Completed"
+}

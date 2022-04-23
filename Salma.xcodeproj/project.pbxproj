@@ -36,6 +36,8 @@
 		E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835E2810362B000AD0C1 /* TransactionTableViewCell.swift */; };
 		E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FE835F2810362B000AD0C1 /* TransactionTableViewCell.xib */; };
 		E6FE836328114F67000AD0C1 /* Formatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE836228114F66000AD0C1 /* Formatter+Extension.swift */; };
+		E6FE836828118222000AD0C1 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE836728118222000AD0C1 /* TextFieldView.swift */; };
+		E6FE836A28118477000AD0C1 /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FE836928118477000AD0C1 /* TextFieldView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		E6FE835E2810362B000AD0C1 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		E6FE835F2810362B000AD0C1 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 		E6FE836228114F66000AD0C1 /* Formatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extension.swift"; sourceTree = "<group>"; };
+		E6FE836728118222000AD0C1 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		E6FE836928118477000AD0C1 /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,6 +425,7 @@
 		E6FE835C28103606000AD0C1 /* Reusable Component */ = {
 			isa = PBXGroup;
 			children = (
+				E6FE8366281181D1000AD0C1 /* Text Field */,
 				E6FE835D28103610000AD0C1 /* Transaction Table View Cell */,
 			);
 			path = "Reusable Component";
@@ -433,6 +438,15 @@
 				E6FE835F2810362B000AD0C1 /* TransactionTableViewCell.xib */,
 			);
 			path = "Transaction Table View Cell";
+			sourceTree = "<group>";
+		};
+		E6FE8366281181D1000AD0C1 /* Text Field */ = {
+			isa = PBXGroup;
+			children = (
+				E6FE836728118222000AD0C1 /* TextFieldView.swift */,
+				E6FE836928118477000AD0C1 /* TextFieldView.xib */,
+			);
+			path = "Text Field";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,6 +560,7 @@
 				B76E2AC02805AB61003E349F /* TabBarViewController.xib in Resources */,
 				B76E2AC32805AB61003E349F /* ProductViewController.xib in Resources */,
 				B76E2AC42805AB61003E349F /* LaunchScreen.storyboard in Resources */,
+				E6FE836A28118477000AD0C1 /* TextFieldView.xib in Resources */,
 				E6545F292804499B00A95A03 /* Assets.xcassets in Resources */,
 				B76E2AC92805AB61003E349F /* TransactionViewController.xib in Resources */,
 				B76E2AC72805AB61003E349F /* DashboardViewController.xib in Resources */,
@@ -577,6 +592,7 @@
 				E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */,
 				E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */,
 				B76E2AC52805AB61003E349F /* DashboardVCViewModel.swift in Sources */,
+				E6FE836828118222000AD0C1 /* TextFieldView.swift in Sources */,
 				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
 				B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */,
 				B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */,

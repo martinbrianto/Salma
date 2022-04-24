@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,7 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController" customModule="Salma" customModuleProvider="target">
             <connections>
-                <outlet property="textfieldView" destination="350-UK-oe1" id="ktI-cM-Zg2"/>
+                <outlet property="tableView" destination="Ajz-jI-eOs" id="CSH-K4-iUc"/>
+                <outlet property="versionLabel" destination="dXe-ms-DzL" id="nFO-xd-v5E"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,25 +21,51 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Setting Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyT-4r-lDt">
-                    <rect key="frame" x="159" y="280" width="97" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="350-UK-oe1" customClass="TextFieldView" customModule="Salma" customModuleProvider="target">
-                    <rect key="frame" x="87" y="480" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="P9n-S6-NUf">
+                    <rect key="frame" x="0.0" y="68" width="414" height="794"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="24" estimatedSectionHeaderHeight="-1" sectionFooterHeight="24" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ajz-jI-eOs">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                            <color key="backgroundColor" name="White"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="160" id="Jj8-wl-BVn"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="xoC-Fu-Z8D"/>
+                                <outlet property="delegate" destination="-1" id="jLH-Yi-7JX"/>
+                            </connections>
+                        </tableView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salma - App Version 0.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXe-ms-DzL">
+                            <rect key="frame" x="0.0" y="184" width="414" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" name="Grey"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHl-uI-JM9">
+                            <rect key="frame" x="0.0" y="222.5" width="414" height="571.5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="132" y="79"/>
+            <constraints>
+                <constraint firstItem="P9n-S6-NUf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="5t2-kC-aad"/>
+                <constraint firstItem="P9n-S6-NUf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jDz-bI-bJU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="P9n-S6-NUf" secondAttribute="bottom" id="kMh-G5-aDK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P9n-S6-NUf" secondAttribute="trailing" id="rOn-at-GTX"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="78.348214285714278"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="Grey">
+            <color red="0.59299999475479126" green="0.62199997901916504" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

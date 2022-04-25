@@ -17,7 +17,7 @@ class TextFieldView: UIView {
     @IBOutlet weak var textfieldView: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
     
-    // MARK: -
+    // MARK: - Variable
     var errorMessage: String? {
         didSet {
             if let errorMessage = errorMessage {
@@ -31,6 +31,12 @@ class TextFieldView: UIView {
                 textfieldBackground.backgroundColor = UIColor(named: "PlaceholderBg")
                 errorMessageLabel.isHidden = true
             }
+        }
+    }
+    
+    var textfieldData: Textfield? {
+        didSet {
+            setupTextField()
         }
     }
     
@@ -49,5 +55,15 @@ class TextFieldView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        textfieldView.returnKeyType = .next
+    }
+}
+
+extension TextFieldView {
+    func setupTextField() {
+        if let textfieldData = textfieldData {
+            titleLabel.text = textfieldData.title
+            textfieldView.placeholder = textfieldData.placeholder
+        }
     }
 }

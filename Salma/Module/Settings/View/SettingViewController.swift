@@ -91,6 +91,8 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
         switch TableViewSection.getSection(indexPath.section){
         case .profile:
             print("Go to profile page")
+            let vc = StoreProfileViewController(from: .onboarding)
+            self.navigationController?.pushViewController(vc, animated: true)
         case .transaction:
             print("Go to enable keyboard")
         }

@@ -20,23 +20,26 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="599" height="105"/>
+            <rect key="frame" x="0.0" y="0.0" width="599" height="104"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="T2k-F6-isp">
-                    <rect key="frame" x="0.0" y="0.0" width="599" height="105"/>
+                    <rect key="frame" x="0.0" y="0.0" width="599" height="104"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMz-NS-eQ2">
-                            <rect key="frame" x="0.0" y="0.0" width="599" height="19.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="599" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="EiB-6N-Gys"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdi-70-edx">
-                            <rect key="frame" x="0.0" y="27.5" width="599" height="77.5"/>
+                            <rect key="frame" x="0.0" y="28" width="599" height="48"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1SI-z0-a2w">
-                                    <rect key="frame" x="16" y="15" width="567" height="48"/>
+                                    <rect key="frame" x="16" y="0.0" width="567" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="N8r-Oe-EP9"/>
                                     </constraints>
@@ -52,17 +55,30 @@
                             <color key="backgroundColor" name="PlaceholderBg"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="1SI-z0-a2w" secondAttribute="trailing" constant="16" id="L5q-AW-7jz"/>
+                                <constraint firstAttribute="height" constant="48" id="LsG-0H-PFF"/>
                                 <constraint firstItem="1SI-z0-a2w" firstAttribute="leading" secondItem="fdi-70-edx" secondAttribute="leading" constant="16" id="WqF-bc-V7R"/>
                                 <constraint firstItem="1SI-z0-a2w" firstAttribute="centerX" secondItem="fdi-70-edx" secondAttribute="centerX" id="ZrV-sr-Xk2"/>
                                 <constraint firstItem="1SI-z0-a2w" firstAttribute="centerY" secondItem="fdi-70-edx" secondAttribute="centerY" id="h0d-bI-hMe"/>
                             </constraints>
                         </view>
-                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kV-cV-3CA">
-                            <rect key="frame" x="0.0" y="105" width="599" height="0.0"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" name="Red"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vdf-M6-9Xw">
+                            <rect key="frame" x="0.0" y="84" width="599" height="20"/>
+                            <subviews>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kV-cV-3CA">
+                                    <rect key="frame" x="0.0" y="1.5" width="599" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" name="Red"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="0kV-cV-3CA" secondAttribute="trailing" id="EWN-LH-OUz"/>
+                                <constraint firstItem="0kV-cV-3CA" firstAttribute="centerY" secondItem="Vdf-M6-9Xw" secondAttribute="centerY" id="KHS-WJ-QC8"/>
+                                <constraint firstItem="0kV-cV-3CA" firstAttribute="leading" secondItem="Vdf-M6-9Xw" secondAttribute="leading" id="na0-du-PHW"/>
+                                <constraint firstAttribute="height" constant="20" id="xVx-KT-ZCq"/>
+                            </constraints>
+                        </view>
                     </subviews>
                 </stackView>
             </subviews>
@@ -75,7 +91,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="T2k-F6-isp" secondAttribute="trailing" id="r9q-hf-56e"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="265.94202898550725" y="-138.95089285714286"/>
+            <point key="canvasLocation" x="265.94202898550725" y="-134.59821428571428"/>
         </view>
     </objects>
     <resources>

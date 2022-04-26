@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26BE46E728181804005118BF /* AutotextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BE46E528181804005118BF /* AutotextTableViewCell.swift */; };
+		26BE46E828181804005118BF /* AutotextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26BE46E628181804005118BF /* AutotextTableViewCell.xib */; };
+		26BE46ED28181902005118BF /* AutotextAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BE46EB28181902005118BF /* AutotextAddViewController.swift */; };
+		26BE46EE28181902005118BF /* AutotextAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26BE46EC28181902005118BF /* AutotextAddViewController.xib */; };
 		B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E2A972805A905003E349F /* UIView+Extension.swift */; };
 		B76E2AC02805AB61003E349F /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E2AA52805AB61003E349F /* TabBarViewController.xib */; };
 		B76E2AC12805AB61003E349F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E2AA62805AB61003E349F /* TabBarViewController.swift */; };
@@ -64,6 +68,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26BE46E528181804005118BF /* AutotextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutotextTableViewCell.swift; sourceTree = "<group>"; };
+		26BE46E628181804005118BF /* AutotextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutotextTableViewCell.xib; sourceTree = "<group>"; };
+		26BE46EB28181902005118BF /* AutotextAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutotextAddViewController.swift; sourceTree = "<group>"; };
+		26BE46EC28181902005118BF /* AutotextAddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutotextAddViewController.xib; sourceTree = "<group>"; };
 		B76E2A972805A905003E349F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B76E2AA52805AB61003E349F /* TabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		B76E2AA62805AB61003E349F /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +140,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26BE46E2281817BA005118BF /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				26BE46EB28181902005118BF /* AutotextAddViewController.swift */,
+				26BE46EC28181902005118BF /* AutotextAddViewController.xib */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		26BE46E3281817CA005118BF /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				26BE46E528181804005118BF /* AutotextTableViewCell.swift */,
+				26BE46E628181804005118BF /* AutotextTableViewCell.xib */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
 		B76E2A962805A8F8003E349F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +303,8 @@
 			isa = PBXGroup;
 			children = (
 				B76E2ABC2805AB61003E349F /* ViewModel */,
+				26BE46E3281817CA005118BF /* Table */,
+				26BE46E2281817BA005118BF /* Add */,
 				B76E2ABD2805AB61003E349F /* View */,
 			);
 			path = Autotext;
@@ -601,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */,
+				26BE46E828181804005118BF /* AutotextTableViewCell.xib in Resources */,
 				E69870642816CCDD002D73F2 /* StoreProfileViewController.xib in Resources */,
 				B76E2ACA2805AB61003E349F /* AutotextViewController.xib in Resources */,
 				E698705E2815C05E002D73F2 /* SettingTableViewCell.xib in Resources */,
@@ -609,6 +638,7 @@
 				B76E2AC02805AB61003E349F /* TabBarViewController.xib in Resources */,
 				B76E2AC32805AB61003E349F /* ProductViewController.xib in Resources */,
 				B76E2AC42805AB61003E349F /* LaunchScreen.storyboard in Resources */,
+				26BE46EE28181902005118BF /* AutotextAddViewController.xib in Resources */,
 				E6FE836A28118477000AD0C1 /* TextFieldView.xib in Resources */,
 				E6545F292804499B00A95A03 /* Assets.xcassets in Resources */,
 				B76E2AC92805AB61003E349F /* TransactionViewController.xib in Resources */,
@@ -641,11 +671,13 @@
 				E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */,
 				E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */,
 				E69870662816D458002D73F2 /* Textfield.swift in Sources */,
+				26BE46ED28181902005118BF /* AutotextAddViewController.swift in Sources */,
 				B76E2AC52805AB61003E349F /* DashboardVCViewModel.swift in Sources */,
 				E6FE836828118222000AD0C1 /* TextFieldView.swift in Sources */,
 				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
 				B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */,
 				B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */,
+				26BE46E728181804005118BF /* AutotextTableViewCell.swift in Sources */,
 				E6FE835A28102B13000AD0C1 /* SettingViewController.swift in Sources */,
 				E69870632816CCDD002D73F2 /* StoreProfileViewController.swift in Sources */,
 				E6FE835528102773000AD0C1 /* Transaction.swift in Sources */,

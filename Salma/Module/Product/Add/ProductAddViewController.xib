@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductAddViewController" customModule="Salma" customModuleProvider="target">
             <connections>
-                <outlet property="productPriceTextField" destination="9zp-MW-atB" id="qh5-EP-EpK"/>
+                <outlet property="productPriceTextField" destination="QiP-Xc-62e" id="rUh-pf-eqZ"/>
                 <outlet property="productTitleTextField" destination="QNX-Hv-afJ" id="CKG-Mh-4Ce"/>
                 <outlet property="productWeightTextField" destination="6CD-dR-3rJ" id="YPc-Mv-1js"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

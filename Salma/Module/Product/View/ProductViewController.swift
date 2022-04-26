@@ -18,7 +18,6 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNIB()
-
         // Do any additional setup after loading the view.
     }
 
@@ -29,6 +28,7 @@ class ProductViewController: UIViewController {
 
      override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)
+         productTableView.reloadData()
          self.navigationController?.setNavigationBarHidden(true, animated: animated)
      }
     

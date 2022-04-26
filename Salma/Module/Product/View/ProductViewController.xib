@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductViewController" customModule="Salma" customModuleProvider="target">
             <connections>
+                <outlet property="productTableView" destination="JFj-Gf-nAK" id="su4-54-WkB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,6 +36,9 @@
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="plus.circle.fill" catalog="system" title=""/>
+                            <connections>
+                                <action selector="addProductButtonAction:" destination="-1" eventType="touchUpInside" id="gvl-4m-OuE"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -44,6 +48,14 @@
                         <constraint firstItem="azq-At-oGc" firstAttribute="centerY" secondItem="v8P-63-e9i" secondAttribute="centerY" id="yDQ-c0-xnk"/>
                     </constraints>
                 </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JFj-Gf-nAK">
+                    <rect key="frame" x="10" y="120" width="394" height="722"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="bVu-fp-8XK"/>
+                        <outlet property="delegate" destination="-1" id="lTv-T6-gD3"/>
+                    </connections>
+                </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Vn-i9-VQy">
                     <rect key="frame" x="10" y="216" width="394" height="124"/>
                     <subviews>
@@ -86,12 +98,21 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="v8P-63-e9i" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="7bA-dV-3RQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JFj-Gf-nAK" secondAttribute="bottom" constant="20" id="CxT-Ke-xz4"/>
+                <constraint firstItem="JFj-Gf-nAK" firstAttribute="top" secondItem="v8P-63-e9i" secondAttribute="bottom" constant="24" id="KSr-H1-VWP"/>
                 <constraint firstItem="9Vn-i9-VQy" firstAttribute="top" secondItem="v8P-63-e9i" secondAttribute="bottom" constant="120" id="Q49-kv-Qx7"/>
+                <constraint firstItem="JFj-Gf-nAK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="XQA-6L-F8g"/>
                 <constraint firstItem="v8P-63-e9i" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="aGR-at-ab6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9Vn-i9-VQy" secondAttribute="trailing" constant="10" id="fB6-Bp-xNd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="v8P-63-e9i" secondAttribute="trailing" constant="16" id="fYz-m1-Flg"/>
                 <constraint firstItem="9Vn-i9-VQy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="gbF-Er-JFk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JFj-Gf-nAK" secondAttribute="trailing" constant="10" id="rly-Ew-Wur"/>
             </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="9Vn-i9-VQy"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
         </view>
     </objects>

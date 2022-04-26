@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		26D9D96128117B4800A8EA86 /* ProductAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D9D95F28117B4800A8EA86 /* ProductAddViewController.swift */; };
 		26D9D96228117B4800A8EA86 /* ProductAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D9D96028117B4800A8EA86 /* ProductAddViewController.xib */; };
+		26D9D9682816CFD200A8EA86 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D9D9662816CFD200A8EA86 /* ProductTableViewCell.swift */; };
+		26D9D9692816CFD200A8EA86 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D9D9672816CFD200A8EA86 /* ProductTableViewCell.xib */; };
 		B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E2A972805A905003E349F /* UIView+Extension.swift */; };
 		B76E2AC02805AB61003E349F /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E2AA52805AB61003E349F /* TabBarViewController.xib */; };
 		B76E2AC12805AB61003E349F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E2AA62805AB61003E349F /* TabBarViewController.swift */; };
@@ -60,6 +62,8 @@
 /* Begin PBXFileReference section */
 		26D9D95F28117B4800A8EA86 /* ProductAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAddViewController.swift; sourceTree = "<group>"; };
 		26D9D96028117B4800A8EA86 /* ProductAddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductAddViewController.xib; sourceTree = "<group>"; };
+		26D9D9662816CFD200A8EA86 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		26D9D9672816CFD200A8EA86 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		B76E2A972805A905003E349F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B76E2AA52805AB61003E349F /* TabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		B76E2AA62805AB61003E349F /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,15 @@
 			path = Add;
 			sourceTree = "<group>";
 		};
+		26D9D9652816CFB800A8EA86 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				26D9D9662816CFD200A8EA86 /* ProductTableViewCell.swift */,
+				26D9D9672816CFD200A8EA86 /* ProductTableViewCell.xib */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
 		B76E2A962805A8F8003E349F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +194,7 @@
 		B76E2AA72805AB61003E349F /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				26D9D9652816CFB800A8EA86 /* Table */,
 				26D9D95C28117A4100A8EA86 /* Add */,
 				B76E2AA82805AB61003E349F /* View */,
 			);
@@ -554,6 +568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */,
+				26D9D9692816CFD200A8EA86 /* ProductTableViewCell.xib in Resources */,
 				B76E2ACA2805AB61003E349F /* AutotextViewController.xib in Resources */,
 				E6FE835B28102B13000AD0C1 /* SettingViewController.xib in Resources */,
 				26D9D96228117B4800A8EA86 /* ProductAddViewController.xib in Resources */,
@@ -591,6 +606,7 @@
 				E6FE836328114F67000AD0C1 /* Formatter+Extension.swift in Sources */,
 				E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */,
 				E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */,
+				26D9D9682816CFD200A8EA86 /* ProductTableViewCell.swift in Sources */,
 				B76E2AC52805AB61003E349F /* DashboardVCViewModel.swift in Sources */,
 				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
 				B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */,

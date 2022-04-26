@@ -9,6 +9,12 @@ import UIKit
 
 class ProductAddViewController: UIViewController {
 
+    // MARK: - Outlets
+    @IBOutlet weak var productTitleTextField: UITextField!
+    @IBOutlet weak var productPriceTextField: UIView!
+    @IBOutlet weak var productWeightTextField: UITextField!
+    
+    // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,14 +22,15 @@ class ProductAddViewController: UIViewController {
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func addProductButton(_ sender: Any) {
+        let product = Product(
+            image: nil,
+            title: productTitleTextField.text!,
+            price: productPriceTextField.text,
+            weight: productWeightTextField.text)
+        
+        productList.append(product)
     }
-    */
+    
 
 }

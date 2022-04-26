@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Transaction {
     var status: Status
@@ -25,8 +26,33 @@ struct Transaction {
 }
 
 struct Product {
-    var image: String
-    var name: String
-    var price: String
+    var image: UIImage?
+    var title: String
+    var price: Float
     var weight: Int
 }
+
+var productDummy1 = Product(
+    image: UIImage(named: "tumbler"),
+    title: "Tublr",
+    price: 10000000,
+    weight: 10
+)
+var productDummy2 = Product(
+    image: UIImage(named: "air jordan 6 university blue"),
+    title: "Air Jordan / Brand New In Box (Mint...",
+    price: 10000000,
+    weight: 10
+)
+var productDummy3 = Product(
+    image: nil,
+    title: "Phone",
+    price: 10000000,
+    weight: 10
+)
+
+var productList: [Product] = [
+    productDummy1,
+    productDummy2,
+    productDummy3
+]

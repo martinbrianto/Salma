@@ -28,7 +28,7 @@ class StoreProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPage()
-        setupTextField()
+        
         keyboardDismisser()
     }
     
@@ -42,16 +42,22 @@ class StoreProfileViewController: UIViewController {
     }
 }
 
-//handle keyboard
+//private function
 private extension StoreProfileViewController {
     private func keyboardDismisser(){
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
+    
+    @objc private func saveTapped(){
+        print("save did tap action")
+    }
 }
 
 extension StoreProfileViewController: UITextFieldDelegate {
     private func setupPage(){
+        setupTextField()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTapped))
         title = "Store Profile"
         switch entryPoint {
         case .onboarding:

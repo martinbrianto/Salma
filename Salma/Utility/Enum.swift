@@ -12,3 +12,8 @@ enum Status: String {
     case inProgress = "In Progress"
     case completed = "Completed"
 }
+
+enum StoreProfilePageEntryPoint {
+    case onboarding
+    case dashboard
+}

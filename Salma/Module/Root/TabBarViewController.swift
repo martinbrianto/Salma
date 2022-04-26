@@ -30,7 +30,7 @@ private extension TabBarViewController {
     func setupDashBoardTabBarItem() -> UINavigationController {
         let dashboardVC = DashboardViewController(nibName: "DashboardViewController", bundle: nil)
         let navigationController = UINavigationController(rootViewController: dashboardVC)
-        navigationController.tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(named: "home"), tag: 0)
+        navigationController.tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(named: "Home"), tag: 0)
         return navigationController
     }
     

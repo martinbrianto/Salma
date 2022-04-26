@@ -90,11 +90,11 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch TableViewSection.getSection(indexPath.section){
         case .profile:
-            print("Go to profile page")
             let vc = StoreProfileViewController(from: .settingPage)
             self.navigationController?.pushViewController(vc, animated: true)
         case .transaction:
-            print("Go to enable keyboard")
+            let vc = EnableKeyboardViewController(from: .settingPage)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

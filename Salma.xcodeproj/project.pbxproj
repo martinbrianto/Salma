@@ -40,6 +40,8 @@
 		E69870642816CCDD002D73F2 /* StoreProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69870622816CCDD002D73F2 /* StoreProfileViewController.xib */; };
 		E69870662816D458002D73F2 /* Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69870652816D458002D73F2 /* Textfield.swift */; };
 		E698706C2817167C002D73F2 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E698706B2817167C002D73F2 /* IQKeyboardManagerSwift */; };
+		E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698717D28182B7D002D73F2 /* EnableKeyboardViewController.swift */; };
+		E698718028182B7D002D73F2 /* EnableKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */; };
 		E6FE835528102773000AD0C1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835428102773000AD0C1 /* Transaction.swift */; };
 		E6FE835A28102B13000AD0C1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835828102B13000AD0C1 /* SettingViewController.swift */; };
 		E6FE835B28102B13000AD0C1 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FE835928102B13000AD0C1 /* SettingViewController.xib */; };
@@ -104,6 +106,8 @@
 		E69870612816CCDD002D73F2 /* StoreProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfileViewController.swift; sourceTree = "<group>"; };
 		E69870622816CCDD002D73F2 /* StoreProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreProfileViewController.xib; sourceTree = "<group>"; };
 		E69870652816D458002D73F2 /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
+		E698717D28182B7D002D73F2 /* EnableKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableKeyboardViewController.swift; sourceTree = "<group>"; };
+		E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnableKeyboardViewController.xib; sourceTree = "<group>"; };
 		E6FE835428102773000AD0C1 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		E6FE835828102B13000AD0C1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E6FE835928102B13000AD0C1 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 		B76E2AA02805AB61003E349F /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				E698717B28182B48002D73F2 /* On Boarding */,
 				E698705F2816CCC3002D73F2 /* Store Profile */,
 				B76E2ACC2805ABEA003E349F /* Root */,
 				B76E2AA12805AB61003E349F /* Settings */,
@@ -474,6 +479,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E698717B28182B48002D73F2 /* On Boarding */ = {
+			isa = PBXGroup;
+			children = (
+				E698717C28182B4E002D73F2 /* Enable Keyboard */,
+			);
+			path = "On Boarding";
+			sourceTree = "<group>";
+		};
+		E698717C28182B4E002D73F2 /* Enable Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E698717D28182B7D002D73F2 /* EnableKeyboardViewController.swift */,
+				E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */,
+			);
+			path = "Enable Keyboard";
+			sourceTree = "<group>";
+		};
 		E6FE835628102ADD000AD0C1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,6 +650,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E698718028182B7D002D73F2 /* EnableKeyboardViewController.xib in Resources */,
 				E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */,
 				E69870642816CCDD002D73F2 /* StoreProfileViewController.xib in Resources */,
 				26D9D9692816CFD200A8EA86 /* ProductTableViewCell.xib in Resources */,
@@ -673,6 +696,7 @@
 				26D9D9682816CFD200A8EA86 /* ProductTableViewCell.swift in Sources */,
 				E69870662816D458002D73F2 /* Textfield.swift in Sources */,
 				B76E2AC52805AB61003E349F /* DashboardVCViewModel.swift in Sources */,
+				E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */,
 				E6FE836828118222000AD0C1 /* TextFieldView.swift in Sources */,
 				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
 				B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */,

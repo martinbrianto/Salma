@@ -34,12 +34,20 @@
 		E6545F372804499B00A95A03 /* SalmaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F362804499B00A95A03 /* SalmaTests.swift */; };
 		E6545F412804499B00A95A03 /* SalmaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F402804499B00A95A03 /* SalmaUITests.swift */; };
 		E6545F432804499C00A95A03 /* SalmaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F422804499C00A95A03 /* SalmaUITestsLaunchTests.swift */; };
+		E698705D2815C05E002D73F2 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698705B2815C05E002D73F2 /* SettingTableViewCell.swift */; };
+		E698705E2815C05E002D73F2 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E698705C2815C05E002D73F2 /* SettingTableViewCell.xib */; };
+		E69870632816CCDD002D73F2 /* StoreProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69870612816CCDD002D73F2 /* StoreProfileViewController.swift */; };
+		E69870642816CCDD002D73F2 /* StoreProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69870622816CCDD002D73F2 /* StoreProfileViewController.xib */; };
+		E69870662816D458002D73F2 /* Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69870652816D458002D73F2 /* Textfield.swift */; };
+		E698706C2817167C002D73F2 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E698706B2817167C002D73F2 /* IQKeyboardManagerSwift */; };
 		E6FE835528102773000AD0C1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835428102773000AD0C1 /* Transaction.swift */; };
 		E6FE835A28102B13000AD0C1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835828102B13000AD0C1 /* SettingViewController.swift */; };
 		E6FE835B28102B13000AD0C1 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FE835928102B13000AD0C1 /* SettingViewController.xib */; };
 		E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835E2810362B000AD0C1 /* TransactionTableViewCell.swift */; };
 		E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FE835F2810362B000AD0C1 /* TransactionTableViewCell.xib */; };
 		E6FE836328114F67000AD0C1 /* Formatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE836228114F66000AD0C1 /* Formatter+Extension.swift */; };
+		E6FE836828118222000AD0C1 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE836728118222000AD0C1 /* TextFieldView.swift */; };
+		E6FE836A28118477000AD0C1 /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FE836928118477000AD0C1 /* TextFieldView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,12 +99,19 @@
 		E6545F3C2804499B00A95A03 /* SalmaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalmaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6545F402804499B00A95A03 /* SalmaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmaUITests.swift; sourceTree = "<group>"; };
 		E6545F422804499C00A95A03 /* SalmaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E698705B2815C05E002D73F2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		E698705C2815C05E002D73F2 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		E69870612816CCDD002D73F2 /* StoreProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfileViewController.swift; sourceTree = "<group>"; };
+		E69870622816CCDD002D73F2 /* StoreProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreProfileViewController.xib; sourceTree = "<group>"; };
+		E69870652816D458002D73F2 /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
 		E6FE835428102773000AD0C1 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		E6FE835828102B13000AD0C1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E6FE835928102B13000AD0C1 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		E6FE835E2810362B000AD0C1 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		E6FE835F2810362B000AD0C1 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 		E6FE836228114F66000AD0C1 /* Formatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extension.swift"; sourceTree = "<group>"; };
+		E6FE836728118222000AD0C1 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		E6FE836928118477000AD0C1 /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E698706C2817167C002D73F2 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +170,7 @@
 		B76E2AA02805AB61003E349F /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				E698705F2816CCC3002D73F2 /* Store Profile */,
 				B76E2ACC2805ABEA003E349F /* Root */,
 				B76E2AA12805AB61003E349F /* Settings */,
 				B76E2AA72805AB61003E349F /* Product */,
@@ -410,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				E6FE835428102773000AD0C1 /* Transaction.swift */,
+				E69870652816D458002D73F2 /* Textfield.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -430,6 +448,32 @@
 			path = "Core Data Manager";
 			sourceTree = "<group>";
 		};
+		E698705A2815C041002D73F2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E698705B2815C05E002D73F2 /* SettingTableViewCell.swift */,
+				E698705C2815C05E002D73F2 /* SettingTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E698705F2816CCC3002D73F2 /* Store Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E69870602816CCCA002D73F2 /* View */,
+			);
+			path = "Store Profile";
+			sourceTree = "<group>";
+		};
+		E69870602816CCCA002D73F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E69870612816CCDD002D73F2 /* StoreProfileViewController.swift */,
+				E69870622816CCDD002D73F2 /* StoreProfileViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E6FE835628102ADD000AD0C1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +484,7 @@
 		E6FE835728102AE5000AD0C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E698705A2815C041002D73F2 /* Cell */,
 				E6FE835828102B13000AD0C1 /* SettingViewController.swift */,
 				E6FE835928102B13000AD0C1 /* SettingViewController.xib */,
 			);
@@ -449,6 +494,7 @@
 		E6FE835C28103606000AD0C1 /* Reusable Component */ = {
 			isa = PBXGroup;
 			children = (
+				E6FE8366281181D1000AD0C1 /* Text Field */,
 				E6FE835D28103610000AD0C1 /* Transaction Table View Cell */,
 			);
 			path = "Reusable Component";
@@ -461,6 +507,15 @@
 				E6FE835F2810362B000AD0C1 /* TransactionTableViewCell.xib */,
 			);
 			path = "Transaction Table View Cell";
+			sourceTree = "<group>";
+		};
+		E6FE8366281181D1000AD0C1 /* Text Field */ = {
+			isa = PBXGroup;
+			children = (
+				E6FE836728118222000AD0C1 /* TextFieldView.swift */,
+				E6FE836928118477000AD0C1 /* TextFieldView.xib */,
+			);
+			path = "Text Field";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,6 +534,9 @@
 			dependencies = (
 			);
 			name = Salma;
+			packageProductDependencies = (
+				E698706B2817167C002D73F2 /* IQKeyboardManagerSwift */,
+			);
 			productName = Salma;
 			productReference = E6545F192804499900A95A03 /* Salma.app */;
 			productType = "com.apple.product-type.application";
@@ -551,6 +609,9 @@
 				Base,
 			);
 			mainGroup = E6545F102804499900A95A03;
+			packageReferences = (
+				E698706A2817167C002D73F2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = E6545F1A2804499900A95A03 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -568,14 +629,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */,
+				E69870642816CCDD002D73F2 /* StoreProfileViewController.xib in Resources */,
 				26D9D9692816CFD200A8EA86 /* ProductTableViewCell.xib in Resources */,
 				B76E2ACA2805AB61003E349F /* AutotextViewController.xib in Resources */,
+				E698705E2815C05E002D73F2 /* SettingTableViewCell.xib in Resources */,
 				E6FE835B28102B13000AD0C1 /* SettingViewController.xib in Resources */,
 				26D9D96228117B4800A8EA86 /* ProductAddViewController.xib in Resources */,
 				B7E1DA3B2804990F006C9D27 /* Colors.xcassets in Resources */,
 				B76E2AC02805AB61003E349F /* TabBarViewController.xib in Resources */,
 				B76E2AC32805AB61003E349F /* ProductViewController.xib in Resources */,
 				B76E2AC42805AB61003E349F /* LaunchScreen.storyboard in Resources */,
+				E6FE836A28118477000AD0C1 /* TextFieldView.xib in Resources */,
 				E6545F292804499B00A95A03 /* Assets.xcassets in Resources */,
 				B76E2AC92805AB61003E349F /* TransactionViewController.xib in Resources */,
 				B76E2AC72805AB61003E349F /* DashboardViewController.xib in Resources */,
@@ -607,15 +671,19 @@
 				E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */,
 				E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */,
 				26D9D9682816CFD200A8EA86 /* ProductTableViewCell.swift in Sources */,
+				E69870662816D458002D73F2 /* Textfield.swift in Sources */,
 				B76E2AC52805AB61003E349F /* DashboardVCViewModel.swift in Sources */,
+				E6FE836828118222000AD0C1 /* TextFieldView.swift in Sources */,
 				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
 				B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */,
 				26D9D96128117B4800A8EA86 /* ProductAddViewController.swift in Sources */,
 				B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */,
 				E6FE835A28102B13000AD0C1 /* SettingViewController.swift in Sources */,
+				E69870632816CCDD002D73F2 /* StoreProfileViewController.swift in Sources */,
 				E6FE835528102773000AD0C1 /* Transaction.swift in Sources */,
 				B76E2AC12805AB61003E349F /* TabBarViewController.swift in Sources */,
 				E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */,
+				E698705D2815C05E002D73F2 /* SettingTableViewCell.swift in Sources */,
 				B76E2AC62805AB61003E349F /* DashboardViewController.swift in Sources */,
 				B76E2ACB2805AB61003E349F /* AutotextViewController.swift in Sources */,
 				B76E2AC82805AB61003E349F /* TransactionViewController.swift in Sources */,
@@ -804,7 +872,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SMS.Salma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -833,7 +901,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SMS.Salma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -954,6 +1022,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E698706A2817167C002D73F2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E698706B2817167C002D73F2 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E698706A2817167C002D73F2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E6545F252804499900A95A03 /* Salma.xcdatamodeld */ = {

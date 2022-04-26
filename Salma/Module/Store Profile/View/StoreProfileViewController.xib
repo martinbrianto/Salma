@@ -25,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WNw-gd-Mvc">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WNw-gd-Mvc">
                     <rect key="frame" x="16" y="56" width="382" height="699"/>
                     <subviews>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6G-ho-r66">
@@ -47,31 +47,31 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZX-dq-une" customClass="TextFieldView" customModule="Salma" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="104"/>
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="96"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="104" id="s9Y-u7-d7B"/>
+                                <constraint firstAttribute="height" constant="96" id="s9Y-u7-d7B"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wy-FS-JDb" customClass="TextFieldView" customModule="Salma" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="104" width="382" height="104"/>
+                            <rect key="frame" x="0.0" y="104" width="382" height="96"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="104" id="gaI-Zq-XFc"/>
+                                <constraint firstAttribute="height" constant="96" id="gaI-Zq-XFc"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vri-E5-6AY" customClass="TextFieldView" customModule="Salma" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="208" width="382" height="104"/>
+                            <rect key="frame" x="0.0" y="208" width="382" height="96"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="104" id="ZQ8-Gb-Gbm"/>
+                                <constraint firstAttribute="height" constant="96" id="ZQ8-Gb-Gbm"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSx-1U-YLn" customClass="TextFieldView" customModule="Salma" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="312" width="382" height="104"/>
+                            <rect key="frame" x="0.0" y="312" width="382" height="96"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="104" id="sh9-cc-gMH"/>
+                                <constraint firstAttribute="height" constant="96" id="sh9-cc-gMH"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoq-x2-fZZ">

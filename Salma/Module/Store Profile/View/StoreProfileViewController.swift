@@ -57,7 +57,7 @@ extension StoreProfileViewController: UITextFieldDelegate {
         case .onboarding:
             nextButton.isHidden = false
             titleLabel.isHidden = false
-        case .dashboard: break
+        case .settingPage: break
         }
     }
     

@@ -42,6 +42,15 @@
 		E698706C2817167C002D73F2 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E698706B2817167C002D73F2 /* IQKeyboardManagerSwift */; };
 		E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698717D28182B7D002D73F2 /* EnableKeyboardViewController.swift */; };
 		E698718028182B7D002D73F2 /* EnableKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */; };
+		E6F7F4FD281AD71100456635 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F4281AD71000456635 /* Inter-ExtraLight.ttf */; };
+		E6F7F4FE281AD71100456635 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F5281AD71000456635 /* Inter-Regular.ttf */; };
+		E6F7F4FF281AD71100456635 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F6281AD71000456635 /* Inter-Black.ttf */; };
+		E6F7F500281AD71100456635 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F7281AD71000456635 /* Inter-Medium.ttf */; };
+		E6F7F501281AD71100456635 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F8281AD71000456635 /* Inter-Light.ttf */; };
+		E6F7F502281AD71100456635 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F9281AD71000456635 /* Inter-Bold.ttf */; };
+		E6F7F503281AD71100456635 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4FA281AD71100456635 /* Inter-SemiBold.ttf */; };
+		E6F7F504281AD71100456635 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4FB281AD71100456635 /* Inter-Thin.ttf */; };
+		E6F7F505281AD71100456635 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4FC281AD71100456635 /* Inter-ExtraBold.ttf */; };
 		E6FE835528102773000AD0C1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835428102773000AD0C1 /* Transaction.swift */; };
 		E6FE835A28102B13000AD0C1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835828102B13000AD0C1 /* SettingViewController.swift */; };
 		E6FE835B28102B13000AD0C1 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FE835928102B13000AD0C1 /* SettingViewController.xib */; };
@@ -108,6 +117,15 @@
 		E69870652816D458002D73F2 /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
 		E698717D28182B7D002D73F2 /* EnableKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableKeyboardViewController.swift; sourceTree = "<group>"; };
 		E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnableKeyboardViewController.xib; sourceTree = "<group>"; };
+		E6F7F4F4281AD71000456635 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		E6F7F4F5281AD71000456635 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		E6F7F4F6281AD71000456635 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		E6F7F4F7281AD71000456635 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		E6F7F4F8281AD71000456635 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		E6F7F4F9281AD71000456635 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		E6F7F4FA281AD71100456635 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		E6F7F4FB281AD71100456635 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		E6F7F4FC281AD71100456635 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
 		E6FE835428102773000AD0C1 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		E6FE835828102B13000AD0C1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E6FE835928102B13000AD0C1 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
@@ -422,6 +440,7 @@
 		E6545F5B2804523D00A95A03 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E6F7F4F3281AD6FD00456635 /* Inter Font */,
 				E6545F282804499B00A95A03 /* Assets.xcassets */,
 				B7E1DA3A2804990E006C9D27 /* Colors.xcassets */,
 			);
@@ -494,6 +513,22 @@
 				E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */,
 			);
 			path = "Enable Keyboard";
+			sourceTree = "<group>";
+		};
+		E6F7F4F3281AD6FD00456635 /* Inter Font */ = {
+			isa = PBXGroup;
+			children = (
+				E6F7F4F6281AD71000456635 /* Inter-Black.ttf */,
+				E6F7F4F9281AD71000456635 /* Inter-Bold.ttf */,
+				E6F7F4FC281AD71100456635 /* Inter-ExtraBold.ttf */,
+				E6F7F4F4281AD71000456635 /* Inter-ExtraLight.ttf */,
+				E6F7F4F8281AD71000456635 /* Inter-Light.ttf */,
+				E6F7F4F7281AD71000456635 /* Inter-Medium.ttf */,
+				E6F7F4F5281AD71000456635 /* Inter-Regular.ttf */,
+				E6F7F4FA281AD71100456635 /* Inter-SemiBold.ttf */,
+				E6F7F4FB281AD71100456635 /* Inter-Thin.ttf */,
+			);
+			path = "Inter Font";
 			sourceTree = "<group>";
 		};
 		E6FE835628102ADD000AD0C1 /* ViewModel */ = {
@@ -652,17 +687,26 @@
 			files = (
 				E698718028182B7D002D73F2 /* EnableKeyboardViewController.xib in Resources */,
 				E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */,
+				E6F7F502281AD71100456635 /* Inter-Bold.ttf in Resources */,
 				E69870642816CCDD002D73F2 /* StoreProfileViewController.xib in Resources */,
+				E6F7F4FD281AD71100456635 /* Inter-ExtraLight.ttf in Resources */,
 				26D9D9692816CFD200A8EA86 /* ProductTableViewCell.xib in Resources */,
 				B76E2ACA2805AB61003E349F /* AutotextViewController.xib in Resources */,
 				E698705E2815C05E002D73F2 /* SettingTableViewCell.xib in Resources */,
 				E6FE835B28102B13000AD0C1 /* SettingViewController.xib in Resources */,
+				E6F7F500281AD71100456635 /* Inter-Medium.ttf in Resources */,
+				E6F7F4FF281AD71100456635 /* Inter-Black.ttf in Resources */,
 				26D9D96228117B4800A8EA86 /* ProductAddViewController.xib in Resources */,
 				B7E1DA3B2804990F006C9D27 /* Colors.xcassets in Resources */,
+				E6F7F4FE281AD71100456635 /* Inter-Regular.ttf in Resources */,
+				E6F7F501281AD71100456635 /* Inter-Light.ttf in Resources */,
+				E6F7F505281AD71100456635 /* Inter-ExtraBold.ttf in Resources */,
 				B76E2AC02805AB61003E349F /* TabBarViewController.xib in Resources */,
 				B76E2AC32805AB61003E349F /* ProductViewController.xib in Resources */,
 				B76E2AC42805AB61003E349F /* LaunchScreen.storyboard in Resources */,
 				E6FE836A28118477000AD0C1 /* TextFieldView.xib in Resources */,
+				E6F7F503281AD71100456635 /* Inter-SemiBold.ttf in Resources */,
+				E6F7F504281AD71100456635 /* Inter-Thin.ttf in Resources */,
 				E6545F292804499B00A95A03 /* Assets.xcassets in Resources */,
 				B76E2AC92805AB61003E349F /* TransactionViewController.xib in Resources */,
 				B76E2AC72805AB61003E349F /* DashboardViewController.xib in Resources */,

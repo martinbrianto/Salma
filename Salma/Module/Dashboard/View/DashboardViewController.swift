@@ -13,6 +13,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var businessNameLabel: UILabel!
     @IBOutlet weak var totalPenjualanLabel: UILabel!
     @IBOutlet weak var transactionTableView: UITableView!
+    @IBOutlet weak var noTransactionView: UIStackView!
     
     // MARK: - Variables
     var trans1 = Transaction(
@@ -70,7 +71,7 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNIB()
-        transData = [trans1, trans2, trans3]
+        transData = []
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -98,6 +99,11 @@ private extension DashboardViewController {
 // MARK: - Tableview
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if transData.isEmpty {
+            transactionTableView.isHidden = true
+        } else {
+            transactionTableView.isHidden = false
+        }
         return transData.count
     }
     

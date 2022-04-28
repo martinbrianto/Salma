@@ -17,3 +17,8 @@ enum StoreProfilePageEntryPoint {
     case onboarding
     case settingPage
 }
+
+enum Section: String{
+    case transaction = "Transaction"
+    case custom = "Custom"
+}

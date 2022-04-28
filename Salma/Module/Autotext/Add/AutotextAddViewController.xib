@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AutotextAddViewController" customModule="Salma" customModuleProvider="target">
             <connections>
+                <outlet property="autotextMessageTextView" destination="gdq-FZ-qDK" id="uk3-5M-3b0"/>
+                <outlet property="autotextTitleTextField" destination="DLi-Li-JWd" id="dgQ-cr-Qhq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -142,6 +144,9 @@
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addAutotextButton:" destination="-1" eventType="touchUpInside" id="tKn-KY-ekD"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

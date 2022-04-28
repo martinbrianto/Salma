@@ -8,22 +8,20 @@
 import UIKit
 
 class AutotextAddViewController: UIViewController {
-
+    @IBOutlet weak var autotextTitleTextField: UITextField!
+    @IBOutlet weak var autotextMessageTextView: UITextView!
+    
+    // MARK: - Outlets
+    
+    // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func addAutotextButton(_ sender: Any) {
+        //add validation
+        
+        //pop back
+        self.navigationController?.popToRootViewController(animated: true)
     }
-    */
-
 }

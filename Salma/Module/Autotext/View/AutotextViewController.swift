@@ -13,6 +13,18 @@ class AutotextViewController: UIViewController {
     @IBOutlet weak var autotextTableView: UITableView!
     
     // MARK: - Variables
+    enum TableViewSection: CaseIterable {
+        case transaction
+        case custom
+        
+        static func numberOfSections() -> Int {
+            return self.allCases.count
+        }
+        
+        static func getSection(_ section: Int) -> TableViewSection {
+            return self.allCases[section]
+        }
+    }
     
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
@@ -30,6 +42,10 @@ class AutotextViewController: UIViewController {
         autotextTableView.reloadData()
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    @IBAction func autotextAddButton(_ sender: Any) {
+        let viewController = AutotextAddViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 private extension AutotextViewController{
@@ -42,22 +58,38 @@ private extension AutotextViewController{
 extension AutotextViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        return TableViewSection.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return autotextList.count
+        switch TableViewSection.getSection(section){
+        case .transaction:
+            return transactionAutotext.count
+        case .custom:
+            return customAutotext.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = autotextTableView.dequeueReusableCell(withIdentifier: AutotextTableViewCell.reuseID, for: indexPath) as! AutotextTableViewCell
-
-        cell.autotextData = autotextList[indexPath.row]
-
-        return cell
+        switch TableViewSection.getSection(indexPath.section){
+            
+        case .transaction:
+            let cell = tableView.dequeueReusableCell(withIdentifier: AutotextTableViewCell.reuseID, for: indexPath) as! AutotextTableViewCell
+            cell.title = transactionAutotext[indexPath.row].title
+            return cell
+        case .custom:
+            let cell = tableView.dequeueReusableCell(withIdentifier: AutotextTableViewCell.reuseID, for: indexPath) as! AutotextTableViewCell
+            cell.title = customAutotext[indexPath.row].title
+            return cell
+        }
     }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch TableViewSection.getSection(section){
+        case .transaction:
+            return "Transaction"
+        case .custom:
+            return "Custom"
+        }
     }
 }

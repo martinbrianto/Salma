@@ -21,7 +21,7 @@ class AutotextTableViewCell: UITableViewCell {
     @IBOutlet weak var cellBackgroundView: UIView!
     
     // MARK: - Variable
-    var autotextData: Autotext? {
+    var title: String? {
         didSet {
             setupCell()
         }
@@ -45,17 +45,10 @@ class AutotextTableViewCell: UITableViewCell {
 private extension AutotextTableViewCell {
     
     private func setupCell(){
-        guard let autotextData = autotextData else { return }
-        addShadow()
-        titleLabel.text = autotextData.title
-}
-    
-    private func addShadow(){
-        cellBackgroundView.layer.masksToBounds = false
-        cellBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        cellBackgroundView.layer.shadowRadius = 1
-        cellBackgroundView.layer.shadowOpacity = 0.25
-        cellBackgroundView.layer.shouldRasterize = true
-        cellBackgroundView.layer.rasterizationScale = UIScreen.main.scale
+//        guard let autotextData = autotextData else { return }
+//        titleLabel.text = autotextData.title
+        if let title = self.title {
+            textLabel?.text = title
+        }
     }
 }

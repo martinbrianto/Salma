@@ -26,62 +26,12 @@ class TransactionViewController: UIViewController {
     }
     
     // MARK: - Variables
-    var trans1 = Transaction(
-        status: .notPaid,
-        customerName: "Martin",
-        phoneNumber: "",
-        address: "",
-        province: "",
-        city: "",
-        district: "",
-        postalCode: "",
-        products: [],
-        notes: nil,
-        expedition: "",
-        shippingPrice: 0,
-        priceSubtotal: 0,
-        priceTotal: 200000
-    )
-    var trans2 = Transaction(
-        status: .inProgress,
-        customerName: "ADWS",
-        phoneNumber: "",
-        address: "",
-        province: "",
-        city: "",
-        district: "",
-        postalCode: "",
-        products: [],
-        notes: nil,
-        expedition: "",
-        shippingPrice: 0,
-        priceSubtotal: 0,
-        priceTotal: 123123123
-    )
-    var trans3 = Transaction(
-        status: .completed,
-        customerName: "ASAD",
-        phoneNumber: "",
-        address: "",
-        province: "",
-        city: "",
-        district: "",
-        postalCode: "",
-        products: [],
-        notes: nil,
-        expedition: "",
-        shippingPrice: 0,
-        priceSubtotal: 0,
-        priceTotal: 123123
-    )
-    
-    var transData: [Transaction] = []
+    var transData: [TransactionModel] = []
     
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNIB()
-        transData = [trans1, trans2, trans3]
     }
     
     override func viewWillDisappear(_ animated: Bool) {

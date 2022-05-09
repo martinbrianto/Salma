@@ -16,56 +16,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var noTransactionView: UIStackView!
     
     // MARK: - Variables
-    var trans1 = Transaction(
-        status: .notPaid,
-        customerName: "Martin",
-        phoneNumber: "",
-        address: "",
-        province: "",
-        city: "",
-        district: "",
-        postalCode: "",
-        products: [],
-        notes: nil,
-        expedition: "",
-        shippingPrice: 0,
-        priceSubtotal: 0,
-        priceTotal: 200000
-    )
-    var trans2 = Transaction(
-        status: .inProgress,
-        customerName: "ADWS",
-        phoneNumber: "",
-        address: "",
-        province: "",
-        city: "",
-        district: "",
-        postalCode: "",
-        products: [],
-        notes: nil,
-        expedition: "",
-        shippingPrice: 0,
-        priceSubtotal: 0,
-        priceTotal: 123123123
-    )
-    var trans3 = Transaction(
-        status: .completed,
-        customerName: "ASAD",
-        phoneNumber: "",
-        address: "",
-        province: "",
-        city: "",
-        district: "",
-        postalCode: "",
-        products: [],
-        notes: nil,
-        expedition: "",
-        shippingPrice: 0,
-        priceSubtotal: 0,
-        priceTotal: 123123
-    )
-    
-    var transData: [Transaction] = []
+    var transData: [TransactionModel] = []
     
     // MARK: - VC LifeCycle
     override func viewDidLoad() {

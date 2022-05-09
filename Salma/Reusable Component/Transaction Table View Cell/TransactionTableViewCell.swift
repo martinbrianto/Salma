@@ -24,7 +24,7 @@ class TransactionTableViewCell: UITableViewCell {
     @IBOutlet weak var transactionStatusLabel: UILabel!
     
     // MARK: - Variable
-    var transactionData: Transaction? {
+    var transactionData: TransactionModel? {
         didSet {
             setupCell()
         }
@@ -44,7 +44,7 @@ private extension TransactionTableViewCell {
     private func setupCell(){
         guard let transactionData = transactionData else { return }
         addShadow()
-        transactionPrice.text = transactionData.priceTotal.formattedToRp
+//        transactionPrice.text = transactionData.priceTotal.formattedToRp
         transactionName.text = transactionData.customerName
         transactionStatusLabel.text = transactionData.status.rawValue
         switch transactionData.status {

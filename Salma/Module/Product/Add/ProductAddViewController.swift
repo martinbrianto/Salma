@@ -13,24 +13,28 @@ class ProductAddViewController: UIViewController {
     @IBOutlet weak var productTitleTextField: UITextField!
     @IBOutlet weak var productWeightTextField: UITextField!
     @IBOutlet weak var productPriceTextField: UITextField!
+    @IBOutlet weak var weightTextField: TextFieldView!
+    
     
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupTextField()
     }
 
 
     @IBAction func addProductButton(_ sender: Any) {
-        let product = Product(
-            image: nil,
-            title: "boleh",
-            price: 2000,
-            weight: 10000
-        )
-        productList.append(product)
     }
     
 
+}
+
+extension ProductAddViewController: UITextFieldDelegate {
+    private func setupTextField(){
+        weightTextField.textfieldView.delegate = self
+        weightTextField.textfieldData = Textfield(title: "Weight", placeholder: "0")
+        weightTextField.textfieldView.keyboardType = .numberPad
+        weightTextField.errorMessage = "ente bahlul"
+        weightTextField.errorMessage = nil
+    }
 }

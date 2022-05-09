@@ -1,4 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CustomAutotext" representedClassName=".CustomAutotext" syncable="YES">
+        <attribute name="messages" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="DefaultAutotext" representedClassName=".DefaultAutotext" syncable="YES">
+        <attribute name="messages" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Product" representedClassName=".Product" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="isActive" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="price" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="referenceCount" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="weight" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="ofTransactionProduct" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TransactionProduct" inverseName="product" inverseEntity="TransactionProduct"/>
+    </entity>
+    <entity name="Profile" representedClassName=".Profile" syncable="YES">
+        <attribute name="storeLocation" attributeType="String"/>
+        <attribute name="storeName" attributeType="String"/>
+        <attribute name="storePhoneNumber" attributeType="String"/>
+        <attribute name="storeURL" attributeType="String"/>
+    </entity>
+    <entity name="Transaction" representedClassName=".Transaction" syncable="YES">
+        <attribute name="address_city" attributeType="String"/>
+        <attribute name="address_district" attributeType="String"/>
+        <attribute name="address_name" attributeType="String"/>
+        <attribute name="address_postal_code" attributeType="String"/>
+        <attribute name="address_province" attributeType="String"/>
+        <attribute name="customer_name" attributeType="String"/>
+        <attribute name="customer_phone_number" attributeType="String"/>
+        <attribute name="date_completed" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="date_created" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="date_paid" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="shipping_expedition" attributeType="String"/>
+        <attribute name="shipping_price" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="status" attributeType="String"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="transactionProducts" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="TransactionProduct" inverseName="ofTransaction" inverseEntity="TransactionProduct"/>
+    </entity>
+    <entity name="TransactionProduct" representedClassName="TransactionProduct" syncable="YES">
+        <attribute name="productPrice" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="productQuantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="ofTransaction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Transaction" inverseName="transactionProducts" inverseEntity="Transaction"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="ofTransactionProduct" inverseEntity="Product"/>
+    </entity>
+    <elements>
+        <element name="CustomAutotext" positionX="-9" positionY="153" width="128" height="74"/>
+        <element name="DefaultAutotext" positionX="-98.80108642578125" positionY="-0.8863525390625" width="128" height="88"/>
+        <element name="Product" positionX="623.512451171875" positionY="52.47564697265625" width="128" height="163"/>
+        <element name="Profile" positionX="-260.3363647460938" positionY="158.5518798828125" width="128" height="89"/>
+        <element name="Transaction" positionX="165.006591796875" positionY="-82.43434143066406" width="128" height="283"/>
+        <element name="TransactionProduct" positionX="402.9671630859375" positionY="112.4483947753906" width="128" height="103"/>
+    </elements>
 </model>

@@ -11,9 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductAddViewController" customModule="Salma" customModuleProvider="target">
             <connections>
+                <outlet property="productButton" destination="YoI-w0-wMT" id="9Tu-0h-IdN"/>
+                <outlet property="productNameTextFieldView" destination="sEV-vb-LaR" id="OeA-0b-JKo"/>
                 <outlet property="productPriceTextField" destination="QiP-Xc-62e" id="rUh-pf-eqZ"/>
+                <outlet property="productPriceTextFieldView" destination="NT8-hV-udV" id="dY0-ro-FkQ"/>
                 <outlet property="productTitleTextField" destination="QNX-Hv-afJ" id="CKG-Mh-4Ce"/>
                 <outlet property="productWeightTextField" destination="6CD-dR-3rJ" id="YPc-Mv-1js"/>
+                <outlet property="productWeightTextFieldView" destination="9hG-XC-uln" id="kPN-Z6-ZrX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -279,6 +283,7 @@
                     </state>
                     <buttonConfiguration key="configuration" style="filled" title="Button">
                         <fontDescription key="titleFontDescription" name="SFMono-Semibold" family="SF Mono" pointSize="17"/>
+                        <color key="baseBackgroundColor" name="AccentColor"/>
                     </buttonConfiguration>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -286,7 +291,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="addProductButton:" destination="-1" eventType="touchUpInside" id="asp-0O-uWV"/>
+                        <action selector="productButtonAction:" destination="-1" eventType="touchUpInside" id="lvF-wi-5xR"/>
                     </connections>
                 </button>
             </subviews>
@@ -305,6 +310,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Black">
             <color red="0.093999996781349182" green="0.093999996781349182" blue="0.093999996781349182" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

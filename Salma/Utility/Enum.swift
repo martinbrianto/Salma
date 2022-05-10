@@ -22,3 +22,9 @@ enum Section: String{
     case transaction = "Transaction"
     case custom = "Custom"
 }
+
+enum AutotextPageState: String{
+    case add = "Add"
+    case edit = "Edit"
+    case detail = "Detail"
+}

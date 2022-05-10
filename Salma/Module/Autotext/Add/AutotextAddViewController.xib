@@ -10,8 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AutotextAddViewController" customModule="Salma" customModuleProvider="target">
             <connections>
-                <outlet property="autotextMessageTextView" destination="gdq-FZ-qDK" id="uk3-5M-3b0"/>
-                <outlet property="autotextTitleTextField" destination="DLi-Li-JWd" id="dgQ-cr-Qhq"/>
+                <outlet property="autotextMessageTextView" destination="gdq-FZ-qDK" id="bC4-H6-v0D"/>
+                <outlet property="autotextTitleTextField" destination="DLi-Li-JWd" id="I7b-Gf-xm0"/>
+                <outlet property="titleTextField" destination="fwv-RC-ZfN" id="1FP-qr-aEn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,6 +24,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXW-cp-DTu">
                     <rect key="frame" x="16" y="73" width="382" height="678"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwv-RC-ZfN" customClass="TextFieldView" customModule="Salma" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="96"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="96" id="vOw-2Z-l6O"/>
+                            </constraints>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8t-Tw-Fnd">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="76"/>
                             <subviews>
@@ -110,9 +118,9 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="jg6-SJ-6gh" secondAttribute="trailing" id="Km9-a1-423"/>
+                                <constraint firstItem="jg6-SJ-6gh" firstAttribute="top" secondItem="CuG-fq-XaL" secondAttribute="top" id="RA0-nR-3u8"/>
                                 <constraint firstAttribute="bottom" secondItem="RcK-0A-qHn" secondAttribute="bottom" constant="8" id="Yck-FI-5qW"/>
                                 <constraint firstItem="RcK-0A-qHn" firstAttribute="top" secondItem="jg6-SJ-6gh" secondAttribute="bottom" constant="8" id="YkG-RM-IEQ"/>
-                                <constraint firstItem="jg6-SJ-6gh" firstAttribute="top" secondItem="CuG-fq-XaL" secondAttribute="top" id="gbU-U3-73M"/>
                                 <constraint firstItem="RcK-0A-qHn" firstAttribute="leading" secondItem="CuG-fq-XaL" secondAttribute="leading" id="i4l-fq-bBU"/>
                                 <constraint firstItem="jg6-SJ-6gh" firstAttribute="leading" secondItem="CuG-fq-XaL" secondAttribute="leading" id="y71-yf-cvX"/>
                                 <constraint firstAttribute="trailing" secondItem="RcK-0A-qHn" secondAttribute="trailing" id="ycB-1f-jVe"/>
@@ -121,14 +129,23 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="fwv-RC-ZfN" firstAttribute="top" secondItem="GXW-cp-DTu" secondAttribute="top" id="1yF-km-dzf"/>
+                        <constraint firstItem="fwv-RC-ZfN" firstAttribute="leading" secondItem="GXW-cp-DTu" secondAttribute="leading" id="AcE-vx-U9O"/>
                         <constraint firstItem="y8t-Tw-Fnd" firstAttribute="leading" secondItem="GXW-cp-DTu" secondAttribute="leading" id="OPj-Ff-VAF"/>
+                        <constraint firstItem="CuG-fq-XaL" firstAttribute="top" secondItem="fwv-RC-ZfN" secondAttribute="bottom" constant="4" id="Pd1-SB-AGE"/>
                         <constraint firstAttribute="trailing" secondItem="CuG-fq-XaL" secondAttribute="trailing" id="Ryt-T4-H39"/>
                         <constraint firstItem="y8t-Tw-Fnd" firstAttribute="top" secondItem="GXW-cp-DTu" secondAttribute="top" id="b3K-vb-cqH"/>
                         <constraint firstItem="CuG-fq-XaL" firstAttribute="leading" secondItem="GXW-cp-DTu" secondAttribute="leading" id="mQz-FF-RDz"/>
                         <constraint firstAttribute="trailing" secondItem="y8t-Tw-Fnd" secondAttribute="trailing" id="oJz-sl-yw8"/>
+                        <constraint firstAttribute="trailing" secondItem="fwv-RC-ZfN" secondAttribute="trailing" id="rbV-s9-iVS"/>
                         <constraint firstItem="CuG-fq-XaL" firstAttribute="top" secondItem="y8t-Tw-Fnd" secondAttribute="bottom" constant="24" id="ulh-uW-VAc"/>
                         <constraint firstAttribute="bottom" secondItem="CuG-fq-XaL" secondAttribute="bottom" id="xBz-Ns-fwR"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="y8t-Tw-Fnd"/>
+                        </mask>
+                    </variation>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4I-j2-AQp">
                     <rect key="frame" x="10" y="790" width="394" height="48"/>

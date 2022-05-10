@@ -42,8 +42,9 @@ class AutotextViewController: UIViewController {
         autotextTableView.reloadData()
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
     @IBAction func autotextAddButton(_ sender: Any) {
-        let viewController = AutotextAddViewController()
+        let viewController = AutotextAddViewController(from: .add)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

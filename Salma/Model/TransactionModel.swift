@@ -11,7 +11,7 @@ import UIKit
 struct TransactionModel {
     var id: UUID?
     var status: Status
-    var dateCreated: Date
+    var dateCreated: Date?
     var datePaid: Date?
     var dateCompleted: Date?
     var customerName: String
@@ -24,4 +24,6 @@ struct TransactionModel {
     var notes: String?
     var expedition: String
     var shippingPrice: Float
+    var priceSubTotal: Float
+    var priceTotal: Float
 }

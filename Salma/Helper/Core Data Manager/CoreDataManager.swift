@@ -395,6 +395,8 @@ struct CoreDataManager {
         transaction.setValue(transactionData.expedition, forKey: "shipping_expedition")
         transaction.setValue(transactionData.shippingPrice, forKey: "shipping_price")
         transaction.setValue(transactionData.notes, forKey: "note")
+        transaction.setValue(transactionData.priceSubTotal, forKey: "price_subTotal")
+        transaction.setValue(transactionData.priceTotal, forKey: "price_Total")
         
         do {
             try context.save()
@@ -418,6 +420,8 @@ struct CoreDataManager {
             transaction.setValue(transactionData.expedition, forKey: "shipping_expedition")
             transaction.setValue(transactionData.shippingPrice, forKey: "shipping_price")
             transaction.setValue(transactionData.notes, forKey: "note")
+            transaction.setValue(transactionData.priceSubTotal, forKey: "price_subTotal")
+            transaction.setValue(transactionData.priceTotal, forKey: "price_Total")
 
             do {
                 try context.save()
@@ -505,7 +509,9 @@ struct CoreDataManager {
                         addressPostalCode: transaction.address_postal_code,
                         notes: transaction.note,
                         expedition: transaction.shipping_expedition,
-                        shippingPrice: transaction.shipping_price
+                        shippingPrice: transaction.shipping_price,
+                        priceSubTotal: transaction.price_subTotal,
+                        priceTotal: transaction.price_Total
                     )
                 )
             }
@@ -552,7 +558,9 @@ struct CoreDataManager {
                     addressPostalCode: transaction.address_postal_code,
                     notes: transaction.note,
                     expedition: transaction.shipping_expedition,
-                    shippingPrice: transaction.shipping_price
+                    shippingPrice: transaction.shipping_price,
+                    priceSubTotal: transaction.price_subTotal,
+                    priceTotal: transaction.price_Total
                 )
                 return transactionModel
             } else {

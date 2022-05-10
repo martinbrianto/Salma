@@ -31,10 +31,5 @@ class ProductAddViewController: UIViewController {
 
 extension ProductAddViewController: UITextFieldDelegate {
     private func setupTextField(){
-        weightTextField.textfieldView.delegate = self
-        weightTextField.textfieldData = Textfield(title: "Weight", placeholder: "0")
-        weightTextField.textfieldView.keyboardType = .numberPad
-        weightTextField.errorMessage = "ente bahlul"
-        weightTextField.errorMessage = nil
     }
 }

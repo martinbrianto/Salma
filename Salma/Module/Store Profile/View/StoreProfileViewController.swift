@@ -77,7 +77,6 @@ extension StoreProfileViewController: UITextFieldDelegate {
         storeURLTextField.textfieldData = Textfield(title: "Store URL", placeholder: "https://")
         storeLocationTextField.textfieldData = Textfield(title: "Store Location", placeholder: "Store Address")
         phoneNumberTextField.textfieldData = Textfield(title: "Phone Number", placeholder: "+62")
-        storeNameTextField.errorMessage = "bahlul"
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

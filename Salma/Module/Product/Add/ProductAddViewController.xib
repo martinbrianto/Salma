@@ -215,11 +215,52 @@
                                 <constraint firstAttribute="height" constant="76" id="Bho-d4-1fR"/>
                             </constraints>
                         </stackView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0K2-GF-bLg">
-                            <rect key="frame" x="0.0" y="552" width="382" height="124"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEV-vb-LaR" customClass="TextFieldView" customModule="Salma" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="252" width="382" height="96"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="96" id="QsF-tO-H55"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NT8-hV-udV" customClass="PriceTextFieldView" customModule="Salma" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="372" width="382" height="96"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="96" id="IxN-gF-ib4"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hG-XC-uln" customClass="TextFieldView" customModule="Salma" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="492" width="382" height="96"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="96" id="mMa-pE-RUA"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oj-JM-LaD">
+                            <rect key="frame" x="0.0" y="612" width="382" height="64"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="NT8-hV-udV" secondAttribute="trailing" id="3YZ-uT-RaV"/>
+                        <constraint firstItem="5oj-JM-LaD" firstAttribute="leading" secondItem="9mA-Mv-l85" secondAttribute="leading" id="Fud-tX-Eqm"/>
+                        <constraint firstItem="sEV-vb-LaR" firstAttribute="leading" secondItem="9mA-Mv-l85" secondAttribute="leading" id="G2p-Ei-fiq"/>
+                        <constraint firstItem="9hG-XC-uln" firstAttribute="top" secondItem="NT8-hV-udV" secondAttribute="bottom" constant="24" id="HiR-Se-NPt"/>
+                        <constraint firstAttribute="bottom" secondItem="5oj-JM-LaD" secondAttribute="bottom" id="Pni-cQ-CKJ"/>
+                        <constraint firstItem="9hG-XC-uln" firstAttribute="leading" secondItem="9mA-Mv-l85" secondAttribute="leading" id="cFT-R9-v5z"/>
+                        <constraint firstAttribute="trailing" secondItem="sEV-vb-LaR" secondAttribute="trailing" id="dKZ-9y-Rxo"/>
+                        <constraint firstItem="NT8-hV-udV" firstAttribute="top" secondItem="sEV-vb-LaR" secondAttribute="bottom" constant="24" id="fby-sG-b4G"/>
+                        <constraint firstAttribute="trailing" secondItem="5oj-JM-LaD" secondAttribute="trailing" id="fkn-AF-5Fm"/>
+                        <constraint firstItem="NT8-hV-udV" firstAttribute="leading" secondItem="9mA-Mv-l85" secondAttribute="leading" id="mWa-1X-aza"/>
+                        <constraint firstAttribute="trailing" secondItem="9hG-XC-uln" secondAttribute="trailing" id="y7G-Be-bt1"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="4HL-YH-QPT"/>
+                            <exclude reference="7j2-9I-2bF"/>
+                            <exclude reference="6Gm-52-ctq"/>
+                        </mask>
+                    </variation>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YoI-w0-wMT">
                     <rect key="frame" x="10" y="790" width="394" height="48"/>

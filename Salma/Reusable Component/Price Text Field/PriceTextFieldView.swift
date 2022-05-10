@@ -51,7 +51,7 @@ class PriceTextFieldView: UIView {
     }
     
     private func commonInit(){
-        Bundle.main.loadNibNamed("TextFieldView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("PriceTextFieldView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

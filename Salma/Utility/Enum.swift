@@ -17,3 +17,9 @@ enum StoreProfilePageEntryPoint {
     case onboarding
     case settingPage
 }
+
+enum ProductPageState {
+    case add
+    case edit
+    case details
+}

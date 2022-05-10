@@ -33,7 +33,7 @@ class ProductViewController: UIViewController {
      }
     
     @IBAction func addProductButtonAction(_ sender: Any) {
-        let viewController = ProductAddViewController()
+        let viewController = ProductAddViewController(from: .add)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

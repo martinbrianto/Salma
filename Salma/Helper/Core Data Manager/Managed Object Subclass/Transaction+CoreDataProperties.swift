@@ -27,6 +27,8 @@ extension Transaction {
     @NSManaged public var date_created: Date
     @NSManaged public var date_paid: Date?
     @NSManaged public var note: String?
+    @NSManaged public var price_subTotal: Float
+    @NSManaged public var price_Total: Float
     @NSManaged public var shipping_expedition: String
     @NSManaged public var shipping_price: Float
     @NSManaged public var status: String

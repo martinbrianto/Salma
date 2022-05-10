@@ -38,6 +38,8 @@
         <attribute name="date_created" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="date_paid" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="price_subTotal" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="price_Total" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="shipping_expedition" attributeType="String"/>
         <attribute name="shipping_price" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="status" attributeType="String"/>
@@ -55,7 +57,7 @@
         <element name="DefaultAutotext" positionX="-98.80108642578125" positionY="-0.8863525390625" width="128" height="88"/>
         <element name="Product" positionX="623.512451171875" positionY="52.47564697265625" width="128" height="163"/>
         <element name="Profile" positionX="-260.3363647460938" positionY="158.5518798828125" width="128" height="89"/>
-        <element name="Transaction" positionX="165.006591796875" positionY="-82.43434143066406" width="128" height="283"/>
+        <element name="Transaction" positionX="165.006591796875" positionY="-82.43434143066406" width="128" height="299"/>
         <element name="TransactionProduct" positionX="402.9671630859375" positionY="112.4483947753906" width="128" height="103"/>
     </elements>
 </model>

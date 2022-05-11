@@ -65,9 +65,9 @@ extension AutotextViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch TableViewSection.getSection(section){
         case .transaction:
-            return transactionAutotext.count
+            return 0
         case .custom:
-            return customAutotext.count
+            return 0
         }
     }
 
@@ -76,11 +76,11 @@ extension AutotextViewController: UITableViewDelegate, UITableViewDataSource {
             
         case .transaction:
             let cell = tableView.dequeueReusableCell(withIdentifier: AutotextTableViewCell.reuseID, for: indexPath) as! AutotextTableViewCell
-            cell.title = transactionAutotext[indexPath.row].title
+            //cell.title = transactionAutotext[indexPath.row].title
             return cell
         case .custom:
             let cell = tableView.dequeueReusableCell(withIdentifier: AutotextTableViewCell.reuseID, for: indexPath) as! AutotextTableViewCell
-            cell.title = customAutotext[indexPath.row].title
+            //cell.title = customAutotext[indexPath.row].title
             return cell
         }
     }

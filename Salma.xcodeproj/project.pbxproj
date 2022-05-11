@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		264EBEDA28182F8500D094B8 /* Autotext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264EBED928182F8500D094B8 /* Autotext.swift */; };
 		269E3EE4281846660095C5A9 /* AutotextAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269E3EE3281846660095C5A9 /* AutotextAddViewController.xib */; };
 		26BE46E728181804005118BF /* AutotextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BE46E528181804005118BF /* AutotextTableViewCell.swift */; };
 		26BE46E828181804005118BF /* AutotextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26BE46E628181804005118BF /* AutotextTableViewCell.xib */; };
@@ -73,7 +72,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		264EBED928182F8500D094B8 /* Autotext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autotext.swift; sourceTree = "<group>"; };
 		269E3EE3281846660095C5A9 /* AutotextAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutotextAddViewController.xib; sourceTree = "<group>"; };
 		26BE46E528181804005118BF /* AutotextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutotextTableViewCell.swift; sourceTree = "<group>"; };
 		26BE46E628181804005118BF /* AutotextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutotextTableViewCell.xib; sourceTree = "<group>"; };
@@ -458,7 +456,6 @@
 			children = (
 				E6FE835428102773000AD0C1 /* Transaction.swift */,
 				E69870652816D458002D73F2 /* Textfield.swift */,
-				264EBED928182F8500D094B8 /* Autotext.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -722,7 +719,6 @@
 				B76E2AC62805AB61003E349F /* DashboardViewController.swift in Sources */,
 				B76E2ACB2805AB61003E349F /* AutotextViewController.swift in Sources */,
 				B76E2AC82805AB61003E349F /* TransactionViewController.swift in Sources */,
-				264EBEDA28182F8500D094B8 /* Autotext.swift in Sources */,
 				B76E2AC22805AB61003E349F /* ProductViewController.swift in Sources */,
 				E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */,
 			);

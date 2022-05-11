@@ -38,13 +38,63 @@
 		E6545F372804499B00A95A03 /* SalmaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F362804499B00A95A03 /* SalmaTests.swift */; };
 		E6545F412804499B00A95A03 /* SalmaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F402804499B00A95A03 /* SalmaUITests.swift */; };
 		E6545F432804499C00A95A03 /* SalmaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F422804499C00A95A03 /* SalmaUITestsLaunchTests.swift */; };
+		E6702D5C281D20AC005F4DAC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E6702D5B281D20AC005F4DAC /* Alamofire */; };
+		E6702D60281D2FA4005F4DAC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6702D5F281D2FA4005F4DAC /* CloudKit.framework */; };
+		E6702D68281D4894005F4DAC /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6702D67281D4894005F4DAC /* KeyboardViewController.swift */; };
+		E6702D6C281D4894005F4DAC /* SalmaKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E6702D65281D4894005F4DAC /* SalmaKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E6702D74281D4943005F4DAC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6702D73281D4943005F4DAC /* CoreDataManager.swift */; };
+		E6702D75281D4943005F4DAC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6702D73281D4943005F4DAC /* CoreDataManager.swift */; };
+		E6702DB428212215005F4DAC /* StoreProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6702DB328212215005F4DAC /* StoreProfile.swift */; };
+		E6702DB528212215005F4DAC /* StoreProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6702DB328212215005F4DAC /* StoreProfile.swift */; };
 		E698705D2815C05E002D73F2 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698705B2815C05E002D73F2 /* SettingTableViewCell.swift */; };
 		E698705E2815C05E002D73F2 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E698705C2815C05E002D73F2 /* SettingTableViewCell.xib */; };
 		E69870632816CCDD002D73F2 /* StoreProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69870612816CCDD002D73F2 /* StoreProfileViewController.swift */; };
 		E69870642816CCDD002D73F2 /* StoreProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69870622816CCDD002D73F2 /* StoreProfileViewController.xib */; };
 		E69870662816D458002D73F2 /* Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69870652816D458002D73F2 /* Textfield.swift */; };
 		E698706C2817167C002D73F2 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E698706B2817167C002D73F2 /* IQKeyboardManagerSwift */; };
-		E6FE835528102773000AD0C1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835428102773000AD0C1 /* Transaction.swift */; };
+		E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698717D28182B7D002D73F2 /* EnableKeyboardViewController.swift */; };
+		E698718028182B7D002D73F2 /* EnableKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */; };
+		E6CECBE4282186E600276B31 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835428102773000AD0C1 /* TransactionModel.swift */; };
+		E6CECBE52821871400276B31 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1DA4328049CE6006C9D27 /* Enum.swift */; };
+		E6CECC72282589F200276B31 /* DefaultAutotext+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC68282589F200276B31 /* DefaultAutotext+CoreDataClass.swift */; };
+		E6CECC73282589F200276B31 /* DefaultAutotext+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC68282589F200276B31 /* DefaultAutotext+CoreDataClass.swift */; };
+		E6CECC74282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC69282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift */; };
+		E6CECC75282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC69282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift */; };
+		E6CECC76282589F200276B31 /* CustomAutotext+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC6A282589F200276B31 /* CustomAutotext+CoreDataClass.swift */; };
+		E6CECC77282589F200276B31 /* CustomAutotext+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC6A282589F200276B31 /* CustomAutotext+CoreDataClass.swift */; };
+		E6CECC78282589F200276B31 /* CustomAutotext+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC6B282589F200276B31 /* CustomAutotext+CoreDataProperties.swift */; };
+		E6CECC79282589F200276B31 /* CustomAutotext+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC6B282589F200276B31 /* CustomAutotext+CoreDataProperties.swift */; };
+		E6CECC7A282589F200276B31 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC6C282589F200276B31 /* Profile+CoreDataClass.swift */; };
+		E6CECC7B282589F200276B31 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC6C282589F200276B31 /* Profile+CoreDataClass.swift */; };
+		E6CECC7C282589F200276B31 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC6D282589F200276B31 /* Profile+CoreDataProperties.swift */; };
+		E6CECC7D282589F200276B31 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC6D282589F200276B31 /* Profile+CoreDataProperties.swift */; };
+		E6CECC7E282589F200276B31 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC6E282589F200276B31 /* Transaction+CoreDataClass.swift */; };
+		E6CECC7F282589F200276B31 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC6E282589F200276B31 /* Transaction+CoreDataClass.swift */; };
+		E6CECC80282589F200276B31 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC6F282589F200276B31 /* Transaction+CoreDataProperties.swift */; };
+		E6CECC81282589F200276B31 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC6F282589F200276B31 /* Transaction+CoreDataProperties.swift */; };
+		E6CECC82282589F200276B31 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC70282589F200276B31 /* Product+CoreDataClass.swift */; };
+		E6CECC83282589F200276B31 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC70282589F200276B31 /* Product+CoreDataClass.swift */; };
+		E6CECC84282589F200276B31 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC71282589F200276B31 /* Product+CoreDataProperties.swift */; };
+		E6CECC85282589F200276B31 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC71282589F200276B31 /* Product+CoreDataProperties.swift */; };
+		E6CECC8828281FD500276B31 /* TransactionProduct+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8628281FD500276B31 /* TransactionProduct+CoreDataClass.swift */; };
+		E6CECC8928281FD500276B31 /* TransactionProduct+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8628281FD500276B31 /* TransactionProduct+CoreDataClass.swift */; };
+		E6CECC8A28281FD500276B31 /* TransactionProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8728281FD500276B31 /* TransactionProduct+CoreDataProperties.swift */; };
+		E6CECC8B28281FD500276B31 /* TransactionProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8728281FD500276B31 /* TransactionProduct+CoreDataProperties.swift */; };
+		E6CECC8D28295B3100276B31 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8C28295B3100276B31 /* Product.swift */; };
+		E6CECC8E28295B3100276B31 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8C28295B3100276B31 /* Product.swift */; };
+		E6CECC9028295C9A00276B31 /* Autotext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8F28295C9A00276B31 /* Autotext.swift */; };
+		E6CECC9128295C9A00276B31 /* Autotext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8F28295C9A00276B31 /* Autotext.swift */; };
+		E6CECC94282AAA6600276B31 /* StoreProfileVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC93282AAA6600276B31 /* StoreProfileVCViewModel.swift */; };
+		E6F7F4FD281AD71100456635 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F4281AD71000456635 /* Inter-ExtraLight.ttf */; };
+		E6F7F4FE281AD71100456635 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F5281AD71000456635 /* Inter-Regular.ttf */; };
+		E6F7F4FF281AD71100456635 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F6281AD71000456635 /* Inter-Black.ttf */; };
+		E6F7F500281AD71100456635 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F7281AD71000456635 /* Inter-Medium.ttf */; };
+		E6F7F501281AD71100456635 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F8281AD71000456635 /* Inter-Light.ttf */; };
+		E6F7F502281AD71100456635 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F9281AD71000456635 /* Inter-Bold.ttf */; };
+		E6F7F503281AD71100456635 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4FA281AD71100456635 /* Inter-SemiBold.ttf */; };
+		E6F7F504281AD71100456635 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4FB281AD71100456635 /* Inter-Thin.ttf */; };
+		E6F7F505281AD71100456635 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4FC281AD71100456635 /* Inter-ExtraBold.ttf */; };
+		E6FE835528102773000AD0C1 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835428102773000AD0C1 /* TransactionModel.swift */; };
 		E6FE835A28102B13000AD0C1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835828102B13000AD0C1 /* SettingViewController.swift */; };
 		E6FE835B28102B13000AD0C1 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FE835928102B13000AD0C1 /* SettingViewController.xib */; };
 		E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835E2810362B000AD0C1 /* TransactionTableViewCell.swift */; };
@@ -69,7 +119,28 @@
 			remoteGlobalIDString = E6545F182804499900A95A03;
 			remoteInfo = Salma;
 		};
+		E6702D6A281D4894005F4DAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6545F112804499900A95A03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6702D64281D4894005F4DAC;
+			remoteInfo = SalmaKeyboard;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E6702D70281D4894005F4DAC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E6702D6C281D4894005F4DAC /* SalmaKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		269E3EE3281846660095C5A9 /* AutotextAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutotextAddViewController.xib; sourceTree = "<group>"; };
@@ -107,12 +178,45 @@
 		E6545F3C2804499B00A95A03 /* SalmaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalmaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6545F402804499B00A95A03 /* SalmaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmaUITests.swift; sourceTree = "<group>"; };
 		E6545F422804499C00A95A03 /* SalmaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E6702D5D281D2FA0005F4DAC /* Salma.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Salma.entitlements; sourceTree = "<group>"; };
+		E6702D5F281D2FA4005F4DAC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		E6702D65281D4894005F4DAC /* SalmaKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SalmaKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6702D67281D4894005F4DAC /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		E6702D69281D4894005F4DAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6702D73281D4943005F4DAC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E6702DB328212215005F4DAC /* StoreProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfile.swift; sourceTree = "<group>"; };
 		E698705B2815C05E002D73F2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		E698705C2815C05E002D73F2 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		E69870612816CCDD002D73F2 /* StoreProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfileViewController.swift; sourceTree = "<group>"; };
 		E69870622816CCDD002D73F2 /* StoreProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreProfileViewController.xib; sourceTree = "<group>"; };
 		E69870652816D458002D73F2 /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
-		E6FE835428102773000AD0C1 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		E698717D28182B7D002D73F2 /* EnableKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableKeyboardViewController.swift; sourceTree = "<group>"; };
+		E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnableKeyboardViewController.xib; sourceTree = "<group>"; };
+		E6CECC68282589F200276B31 /* DefaultAutotext+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultAutotext+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E6CECC69282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultAutotext+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E6CECC6A282589F200276B31 /* CustomAutotext+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomAutotext+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E6CECC6B282589F200276B31 /* CustomAutotext+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomAutotext+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E6CECC6C282589F200276B31 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E6CECC6D282589F200276B31 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E6CECC6E282589F200276B31 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E6CECC6F282589F200276B31 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E6CECC70282589F200276B31 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E6CECC71282589F200276B31 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E6CECC8628281FD500276B31 /* TransactionProduct+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionProduct+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E6CECC8728281FD500276B31 /* TransactionProduct+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionProduct+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E6CECC8C28295B3100276B31 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E6CECC8F28295C9A00276B31 /* Autotext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autotext.swift; sourceTree = "<group>"; };
+		E6CECC93282AAA6600276B31 /* StoreProfileVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfileVCViewModel.swift; sourceTree = "<group>"; };
+		E6F7F4F4281AD71000456635 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		E6F7F4F5281AD71000456635 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		E6F7F4F6281AD71000456635 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		E6F7F4F7281AD71000456635 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		E6F7F4F8281AD71000456635 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		E6F7F4F9281AD71000456635 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		E6F7F4FA281AD71100456635 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		E6F7F4FB281AD71100456635 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		E6F7F4FC281AD71100456635 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E6FE835428102773000AD0C1 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		E6FE835828102B13000AD0C1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E6FE835928102B13000AD0C1 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		E6FE835E2810362B000AD0C1 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
@@ -127,7 +231,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6702D60281D2FA4005F4DAC /* CloudKit.framework in Frameworks */,
 				E698706C2817167C002D73F2 /* IQKeyboardManagerSwift in Frameworks */,
+				E6702D5C281D20AC005F4DAC /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +245,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E6545F392804499B00A95A03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6702D62281D4894005F4DAC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -196,6 +309,7 @@
 		B76E2AA02805AB61003E349F /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				E698717B28182B48002D73F2 /* On Boarding */,
 				E698705F2816CCC3002D73F2 /* Store Profile */,
 				B76E2ACC2805ABEA003E349F /* Root */,
 				B76E2AA12805AB61003E349F /* Settings */,
@@ -378,7 +492,9 @@
 				E6545F1B2804499900A95A03 /* Salma */,
 				E6545F352804499B00A95A03 /* SalmaTests */,
 				E6545F3F2804499B00A95A03 /* SalmaUITests */,
+				E6702D66281D4894005F4DAC /* SalmaKeyboard */,
 				E6545F1A2804499900A95A03 /* Products */,
+				E6702D5E281D2FA4005F4DAC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -388,6 +504,7 @@
 				E6545F192804499900A95A03 /* Salma.app */,
 				E6545F322804499B00A95A03 /* SalmaTests.xctest */,
 				E6545F3C2804499B00A95A03 /* SalmaUITests.xctest */,
+				E6702D65281D4894005F4DAC /* SalmaKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -395,6 +512,7 @@
 		E6545F1B2804499900A95A03 /* Salma */ = {
 			isa = PBXGroup;
 			children = (
+				E6702D5D281D2FA0005F4DAC /* Salma.entitlements */,
 				E6FE835C28103606000AD0C1 /* Reusable Component */,
 				E6545F582804521700A95A03 /* Core */,
 				E6545F5E2804531200A95A03 /* Helper */,
@@ -445,6 +563,7 @@
 		E6545F5B2804523D00A95A03 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E6F7F4F3281AD6FD00456635 /* Inter Font */,
 				E6545F282804499B00A95A03 /* Assets.xcassets */,
 				B7E1DA3A2804990E006C9D27 /* Colors.xcassets */,
 			);
@@ -454,8 +573,11 @@
 		E6545F5C2804529500A95A03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E6FE835428102773000AD0C1 /* Transaction.swift */,
+				E6FE835428102773000AD0C1 /* TransactionModel.swift */,
 				E69870652816D458002D73F2 /* Textfield.swift */,
+				E6702DB328212215005F4DAC /* StoreProfile.swift */,
+				E6CECC8C28295B3100276B31 /* Product.swift */,
+				E6CECC8F28295C9A00276B31 /* Autotext.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,9 +593,47 @@
 		E6545F5F2804531A00A95A03 /* Core Data Manager */ = {
 			isa = PBXGroup;
 			children = (
+				E6702D76282112E3005F4DAC /* Managed Object Subclass */,
 				E6545F252804499900A95A03 /* Salma.xcdatamodeld */,
+				E6702D73281D4943005F4DAC /* CoreDataManager.swift */,
 			);
 			path = "Core Data Manager";
+			sourceTree = "<group>";
+		};
+		E6702D5E281D2FA4005F4DAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6702D5F281D2FA4005F4DAC /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6702D66281D4894005F4DAC /* SalmaKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E6702D67281D4894005F4DAC /* KeyboardViewController.swift */,
+				E6702D69281D4894005F4DAC /* Info.plist */,
+			);
+			path = SalmaKeyboard;
+			sourceTree = "<group>";
+		};
+		E6702D76282112E3005F4DAC /* Managed Object Subclass */ = {
+			isa = PBXGroup;
+			children = (
+				E6CECC8628281FD500276B31 /* TransactionProduct+CoreDataClass.swift */,
+				E6CECC8728281FD500276B31 /* TransactionProduct+CoreDataProperties.swift */,
+				E6CECC68282589F200276B31 /* DefaultAutotext+CoreDataClass.swift */,
+				E6CECC69282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift */,
+				E6CECC6A282589F200276B31 /* CustomAutotext+CoreDataClass.swift */,
+				E6CECC6B282589F200276B31 /* CustomAutotext+CoreDataProperties.swift */,
+				E6CECC6C282589F200276B31 /* Profile+CoreDataClass.swift */,
+				E6CECC6D282589F200276B31 /* Profile+CoreDataProperties.swift */,
+				E6CECC6E282589F200276B31 /* Transaction+CoreDataClass.swift */,
+				E6CECC6F282589F200276B31 /* Transaction+CoreDataProperties.swift */,
+				E6CECC70282589F200276B31 /* Product+CoreDataClass.swift */,
+				E6CECC71282589F200276B31 /* Product+CoreDataProperties.swift */,
+			);
+			path = "Managed Object Subclass";
 			sourceTree = "<group>";
 		};
 		E698705A2815C041002D73F2 /* Cell */ = {
@@ -488,6 +648,7 @@
 		E698705F2816CCC3002D73F2 /* Store Profile */ = {
 			isa = PBXGroup;
 			children = (
+				E6CECC92282AAA5800276B31 /* ViewModel */,
 				E69870602816CCCA002D73F2 /* View */,
 			);
 			path = "Store Profile";
@@ -500,6 +661,47 @@
 				E69870622816CCDD002D73F2 /* StoreProfileViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E698717B28182B48002D73F2 /* On Boarding */ = {
+			isa = PBXGroup;
+			children = (
+				E698717C28182B4E002D73F2 /* Enable Keyboard */,
+			);
+			path = "On Boarding";
+			sourceTree = "<group>";
+		};
+		E698717C28182B4E002D73F2 /* Enable Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E698717D28182B7D002D73F2 /* EnableKeyboardViewController.swift */,
+				E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */,
+			);
+			path = "Enable Keyboard";
+			sourceTree = "<group>";
+		};
+		E6CECC92282AAA5800276B31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E6CECC93282AAA6600276B31 /* StoreProfileVCViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E6F7F4F3281AD6FD00456635 /* Inter Font */ = {
+			isa = PBXGroup;
+			children = (
+				E6F7F4F6281AD71000456635 /* Inter-Black.ttf */,
+				E6F7F4F9281AD71000456635 /* Inter-Bold.ttf */,
+				E6F7F4FC281AD71100456635 /* Inter-ExtraBold.ttf */,
+				E6F7F4F4281AD71000456635 /* Inter-ExtraLight.ttf */,
+				E6F7F4F8281AD71000456635 /* Inter-Light.ttf */,
+				E6F7F4F7281AD71000456635 /* Inter-Medium.ttf */,
+				E6F7F4F5281AD71000456635 /* Inter-Regular.ttf */,
+				E6F7F4FA281AD71100456635 /* Inter-SemiBold.ttf */,
+				E6F7F4FB281AD71100456635 /* Inter-Thin.ttf */,
+			);
+			path = "Inter Font";
 			sourceTree = "<group>";
 		};
 		E6FE835628102ADD000AD0C1 /* ViewModel */ = {
@@ -556,14 +758,17 @@
 				E6545F152804499900A95A03 /* Sources */,
 				E6545F162804499900A95A03 /* Frameworks */,
 				E6545F172804499900A95A03 /* Resources */,
+				E6702D70281D4894005F4DAC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E6702D6B281D4894005F4DAC /* PBXTargetDependency */,
 			);
 			name = Salma;
 			packageProductDependencies = (
 				E698706B2817167C002D73F2 /* IQKeyboardManagerSwift */,
+				E6702D5B281D20AC005F4DAC /* Alamofire */,
 			);
 			productName = Salma;
 			productReference = E6545F192804499900A95A03 /* Salma.app */;
@@ -605,6 +810,23 @@
 			productReference = E6545F3C2804499B00A95A03 /* SalmaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		E6702D64281D4894005F4DAC /* SalmaKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6702D6D281D4894005F4DAC /* Build configuration list for PBXNativeTarget "SalmaKeyboard" */;
+			buildPhases = (
+				E6702D61281D4894005F4DAC /* Sources */,
+				E6702D62281D4894005F4DAC /* Frameworks */,
+				E6702D63281D4894005F4DAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SalmaKeyboard;
+			productName = SalmaKeyboard;
+			productReference = E6702D65281D4894005F4DAC /* SalmaKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -626,6 +848,9 @@
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = E6545F182804499900A95A03;
 					};
+					E6702D64281D4894005F4DAC = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 				};
 			};
 			buildConfigurationList = E6545F142804499900A95A03 /* Build configuration list for PBXProject "Salma" */;
@@ -639,6 +864,7 @@
 			mainGroup = E6545F102804499900A95A03;
 			packageReferences = (
 				E698706A2817167C002D73F2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				E6702D5A281D20AC005F4DAC /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = E6545F1A2804499900A95A03 /* Products */;
 			projectDirPath = "";
@@ -647,6 +873,7 @@
 				E6545F182804499900A95A03 /* Salma */,
 				E6545F312804499B00A95A03 /* SalmaTests */,
 				E6545F3B2804499B00A95A03 /* SalmaUITests */,
+				E6702D64281D4894005F4DAC /* SalmaKeyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -656,20 +883,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E698718028182B7D002D73F2 /* EnableKeyboardViewController.xib in Resources */,
 				E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */,
+				E6F7F502281AD71100456635 /* Inter-Bold.ttf in Resources */,
 				26BE46E828181804005118BF /* AutotextTableViewCell.xib in Resources */,
 				E69870642816CCDD002D73F2 /* StoreProfileViewController.xib in Resources */,
+				E6F7F4FD281AD71100456635 /* Inter-ExtraLight.ttf in Resources */,
 				26D9D9692816CFD200A8EA86 /* ProductTableViewCell.xib in Resources */,
 				B76E2ACA2805AB61003E349F /* AutotextViewController.xib in Resources */,
 				E698705E2815C05E002D73F2 /* SettingTableViewCell.xib in Resources */,
 				E6FE835B28102B13000AD0C1 /* SettingViewController.xib in Resources */,
+				E6F7F500281AD71100456635 /* Inter-Medium.ttf in Resources */,
+				E6F7F4FF281AD71100456635 /* Inter-Black.ttf in Resources */,
 				26D9D96228117B4800A8EA86 /* ProductAddViewController.xib in Resources */,
 				269E3EE4281846660095C5A9 /* AutotextAddViewController.xib in Resources */,
 				B7E1DA3B2804990F006C9D27 /* Colors.xcassets in Resources */,
+				E6F7F4FE281AD71100456635 /* Inter-Regular.ttf in Resources */,
+				E6F7F501281AD71100456635 /* Inter-Light.ttf in Resources */,
+				E6F7F505281AD71100456635 /* Inter-ExtraBold.ttf in Resources */,
 				B76E2AC02805AB61003E349F /* TabBarViewController.xib in Resources */,
 				B76E2AC32805AB61003E349F /* ProductViewController.xib in Resources */,
 				B76E2AC42805AB61003E349F /* LaunchScreen.storyboard in Resources */,
 				E6FE836A28118477000AD0C1 /* TextFieldView.xib in Resources */,
+				E6F7F503281AD71100456635 /* Inter-SemiBold.ttf in Resources */,
+				E6F7F504281AD71100456635 /* Inter-Thin.ttf in Resources */,
 				E6545F292804499B00A95A03 /* Assets.xcassets in Resources */,
 				B76E2AC92805AB61003E349F /* TransactionViewController.xib in Resources */,
 				B76E2AC72805AB61003E349F /* DashboardViewController.xib in Resources */,
@@ -690,6 +927,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6702D63281D4894005F4DAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -698,29 +942,47 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FE836328114F67000AD0C1 /* Formatter+Extension.swift in Sources */,
+				E6CECC7A282589F200276B31 /* Profile+CoreDataClass.swift in Sources */,
 				E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */,
+				E6CECC76282589F200276B31 /* CustomAutotext+CoreDataClass.swift in Sources */,
+				E6CECC7E282589F200276B31 /* Transaction+CoreDataClass.swift in Sources */,
 				E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */,
 				26D9D9682816CFD200A8EA86 /* ProductTableViewCell.swift in Sources */,
 				E69870662816D458002D73F2 /* Textfield.swift in Sources */,
 				26BE46ED28181902005118BF /* AutotextAddViewController.swift in Sources */,
 				B76E2AC52805AB61003E349F /* DashboardVCViewModel.swift in Sources */,
+				E6CECC9028295C9A00276B31 /* Autotext.swift in Sources */,
+				E6702D74281D4943005F4DAC /* CoreDataManager.swift in Sources */,
+				E6CECC94282AAA6600276B31 /* StoreProfileVCViewModel.swift in Sources */,
+				E6CECC84282589F200276B31 /* Product+CoreDataProperties.swift in Sources */,
+				E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */,
 				E6FE836828118222000AD0C1 /* TextFieldView.swift in Sources */,
 				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
 				B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */,
+				E6CECC7C282589F200276B31 /* Profile+CoreDataProperties.swift in Sources */,
+				E6702DB428212215005F4DAC /* StoreProfile.swift in Sources */,
 				26D9D96128117B4800A8EA86 /* ProductAddViewController.swift in Sources */,
+				E6CECC80282589F200276B31 /* Transaction+CoreDataProperties.swift in Sources */,
+				E6CECC8D28295B3100276B31 /* Product.swift in Sources */,
+				E6CECC8A28281FD500276B31 /* TransactionProduct+CoreDataProperties.swift in Sources */,
 				B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */,
+				E6CECC8828281FD500276B31 /* TransactionProduct+CoreDataClass.swift in Sources */,
 				26BE46E728181804005118BF /* AutotextTableViewCell.swift in Sources */,
 				E6FE835A28102B13000AD0C1 /* SettingViewController.swift in Sources */,
 				E69870632816CCDD002D73F2 /* StoreProfileViewController.swift in Sources */,
-				E6FE835528102773000AD0C1 /* Transaction.swift in Sources */,
+				E6FE835528102773000AD0C1 /* TransactionModel.swift in Sources */,
 				B76E2AC12805AB61003E349F /* TabBarViewController.swift in Sources */,
 				E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */,
 				E698705D2815C05E002D73F2 /* SettingTableViewCell.swift in Sources */,
 				B76E2AC62805AB61003E349F /* DashboardViewController.swift in Sources */,
 				B76E2ACB2805AB61003E349F /* AutotextViewController.swift in Sources */,
 				B76E2AC82805AB61003E349F /* TransactionViewController.swift in Sources */,
+				E6CECC74282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift in Sources */,
+				E6CECC82282589F200276B31 /* Product+CoreDataClass.swift in Sources */,
 				B76E2AC22805AB61003E349F /* ProductViewController.swift in Sources */,
 				E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */,
+				E6CECC72282589F200276B31 /* DefaultAutotext+CoreDataClass.swift in Sources */,
+				E6CECC78282589F200276B31 /* CustomAutotext+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +1003,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6702D61281D4894005F4DAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6CECBE4282186E600276B31 /* TransactionModel.swift in Sources */,
+				E6CECC7B282589F200276B31 /* Profile+CoreDataClass.swift in Sources */,
+				E6702D75281D4943005F4DAC /* CoreDataManager.swift in Sources */,
+				E6CECC83282589F200276B31 /* Product+CoreDataClass.swift in Sources */,
+				E6CECC77282589F200276B31 /* CustomAutotext+CoreDataClass.swift in Sources */,
+				E6CECC85282589F200276B31 /* Product+CoreDataProperties.swift in Sources */,
+				E6CECC7F282589F200276B31 /* Transaction+CoreDataClass.swift in Sources */,
+				E6CECC9128295C9A00276B31 /* Autotext.swift in Sources */,
+				E6CECC79282589F200276B31 /* CustomAutotext+CoreDataProperties.swift in Sources */,
+				E6CECBE52821871400276B31 /* Enum.swift in Sources */,
+				E6CECC75282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift in Sources */,
+				E6CECC7D282589F200276B31 /* Profile+CoreDataProperties.swift in Sources */,
+				E6CECC8E28295B3100276B31 /* Product.swift in Sources */,
+				E6702DB528212215005F4DAC /* StoreProfile.swift in Sources */,
+				E6CECC8928281FD500276B31 /* TransactionProduct+CoreDataClass.swift in Sources */,
+				E6702D68281D4894005F4DAC /* KeyboardViewController.swift in Sources */,
+				E6CECC8B28281FD500276B31 /* TransactionProduct+CoreDataProperties.swift in Sources */,
+				E6CECC73282589F200276B31 /* DefaultAutotext+CoreDataClass.swift in Sources */,
+				E6CECC81282589F200276B31 /* Transaction+CoreDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -753,6 +1041,11 @@
 			isa = PBXTargetDependency;
 			target = E6545F182804499900A95A03 /* Salma */;
 			targetProxy = E6545F3D2804499B00A95A03 /* PBXContainerItemProxy */;
+		};
+		E6702D6B281D4894005F4DAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6702D64281D4894005F4DAC /* SalmaKeyboard */;
+			targetProxy = E6702D6A281D4894005F4DAC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -887,11 +1180,13 @@
 		E6545F472804499C00A95A03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Salma/Salma.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 94RH8K67DD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Salma/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -916,11 +1211,13 @@
 		E6545F482804499C00A95A03 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Salma/Salma.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 94RH8K67DD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Salma/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1014,6 +1311,56 @@
 			};
 			name = Release;
 		};
+		E6702D6E281D4894005F4DAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 94RH8K67DD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SalmaKeyboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SalmaKeyboard;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SMS.Salma.SalmaKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E6702D6F281D4894005F4DAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 94RH8K67DD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SalmaKeyboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SalmaKeyboard;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SMS.Salma.SalmaKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1053,9 +1400,26 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		E6702D6D281D4894005F4DAC /* Build configuration list for PBXNativeTarget "SalmaKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6702D6E281D4894005F4DAC /* Debug */,
+				E6702D6F281D4894005F4DAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E6702D5A281D20AC005F4DAC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.1;
+			};
+		};
 		E698706A2817167C002D73F2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -1067,6 +1431,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E6702D5B281D20AC005F4DAC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6702D5A281D20AC005F4DAC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		E698706B2817167C002D73F2 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E698706A2817167C002D73F2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;

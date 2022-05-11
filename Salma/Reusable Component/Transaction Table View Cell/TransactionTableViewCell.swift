@@ -24,7 +24,7 @@ class TransactionTableViewCell: UITableViewCell {
     @IBOutlet weak var transactionStatusLabel: UILabel!
     
     // MARK: - Variable
-    var transactionData: Transaction? {
+    var transactionData: TransactionModel? {
         didSet {
             setupCell()
         }

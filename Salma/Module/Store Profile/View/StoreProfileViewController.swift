@@ -19,45 +19,120 @@ class StoreProfileViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: TextFieldView!
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButtonAction(_ sender: Any) {
-        print("insert done action")
+        if validateTextField() {
+            let profile = StoreProfile(
+                name: "\(storeNameTextField.textfieldView.text ?? "")",
+                URL: "\(storeURLTextField.textfieldView.text ?? "")",
+                location: "\(storeLocationTextField.textfieldView.text ?? "")",
+                phoneNumber: "\(phoneNumberTextField.textfieldView.text ?? "")"
+            )
+            viewModel.saveStoreProfile(profile)
+        }
     }
     
     // MARK: - Variable
+    private var viewModel: StoreProfileVCViewModel!
     private var entryPoint: StoreProfilePageEntryPoint
+    private var isEditMode: Bool = false {
+        didSet {
+            if isEditMode {
+                navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTapped))
+                storeNameTextField.isEnabled = true
+                storeURLTextField.isEnabled = true
+                storeLocationTextField.isEnabled = true
+                phoneNumberTextField.isEnabled = true
+            } else {
+                navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTapped))
+                storeNameTextField.isEnabled = false
+                storeURLTextField.isEnabled = false
+                storeLocationTextField.isEnabled = false
+                phoneNumberTextField.isEnabled = false
+            }
+        }
+    }
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPage()
-        setupTextField()
         keyboardDismisser()
     }
     
     init(from entryPoint: StoreProfilePageEntryPoint){
         self.entryPoint = entryPoint
+        self.viewModel = StoreProfileVCViewModel.init()
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - ViewModel
+    private func bindToViewModel() {
+        viewModel.didUpdate = { [weak self] _ in
+            self?.viewModelDidUpdate()
+        }
+        
+        viewModel.didError = { [weak self] _ in
+            self?.viewModelDidError()
+        }
+    }
+    
+    private func viewModelDidUpdate(){
+        storeNameTextField.textfieldView.text = viewModel.fetchedData?.name
+        storeURLTextField.textfieldView.text = viewModel.fetchedData?.URL
+        storeLocationTextField.textfieldView.text = viewModel.fetchedData?.location
+        phoneNumberTextField.textfieldView.text = viewModel.fetchedData?.phoneNumber
+    }
+    
+    //TODO: error handling here
+    private func viewModelDidError(){
+        //handle error here
+    }
+    
+    private func fetchData(){
+        viewModel.fetchStoreProfile()
+    }
+    
 }
 
-//handle keyboard
+//private function
 private extension StoreProfileViewController {
     private func keyboardDismisser(){
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
+    
+    @objc private func saveTapped(){
+        if validateTextField() {
+            let profile = StoreProfile(
+                name: "\(storeNameTextField.textfieldView.text ?? "")",
+                URL: "\(storeURLTextField.textfieldView.text ?? "")",
+                location: "\(storeLocationTextField.textfieldView.text ?? "")",
+                phoneNumber: "\(phoneNumberTextField.textfieldView.text ?? "")"
+            )
+            viewModel.updateStoreProfile(profile)
+            isEditMode = false
+        }
+    }
+    
+    @objc private func editTapped(){
+        isEditMode = true
+    }
 }
 
 extension StoreProfileViewController: UITextFieldDelegate {
     private func setupPage(){
+        bindToViewModel()
+        setupTextField()
         title = "Store Profile"
         switch entryPoint {
         case .onboarding:
             nextButton.isHidden = false
             titleLabel.isHidden = false
-        case .settingPage: break
+        case .settingPage:
+            viewModel.fetchStoreProfile()
+            isEditMode = false
         }
     }
     
@@ -86,5 +161,22 @@ extension StoreProfileViewController: UITextFieldDelegate {
             print("insert done action")
         }
         return true
+    }
+    
+    private func validateTextField() -> Bool {
+        var errorCounter = 0
+        
+        let textField = [storeNameTextField, storeURLTextField, storeLocationTextField, phoneNumberTextField]
+        
+        textField.forEach({
+            if ($0?.textfieldView.text ?? "").isEmpty {
+                $0?.errorMessage = "\($0?.titleLabel.text ?? "") cannot be empty"
+                errorCounter += 1
+            } else {
+                $0?.errorMessage = nil
+            }
+        })
+        
+        return errorCounter == 0 ? true : false
     }
 }

@@ -13,64 +13,25 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var businessNameLabel: UILabel!
     @IBOutlet weak var totalPenjualanLabel: UILabel!
     @IBOutlet weak var transactionTableView: UITableView!
+    @IBOutlet weak var noTransactionView: UIStackView!
+    
+    @IBAction func settingButtonAction(_ sender: Any) {
+        let viewController = SettingViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func seeAllTransactionAction(_ sender: UIButton) {
+        tabBarController?.selectedIndex = 3
+    }
     
     // MARK: - Variables
-    var trans1 = Transaction(
-        status: .notPaid,
-        customerName: "Martin",
-        phoneNumber: "",
-        address: "",
-        province: "",
-        city: "",
-        district: "",
-        postalCode: "",
-        products: [],
-        notes: nil,
-        expedition: "",
-        shippingPrice: 0,
-        priceSubtotal: 0,
-        priceTotal: 200000
-    )
-    var trans2 = Transaction(
-        status: .inProgress,
-        customerName: "ADWS",
-        phoneNumber: "",
-        address: "",
-        province: "",
-        city: "",
-        district: "",
-        postalCode: "",
-        products: [],
-        notes: nil,
-        expedition: "",
-        shippingPrice: 0,
-        priceSubtotal: 0,
-        priceTotal: 123123123
-    )
-    var trans3 = Transaction(
-        status: .completed,
-        customerName: "ASAD",
-        phoneNumber: "",
-        address: "",
-        province: "",
-        city: "",
-        district: "",
-        postalCode: "",
-        products: [],
-        notes: nil,
-        expedition: "",
-        shippingPrice: 0,
-        priceSubtotal: 0,
-        priceTotal: 123123
-    )
-    
-    var transData: [Transaction] = []
+    private var viewModel: DashboardVCViewModel!
     
     // MARK: - VC LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerNIB()
-        transData = [trans1, trans2, trans3]
+        viewModel = DashboardVCViewModel.init()
+        configurePage()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -81,36 +42,69 @@ class DashboardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.fetchData()
     }
     
-    @IBAction func settingButtonAction(_ sender: Any) {
-        let viewController = SettingViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
+    // MARK: - ViewModel
+    private func bindToViewModel() {
+        viewModel.didUpdate = { [weak self] _ in
+            self?.viewModelDidUpdate()
+        }
+        
+        viewModel.didError = { [weak self] _ in
+            self?.viewModelDidError()
+        }
     }
+    
+    private func viewModelDidUpdate(){
+        transactionTableView.reloadData()
+        totalPenjualanLabel.text = viewModel.calculateTotalPenjualan().formattedToRp
+    }
+    
+    //TODO: error handling here
+    private func viewModelDidError(){
+        //handle error here
+    }
+    
+    private func fetchData(){
+        viewModel.fetchTransactionData()
+    }
+    
 }
 
 private extension DashboardViewController {
-    private func registerNIB(){
+    private func configurePage(){
         transactionTableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: TransactionTableViewCell.reuseID)
+        self.bindToViewModel()
+        businessNameLabel.text = "Welcome, " + viewModel.getSellerProfileName()
     }
 }
 
 // MARK: - Tableview
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transData.count
+        if viewModel.sortedFetchedData.isEmpty {
+            transactionTableView.isHidden = true
+        } else {
+            transactionTableView.isHidden = false
+        }
+        return viewModel.sortedFetchedData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = transactionTableView.dequeueReusableCell(withIdentifier: TransactionTableViewCell.reuseID, for: indexPath) as! TransactionTableViewCell
         
-        cell.transactionData = transData[indexPath.row]
+        cell.transactionData = viewModel.sortedFetchedData[indexPath.row]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 94
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //TODO: goto product detail
     }
     
     

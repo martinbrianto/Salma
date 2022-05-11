@@ -9,21 +9,68 @@ import UIKit
 
 class TransactionViewController: UIViewController {
 
+    // MARK: - IBOutlets
+    @IBOutlet weak var noTransactionView: UIStackView!
+    @IBOutlet weak var transactionTableView: UITableView!
+    @IBAction func segmentedControlDidChange(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0: print("ALL")
+        case 1 : print("NotPaid")
+        case 2 : print("InProgress")
+        case 3 : print("Completed")
+        default: break
+        }
+    }
+    @IBAction func addButtonAction(_ sender: Any) {
+        print("insert action button action")
+    }
+    
+    // MARK: - Variables
+    var transData: [TransactionModel] = []
+    
+    // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        registerNIB()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated);
+        super.viewWillDisappear(animated)
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-    */
+}
 
+private extension TransactionViewController {
+    private func registerNIB(){
+        transactionTableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: TransactionTableViewCell.reuseID)
+    }
+}
+
+extension TransactionViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if transData.isEmpty {
+            transactionTableView.isHidden = true
+        } else {
+            transactionTableView.isHidden = false
+        }
+        return transData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = transactionTableView.dequeueReusableCell(withIdentifier: TransactionTableViewCell.reuseID, for: indexPath) as! TransactionTableViewCell
+        
+        cell.transactionData = transData[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 94
+    }
+    
 }

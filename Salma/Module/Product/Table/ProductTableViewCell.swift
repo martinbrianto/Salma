@@ -23,7 +23,7 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productPrice: UILabel!
     
     // MARK: - Variable
-    var productData: Product? {
+    var productData: ProductModel? {
         didSet {
             setupCell()
         }
@@ -48,7 +48,7 @@ private extension ProductTableViewCell {
     private func setupCell(){
         guard let productData = productData else { return }
         addShadow()
-        productTitle.text = productData.title
+        productTitle.text = productData.name
         productPrice.text = productData.price.formattedToRp
         if productData.image != nil{
             productImage.image = productData.image

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXW-cp-DTu">
-                    <rect key="frame" x="16" y="73" width="382" height="678"/>
+                    <rect key="frame" x="16" y="68" width="382" height="683"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwv-RC-ZfN" customClass="TextFieldView" customModule="Salma" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="96"/>
@@ -71,7 +71,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CuG-fq-XaL">
-                            <rect key="frame" x="0.0" y="100" width="382" height="578"/>
+                            <rect key="frame" x="0.0" y="100" width="382" height="583"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jg6-SJ-6gh">
                                     <rect key="frame" x="0.0" y="0.0" width="382" height="22"/>
@@ -96,10 +96,10 @@
                                     </constraints>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcK-0A-qHn">
-                                    <rect key="frame" x="0.0" y="30" width="382" height="540"/>
+                                    <rect key="frame" x="0.0" y="30" width="382" height="545"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="e.g. Barang Ready Stock, Silakan di order" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gdq-FZ-qDK">
-                                            <rect key="frame" x="16" y="16" width="350" height="508"/>
+                                            <rect key="frame" x="16" y="16" width="350" height="513"/>
                                             <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="textColor" systemColor="labelColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -175,7 +175,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Q4I-j2-AQp" secondAttribute="bottom" constant="24" id="MxH-QQ-8Bd"/>
                 <constraint firstItem="Q4I-j2-AQp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Nhi-M2-DtR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GXW-cp-DTu" secondAttribute="trailing" constant="16" id="aTz-II-FB5"/>
-                <constraint firstItem="GXW-cp-DTu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="29" id="uak-pt-ian"/>
+                <constraint firstItem="GXW-cp-DTu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="uak-pt-ian"/>
             </constraints>
             <point key="canvasLocation" x="134.78260869565219" y="49.553571428571423"/>
         </view>

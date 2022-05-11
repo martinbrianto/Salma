@@ -81,7 +81,7 @@ private extension AutotextAddViewController {
     }
 }
 
-extension AutotextAddViewController: UITextFieldDelegate{
+extension AutotextAddViewController: UITextFieldDelegate, UITextViewDelegate {
     private func setupPage(){
         title = "Add Autotext"
         switch pageState {
@@ -102,6 +102,7 @@ extension AutotextAddViewController: UITextFieldDelegate{
     
     private func setupTextField(){
         titleTextField.textfieldView.delegate = self
+        autotextMessageTextView.delegate = self
         titleTextField.textfieldData = Textfield(title: "Autotext Title", placeholder: "e.g. Product A")
     }
     
@@ -114,4 +115,20 @@ extension AutotextAddViewController: UITextFieldDelegate{
             }
         return true
         }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if autotextMessageTextView.text.isEmpty {
+            
+        }
+    }
+    
+    private func textViewDisplayPlaceholder(_ isEmpty: Bool){
+        if isEmpty {
+            autotextTitleTextField.text = "e.g. Barang Ready Stock, Silakan di order"
+        }
+    }
 }

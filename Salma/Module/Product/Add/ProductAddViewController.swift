@@ -68,6 +68,7 @@ extension ProductAddViewController: UITextFieldDelegate {
             productButton.backgroundColor = UIColor.blue
             productButton.setTitleColor(UIColor.white, for: .normal)
             productButton.isHidden = false
+            productButton.titleLabel?.text = "Save"
         case .edit:
             title = "Edit Product"
             productButton.isHidden = true

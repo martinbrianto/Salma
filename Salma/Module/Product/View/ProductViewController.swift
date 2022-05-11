@@ -10,6 +10,7 @@ import UIKit
 class ProductViewController: UIViewController {
 
     // MARK: - Outlets
+    @IBOutlet weak var noProductStackView: UIStackView!
     @IBOutlet weak var productTableView: UITableView!
     
     // MARK: - Variables
@@ -18,7 +19,6 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNIB()
-        // Do any additional setup after loading the view.
     }
 
      override func viewWillDisappear(_ animated: Bool) {
@@ -30,6 +30,13 @@ class ProductViewController: UIViewController {
          super.viewWillAppear(animated)
          productTableView.reloadData()
          self.navigationController?.setNavigationBarHidden(true, animated: animated)
+         if productList.count == 0 {
+             noProductStackView.isHidden = false
+             productTableView.isHidden = true
+         }else{
+             noProductStackView.isHidden = true
+             productTableView.isHidden = false
+         }
      }
     
     @IBAction func addProductButtonAction(_ sender: Any) {

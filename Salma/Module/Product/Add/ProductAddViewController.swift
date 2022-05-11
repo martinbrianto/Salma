@@ -7,19 +7,20 @@
 
 import UIKit
 
-class ProductAddViewController: UIViewController {
+class ProductAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: - Outlets
     @IBOutlet weak var productNameTextFieldView: TextFieldView!
     @IBOutlet weak var productPriceTextFieldView: PriceTextFieldView!
     @IBOutlet weak var productWeightTextFieldView: TextFieldView!
-    @IBOutlet weak var productTitleTextField: UITextField!
-    @IBOutlet weak var productWeightTextField: UITextField!
-    @IBOutlet weak var productPriceTextField: UITextField!
+    @IBOutlet weak var imagePreviewView: UIView!
+    @IBOutlet weak var imagePreview: UIImageView!
     @IBOutlet weak var productButton: UIButton!
+    @IBOutlet weak var selectImageView: UIView!
     
     // MARK: - Variables
     private var productPageState: ProductPageState
+//    var imagePickerData: Data
     
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
@@ -38,6 +39,21 @@ class ProductAddViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @IBAction func imagePickerButton(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else {return}
+        imagePreview.image = image
+        selectImageView.isHidden = true
+        imagePreviewView.isHidden = false
+        dismiss(animated: true)
+    }
+    
     @IBAction func productButtonAction(_ sender: Any) {
         switch productPageState {
         case .add:
@@ -50,6 +66,14 @@ class ProductAddViewController: UIViewController {
             break
         }
     }
+    
+    @objc func changeImage (_ gesture: UITapGestureRecognizer){
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
+    }
+    
 }
 
 //handle keyboard
@@ -62,6 +86,14 @@ private extension ProductAddViewController {
 
 extension ProductAddViewController: UITextFieldDelegate {
     private func setupPage(){
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changeImage(_:)))
+        gestureRecognizer.numberOfTapsRequired = 1
+        gestureRecognizer.numberOfTouchesRequired = 1
+        
+        imagePreview.addGestureRecognizer(gestureRecognizer)
+        imagePreview.isUserInteractionEnabled = true
+        
         switch productPageState {
         case .add:
             title = "Add Product"
@@ -69,16 +101,22 @@ extension ProductAddViewController: UITextFieldDelegate {
             productButton.setTitleColor(UIColor.white, for: .normal)
             productButton.isHidden = false
             productButton.titleLabel?.text = "Save"
+            imagePreviewView.isHidden = true
+            selectImageView.isHidden = false
         case .edit:
             title = "Edit Product"
             productButton.isHidden = true
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(navbarRightActionButtonSave(sender:)))
+            selectImageView.isHidden = true
+            imagePreviewView.isHidden = false
         case .details:
             title = "Product Details"
             productButton.backgroundColor = UIColor.white
             productButton.setTitleColor(UIColor.red, for: .normal)
             productButton.isHidden = false
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Edit", style: .done, target: self, action: #selector(navbarRightActionButtonEdit(sender:)))
+            selectImageView.isHidden = true
+            imagePreviewView.isHidden = false
         }
     }
     
@@ -149,5 +187,3 @@ extension ProductAddViewController: UITextFieldDelegate {
     }
     
 }
-
-

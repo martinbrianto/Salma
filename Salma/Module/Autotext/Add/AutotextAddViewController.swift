@@ -9,12 +9,31 @@ import UIKit
 
 class AutotextAddViewController: UIViewController {
     // MARK: - Outlets
-    @IBOutlet weak var titleTextField: TextFieldView!
-    @IBOutlet weak var autotextTitleTextField: UITextField!
+    @IBOutlet weak var autotextTitleTextField: TextFieldView!
     @IBOutlet weak var autotextMessageTextView: UITextView!
+    @IBOutlet weak var autotextMessageBackground: UIView!
+    @IBOutlet weak var autotextMessageCharCounter: UILabel!
+    @IBOutlet weak var autotextMessageErrorLabel: UILabel!
+    @IBOutlet weak var button: UIButton!
+    @IBAction func buttonAction(_ sender: Any) {
+        if validateAutotext() {
+            switch pageState {
+                case .add:
+                
+                    break
+                case .edit:
+                    //Button
+                    break
+                case .detail:
+                    //Button
+                    //delete autotext
+                    break
+            }
+        }
+    }
     
     // MARK: - Variable
-    var errorCount = 0
+    private var textViewPlaceholder: String = "e.g. Barang Ready Stock, Silakan di order"
     private var pageState: AutotextPageState{
         didSet{
             setupPage()
@@ -29,7 +48,7 @@ class AutotextAddViewController: UIViewController {
         keyboardDismisser()
     }
     
-    init(from pageState: AutotextPageState){
+    init(state pageState: AutotextPageState){
         self.pageState = pageState
         super.init(nibName: nil, bundle: nil)
     }
@@ -38,97 +57,109 @@ class AutotextAddViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @IBAction func addAutotextButton(_ sender: Any) {
-        //add validation
-        switch pageState {
-            case .add:
-            
-                break
-            case .edit:
-                //Button
-                break
-            case .detail:
-                //Button
-                //delete autotext
-                break
-        }
-        errorCount = 0
-        if autotextTitleTextField.text == "" {
-            //Change textField error isHidden to false
-            titleTextField.errorMessage = "title tidak boleh kosong"
-            errorCount += 1
-        }
-        
-        if autotextMessageTextView.text == ""{
-            //Change tesctView error isHidden to false
-            errorCount += 1
-        }
-        
-        if errorCount == 0 {
-            //pop back
-            self.navigationController?.popToRootViewController(animated: true)
-        }else{
-            //error notification popup
-        }
-    }
+    
 }
 
-//handle keyboard
 private extension AutotextAddViewController {
-    private func keyboardDismisser(){
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
+    
+    private func validateAutotext() -> Bool {
+        var errorCounter = 0
+        if (autotextTitleTextField.textfieldView.text ?? "" ).isEmpty {
+            autotextTitleTextField.errorMessage = "\(autotextTitleTextField.titleLabel.text ?? "") cannot be empty"
+            errorCounter += 1
+        } else {
+            autotextTitleTextField.errorMessage = nil
+        }
+        
+        if autotextMessageTextView.text == textViewPlaceholder {
+            autotextMessageBackground.borderWidth = 1
+            autotextMessageBackground.borderColor = UIColor(named: "Red")
+            autotextMessageBackground.backgroundColor = UIColor(named: "Error50")
+            autotextMessageErrorLabel.text = "Messages cannot be empty"
+            autotextMessageErrorLabel.isHidden = false
+        } else {
+            autotextMessageBackground.borderWidth = 0
+            autotextMessageBackground.backgroundColor = UIColor(named: "PlaceholderBg")
+            autotextMessageErrorLabel.isHidden = true
+        }
+        return errorCounter == 0 ? true : false
     }
-}
-
-extension AutotextAddViewController: UITextFieldDelegate, UITextViewDelegate {
+    
     private func setupPage(){
         title = "Add Autotext"
         switch pageState {
         case .add:
             title = "Add Autotext"
-            //Change button to blue & text, hidden to false
+            button.tintColor = .systemBlue
         case .edit:
-            title = "Autotext Details"
-            //Change button hidden to true
-            //Change navBar Item to Save
+            title = "Autotext Edit"
+            button.isHidden = true
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(navBarItemTapped))
         case .detail:
             title = "Autotext Details"
-            //Change button to red & text, hidden to false
-            //Change navBar Item to Edit
-            //Add function to change navBar purpose
+            button.isHidden = false
+            button.tintColor = .clear
+            button.setTitle("Delete Autotext", for: .normal)
+            button.setTitleColor(.red, for: .normal)
+            button.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(navBarItemTapped))
         }
     }
     
+    @objc private func navBarItemTapped(){
+        switch pageState {
+        case .add:
+            break
+        case .edit:
+            pageState = .detail
+        case .detail:
+            pageState = .edit
+        }
+    }
+}
+
+extension AutotextAddViewController: UITextFieldDelegate, UITextViewDelegate {
+    
+    private func keyboardDismisser(){
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
+    
     private func setupTextField(){
-        titleTextField.textfieldView.delegate = self
+        autotextTitleTextField.textfieldView.delegate = self
         autotextMessageTextView.delegate = self
-        titleTextField.textfieldData = Textfield(title: "Autotext Title", placeholder: "e.g. Product A")
+        autotextTitleTextField.textfieldData = Textfield(title: "Autotext Title", placeholder: "e.g. Ready Stock")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField{
-            case self.titleTextField.textfieldView: self.autotextMessageTextView.becomeFirstResponder()
+            case self.autotextTitleTextField.textfieldView: self.autotextMessageTextView.becomeFirstResponder()
             default:
                 textField.resignFirstResponder()
-                print("insert done action")
             }
         return true
         }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        
+        if autotextMessageTextView.text == textViewPlaceholder {
+            autotextMessageTextView.text = ""
+            autotextMessageTextView.textColor = .darkText
+        }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if autotextMessageTextView.text.isEmpty {
-            
+            autotextMessageTextView.text = textViewPlaceholder
+            autotextMessageTextView.textColor = .placeholderText
         }
     }
     
-    private func textViewDisplayPlaceholder(_ isEmpty: Bool){
-        if isEmpty {
-            autotextTitleTextField.text = "e.g. Barang Ready Stock, Silakan di order"
-        }
+    func textViewDidChange(_ textView: UITextView) {
+        autotextMessageCharCounter.text = "\(autotextMessageTextView.text.count) / 2200"
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+             return newText.count <= 2200
     }
 }

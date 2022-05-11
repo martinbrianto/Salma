@@ -85,6 +85,7 @@
 		E6CECC9028295C9A00276B31 /* Autotext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8F28295C9A00276B31 /* Autotext.swift */; };
 		E6CECC9128295C9A00276B31 /* Autotext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8F28295C9A00276B31 /* Autotext.swift */; };
 		E6CECC94282AAA6600276B31 /* StoreProfileVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC93282AAA6600276B31 /* StoreProfileVCViewModel.swift */; };
+		E6DF7AA4282C00CA00A61D08 /* AutotextAddVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF7AA3282C00CA00A61D08 /* AutotextAddVCViewModel.swift */; };
 		E6F7F4FD281AD71100456635 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F4281AD71000456635 /* Inter-ExtraLight.ttf */; };
 		E6F7F4FE281AD71100456635 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F5281AD71000456635 /* Inter-Regular.ttf */; };
 		E6F7F4FF281AD71100456635 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F6281AD71000456635 /* Inter-Black.ttf */; };
@@ -207,6 +208,7 @@
 		E6CECC8C28295B3100276B31 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E6CECC8F28295C9A00276B31 /* Autotext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autotext.swift; sourceTree = "<group>"; };
 		E6CECC93282AAA6600276B31 /* StoreProfileVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfileVCViewModel.swift; sourceTree = "<group>"; };
+		E6DF7AA3282C00CA00A61D08 /* AutotextAddVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutotextAddVCViewModel.swift; sourceTree = "<group>"; };
 		E6F7F4F4281AD71000456635 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		E6F7F4F5281AD71000456635 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		E6F7F4F6281AD71000456635 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 		26BE46E2281817BA005118BF /* Add */ = {
 			isa = PBXGroup;
 			children = (
+				E6DF7AA2282C00B300A61D08 /* ViewModel */,
 				269E3EE3281846660095C5A9 /* AutotextAddViewController.xib */,
 				26BE46EB28181902005118BF /* AutotextAddViewController.swift */,
 			);
@@ -688,6 +691,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		E6DF7AA2282C00B300A61D08 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E6DF7AA3282C00CA00A61D08 /* AutotextAddVCViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E6F7F4F3281AD6FD00456635 /* Inter Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -953,6 +964,7 @@
 				B76E2AC52805AB61003E349F /* DashboardVCViewModel.swift in Sources */,
 				E6CECC9028295C9A00276B31 /* Autotext.swift in Sources */,
 				E6702D74281D4943005F4DAC /* CoreDataManager.swift in Sources */,
+				E6DF7AA4282C00CA00A61D08 /* AutotextAddVCViewModel.swift in Sources */,
 				E6CECC94282AAA6600276B31 /* StoreProfileVCViewModel.swift in Sources */,
 				E6CECC84282589F200276B31 /* Product+CoreDataProperties.swift in Sources */,
 				E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */,

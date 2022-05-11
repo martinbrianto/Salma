@@ -207,7 +207,7 @@ struct CoreDataManager {
                 storeProfile = StoreProfile(
                     name: profile.storeName,
                     URL: profile.storeURL,
-                    location: profile.storeURL,
+                    location: profile.storeLocation,
                     phoneNumber: profile.storePhoneNumber
                 )
             }

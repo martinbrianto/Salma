@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class TextFieldView: UIView {
     
@@ -30,6 +31,18 @@ class TextFieldView: UIView {
                 textfieldBackground.borderWidth = 0
                 textfieldBackground.backgroundColor = UIColor(named: "PlaceholderBg")
                 errorMessageLabel.isHidden = true
+            }
+        }
+    }
+    
+    var isEnabled: Bool = true{
+        didSet {
+            if isEnabled {
+                textfieldView.isEnabled = isEnabled
+                textfieldView.textColor = UIColor.darkText
+            } else {
+                textfieldView.isEnabled = isEnabled
+                textfieldView.textColor = UIColor(named: "textFieldDisabled")
             }
         }
     }

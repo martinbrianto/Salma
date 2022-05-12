@@ -47,6 +47,7 @@ extension AutotextAddVCViewModel {
         } else if pageState == .editCustom {
             service.updateCustomAutotext(autotextID: id, newAutotextData: data)
         }
+        self.data = data
         didUpdateData?(self)
     }
     

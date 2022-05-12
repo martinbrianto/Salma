@@ -76,7 +76,6 @@ class AutotextAddViewController: UIViewController {
     
     // MARK: - ViewModel
     private func bindToViewModel() {
-        print("CUK")
         viewModel.didUpdate = { [weak self] in
             self?.viewModelDidUpdate()
         }
@@ -146,45 +145,49 @@ private extension AutotextAddViewController {
     }
     
     private func setupPage(){
-        title = "Add Autotext"
-        switch pageState {
+        DispatchQueue.main.async { [weak self] in
+            self?.title = "Add Autotext"
+            switch self?.pageState {
         case .add:
-            title = "Add Autotext"
-            button.tintColor = .systemBlue
+            self?.title = "Add Autotext"
+            self?.button.tintColor = .systemBlue
         case .editCustom:
-            title = "Autotext Edit"
-            button.isHidden = true
-            autotextTitleTextField.isEnabled = true
-            autotextMessageTextView.isEditable = true
-            autotextMessageTextView.textColor = .darkText
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(navBarItemTapped))
+            self?.title = "Autotext Edit"
+            self?.button.isHidden = true
+            self?.autotextTitleTextField.isEnabled = true
+            self?.autotextMessageTextView.isEditable = true
+            self?.autotextMessageTextView.textColor = .darkText
+            self?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self?.navBarItemTapped))
         case .editDefault:
-            title = "Autotext Edit"
-            button.isHidden = true
-            autotextTitleTextField.isEnabled = true
-            autotextMessageTextView.isEditable = true
-            autotextMessageTextView.textColor = .darkText
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(navBarItemTapped))
+            self?.title = "Autotext Edit"
+            self?.button.isHidden = true
+            self?.autotextTitleTextField.isEnabled = true
+            self?.autotextMessageTextView.isEditable = true
+            self?.autotextMessageTextView.textColor = .darkText
+            self?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self?.navBarItemTapped))
         case .detailCustom:
-            viewModel.fetchAutotext()
-            title = "Autotext Details"
-            button.isHidden = false
-            button.tintColor = .clear
-            button.setTitle("Delete Autotext", for: .normal)
-            button.setTitleColor(.red, for: .normal)
-            button.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
-            autotextTitleTextField.isEnabled = false
-            autotextMessageTextView.isEditable = false
-            autotextMessageTextView.textColor = UIColor(named: "textFieldDisabled")
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(navBarItemTapped))
+            self?.viewModel.fetchAutotext()
+            self?.title = "Autotext Details"
+            self?.button.isHidden = false
+            self?.button.tintColor = .clear
+            self?.button.setTitle("Delete Autotext", for: .normal)
+            self?.button.setTitleColor(.red, for: .normal)
+            self?.button.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
+            self?.autotextTitleTextField.isEnabled = false
+            self?.autotextMessageTextView.isEditable = false
+            self?.autotextMessageTextView.textColor = UIColor(named: "textFieldDisabled")
+            self?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self?.navBarItemTapped))
         case .detailDefault:
-            viewModel.fetchAutotext()
-            title = "Autotext Details"
-            autotextGuideLabel.isHidden = false
-            autotextTitleTextField.isEnabled = false
-            autotextMessageTextView.isEditable = false
-            autotextMessageTextView.textColor = UIColor(named: "textFieldDisabled")
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(navBarItemTapped))
+            self?.viewModel.fetchAutotext()
+            self?.title = "Autotext Details"
+            self?.autotextGuideLabel.isHidden = false
+            self?.autotextTitleTextField.isEnabled = false
+            self?.autotextMessageTextView.isEditable = false
+            self?.autotextMessageTextView.textColor = UIColor(named: "textFieldDisabled")
+            self?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self?.navBarItemTapped))
+            case .none:
+                break
+            }
         }
     }
     
@@ -193,8 +196,14 @@ private extension AutotextAddViewController {
         case .add:
             break
         case .editCustom:
+            guard let autotextId = viewModel.data?.id else { return }
+            let autoTextData = Autotext(title: autotextTitleTextField.textfieldView.text ?? "", messages: autotextMessageTextView.text ?? "", id: viewModel.data?.id)
+            viewModel.updateAutotext(pageState: self.pageState, data: autoTextData, id: autotextId)
             pageState = .detailCustom
         case .editDefault:
+            guard let autotextId = viewModel.data?.id else { return }
+            let autoTextData = Autotext(title: autotextTitleTextField.textfieldView.text ?? "", messages: autotextMessageTextView.text ?? "")
+            viewModel.updateAutotext(pageState: self.pageState, data: autoTextData, id: autotextId)
             pageState = .detailDefault
         case .detailCustom:
             pageState = .editCustom

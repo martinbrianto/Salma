@@ -11,8 +11,13 @@ class AutotextViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var autotextTableView: UITableView!
+    @IBAction func autotextAddButton(_ sender: Any) {
+        let viewController = AutotextAddViewController(state: .add, viewModel: AutotextAddVCViewModel(data: nil))
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
     
     // MARK: - Variables
+    private let viewModel = AutotextVCViewModel()
     enum TableViewSection: CaseIterable {
         case transaction
         case custom
@@ -29,7 +34,8 @@ class AutotextViewController: UIViewController {
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerNIB()
+        setupPage()
+        bindToViewModel()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -39,19 +45,26 @@ class AutotextViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        autotextTableView.reloadData()
+        viewModel.fetchAutotextList()
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    @IBAction func autotextAddButton(_ sender: Any) {
-        let viewController = AutotextAddViewController(state: .add, viewModel: AutotextAddVCViewModel(data: nil))
-        self.navigationController?.pushViewController(viewController, animated: true)
+    // MARK: - ViewModel
+    private func bindToViewModel() {
+        viewModel.didUpdate = { [weak self] _ in
+            self?.viewModeldidUpdate()
+        }
+    }
+    
+    private func viewModeldidUpdate(){
+        autotextTableView.reloadData()
     }
 }
 
 private extension AutotextViewController{
-    private func registerNIB(){
+    private func setupPage(){
         autotextTableView.register(AutotextTableViewCell.nib(), forCellReuseIdentifier: AutotextTableViewCell.reuseID)
+        viewModel.fetchAutotextList()
     }
 }
 
@@ -65,9 +78,9 @@ extension AutotextViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch TableViewSection.getSection(section){
         case .transaction:
-            return 0
+            return viewModel.fetchedDefaultAutotext.count
         case .custom:
-            return 0
+            return viewModel.fetchedCustomAutotext.count
         }
     }
 
@@ -76,11 +89,11 @@ extension AutotextViewController: UITableViewDelegate, UITableViewDataSource {
             
         case .transaction:
             let cell = tableView.dequeueReusableCell(withIdentifier: AutotextTableViewCell.reuseID, for: indexPath) as! AutotextTableViewCell
-            //cell.title = transactionAutotext[indexPath.row].title
+            cell.title = viewModel.fetchedDefaultAutotext[indexPath.row].title
             return cell
         case .custom:
             let cell = tableView.dequeueReusableCell(withIdentifier: AutotextTableViewCell.reuseID, for: indexPath) as! AutotextTableViewCell
-            //cell.title = customAutotext[indexPath.row].title
+            cell.title = viewModel.fetchedCustomAutotext[indexPath.row].title
             return cell
         }
     }
@@ -91,6 +104,19 @@ extension AutotextViewController: UITableViewDelegate, UITableViewDataSource {
             return "Transaction"
         case .custom:
             return "Custom"
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch TableViewSection.getSection(indexPath.section){
+        case .transaction:
+            let viewModel = viewModel.autotextAddVCViewModelDefaultDetail(index: indexPath.row)
+            let vc = AutotextAddViewController(state: .detailDefault, viewModel: viewModel)
+            navigationController?.pushViewController(vc, animated: true)
+        case .custom:
+            let viewModel = viewModel.autotextAddVCViewModelCustomDetail(index: indexPath.row)
+            let vc = AutotextAddViewController(state: .detailCustom, viewModel: viewModel)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

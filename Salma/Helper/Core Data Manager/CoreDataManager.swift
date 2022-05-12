@@ -69,6 +69,23 @@ struct CoreDataManager {
         }
     }
     
+    func fetchCustomAutotextData(autotextID: UUID) -> Autotext? {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let fetchRequest = CustomAutotext.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", "\(autotextID)")
+        do {
+            if let customAutotext = try context.fetch(fetchRequest).first {
+                let autotext = Autotext(title: customAutotext.title, messages: customAutotext.messages, id: customAutotext.uuid)
+                return autotext
+            } else {
+                return nil
+            }
+        } catch {
+            print("could not fetch \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
     func fetchAllCustomAutotext() -> [Autotext]? {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let fetchRequest = CustomAutotext.fetchRequest()
@@ -139,6 +156,23 @@ struct CoreDataManager {
         do {
             let customAutotext = try context.fetch(fetchRequest).first
             return customAutotext
+        } catch {
+            print("could not fetch \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    func fetchDefaultAutotextData(autotextID: UUID) -> Autotext? {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let fetchRequest = DefaultAutotext.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", "\(autotextID)")
+        do {
+            if let customAutotext = try context.fetch(fetchRequest).first {
+                let autotext = Autotext(title: customAutotext.title, messages: customAutotext.messages, id: customAutotext.uuid)
+                return autotext
+            } else {
+                return nil
+            }
         } catch {
             print("could not fetch \(error.localizedDescription)")
             return nil

@@ -90,6 +90,7 @@
 		E6CECC9128295C9A00276B31 /* Autotext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8F28295C9A00276B31 /* Autotext.swift */; };
 		E6CECC94282AAA6600276B31 /* StoreProfileVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC93282AAA6600276B31 /* StoreProfileVCViewModel.swift */; };
 		E6DF7AA4282C00CA00A61D08 /* AutotextAddVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF7AA3282C00CA00A61D08 /* AutotextAddVCViewModel.swift */; };
+		E6DF7AA7282D513D00A61D08 /* AutotextVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF7AA6282D513D00A61D08 /* AutotextVCViewModel.swift */; };
 		E6F7F4FD281AD71100456635 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F4281AD71000456635 /* Inter-ExtraLight.ttf */; };
 		E6F7F4FE281AD71100456635 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F5281AD71000456635 /* Inter-Regular.ttf */; };
 		E6F7F4FF281AD71100456635 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F6281AD71000456635 /* Inter-Black.ttf */; };
@@ -217,6 +218,7 @@
 		E6CECC8F28295C9A00276B31 /* Autotext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autotext.swift; sourceTree = "<group>"; };
 		E6CECC93282AAA6600276B31 /* StoreProfileVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfileVCViewModel.swift; sourceTree = "<group>"; };
 		E6DF7AA3282C00CA00A61D08 /* AutotextAddVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutotextAddVCViewModel.swift; sourceTree = "<group>"; };
+		E6DF7AA6282D513D00A61D08 /* AutotextVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AutotextVCViewModel.swift; path = Salma/Module/Autotext/Add/ViewModel/AutotextVCViewModel.swift; sourceTree = SOURCE_ROOT; };
 		E6F7F4F4281AD71000456635 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		E6F7F4F5281AD71000456635 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		E6F7F4F6281AD71000456635 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
@@ -482,19 +484,12 @@
 		B76E2ABB2805AB61003E349F /* Autotext */ = {
 			isa = PBXGroup;
 			children = (
-				B76E2ABC2805AB61003E349F /* ViewModel */,
+				E6DF7AA5282D512700A61D08 /* ViewModel */,
 				26BE46E3281817CA005118BF /* Table */,
 				26BE46E2281817BA005118BF /* Add */,
 				B76E2ABD2805AB61003E349F /* View */,
 			);
 			path = Autotext;
-			sourceTree = "<group>";
-		};
-		B76E2ABC2805AB61003E349F /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B76E2ABD2805AB61003E349F /* View */ = {
@@ -730,6 +725,14 @@
 			isa = PBXGroup;
 			children = (
 				E6DF7AA3282C00CA00A61D08 /* AutotextAddVCViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E6DF7AA5282D512700A61D08 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E6DF7AA6282D513D00A61D08 /* AutotextVCViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1014,6 +1017,7 @@
 				E6702DB428212215005F4DAC /* StoreProfile.swift in Sources */,
 				26D9D96128117B4800A8EA86 /* ProductAddViewController.swift in Sources */,
 				E6CECC80282589F200276B31 /* Transaction+CoreDataProperties.swift in Sources */,
+				E6DF7AA7282D513D00A61D08 /* AutotextVCViewModel.swift in Sources */,
 				E6CECC8D28295B3100276B31 /* Product.swift in Sources */,
 				E6CECC8A28281FD500276B31 /* TransactionProduct+CoreDataProperties.swift in Sources */,
 				B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */,

@@ -20,7 +20,7 @@ class AutotextAddVCViewModel {
     
     // MARK: - Events
     var didError: ((Error) -> Void)?
-    var didUpdate: ((AutotextAddVCViewModel?) -> Void)?
+    var didUpdate: (() -> Void)?
     var didSave: ((AutotextAddVCViewModel?) -> Void)?
     var didDelete: ((AutotextAddVCViewModel?) -> Void)?
     var didUpdateData : ((AutotextAddVCViewModel?) -> Void)?
@@ -31,7 +31,9 @@ class AutotextAddVCViewModel {
 
 extension AutotextAddVCViewModel {
     func fetchAutotext(){
-        didUpdate?(self)
+        if data != nil {
+            didUpdate?()
+        }
     }
     
     func saveAutotext(data: Autotext){

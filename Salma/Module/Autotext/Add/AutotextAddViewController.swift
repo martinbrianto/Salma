@@ -52,11 +52,16 @@ class AutotextAddViewController: UIViewController {
     }
     
     // MARK: - VC Lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        bindToViewModel()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPage()
         setupTextField()
         keyboardDismisser()
+        
     }
     
     init(state pageState: AutotextPageState, viewModel: AutotextAddVCViewModel){
@@ -71,7 +76,8 @@ class AutotextAddViewController: UIViewController {
     
     // MARK: - ViewModel
     private func bindToViewModel() {
-        viewModel.didUpdate = { [weak self] _ in
+        print("CUK")
+        viewModel.didUpdate = { [weak self] in
             self?.viewModelDidUpdate()
         }
         
@@ -93,8 +99,8 @@ class AutotextAddViewController: UIViewController {
     }
     
     private func viewModelDidUpdate(){
-        autotextTitleTextField.textfieldView.text = viewModel.data?.title
-        autotextMessageTextView.text = viewModel.data?.messages
+            self.autotextTitleTextField.textfieldView.text = self.viewModel.data?.title
+            self.autotextMessageTextView.text = self.viewModel.data?.messages
     }
     
     private func viewModelDidError(){

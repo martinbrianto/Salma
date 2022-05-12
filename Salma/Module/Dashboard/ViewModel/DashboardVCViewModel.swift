@@ -23,11 +23,6 @@ class DashboardVCViewModel {
     var didError: ((Error) -> Void)?
     var didUpdate: ((DashboardVCViewModel?) -> Void)?
     var didSelect: ((TransactionModel) -> Void)?
-    private(set) var isUpdating: Bool = false {
-        didSet {
-            didUpdate?(self)
-        }
-    }
     
     var bindViewModelToController : ((DashboardVCViewModel) -> Void)?
 }
@@ -61,7 +56,7 @@ extension DashboardVCViewModel {
     }
     
     func getSellerProfileName() -> String {
-        let storeProfile = CoreDataManager.shared.fetchStoreProfile()
+        let storeProfile = service.fetchStoreProfile()
         return storeProfile?.name ?? ""
     }
     

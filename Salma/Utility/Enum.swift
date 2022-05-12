@@ -23,3 +23,16 @@ enum ProductPageState {
     case edit
     case details
 }
+
+enum Section: String{
+    case transaction = "Transaction"
+    case custom = "Custom"
+}
+
+enum AutotextPageState {
+    case add
+    case editCustom
+    case editDefault
+    case detailCustom
+    case detailDefault
+}

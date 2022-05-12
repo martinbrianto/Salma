@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		269E3EE4281846660095C5A9 /* AutotextAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269E3EE3281846660095C5A9 /* AutotextAddViewController.xib */; };
+		26BE46E728181804005118BF /* AutotextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BE46E528181804005118BF /* AutotextTableViewCell.swift */; };
+		26BE46E828181804005118BF /* AutotextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26BE46E628181804005118BF /* AutotextTableViewCell.xib */; };
+		26BE46ED28181902005118BF /* AutotextAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BE46EB28181902005118BF /* AutotextAddViewController.swift */; };
 		26D9D96128117B4800A8EA86 /* ProductAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D9D95F28117B4800A8EA86 /* ProductAddViewController.swift */; };
 		26D9D96228117B4800A8EA86 /* ProductAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D9D96028117B4800A8EA86 /* ProductAddViewController.xib */; };
 		26D9D9682816CFD200A8EA86 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D9D9662816CFD200A8EA86 /* ProductTableViewCell.swift */; };
@@ -85,6 +89,7 @@
 		E6CECC9028295C9A00276B31 /* Autotext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8F28295C9A00276B31 /* Autotext.swift */; };
 		E6CECC9128295C9A00276B31 /* Autotext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8F28295C9A00276B31 /* Autotext.swift */; };
 		E6CECC94282AAA6600276B31 /* StoreProfileVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC93282AAA6600276B31 /* StoreProfileVCViewModel.swift */; };
+		E6DF7AA4282C00CA00A61D08 /* AutotextAddVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF7AA3282C00CA00A61D08 /* AutotextAddVCViewModel.swift */; };
 		E6F7F4FD281AD71100456635 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F4281AD71000456635 /* Inter-ExtraLight.ttf */; };
 		E6F7F4FE281AD71100456635 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F5281AD71000456635 /* Inter-Regular.ttf */; };
 		E6F7F4FF281AD71100456635 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6F7F4F6281AD71000456635 /* Inter-Black.ttf */; };
@@ -143,6 +148,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		269E3EE3281846660095C5A9 /* AutotextAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutotextAddViewController.xib; sourceTree = "<group>"; };
+		26BE46E528181804005118BF /* AutotextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutotextTableViewCell.swift; sourceTree = "<group>"; };
+		26BE46E628181804005118BF /* AutotextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutotextTableViewCell.xib; sourceTree = "<group>"; };
+		26BE46EB28181902005118BF /* AutotextAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutotextAddViewController.swift; sourceTree = "<group>"; };
 		26D9D95F28117B4800A8EA86 /* ProductAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAddViewController.swift; sourceTree = "<group>"; };
 		26D9D96028117B4800A8EA86 /* ProductAddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductAddViewController.xib; sourceTree = "<group>"; };
 		26D9D9662816CFD200A8EA86 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -207,6 +216,7 @@
 		E6CECC8C28295B3100276B31 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E6CECC8F28295C9A00276B31 /* Autotext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autotext.swift; sourceTree = "<group>"; };
 		E6CECC93282AAA6600276B31 /* StoreProfileVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfileVCViewModel.swift; sourceTree = "<group>"; };
+		E6DF7AA3282C00CA00A61D08 /* AutotextAddVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutotextAddVCViewModel.swift; sourceTree = "<group>"; };
 		E6F7F4F4281AD71000456635 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		E6F7F4F5281AD71000456635 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		E6F7F4F6281AD71000456635 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
@@ -261,6 +271,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26BE46E2281817BA005118BF /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				E6DF7AA2282C00B300A61D08 /* ViewModel */,
+				269E3EE3281846660095C5A9 /* AutotextAddViewController.xib */,
+				26BE46EB28181902005118BF /* AutotextAddViewController.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		26BE46E3281817CA005118BF /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				26BE46E528181804005118BF /* AutotextTableViewCell.swift */,
+				26BE46E628181804005118BF /* AutotextTableViewCell.xib */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
 		26D9D95C28117A4100A8EA86 /* Add */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +483,8 @@
 			isa = PBXGroup;
 			children = (
 				B76E2ABC2805AB61003E349F /* ViewModel */,
+				26BE46E3281817CA005118BF /* Table */,
+				26BE46E2281817BA005118BF /* Add */,
 				B76E2ABD2805AB61003E349F /* View */,
 			);
 			path = Autotext;
@@ -695,6 +726,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		E6DF7AA2282C00B300A61D08 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E6DF7AA3282C00CA00A61D08 /* AutotextAddVCViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E6F7F4F3281AD6FD00456635 /* Inter Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -894,6 +933,7 @@
 				E698718028182B7D002D73F2 /* EnableKeyboardViewController.xib in Resources */,
 				E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */,
 				E6F7F502281AD71100456635 /* Inter-Bold.ttf in Resources */,
+				26BE46E828181804005118BF /* AutotextTableViewCell.xib in Resources */,
 				E69870642816CCDD002D73F2 /* StoreProfileViewController.xib in Resources */,
 				E6F7F4FD281AD71100456635 /* Inter-ExtraLight.ttf in Resources */,
 				26D9D9692816CFD200A8EA86 /* ProductTableViewCell.xib in Resources */,
@@ -903,6 +943,7 @@
 				E6F7F500281AD71100456635 /* Inter-Medium.ttf in Resources */,
 				E6F7F4FF281AD71100456635 /* Inter-Black.ttf in Resources */,
 				26D9D96228117B4800A8EA86 /* ProductAddViewController.xib in Resources */,
+				269E3EE4281846660095C5A9 /* AutotextAddViewController.xib in Resources */,
 				B7E1DA3B2804990F006C9D27 /* Colors.xcassets in Resources */,
 				E6F7F4FE281AD71100456635 /* Inter-Regular.ttf in Resources */,
 				E6F7F501281AD71100456635 /* Inter-Light.ttf in Resources */,
@@ -957,9 +998,11 @@
 				E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */,
 				26D9D9682816CFD200A8EA86 /* ProductTableViewCell.swift in Sources */,
 				E69870662816D458002D73F2 /* Textfield.swift in Sources */,
+				26BE46ED28181902005118BF /* AutotextAddViewController.swift in Sources */,
 				B76E2AC52805AB61003E349F /* DashboardVCViewModel.swift in Sources */,
 				E6CECC9028295C9A00276B31 /* Autotext.swift in Sources */,
 				E6702D74281D4943005F4DAC /* CoreDataManager.swift in Sources */,
+				E6DF7AA4282C00CA00A61D08 /* AutotextAddVCViewModel.swift in Sources */,
 				E6CECC94282AAA6600276B31 /* StoreProfileVCViewModel.swift in Sources */,
 				E6CECC84282589F200276B31 /* Product+CoreDataProperties.swift in Sources */,
 				E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */,
@@ -975,6 +1018,7 @@
 				E6CECC8A28281FD500276B31 /* TransactionProduct+CoreDataProperties.swift in Sources */,
 				B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */,
 				E6CECC8828281FD500276B31 /* TransactionProduct+CoreDataClass.swift in Sources */,
+				26BE46E728181804005118BF /* AutotextTableViewCell.swift in Sources */,
 				E6FE835A28102B13000AD0C1 /* SettingViewController.swift in Sources */,
 				E69870632816CCDD002D73F2 /* StoreProfileViewController.swift in Sources */,
 				E6FE835528102773000AD0C1 /* TransactionModel.swift in Sources */,

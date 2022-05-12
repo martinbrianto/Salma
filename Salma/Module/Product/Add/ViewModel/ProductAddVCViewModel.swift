@@ -12,10 +12,10 @@ class ProductAddVCViewModel {
     
     // MARK: - private
     private let service: CoreDataManager
-    private(set) var fetchedData: [ProductModel] = []
-    private(set) var sortedFetchedData: [ProductModel] = []
+    private(set) var data: ProductModel?
     
-    init(service: CoreDataManager = CoreDataManager.shared){
+    init(service: CoreDataManager = CoreDataManager.shared, data: ProductModel?){
+        self.data = data
         self.service = service
     }
     
@@ -25,26 +25,28 @@ class ProductAddVCViewModel {
     var didDelete: ((ProductAddVCViewModel?) -> Void)?
     var didUpdate: ((ProductAddVCViewModel?) -> Void)?
     var didSelect: ((ProductModel) -> Void)?
+    var didUpdateData: ((ProductAddVCViewModel?) -> Void)?
     
 }
 
 extension ProductAddVCViewModel {
     func fetchProductData() {
-        self.fetchedData = service.fetchAllProduct() ?? []
-//        sortLatestTransaction()
         didUpdate?(self)
     }
     
-//    func sortLatestTransaction() {
-//        if !fetchedData.isEmpty {
-//            let firstTenElements = fetchedData.prefix(10)
-//            self.sortedFetchedData = firstTenElements.sorted(by: {$0.dateCreated!.compare($1.dateCreated!) == .orderedAscending})
-//        }
-//    }
+    func saveProduct(data: ProductModel){
+        service.saveProduct(newProduct: data)
+        didSave?(self)
+    }
     
-    func getSellerProfileName() -> String {
-        let storeProfile = service.fetchStoreProfile()
-        return storeProfile?.name ?? ""
+    func updateProduct(data: ProductModel, id: UUID){
+        service.updateProduct(productID: id, newProductData: data)
+        didUpdateData?(self)
+    }
+    
+    func deleteProduct(id: UUID) {
+        service.deleteProduct(productID: id)
+        didDelete?(self)
     }
     
 }

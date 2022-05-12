@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct ProductModel {
-    var image: UIImage?
+    var image: Data?
     var id: UUID?
     var name: String
     var price: Float

@@ -20,6 +20,7 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
     
     // MARK: - Variables
     private var productPageState: ProductPageState
+    private let viewModel: ProductAddVCViewModel
 //    var imagePickerData: Data
     
     // MARK: - VC Lifecycle
@@ -30,8 +31,9 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
         keyboardDismisser()
     }
     
-    init(from productPageState: ProductPageState){
+    init(from productPageState: ProductPageState, viewModel: ProductAddVCViewModel){
         self.productPageState = productPageState
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -55,15 +57,19 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func productButtonAction(_ sender: Any) {
-        switch productPageState {
-        case .add:
-            validateTextField()
-        case .edit:
-            validateTextField()
-        case .details:
-            //Delete data
-            //Pop to root
-            break
+        if validateTextField() {
+            switch productPageState {
+            case .add:
+                let productData = ProductModel(name: productNameTextFieldView.textfieldView.text ?? "", price: Float(productPriceTextFieldView.textfieldView.text ?? "0") ?? 0, weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0)
+                viewModel.saveProduct(data: productData)
+            case .edit:
+                guard let productId = viewModel.data?.id else { return }
+                let productData = ProductModel(name: productNameTextFieldView.textfieldView.text ?? "", price: Float(productPriceTextFieldView.textfieldView.text ?? "0") ?? 0, weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0)
+                viewModel.updateProduct(data: productData, id: productId)
+            case .details:
+                guard let productId = viewModel.data?.id else { return }
+                viewModel.deleteProduct(id: productId)
+            }
         }
     }
     
@@ -74,6 +80,50 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
         present(picker, animated: true)
     }
     
+    // MARK: - ViewModel
+    private func bindToViewModel() {
+        viewModel.didUpdate = { [weak self] _ in
+            self?.viewModelDidUpdate()
+        }
+        
+        viewModel.didError = { [weak self] _ in
+            self?.viewModelDidError()
+        }
+        
+        viewModel.didSave = { [weak self] _ in
+            self?.viewModelDidSave()
+        }
+        
+        viewModel.didDelete = { [weak self] _ in
+            self?.viewModelDidDelete()
+        }
+        
+        viewModel.didUpdateData = { [weak self] _ in
+            self?.viewModelDidUpdateData()
+        }
+    }
+    
+    private func viewModelDidUpdate(){
+        productNameTextFieldView.textfieldView.text = viewModel.data?.name
+        productPriceTextFieldView.textfieldView.text = "\(viewModel.data?.price ?? 0)"
+        productWeightTextFieldView.textfieldView.text = "\(viewModel.data?.weight ?? 0)"
+    }
+    
+    private func viewModelDidError(){
+        //TODO: Handle error
+    }
+    
+    private func viewModelDidUpdateData(){
+        //TODO: Handle update data
+    }
+    
+    private func viewModelDidDelete(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func viewModelDidSave(){
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 //handle keyboard
@@ -86,7 +136,6 @@ private extension ProductAddViewController {
 
 extension ProductAddViewController: UITextFieldDelegate {
     private func setupPage(){
-        
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changeImage(_:)))
         gestureRecognizer.numberOfTapsRequired = 1
         gestureRecognizer.numberOfTouchesRequired = 1
@@ -144,7 +193,7 @@ extension ProductAddViewController: UITextFieldDelegate {
         return true
     }
     
-    private func validateTextField(){
+    private func validateTextField() -> Bool{
         var errorCount = 0
         // Validate product name
         if (productNameTextFieldView.textfieldView.text ?? "").isEmpty {
@@ -171,8 +220,9 @@ extension ProductAddViewController: UITextFieldDelegate {
         }
         
         if errorCount == 0 {
-            // Add data
-            // Pop to root
+            return true
+        }else{
+            return false
         }
     }
     

@@ -14,10 +14,12 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var productTableView: UITableView!
     
     // MARK: - Variables
+    private var viewModel: ProductVCVIewModel!
     
     // MARK: - VC LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = ProductVCVIewModel.init()
         registerNIB()
     }
 
@@ -28,9 +30,9 @@ class ProductViewController: UIViewController {
 
      override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)
-         productTableView.reloadData()
+         fetchData()
          self.navigationController?.setNavigationBarHidden(true, animated: animated)
-         if productList.count == 0 {
+         if viewModel.fetchedData.count == 0 {
              noProductStackView.isHidden = false
              productTableView.isHidden = true
          }else{
@@ -40,28 +42,53 @@ class ProductViewController: UIViewController {
      }
     
     @IBAction func addProductButtonAction(_ sender: Any) {
-        let viewController = ProductAddViewController(from: .add)
+        let viewController = ProductAddViewController(from: .add, viewModel: ProductAddVCViewModel(data: nil))
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    // MARK: - ViewModel
+    private func bindToViewModel() {
+        viewModel.didUpdate = { [weak self] _ in
+            self?.viewModelDidUpdate()
+        }
+        
+        viewModel.didError = { [weak self] _ in
+            self?.viewModelDidError()
+        }
+    }
+    
+    private func viewModelDidUpdate(){
+        productTableView.reloadData()
+//        totalPenjualanLabel.text = viewModel.calculateTotalPenjualan().formattedToRp
+    }
+    
+    //TODO: error handling here
+    private func viewModelDidError(){
+        //handle error here
+    }
+    
+    private func fetchData(){
+        viewModel.fetchProductData()
     }
 }
 
 private extension ProductViewController{
     private func registerNIB(){
         productTableView.register(ProductTableViewCell.nib(), forCellReuseIdentifier: ProductTableViewCell.reuseID)
+        self.bindToViewModel()
     }
 }
 
  // MARK: - Tableview
 extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return productList.count
+        return viewModel.fetchedData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = productTableView.dequeueReusableCell(withIdentifier: ProductTableViewCell.reuseID, for: indexPath) as! ProductTableViewCell
 
-        cell.productData = productList[indexPath.row]
-
+        cell.productData = viewModel.fetchedData[indexPath.row]
         return cell
     }
 

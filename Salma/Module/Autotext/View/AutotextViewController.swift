@@ -44,7 +44,7 @@ class AutotextViewController: UIViewController {
     }
     
     @IBAction func autotextAddButton(_ sender: Any) {
-        let viewController = AutotextAddViewController(state: .add)
+        let viewController = AutotextAddViewController(state: .add, viewModel: AutotextAddVCViewModel(data: nil))
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

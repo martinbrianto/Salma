@@ -23,8 +23,10 @@ enum Section: String{
     case custom = "Custom"
 }
 
-enum AutotextPageState: String{
-    case add = "Add"
-    case edit = "Edit"
-    case detail = "Detail"
+enum AutotextPageState {
+    case add
+    case editCustom
+    case editDefault
+    case detailCustom
+    case detailDefault
 }

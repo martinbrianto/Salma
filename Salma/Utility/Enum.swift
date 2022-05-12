@@ -18,6 +18,12 @@ enum StoreProfilePageEntryPoint {
     case settingPage
 }
 
+enum ProductPageState {
+    case add
+    case edit
+    case details
+}
+
 enum Section: String{
     case transaction = "Transaction"
     case custom = "Custom"

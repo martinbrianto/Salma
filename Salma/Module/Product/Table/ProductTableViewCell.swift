@@ -51,7 +51,7 @@ private extension ProductTableViewCell {
         productTitle.text = productData.name
         productPrice.text = productData.price.formattedToRp
         if productData.image != nil{
-            productImage.image = productData.image
+            productImage.image = UIImage(data: productData.image!)
         }else{
             productImage.image = UIImage(named: "placeholder")
         }

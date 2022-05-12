@@ -43,7 +43,7 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
         let picker = UIImagePickerController()
         picker.allowsEditing = true
         picker.delegate = self
-        present(picker, animated: true)
+        self.navigationController?.present(picker, animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -51,7 +51,7 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
         imagePreview.image = image
         selectImageView.isHidden = true
         imagePreviewView.isHidden = false
-        dismiss(animated: true)
+        picker.dismiss(animated: true)
     }
     
     @IBAction func productButtonAction(_ sender: Any) {
@@ -100,7 +100,6 @@ extension ProductAddViewController: UITextFieldDelegate {
             productButton.backgroundColor = UIColor.blue
             productButton.setTitleColor(UIColor.white, for: .normal)
             productButton.isHidden = false
-            productButton.titleLabel?.text = "Save"
             imagePreviewView.isHidden = true
             selectImageView.isHidden = false
         case .edit:
@@ -113,6 +112,8 @@ extension ProductAddViewController: UITextFieldDelegate {
             title = "Product Details"
             productButton.backgroundColor = UIColor.white
             productButton.setTitleColor(UIColor.red, for: .normal)
+            productButton.setTitle("Delete", for: .normal)
+            productButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
             productButton.isHidden = false
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Edit", style: .done, target: self, action: #selector(navbarRightActionButtonEdit(sender:)))
             selectImageView.isHidden = true
@@ -136,8 +137,6 @@ extension ProductAddViewController: UITextFieldDelegate {
         switch textField {
         case self.productNameTextFieldView.textfieldView:
             self.productPriceTextFieldView.textfieldView.becomeFirstResponder()
-        case self.productPriceTextFieldView.textfieldView:
-            self.productWeightTextFieldView.textfieldView.becomeFirstResponder()
         default:
             textField.resignFirstResponder()
             print("insert done action")

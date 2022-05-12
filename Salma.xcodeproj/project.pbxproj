@@ -13,6 +13,8 @@
 		26D9D9692816CFD200A8EA86 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D9D9672816CFD200A8EA86 /* ProductTableViewCell.xib */; };
 		26E334AC282A9AE600FB1164 /* PriceTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E334AB282A9AE600FB1164 /* PriceTextFieldView.swift */; };
 		26E334AE282A9B2300FB1164 /* PriceTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26E334AD282A9B2300FB1164 /* PriceTextFieldView.xib */; };
+		26E699DE282D514400846FE4 /* ProductAddVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E699DD282D514400846FE4 /* ProductAddVCViewModel.swift */; };
+		26E699E1282D517100846FE4 /* ProductVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E699E0282D517100846FE4 /* ProductVCViewModel.swift */; };
 		B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E2A972805A905003E349F /* UIView+Extension.swift */; };
 		B76E2AC02805AB61003E349F /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E2AA52805AB61003E349F /* TabBarViewController.xib */; };
 		B76E2AC12805AB61003E349F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E2AA62805AB61003E349F /* TabBarViewController.swift */; };
@@ -147,6 +149,8 @@
 		26D9D9672816CFD200A8EA86 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		26E334AB282A9AE600FB1164 /* PriceTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTextFieldView.swift; sourceTree = "<group>"; };
 		26E334AD282A9B2300FB1164 /* PriceTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceTextFieldView.xib; sourceTree = "<group>"; };
+		26E699DD282D514400846FE4 /* ProductAddVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAddVCViewModel.swift; sourceTree = "<group>"; };
+		26E699E0282D517100846FE4 /* ProductVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVCViewModel.swift; sourceTree = "<group>"; };
 		B76E2A972805A905003E349F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B76E2AA52805AB61003E349F /* TabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		B76E2AA62805AB61003E349F /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 		26D9D95C28117A4100A8EA86 /* Add */ = {
 			isa = PBXGroup;
 			children = (
+				26E699DC282D512B00846FE4 /* ViewModel */,
 				26D9D95F28117B4800A8EA86 /* ProductAddViewController.swift */,
 				26D9D96028117B4800A8EA86 /* ProductAddViewController.xib */,
 			);
@@ -282,6 +287,22 @@
 				26E334AD282A9B2300FB1164 /* PriceTextFieldView.xib */,
 			);
 			path = "Price Text Field";
+			sourceTree = "<group>";
+		};
+		26E699DC282D512B00846FE4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				26E699DD282D514400846FE4 /* ProductAddVCViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		26E699DF282D514B00846FE4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				26E699E0282D517100846FE4 /* ProductVCViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B76E2A962805A8F8003E349F /* Extension */ = {
@@ -348,6 +369,7 @@
 		B76E2AA82805AB61003E349F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				26E699DF282D514B00846FE4 /* ViewModel */,
 				B76E2AA92805AB61003E349F /* ProductViewController.swift */,
 				B76E2AAA2805AB61003E349F /* ProductViewController.xib */,
 			);
@@ -927,6 +949,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FE836328114F67000AD0C1 /* Formatter+Extension.swift in Sources */,
+				26E699DE282D514400846FE4 /* ProductAddVCViewModel.swift in Sources */,
 				E6CECC7A282589F200276B31 /* Profile+CoreDataClass.swift in Sources */,
 				E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */,
 				E6CECC76282589F200276B31 /* CustomAutotext+CoreDataClass.swift in Sources */,
@@ -942,6 +965,7 @@
 				E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */,
 				E6FE836828118222000AD0C1 /* TextFieldView.swift in Sources */,
 				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
+				26E699E1282D517100846FE4 /* ProductVCViewModel.swift in Sources */,
 				B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */,
 				E6CECC7C282589F200276B31 /* Profile+CoreDataProperties.swift in Sources */,
 				E6702DB428212215005F4DAC /* StoreProfile.swift in Sources */,

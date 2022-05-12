@@ -191,8 +191,8 @@
                             </fragment>
                         </attributedString>
                     </state>
-                    <buttonConfiguration key="configuration" style="filled" title="Button">
-                        <fontDescription key="titleFontDescription" name="SFMono-Semibold" family="SF Mono" pointSize="17"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Save">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                         <color key="baseBackgroundColor" name="AccentColor"/>
                     </buttonConfiguration>
                     <userDefinedRuntimeAttributes>

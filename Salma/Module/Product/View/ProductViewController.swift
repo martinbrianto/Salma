@@ -59,7 +59,6 @@ class ProductViewController: UIViewController {
     
     private func viewModelDidUpdate(){
         productTableView.reloadData()
-//        totalPenjualanLabel.text = viewModel.calculateTotalPenjualan().formattedToRp
     }
     
     //TODO: error handling here
@@ -87,12 +86,18 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = productTableView.dequeueReusableCell(withIdentifier: ProductTableViewCell.reuseID, for: indexPath) as! ProductTableViewCell
-
         cell.productData = viewModel.fetchedData[indexPath.row]
+        print(viewModel.fetchedData[indexPath.row])
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewModel = viewModel.productAddVCViewModel(index: indexPath.row)
+        let vc = ProductAddViewController(from: .details, viewModel: viewModel)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

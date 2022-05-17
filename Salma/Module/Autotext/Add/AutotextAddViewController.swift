@@ -150,7 +150,6 @@ private extension AutotextAddViewController {
             switch self?.pageState {
         case .add:
             self?.title = "Add Autotext"
-            self?.button.tintColor = .systemBlue
         case .editCustom:
             self?.title = "Autotext Edit"
             self?.button.isHidden = true
@@ -169,7 +168,7 @@ private extension AutotextAddViewController {
             self?.viewModel.fetchAutotext()
             self?.title = "Autotext Details"
             self?.button.isHidden = false
-            self?.button.tintColor = .clear
+            self?.button.backgroundColor = .clear
             self?.button.setTitle("Delete Autotext", for: .normal)
             self?.button.setTitleColor(.red, for: .normal)
             self?.button.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)

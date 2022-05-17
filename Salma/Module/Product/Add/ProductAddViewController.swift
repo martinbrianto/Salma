@@ -19,9 +19,12 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var selectImageView: UIView!
     
     // MARK: - Variables
-    private var productPageState: ProductPageState
+    private var productPageState: ProductPageState {
+        didSet {
+            setupPage()
+        }
+    }
     private let viewModel: ProductAddVCViewModel
-//    var imagePickerData: Data
     
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
@@ -35,6 +38,7 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
         self.productPageState = productPageState
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        bindToViewModel()
     }
     
     required init?(coder: NSCoder) {
@@ -60,7 +64,13 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
         if validateTextField() {
             switch productPageState {
             case .add:
-                let productData = ProductModel(name: productNameTextFieldView.textfieldView.text ?? "", price: Float(productPriceTextFieldView.textfieldView.text ?? "0") ?? 0, weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0)
+                let imageData = viewModel.convertToData(image: imagePreview.image)
+                let productData = ProductModel(
+                    image: imageData,
+                    name: productNameTextFieldView.textfieldView.text ?? "",
+                    price: Float(productPriceTextFieldView.textfieldView.text ?? "0") ?? 0,
+                    weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0
+                )
                 viewModel.saveProduct(data: productData)
             case .edit:
                 guard let productId = viewModel.data?.id else { return }
@@ -70,6 +80,7 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
                 guard let productId = viewModel.data?.id else { return }
                 viewModel.deleteProduct(id: productId)
             }
+            navigationController?.popViewController(animated: true)
         }
     }
     
@@ -104,9 +115,14 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     private func viewModelDidUpdate(){
-        productNameTextFieldView.textfieldView.text = viewModel.data?.name
-        productPriceTextFieldView.textfieldView.text = "\(viewModel.data?.price ?? 0)"
-        productWeightTextFieldView.textfieldView.text = "\(viewModel.data?.weight ?? 0)"
+        DispatchQueue.main.async { [self] in
+            let image = viewModel.getImageFromData(imageData: viewModel.data?.image)
+            imagePreview.image = image ??  UIImage(named: "placeholder")
+            productNameTextFieldView.textfieldView.text = viewModel.data?.name
+            productPriceTextFieldView.textfieldView.text = "\(viewModel.data?.price ?? 0)"
+            productWeightTextFieldView.textfieldView.text = "\(viewModel.data?.weight ?? 0)"
+            
+        }
     }
     
     private func viewModelDidError(){
@@ -140,33 +156,39 @@ extension ProductAddViewController: UITextFieldDelegate {
         gestureRecognizer.numberOfTapsRequired = 1
         gestureRecognizer.numberOfTouchesRequired = 1
         
-        imagePreview.addGestureRecognizer(gestureRecognizer)
-        imagePreview.isUserInteractionEnabled = true
-        
+        imagePreviewView.addGestureRecognizer(gestureRecognizer)
+        imagePreviewView.isUserInteractionEnabled = true
+        DispatchQueue.main.async { [self] in
         switch productPageState {
         case .add:
             title = "Add Product"
-            productButton.backgroundColor = UIColor.blue
-            productButton.setTitleColor(UIColor.white, for: .normal)
             productButton.isHidden = false
             imagePreviewView.isHidden = true
             selectImageView.isHidden = false
         case .edit:
             title = "Edit Product"
+            productNameTextFieldView.isEnabled = true
+            productWeightTextFieldView.isEnabled = true
+            productPriceTextFieldView.isEnabled = true
             productButton.isHidden = true
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(navbarRightActionButtonSave(sender:)))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(navbarRightActionButton))
             selectImageView.isHidden = true
             imagePreviewView.isHidden = false
         case .details:
+            viewModel.fetchProductData()
             title = "Product Details"
-            productButton.backgroundColor = UIColor.white
-            productButton.setTitleColor(UIColor.red, for: .normal)
-            productButton.setTitle("Delete", for: .normal)
-            productButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
+            productNameTextFieldView.isEnabled = false
+            productWeightTextFieldView.isEnabled = false
+            productPriceTextFieldView.isEnabled = false
             productButton.isHidden = false
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Edit", style: .done, target: self, action: #selector(navbarRightActionButtonEdit(sender:)))
+            productButton.backgroundColor = .clear
+            productButton.setTitle("Delete Product", for: .normal)
+            productButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
+            productButton.setTitleColor(UIColor.red, for: .normal)
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Edit", style: .done, target: self, action: #selector(navbarRightActionButton))
             selectImageView.isHidden = true
-            imagePreviewView.isHidden = false
+            imagePreviewView.isHidden = true
+            }
         }
     }
     
@@ -193,7 +215,20 @@ extension ProductAddViewController: UITextFieldDelegate {
         return true
     }
     
-    private func validateTextField() -> Bool{
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        case self.productNameTextFieldView.textfieldView:
+            self.productNameTextFieldView.errorMessage = nil
+        case self.productPriceTextFieldView.textfieldView:
+            self.productPriceTextFieldView.errorMessage = nil
+        case self.productWeightTextFieldView.textfieldView:
+            self.productWeightTextFieldView.errorMessage = nil
+        default:
+            break
+        }
+    }
+    
+    private func validateTextField() -> Bool {
         var errorCount = 0
         // Validate product name
         if (productNameTextFieldView.textfieldView.text ?? "").isEmpty {
@@ -226,15 +261,29 @@ extension ProductAddViewController: UITextFieldDelegate {
         }
     }
     
-    @objc func navbarRightActionButtonSave(sender: UIBarButtonItem) {
-        // Save changes
-        // Pop to root
+     @objc private func navbarRightActionButton(sender: UIBarButtonItem) {
+        switch self.productPageState {
+        case .add:
+            break
+        case .edit:
+            //save
+            if validateTextField() {
+                guard let productId = viewModel.data?.id else { return }
+                let imageData = viewModel.convertToData(image: imagePreview.image)
+                let productData = ProductModel(
+                    image: imageData,
+                    id: productId,
+                    name: productNameTextFieldView.textfieldView.text ?? "",
+                    price: Float(productPriceTextFieldView.textfieldView.text ?? "0") ?? 0,
+                    weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0
+                )
+                viewModel.updateProduct(data: productData, id: productId)
+                productPageState = .details
+            }
+        case .details:
+            productPageState = .edit
+        }
     }
-    
-    @objc func navbarRightActionButtonEdit(sender: UIBarButtonItem) {
-        // Change to .edit
-    }
-    
 }
 
 

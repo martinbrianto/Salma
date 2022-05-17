@@ -34,6 +34,18 @@ class PriceTextFieldView: UIView {
         }
     }
     
+    var isEnabled: Bool = true{
+        didSet {
+            if isEnabled {
+                textfieldView.isEnabled = isEnabled
+                textfieldView.textColor = UIColor.darkText
+            } else {
+                textfieldView.isEnabled = isEnabled
+                textfieldView.textColor = UIColor(named: "textFieldDisabled")
+            }
+        }
+    }
+    
     var textfieldData: Textfield? {
         didSet {
             setupTextField()

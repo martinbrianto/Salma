@@ -41,6 +41,7 @@ extension ProductAddVCViewModel {
     
     func updateProduct(data: ProductModel, id: UUID){
         service.updateProduct(productID: id, newProductData: data)
+        self.data = data
         didUpdateData?(self)
     }
     
@@ -48,6 +49,21 @@ extension ProductAddVCViewModel {
         service.deleteProduct(productID: id)
         didDelete?(self)
     }
+    
+    func convertToData(image: UIImage?) -> Data? {
+        if let imageData = image?.jpegData(compressionQuality: 0.75) {
+            return imageData
+        }
+        return nil
+    }
+    
+    func getImageFromData(imageData: Data?) -> UIImage? {
+        if let imageData = imageData {
+            return UIImage(data: imageData)
+        }
+        return nil
+    }
+    
     
 }
 

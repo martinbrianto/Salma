@@ -140,7 +140,7 @@
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4I-j2-AQp">
                     <rect key="frame" x="16" y="790" width="382" height="48"/>
-                    <color key="backgroundColor" systemColor="tintColor"/>
+                    <color key="backgroundColor" name="AccentColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="rhr-Mb-Nl8"/>
                     </constraints>
@@ -175,6 +175,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Red">
             <color red="0.86799997091293335" green="0.32300001382827759" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -182,9 +185,6 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>

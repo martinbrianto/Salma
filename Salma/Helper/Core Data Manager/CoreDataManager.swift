@@ -319,7 +319,7 @@ struct CoreDataManager {
             for product in products {
                 productsList.append(
                     ProductModel(
-                        image: nil,
+                        image: product.image,
                         id: product.uuid,
                         name: product.name,
                         price: product.price,
@@ -344,7 +344,7 @@ struct CoreDataManager {
         do {
             if let product = try context.fetch(fetchRequest).first {
                 productModel = ProductModel(
-                    image: nil,
+                    image: product.image,
                     id: product.uuid,
                     name: product.name,
                     price: product.price,

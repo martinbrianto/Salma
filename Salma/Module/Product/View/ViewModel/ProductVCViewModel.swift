@@ -33,8 +33,9 @@ extension ProductVCVIewModel {
         didUpdate?(self)
     }
     
-    func navigateToDetailProduct(_ vc : DashboardViewController) {
-        //todo: navigate to detail
+    func productAddVCViewModel(index: Int) -> ProductAddVCViewModel{
+        let viewModel = ProductAddVCViewModel(data: self.fetchedData[index])
+        return viewModel
     }
     
 }

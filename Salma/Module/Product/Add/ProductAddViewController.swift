@@ -77,8 +77,10 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
                 let productData = ProductModel(name: productNameTextFieldView.textfieldView.text ?? "", price: Float(productPriceTextFieldView.textfieldView.text ?? "0") ?? 0, weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0)
                 viewModel.updateProduct(data: productData, id: productId)
             case .details:
-                guard let productId = viewModel.data?.id else { return }
-                viewModel.deleteProduct(id: productId)
+                AlertManager.shared.showDeleteAlertActionSheet(controller: self) { [weak self] _ in
+                    guard let productId = self?.viewModel.data?.id else { return }
+                    self?.viewModel.deleteProduct(id: productId)
+                }
             }
             navigationController?.popViewController(animated: true)
         }

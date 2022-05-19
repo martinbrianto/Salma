@@ -32,8 +32,12 @@ class AutotextAddViewController: UIViewController {
                 let autoTextData = Autotext(title: autotextTitleTextField.textfieldView.text ?? "", messages: autotextMessageTextView.text ?? "")
                 viewModel.updateAutotext(pageState: self.pageState, data: autoTextData, id: autotextId)
                 case .detailCustom:
-                guard let autotextId = viewModel.data?.id else { return }
-                viewModel.deleteAutotext(id: autotextId)
+                
+                AlertManager.shared.showDeleteAlertActionSheet(controller: self) { [weak self] _ in
+                    guard let autotextId = self?.viewModel.data?.id else { return }
+                    self?.viewModel.deleteAutotext(id: autotextId)
+                }
+                
                     break
                 case .detailDefault:
                     break
@@ -166,6 +170,7 @@ private extension AutotextAddViewController {
             self?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self?.navBarItemTapped))
         case .detailCustom:
             self?.viewModel.fetchAutotext()
+            self?.autotextMessageCharCounter.text = "\(self?.autotextMessageTextView.text.count ?? 0) / 2200"
             self?.title = "Autotext Details"
             self?.button.isHidden = false
             self?.button.backgroundColor = .clear
@@ -178,6 +183,7 @@ private extension AutotextAddViewController {
             self?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self?.navBarItemTapped))
         case .detailDefault:
             self?.viewModel.fetchAutotext()
+            self?.autotextMessageCharCounter.text = "\(self?.autotextMessageTextView.text.count ?? 0) / 2200"
             self?.title = "Autotext Details"
             self?.autotextGuideLabel.isHidden = false
             self?.autotextTitleTextField.isEnabled = false
@@ -233,11 +239,22 @@ extension AutotextAddViewController: UITextFieldDelegate, UITextViewDelegate {
             }
         return true
         }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        case self.autotextTitleTextField.textfieldView:
+            self.autotextTitleTextField.errorMessage = nil
+        default:
+            break
+        }
+    }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if autotextMessageTextView.text == textViewPlaceholder {
             autotextMessageTextView.text = ""
             autotextMessageTextView.textColor = .darkText
+            autotextMessageBackground.borderWidth = 0
+            autotextMessageBackground.backgroundColor = UIColor(named: "PlaceholderBg")
+            autotextMessageErrorLabel.isHidden = true
         }
     }
     

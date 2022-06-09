@@ -36,3 +36,83 @@ enum AutotextPageState {
     case detailCustom
     case detailDefault
 }
+
+enum TransactionPageState {
+    case add
+    case edit
+    case detail
+}
+
+enum TransactionTextfieldType: Int, CaseIterable {
+    case customerName = 0
+    case customerPhoneNumber = 1
+    case addressName = 2
+    case addressProvince = 3
+    case addressCity = 4
+    case addressDistrict = 5
+    case addressPostalCode = 6
+    case product = 7
+    case productNote = 8
+    case shippingExpedition = 9
+    case shippingPrice = 10
+    case productCell
+    case totalPrice
+    
+    var tfTitle: String {
+        switch self {
+        case .customerName:
+            return "Customer Name"
+        case .customerPhoneNumber:
+            return "Phone Number"
+        case .addressName:
+            return "Address Name"
+        case .addressProvince:
+            return "Province"
+        case .addressCity:
+            return "City"
+        case .addressDistrict:
+            return "District"
+        case .addressPostalCode:
+            return "Postal Code"
+        case .product:
+            return "Product"
+        case .productNote:
+            return "Notes"
+        case .shippingExpedition:
+            return "Expedition"
+        case .shippingPrice:
+            return "Shipping Price"
+        default:
+            return ""
+        }
+    }
+    
+    var tfPlaceholder: String {
+        switch self {
+        case .customerName:
+            return "Customer name"
+        case .customerPhoneNumber:
+            return "Phone number"
+        case .addressName:
+            return "Street name, house number"
+        case .addressProvince:
+            return "Province"
+        case .addressCity:
+            return "City"
+        case .addressDistrict:
+            return "District"
+        case .addressPostalCode:
+            return "Postal code"
+        case .productNote:
+            return "Additional notes"
+        case .shippingExpedition:
+            return "Expedition"
+        case .shippingPrice:
+            return "Shipping price"
+        case .product:
+            return "Product(s) chosen"
+        default:
+            return ""
+        }
+    }
+}

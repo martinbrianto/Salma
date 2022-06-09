@@ -35,6 +35,19 @@
 		B7E1DA3B2804990F006C9D27 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7E1DA3A2804990E006C9D27 /* Colors.xcassets */; };
 		B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1DA4328049CE6006C9D27 /* Enum.swift */; };
 		B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1DA4528049CFB006C9D27 /* Constant.swift */; };
+		E60A5B97284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60A5B95284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.swift */; };
+		E60A5B98284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60A5B96284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.xib */; };
+		E60A5B9B284B802000E1D92B /* TransactionViewCellHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60A5B9A284B802000E1D92B /* TransactionViewCellHeaderView.xib */; };
+		E60A5BA1284B922B00E1D92B /* TransactionTextfieldHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60A5BA0284B922B00E1D92B /* TransactionTextfieldHeaderView.swift */; };
+		E62178DF284FC1A600A3EFC2 /* TransactionProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62178DD284FC1A600A3EFC2 /* TransactionProductTableViewCell.swift */; };
+		E62178E0284FC1A600A3EFC2 /* TransactionProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E62178DE284FC1A600A3EFC2 /* TransactionProductTableViewCell.xib */; };
+		E62178E2284FCB9200A3EFC2 /* TransactionProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62178E1284FCB9200A3EFC2 /* TransactionProduct.swift */; };
+		E62178E6284FD2E600A3EFC2 /* TransactionPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62178E4284FD2E600A3EFC2 /* TransactionPriceTableViewCell.swift */; };
+		E62178E7284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E62178E5284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib */; };
+		E643925428510A830087D621 /* ProductTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643925228510A830087D621 /* ProductTransactionViewController.swift */; };
+		E643925528510A830087D621 /* ProductTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E643925328510A830087D621 /* ProductTransactionViewController.xib */; };
+		E643925A28510B860087D621 /* TransactionListProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643925828510B860087D621 /* TransactionListProductTableViewCell.swift */; };
+		E643925B28510B860087D621 /* TransactionListProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E643925928510B860087D621 /* TransactionListProductTableViewCell.xib */; };
 		E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F1C2804499900A95A03 /* AppDelegate.swift */; };
 		E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F1E2804499900A95A03 /* SceneDelegate.swift */; };
 		E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6545F252804499900A95A03 /* Salma.xcdatamodeld */; };
@@ -50,6 +63,8 @@
 		E6702D75281D4943005F4DAC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6702D73281D4943005F4DAC /* CoreDataManager.swift */; };
 		E6702DB428212215005F4DAC /* StoreProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6702DB328212215005F4DAC /* StoreProfile.swift */; };
 		E6702DB528212215005F4DAC /* StoreProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6702DB328212215005F4DAC /* StoreProfile.swift */; };
+		E68AF54B2848F24C0093FC15 /* DetailTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68AF5492848F24C0093FC15 /* DetailTransactionViewController.swift */; };
+		E68AF54C2848F24C0093FC15 /* DetailTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68AF54A2848F24C0093FC15 /* DetailTransactionViewController.xib */; };
 		E698705D2815C05E002D73F2 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698705B2815C05E002D73F2 /* SettingTableViewCell.swift */; };
 		E698705E2815C05E002D73F2 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E698705C2815C05E002D73F2 /* SettingTableViewCell.xib */; };
 		E69870632816CCDD002D73F2 /* StoreProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69870612816CCDD002D73F2 /* StoreProfileViewController.swift */; };
@@ -58,6 +73,10 @@
 		E698706C2817167C002D73F2 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E698706B2817167C002D73F2 /* IQKeyboardManagerSwift */; };
 		E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698717D28182B7D002D73F2 /* EnableKeyboardViewController.swift */; };
 		E698718028182B7D002D73F2 /* EnableKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */; };
+		E6BC3437284E34F90076289C /* DetailTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BC3436284E34F90076289C /* DetailTransactionViewModel.swift */; };
+		E6BC3439284E37050076289C /* TransactionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BC3438284E37050076289C /* TransactionTextField.swift */; };
+		E6BC343D284E5EC40076289C /* TransactionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BC343B284E5EC40076289C /* TransactionButtonTableViewCell.swift */; };
+		E6BC343E284E5EC40076289C /* TransactionButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BC343C284E5EC40076289C /* TransactionButtonTableViewCell.xib */; };
 		E6CECBE4282186E600276B31 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE835428102773000AD0C1 /* TransactionModel.swift */; };
 		E6CECBE52821871400276B31 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1DA4328049CE6006C9D27 /* Enum.swift */; };
 		E6CECC72282589F200276B31 /* DefaultAutotext+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC68282589F200276B31 /* DefaultAutotext+CoreDataClass.swift */; };
@@ -179,6 +198,19 @@
 		B7E1DA3A2804990E006C9D27 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B7E1DA4328049CE6006C9D27 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		B7E1DA4528049CFB006C9D27 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		E60A5B95284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		E60A5B96284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		E60A5B9A284B802000E1D92B /* TransactionViewCellHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionViewCellHeaderView.xib; sourceTree = "<group>"; };
+		E60A5BA0284B922B00E1D92B /* TransactionTextfieldHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTextfieldHeaderView.swift; sourceTree = "<group>"; };
+		E62178DD284FC1A600A3EFC2 /* TransactionProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionProductTableViewCell.swift; sourceTree = "<group>"; };
+		E62178DE284FC1A600A3EFC2 /* TransactionProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionProductTableViewCell.xib; sourceTree = "<group>"; };
+		E62178E1284FCB9200A3EFC2 /* TransactionProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionProduct.swift; sourceTree = "<group>"; };
+		E62178E4284FD2E600A3EFC2 /* TransactionPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPriceTableViewCell.swift; sourceTree = "<group>"; };
+		E62178E5284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionPriceTableViewCell.xib; sourceTree = "<group>"; };
+		E643925228510A830087D621 /* ProductTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTransactionViewController.swift; sourceTree = "<group>"; };
+		E643925328510A830087D621 /* ProductTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTransactionViewController.xib; sourceTree = "<group>"; };
+		E643925828510B860087D621 /* TransactionListProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListProductTableViewCell.swift; sourceTree = "<group>"; };
+		E643925928510B860087D621 /* TransactionListProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionListProductTableViewCell.xib; sourceTree = "<group>"; };
 		E6545F192804499900A95A03 /* Salma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6545F1C2804499900A95A03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6545F1E2804499900A95A03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +229,8 @@
 		E6702D69281D4894005F4DAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6702D73281D4943005F4DAC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E6702DB328212215005F4DAC /* StoreProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfile.swift; sourceTree = "<group>"; };
+		E68AF5492848F24C0093FC15 /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
+		E68AF54A2848F24C0093FC15 /* DetailTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTransactionViewController.xib; sourceTree = "<group>"; };
 		E698705B2815C05E002D73F2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		E698705C2815C05E002D73F2 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		E69870612816CCDD002D73F2 /* StoreProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfileViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +238,10 @@
 		E69870652816D458002D73F2 /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
 		E698717D28182B7D002D73F2 /* EnableKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableKeyboardViewController.swift; sourceTree = "<group>"; };
 		E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnableKeyboardViewController.xib; sourceTree = "<group>"; };
+		E6BC3436284E34F90076289C /* DetailTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewModel.swift; sourceTree = "<group>"; };
+		E6BC3438284E37050076289C /* TransactionTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTextField.swift; sourceTree = "<group>"; };
+		E6BC343B284E5EC40076289C /* TransactionButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionButtonTableViewCell.swift; sourceTree = "<group>"; };
+		E6BC343C284E5EC40076289C /* TransactionButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionButtonTableViewCell.xib; sourceTree = "<group>"; };
 		E6CECC68282589F200276B31 /* DefaultAutotext+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultAutotext+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E6CECC69282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultAutotext+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E6CECC6A282589F200276B31 /* CustomAutotext+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomAutotext+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -351,6 +389,8 @@
 		B76E2AA02805AB61003E349F /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				E643925128510A690087D621 /* Product Transaction */,
+				E68AF5482848F20F0093FC15 /* Detail Transaction */,
 				E698717B28182B48002D73F2 /* On Boarding */,
 				E698705F2816CCC3002D73F2 /* Store Profile */,
 				B76E2ACC2805ABEA003E349F /* Root */,
@@ -522,6 +562,60 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		E60A5B94284B6EA700E1D92B /* Transaction Text Field View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E60A5B95284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.swift */,
+				E60A5B96284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.xib */,
+			);
+			path = "Transaction Text Field View Cell";
+			sourceTree = "<group>";
+		};
+		E60A5B99284B800400E1D92B /* Transaction View Cell Header */ = {
+			isa = PBXGroup;
+			children = (
+				E60A5B9A284B802000E1D92B /* TransactionViewCellHeaderView.xib */,
+				E60A5BA0284B922B00E1D92B /* TransactionTextfieldHeaderView.swift */,
+			);
+			path = "Transaction View Cell Header";
+			sourceTree = "<group>";
+		};
+		E62178DC284FC19500A3EFC2 /* Transaction Product Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E62178DD284FC1A600A3EFC2 /* TransactionProductTableViewCell.swift */,
+				E62178DE284FC1A600A3EFC2 /* TransactionProductTableViewCell.xib */,
+			);
+			path = "Transaction Product Cell";
+			sourceTree = "<group>";
+		};
+		E62178E3284FD2C900A3EFC2 /* Transaction Price Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E62178E4284FD2E600A3EFC2 /* TransactionPriceTableViewCell.swift */,
+				E62178E5284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib */,
+			);
+			path = "Transaction Price Cell";
+			sourceTree = "<group>";
+		};
+		E643925128510A690087D621 /* Product Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				E643925228510A830087D621 /* ProductTransactionViewController.swift */,
+				E643925328510A830087D621 /* ProductTransactionViewController.xib */,
+			);
+			path = "Product Transaction";
+			sourceTree = "<group>";
+		};
+		E643925628510B4E0087D621 /* Transaction Product */ = {
+			isa = PBXGroup;
+			children = (
+				E643925828510B860087D621 /* TransactionListProductTableViewCell.swift */,
+				E643925928510B860087D621 /* TransactionListProductTableViewCell.xib */,
+			);
+			path = "Transaction Product";
+			sourceTree = "<group>";
+		};
 		E6545F102804499900A95A03 = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +708,8 @@
 				E6702DB328212215005F4DAC /* StoreProfile.swift */,
 				E6CECC8C28295B3100276B31 /* Product.swift */,
 				E6CECC8F28295C9A00276B31 /* Autotext.swift */,
+				E6BC3438284E37050076289C /* TransactionTextField.swift */,
+				E62178E1284FCB9200A3EFC2 /* TransactionProduct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -673,6 +769,16 @@
 			path = "Managed Object Subclass";
 			sourceTree = "<group>";
 		};
+		E68AF5482848F20F0093FC15 /* Detail Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				E68AF5492848F24C0093FC15 /* DetailTransactionViewController.swift */,
+				E68AF54A2848F24C0093FC15 /* DetailTransactionViewController.xib */,
+				E6BC3436284E34F90076289C /* DetailTransactionViewModel.swift */,
+			);
+			path = "Detail Transaction";
+			sourceTree = "<group>";
+		};
 		E698705A2815C041002D73F2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,6 +821,15 @@
 				E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */,
 			);
 			path = "Enable Keyboard";
+			sourceTree = "<group>";
+		};
+		E6BC343A284E5E9C0076289C /* Transaction Button */ = {
+			isa = PBXGroup;
+			children = (
+				E6BC343B284E5EC40076289C /* TransactionButtonTableViewCell.swift */,
+				E6BC343C284E5EC40076289C /* TransactionButtonTableViewCell.xib */,
+			);
+			path = "Transaction Button";
 			sourceTree = "<group>";
 		};
 		E6CECC92282AAA5800276B31 /* ViewModel */ = {
@@ -785,6 +900,12 @@
 		E6FE835C28103606000AD0C1 /* Reusable Component */ = {
 			isa = PBXGroup;
 			children = (
+				E643925628510B4E0087D621 /* Transaction Product */,
+				E62178E3284FD2C900A3EFC2 /* Transaction Price Cell */,
+				E62178DC284FC19500A3EFC2 /* Transaction Product Cell */,
+				E6BC343A284E5E9C0076289C /* Transaction Button */,
+				E60A5B99284B800400E1D92B /* Transaction View Cell Header */,
+				E60A5B94284B6EA700E1D92B /* Transaction Text Field View Cell */,
 				26E334AA282A98B400FB1164 /* Price Text Field */,
 				E6FE8366281181D1000AD0C1 /* Text Field */,
 				E6FE835D28103610000AD0C1 /* Transaction Table View Cell */,
@@ -946,6 +1067,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E698718028182B7D002D73F2 /* EnableKeyboardViewController.xib in Resources */,
+				E62178E7284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib in Resources */,
 				E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */,
 				E6F7F502281AD71100456635 /* Inter-Bold.ttf in Resources */,
 				26BE46E828181804005118BF /* AutotextTableViewCell.xib in Resources */,
@@ -960,19 +1082,26 @@
 				26D9D96228117B4800A8EA86 /* ProductAddViewController.xib in Resources */,
 				269E3EE4281846660095C5A9 /* AutotextAddViewController.xib in Resources */,
 				B7E1DA3B2804990F006C9D27 /* Colors.xcassets in Resources */,
+				E68AF54C2848F24C0093FC15 /* DetailTransactionViewController.xib in Resources */,
+				E62178E0284FC1A600A3EFC2 /* TransactionProductTableViewCell.xib in Resources */,
 				E6F7F4FE281AD71100456635 /* Inter-Regular.ttf in Resources */,
 				E6F7F501281AD71100456635 /* Inter-Light.ttf in Resources */,
+				E60A5B98284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.xib in Resources */,
 				E6F7F505281AD71100456635 /* Inter-ExtraBold.ttf in Resources */,
 				B76E2AC02805AB61003E349F /* TabBarViewController.xib in Resources */,
 				B76E2AC32805AB61003E349F /* ProductViewController.xib in Resources */,
 				B76E2AC42805AB61003E349F /* LaunchScreen.storyboard in Resources */,
 				E6FE836A28118477000AD0C1 /* TextFieldView.xib in Resources */,
+				E643925B28510B860087D621 /* TransactionListProductTableViewCell.xib in Resources */,
+				E60A5B9B284B802000E1D92B /* TransactionViewCellHeaderView.xib in Resources */,
 				E6F7F503281AD71100456635 /* Inter-SemiBold.ttf in Resources */,
 				E6F7F504281AD71100456635 /* Inter-Thin.ttf in Resources */,
 				E6545F292804499B00A95A03 /* Assets.xcassets in Resources */,
 				B76E2AC92805AB61003E349F /* TransactionViewController.xib in Resources */,
+				E6BC343E284E5EC40076289C /* TransactionButtonTableViewCell.xib in Resources */,
 				26E334AE282A9B2300FB1164 /* PriceTextFieldView.xib in Resources */,
 				B76E2AC72805AB61003E349F /* DashboardViewController.xib in Resources */,
+				E643925528510A830087D621 /* ProductTransactionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1006,13 +1135,17 @@
 			files = (
 				E6FE836328114F67000AD0C1 /* Formatter+Extension.swift in Sources */,
 				E6F1374128366543006540E5 /* Alert Manager.swift in Sources */,
+				E60A5BA1284B922B00E1D92B /* TransactionTextfieldHeaderView.swift in Sources */,
 				26E699DE282D514400846FE4 /* ProductAddVCViewModel.swift in Sources */,
 				E6CECC7A282589F200276B31 /* Profile+CoreDataClass.swift in Sources */,
 				E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */,
+				E60A5B97284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.swift in Sources */,
 				E6CECC76282589F200276B31 /* CustomAutotext+CoreDataClass.swift in Sources */,
 				E6CECC7E282589F200276B31 /* Transaction+CoreDataClass.swift in Sources */,
 				E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */,
 				26D9D9682816CFD200A8EA86 /* ProductTableViewCell.swift in Sources */,
+				E643925A28510B860087D621 /* TransactionListProductTableViewCell.swift in Sources */,
+				E68AF54B2848F24C0093FC15 /* DetailTransactionViewController.swift in Sources */,
 				E69870662816D458002D73F2 /* Textfield.swift in Sources */,
 				26BE46ED28181902005118BF /* AutotextAddViewController.swift in Sources */,
 				B76E2AC52805AB61003E349F /* DashboardVCViewModel.swift in Sources */,
@@ -1023,23 +1156,29 @@
 				E6CECC84282589F200276B31 /* Product+CoreDataProperties.swift in Sources */,
 				E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */,
 				E6FE836828118222000AD0C1 /* TextFieldView.swift in Sources */,
+				E6BC3437284E34F90076289C /* DetailTransactionViewModel.swift in Sources */,
 				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
 				26E699E1282D517100846FE4 /* ProductVCViewModel.swift in Sources */,
+				E62178DF284FC1A600A3EFC2 /* TransactionProductTableViewCell.swift in Sources */,
 				B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */,
 				E6CECC7C282589F200276B31 /* Profile+CoreDataProperties.swift in Sources */,
 				E6702DB428212215005F4DAC /* StoreProfile.swift in Sources */,
 				26D9D96128117B4800A8EA86 /* ProductAddViewController.swift in Sources */,
 				E6CECC80282589F200276B31 /* Transaction+CoreDataProperties.swift in Sources */,
 				E6DF7AA7282D513D00A61D08 /* AutotextVCViewModel.swift in Sources */,
+				E643925428510A830087D621 /* ProductTransactionViewController.swift in Sources */,
 				E6CECC8D28295B3100276B31 /* Product.swift in Sources */,
 				E6CECC8A28281FD500276B31 /* TransactionProduct+CoreDataProperties.swift in Sources */,
 				B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */,
+				E62178E6284FD2E600A3EFC2 /* TransactionPriceTableViewCell.swift in Sources */,
 				E6CECC8828281FD500276B31 /* TransactionProduct+CoreDataClass.swift in Sources */,
 				26BE46E728181804005118BF /* AutotextTableViewCell.swift in Sources */,
 				E6FE835A28102B13000AD0C1 /* SettingViewController.swift in Sources */,
 				E69870632816CCDD002D73F2 /* StoreProfileViewController.swift in Sources */,
 				E6FE835528102773000AD0C1 /* TransactionModel.swift in Sources */,
 				B76E2AC12805AB61003E349F /* TabBarViewController.swift in Sources */,
+				E62178E2284FCB9200A3EFC2 /* TransactionProduct.swift in Sources */,
+				E6BC343D284E5EC40076289C /* TransactionButtonTableViewCell.swift in Sources */,
 				E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */,
 				26E334AC282A9AE600FB1164 /* PriceTextFieldView.swift in Sources */,
 				E698705D2815C05E002D73F2 /* SettingTableViewCell.swift in Sources */,
@@ -1049,6 +1188,7 @@
 				E6CECC74282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift in Sources */,
 				E6CECC82282589F200276B31 /* Product+CoreDataClass.swift in Sources */,
 				B76E2AC22805AB61003E349F /* ProductViewController.swift in Sources */,
+				E6BC3439284E37050076289C /* TransactionTextField.swift in Sources */,
 				E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */,
 				E6CECC72282589F200276B31 /* DefaultAutotext+CoreDataClass.swift in Sources */,
 				E6CECC78282589F200276B31 /* CustomAutotext+CoreDataProperties.swift in Sources */,

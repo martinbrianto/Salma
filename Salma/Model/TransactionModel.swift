@@ -27,3 +27,9 @@ struct TransactionModel {
     var priceSubTotal: Float
     var priceTotal: Float
 }
+
+struct TransactionPrice {
+    var shippingPrice: Float
+    var priceSubTotal: Float
+    var priceTotal: Float
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="TransactionTextfieldHeaderView" customModule="Salma" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcN-Zs-bkQ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="12"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UP9-PR-NlY">
+                            <rect key="frame" x="0.0" y="0.0" width="41" height="12"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4SO-Ur-4Qy">
+                            <rect key="frame" x="365" y="0.0" width="49" height="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="headerButtonAction:" destination="-2" eventType="touchUpInside" id="MPW-V2-WiY"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="4SO-Ur-4Qy" firstAttribute="top" secondItem="TcN-Zs-bkQ" secondAttribute="top" id="Mb7-lG-cOW"/>
+                        <constraint firstAttribute="bottom" secondItem="4SO-Ur-4Qy" secondAttribute="bottom" id="PXw-QV-bVV"/>
+                        <constraint firstItem="UP9-PR-NlY" firstAttribute="top" secondItem="TcN-Zs-bkQ" secondAttribute="top" id="Yy8-Pl-rJO"/>
+                        <constraint firstAttribute="bottom" secondItem="UP9-PR-NlY" secondAttribute="bottom" id="cg6-Xt-dJo"/>
+                        <constraint firstAttribute="trailing" secondItem="4SO-Ur-4Qy" secondAttribute="trailing" id="d6y-Ux-ace"/>
+                        <constraint firstItem="UP9-PR-NlY" firstAttribute="leading" secondItem="TcN-Zs-bkQ" secondAttribute="leading" id="nA5-zO-zfJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="TcN-Zs-bkQ" secondAttribute="bottom" constant="8" id="0Bu-rI-oK7"/>
+                <constraint firstItem="TcN-Zs-bkQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="K52-3a-ayW"/>
+                <constraint firstItem="TcN-Zs-bkQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RjG-rr-Ui5"/>
+                <constraint firstAttribute="trailing" secondItem="TcN-Zs-bkQ" secondAttribute="trailing" id="ThK-Lh-guf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleLabel" destination="UP9-PR-NlY" id="w9B-SL-Reo"/>
+            </connections>
+            <point key="canvasLocation" x="108.69565217391305" y="-111.83035714285714"/>
+        </view>
+    </objects>
+</document>

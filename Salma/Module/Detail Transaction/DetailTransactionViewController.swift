@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol DetailTransactionViewControllerDelegate: DetailTransactionViewController {
+    func updateProduct()
+}
+
 class DetailTransactionViewController: UIViewController {
     
     // MARK: - Outlet
@@ -36,7 +40,7 @@ class DetailTransactionViewController: UIViewController {
     // MARK: - VC LifeCycle
     
     init(state: TransactionPageState, viewModel: DetailTransactionViewModel){
-        self.pageState = .detail
+        self.pageState = state
         self.viewModel =  viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -48,19 +52,55 @@ class DetailTransactionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPage()
+        registerNIB()
+        bindToViewModel()
+        viewModel.fetchTransactionData()
     }
 }
 
-private extension DetailTransactionViewController {
+extension DetailTransactionViewController: ProductTransactionViewControllerDelegate {
+    
+    func updateProductData(products: [ProductModel]) {
+        viewModel.receiveProductData(products: products)
+        
+    }
+    
+    private func bindToViewModel() {
+        viewModel.didUpdateProduct = { [weak self] _ in
+            guard let self = self else { return }
+            self.tableView.reloadSections(IndexSet(integersIn: 2...2), with: .automatic)
+        }
+    }
+    
+    
     private func setupPage() {
+        switch pageState {
+        case .add:
+            title = "Add Transaction"
+        case .edit:
+            break
+        case .detail:
+            title = "Transaction Details"
+        }
+    }
+    
+    
+    private func registerNIB(){
         tableView.register(TransactionTextFieldTableViewCell.nib(), forCellReuseIdentifier: TransactionTextFieldTableViewCell.reuseID)
         tableView.register(TransactionTextfieldHeaderView.nib(), forHeaderFooterViewReuseIdentifier: TransactionTextfieldHeaderView.reuseID)
         tableView.register(TransactionButtonTableViewCell.nib(), forCellReuseIdentifier: TransactionButtonTableViewCell.reuseID)
         tableView.register(TransactionProductTableViewCell.nib(), forCellReuseIdentifier: TransactionProductTableViewCell.reuseID)
         tableView.register(TransactionPriceTableViewCell.nib(), forCellReuseIdentifier: TransactionPriceTableViewCell.reuseID)
     }
+    
+    @objc func didTapCellButton(sender: UIButton) {
+        print("asdasdasd")
+
+        //Configure selected button or update model
+    }
 }
 
+// MARK: Tableview func
 extension DetailTransactionViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -126,6 +166,7 @@ extension DetailTransactionViewController: UITableViewDataSource, UITableViewDel
             switch viewModel.productTextfield[indexPath.row] {
             case .productCell:
                 let cell = tableView.dequeueReusableCell(withIdentifier: TransactionProductTableViewCell.reuseID) as! TransactionProductTableViewCell
+                cell.productModel = viewModel.data.productTransactions?[indexPath.row - 1]
                 return cell
                 // choose product cell
             case viewModel.productTextfield.first:
@@ -153,6 +194,7 @@ extension DetailTransactionViewController: UITableViewDataSource, UITableViewDel
                 return cell
         case .button:
             let buttonCell = tableView.dequeueReusableCell(withIdentifier: TransactionButtonTableViewCell.reuseID) as! TransactionButtonTableViewCell
+            buttonCell.button.addTarget(self, action: #selector(didTapCellButton(sender:)), for: .touchUpInside)
             return buttonCell
         }
     }
@@ -162,11 +204,16 @@ extension DetailTransactionViewController: UITableViewDataSource, UITableViewDel
         case .productDetails:
             switch viewModel.productTextfield[indexPath.row] {
             case viewModel.productTextfield.first:
-                break
+                let viewModel = viewModel.productTransactionViewModel()
+                let vc = ProductTransactionViewController(viewModel: viewModel)
+                vc.delegate = self
+                self.navigationController?.pushViewController(vc, animated: true)
             default:
                 break
             }
-                //let vc = ProductViewController
+        case .button:
+            print("asdasd")
+            self.tableView.reloadData()
         default:
             break
         }

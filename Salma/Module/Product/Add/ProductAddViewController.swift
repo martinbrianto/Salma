@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ProductAddViewControllerDelegate {
+    func addCustomProduct(product: ProductModel)
+}
+
 class ProductAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: - Outlets
@@ -25,6 +29,7 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
     private let viewModel: ProductAddVCViewModel
+    var delegate: ProductAddViewControllerDelegate?
     
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
@@ -71,7 +76,28 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
                     price: Float(productPriceTextFieldView.textfieldView.text ?? "0") ?? 0,
                     weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0
                 )
-                viewModel.saveProduct(data: productData)
+                if viewModel.productList.contains(where: { $0.name.lowercased() == productData.name.lowercased() }){
+                    print("tai")
+                } else {
+                    viewModel.saveProduct(data: productData)
+                }
+                
+            case .addCustom:
+                let imageData = viewModel.convertToData(image: imagePreview.image)
+                let productData = ProductModel(
+                    image: imageData,
+                    name: productNameTextFieldView.textfieldView.text ?? "",
+                    price: Float(productPriceTextFieldView.textfieldView.text ?? "") ?? 0,
+                    weight: Int32(productWeightTextFieldView.textfieldView.text ?? "") ?? 0,
+                    quantity: 0
+                )
+                if viewModel.productList.contains(where: { $0.name.lowercased() == productData.name.lowercased() }){
+                    print("tai")
+                } else {
+                    delegate?.addCustomProduct(product: productData)
+                }
+                self.dismiss(animated: true)
+                break
             case .edit:
                 guard let productId = viewModel.data?.id else { return }
                 let productData = ProductModel(name: productNameTextFieldView.textfieldView.text ?? "", price: Float(productPriceTextFieldView.textfieldView.text ?? "0") ?? 0, weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0)
@@ -167,6 +193,13 @@ extension ProductAddViewController: UITextFieldDelegate {
             productButton.isHidden = false
             imagePreviewView.isHidden = true
             selectImageView.isHidden = false
+        case .addCustom:
+            title = "Add Custom Product"
+            productButton.isHidden = false
+            imagePreviewView.isHidden = true
+            selectImageView.isHidden = false
+            productButton.setTitle("Add Custom Product", for: .normal)
+            productButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
         case .edit:
             title = "Edit Product"
             productNameTextFieldView.isEnabled = true
@@ -265,7 +298,7 @@ extension ProductAddViewController: UITextFieldDelegate {
     
      @objc private func navbarRightActionButton(sender: UIBarButtonItem) {
         switch self.productPageState {
-        case .add:
+        case .add, .addCustom:
             break
         case .edit:
             //save

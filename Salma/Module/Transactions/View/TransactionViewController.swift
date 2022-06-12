@@ -22,11 +22,13 @@ class TransactionViewController: UIViewController {
         }
     }
     @IBAction func addButtonAction(_ sender: Any) {
-        print("insert action button action")
+        let vc = DetailTransactionViewController(state: .add, viewModel: DetailTransactionViewModel(data: nil))
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Variables
     var transData: [TransactionModel] = []
+    var viewModel: TransactionViewModel = TransactionViewModel()
     
     // MARK: - VC Lifecycle
     override func viewDidLoad() {

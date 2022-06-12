@@ -19,6 +19,7 @@ enum StoreProfilePageEntryPoint {
 }
 
 enum ProductPageState {
+    case addCustom
     case add
     case edit
     case details
@@ -51,7 +52,7 @@ enum TransactionTextfieldType: Int, CaseIterable {
     case addressCity = 4
     case addressDistrict = 5
     case addressPostalCode = 6
-    case product = 7
+    case addProduct = 7
     case productNote = 8
     case shippingExpedition = 9
     case shippingPrice = 10
@@ -74,7 +75,7 @@ enum TransactionTextfieldType: Int, CaseIterable {
             return "District"
         case .addressPostalCode:
             return "Postal Code"
-        case .product:
+        case .addProduct:
             return "Product"
         case .productNote:
             return "Notes"
@@ -109,10 +110,15 @@ enum TransactionTextfieldType: Int, CaseIterable {
             return "Expedition"
         case .shippingPrice:
             return "Shipping price"
-        case .product:
+        case .addProduct:
             return "Product(s) chosen"
         default:
             return ""
         }
     }
+}
+
+enum TransactionProductType {
+    case addCustomButton
+    case product
 }

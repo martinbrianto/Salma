@@ -317,16 +317,18 @@ struct CoreDataManager {
             var productsList: [ProductModel] = []
             let products = try context.fetch(fetchRequest)
             for product in products {
-                productsList.append(
-                    ProductModel(
-                        image: product.image,
-                        id: product.uuid,
-                        name: product.name,
-                        price: product.price,
-                        weight: product.weight,
-                        isActive: product.isActive
+                if product.isActive {
+                    productsList.append(
+                        ProductModel(
+                            image: product.image,
+                            id: product.uuid,
+                            name: product.name,
+                            price: product.price,
+                            weight: product.weight,
+                            isActive: product.isActive
+                        )
                     )
-                )
+                }
             }
             return productsList
         } catch {
@@ -472,9 +474,11 @@ struct CoreDataManager {
             // look for product in transaction, -1 reference count
             if let transactionProducts = transaction.transactionProducts {
                 for tp in transactionProducts.array as! [TransactionProduct] {
-                    tp.product.referenceCount -= 1
-                    if tp.product.referenceCount == 0 && !tp.product.isActive {
-                        context.delete(tp.product)
+                    if let product = tp.product {
+                        product.referenceCount -= 1
+                        if product.referenceCount == 0 && !product.isActive {
+                            context.delete(product)
+                        }
                     }
                 }
             }
@@ -638,7 +642,7 @@ struct CoreDataManager {
         if let transaction = CoreDataManager.shared.fetchTransaction(transactionID: transactionID) {
             if let transactionProducts = transaction.transactionProducts?.array as? [TransactionProduct] {
                 for transactionProduct in transactionProducts {
-                    productList.append(ProductModel(image: nil, id: transactionProduct.product.uuid, name: transactionProduct.product.name, price: transactionProduct.product.price, weight: transactionProduct.product.weight, quantity: transactionProduct.productQuantity))
+                    productList.append(ProductModel(image: nil, id: transactionProduct.product?.uuid, name: transactionProduct.product?.name ?? "", price: transactionProduct.product?.price ?? 0, weight: transactionProduct.product?.weight ?? 0, quantity: transactionProduct.productQuantity))
                 }
                 return productList
             }
@@ -660,7 +664,7 @@ struct CoreDataManager {
     func updateProductsOfTransactionQuantity(transactionID: UUID, productID: UUID, quantity: Int32) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         if let productTransactions = CoreDataManager.shared.fetchProductsOfTransaction(transactionID: transactionID) {
-            if let productTransaction = productTransactions.first(where: { $0.product.uuid == productID }) {
+            if let productTransaction = productTransactions.first(where: { $0.product?.uuid == productID }) {
                 productTransaction.productQuantity = quantity
                 do {
                     try context.save()
@@ -675,12 +679,13 @@ struct CoreDataManager {
     func deleteProductsOfTransaction(transactionID: UUID, productID: UUID) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         if let productTransactions = CoreDataManager.shared.fetchProductsOfTransaction(transactionID: transactionID) {
-            if let productTransaction = productTransactions.first(where: { $0.product.uuid == productID }) {
-                let product = productTransaction.product
-                product.referenceCount -= 1
-                if product.referenceCount == 0 && !product.isActive{
-                    do {
-                        context.delete(product)
+            if let productTransaction = productTransactions.first(where: { $0.product?.uuid == productID }) {
+                if let product = productTransaction.product {
+                    product.referenceCount -= 1
+                    if product.referenceCount == 0 && !product.isActive{
+                        do {
+                            context.delete(product)
+                        }
                     }
                 }
                 do {

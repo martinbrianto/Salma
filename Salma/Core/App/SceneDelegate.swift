@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScence = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScence)
-        let viewController = DetailTransactionViewController(state: .detail, viewModel: DetailTransactionViewModel(data: nil))
+        let viewController = TabBarViewController()
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }

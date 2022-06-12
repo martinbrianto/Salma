@@ -9,6 +9,7 @@ import UIKit
 
 class TransactionButtonTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var button: UIButton!
     static let identifier = "TransactionButtonTableViewCell"
         static let reuseID = "cellButton"
         static func nib() -> UINib {

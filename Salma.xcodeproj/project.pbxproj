@@ -44,6 +44,12 @@
 		E62178E2284FCB9200A3EFC2 /* TransactionProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62178E1284FCB9200A3EFC2 /* TransactionProduct.swift */; };
 		E62178E6284FD2E600A3EFC2 /* TransactionPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62178E4284FD2E600A3EFC2 /* TransactionPriceTableViewCell.swift */; };
 		E62178E7284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E62178E5284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib */; };
+		E642D87E285269A400F22258 /* AddCustomProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D87C285269A400F22258 /* AddCustomProductTableViewCell.swift */; };
+		E642D87F285269A400F22258 /* AddCustomProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E642D87D285269A400F22258 /* AddCustomProductTableViewCell.xib */; };
+		E642D88128526C0F00F22258 /* ProductTransactionVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D88028526C0F00F22258 /* ProductTransactionVCViewModel.swift */; };
+		E642D88D285321DC00F22258 /* DSFStepperView in Frameworks */ = {isa = PBXBuildFile; productRef = E642D88C285321DC00F22258 /* DSFStepperView */; };
+		E642D8902854D79700F22258 /* TransactionProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D88F2854D79700F22258 /* TransactionProduct+CoreDataProperties.swift */; };
+		E642D8922854EC8300F22258 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D8912854EC8300F22258 /* TransactionViewModel.swift */; };
 		E643925428510A830087D621 /* ProductTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643925228510A830087D621 /* ProductTransactionViewController.swift */; };
 		E643925528510A830087D621 /* ProductTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E643925328510A830087D621 /* ProductTransactionViewController.xib */; };
 		E643925A28510B860087D621 /* TransactionListProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643925828510B860087D621 /* TransactionListProductTableViewCell.swift */; };
@@ -207,6 +213,12 @@
 		E62178E1284FCB9200A3EFC2 /* TransactionProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionProduct.swift; sourceTree = "<group>"; };
 		E62178E4284FD2E600A3EFC2 /* TransactionPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPriceTableViewCell.swift; sourceTree = "<group>"; };
 		E62178E5284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionPriceTableViewCell.xib; sourceTree = "<group>"; };
+		E642D87C285269A400F22258 /* AddCustomProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomProductTableViewCell.swift; sourceTree = "<group>"; };
+		E642D87D285269A400F22258 /* AddCustomProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCustomProductTableViewCell.xib; sourceTree = "<group>"; };
+		E642D88028526C0F00F22258 /* ProductTransactionVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTransactionVCViewModel.swift; sourceTree = "<group>"; };
+		E642D88B2853217800F22258 /* DSFStepperView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DSFStepperView; sourceTree = "<group>"; };
+		E642D88F2854D79700F22258 /* TransactionProduct+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TransactionProduct+CoreDataProperties.swift"; path = "Salma/Helper/Core Data Manager/Managed Object Subclass/TransactionProduct+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E642D8912854EC8300F22258 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionViewModel.swift; path = "Salma/Helper/Core Data Manager/Managed Object Subclass/TransactionViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		E643925228510A830087D621 /* ProductTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTransactionViewController.swift; sourceTree = "<group>"; };
 		E643925328510A830087D621 /* ProductTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTransactionViewController.xib; sourceTree = "<group>"; };
 		E643925828510B860087D621 /* TransactionListProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -285,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6702D60281D2FA4005F4DAC /* CloudKit.framework in Frameworks */,
+				E642D88D285321DC00F22258 /* DSFStepperView in Frameworks */,
 				E698706C2817167C002D73F2 /* IQKeyboardManagerSwift in Frameworks */,
 				E6702D5C281D20AC005F4DAC /* Alamofire in Frameworks */,
 			);
@@ -389,7 +402,7 @@
 		B76E2AA02805AB61003E349F /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				E643925128510A690087D621 /* Product Transaction */,
+				E643925128510A690087D621 /* Add Product Transaction */,
 				E68AF5482848F20F0093FC15 /* Detail Transaction */,
 				E698717B28182B48002D73F2 /* On Boarding */,
 				E698705F2816CCC3002D73F2 /* Store Profile */,
@@ -511,6 +524,7 @@
 		B76E2AB72805AB61003E349F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E642D8912854EC8300F22258 /* TransactionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -598,13 +612,14 @@
 			path = "Transaction Price Cell";
 			sourceTree = "<group>";
 		};
-		E643925128510A690087D621 /* Product Transaction */ = {
+		E643925128510A690087D621 /* Add Product Transaction */ = {
 			isa = PBXGroup;
 			children = (
 				E643925228510A830087D621 /* ProductTransactionViewController.swift */,
 				E643925328510A830087D621 /* ProductTransactionViewController.xib */,
+				E642D88028526C0F00F22258 /* ProductTransactionVCViewModel.swift */,
 			);
-			path = "Product Transaction";
+			path = "Add Product Transaction";
 			sourceTree = "<group>";
 		};
 		E643925628510B4E0087D621 /* Transaction Product */ = {
@@ -612,6 +627,8 @@
 			children = (
 				E643925828510B860087D621 /* TransactionListProductTableViewCell.swift */,
 				E643925928510B860087D621 /* TransactionListProductTableViewCell.xib */,
+				E642D87C285269A400F22258 /* AddCustomProductTableViewCell.swift */,
+				E642D87D285269A400F22258 /* AddCustomProductTableViewCell.xib */,
 			);
 			path = "Transaction Product";
 			sourceTree = "<group>";
@@ -619,6 +636,8 @@
 		E6545F102804499900A95A03 = {
 			isa = PBXGroup;
 			children = (
+				E642D88F2854D79700F22258 /* TransactionProduct+CoreDataProperties.swift */,
+				E642D88B2853217800F22258 /* DSFStepperView */,
 				E6545F1B2804499900A95A03 /* Salma */,
 				E6545F352804499B00A95A03 /* SalmaTests */,
 				E6545F3F2804499B00A95A03 /* SalmaUITests */,
@@ -952,6 +971,7 @@
 			packageProductDependencies = (
 				E698706B2817167C002D73F2 /* IQKeyboardManagerSwift */,
 				E6702D5B281D20AC005F4DAC /* Alamofire */,
+				E642D88C285321DC00F22258 /* DSFStepperView */,
 			);
 			productName = Salma;
 			productReference = E6545F192804499900A95A03 /* Salma.app */;
@@ -1067,6 +1087,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E698718028182B7D002D73F2 /* EnableKeyboardViewController.xib in Resources */,
+				E642D87F285269A400F22258 /* AddCustomProductTableViewCell.xib in Resources */,
 				E62178E7284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib in Resources */,
 				E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */,
 				E6F7F502281AD71100456635 /* Inter-Bold.ttf in Resources */,
@@ -1153,10 +1174,13 @@
 				E6702D74281D4943005F4DAC /* CoreDataManager.swift in Sources */,
 				E6DF7AA4282C00CA00A61D08 /* AutotextAddVCViewModel.swift in Sources */,
 				E6CECC94282AAA6600276B31 /* StoreProfileVCViewModel.swift in Sources */,
+				E642D8922854EC8300F22258 /* TransactionViewModel.swift in Sources */,
+				E642D8902854D79700F22258 /* TransactionProduct+CoreDataProperties.swift in Sources */,
 				E6CECC84282589F200276B31 /* Product+CoreDataProperties.swift in Sources */,
 				E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */,
 				E6FE836828118222000AD0C1 /* TextFieldView.swift in Sources */,
 				E6BC3437284E34F90076289C /* DetailTransactionViewModel.swift in Sources */,
+				E642D88128526C0F00F22258 /* ProductTransactionVCViewModel.swift in Sources */,
 				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
 				26E699E1282D517100846FE4 /* ProductVCViewModel.swift in Sources */,
 				E62178DF284FC1A600A3EFC2 /* TransactionProductTableViewCell.swift in Sources */,
@@ -1183,6 +1207,7 @@
 				26E334AC282A9AE600FB1164 /* PriceTextFieldView.swift in Sources */,
 				E698705D2815C05E002D73F2 /* SettingTableViewCell.swift in Sources */,
 				B76E2AC62805AB61003E349F /* DashboardViewController.swift in Sources */,
+				E642D87E285269A400F22258 /* AddCustomProductTableViewCell.swift in Sources */,
 				B76E2ACB2805AB61003E349F /* AutotextViewController.swift in Sources */,
 				B76E2AC82805AB61003E349F /* TransactionViewController.swift in Sources */,
 				E6CECC74282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift in Sources */,
@@ -1641,6 +1666,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E642D88C285321DC00F22258 /* DSFStepperView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DSFStepperView;
+		};
 		E6702D5B281D20AC005F4DAC /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E6702D5A281D20AC005F4DAC /* XCRemoteSwiftPackageReference "Alamofire" */;

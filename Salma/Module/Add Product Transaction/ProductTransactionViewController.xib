@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductTransactionViewController" customModule="Salma" customModuleProvider="target">
             <connections>
+                <outlet property="addButton" destination="QkH-Hv-2Ad" id="md6-px-bk6"/>
+                <outlet property="tableview" destination="JzP-fa-4Dm" id="muR-pu-Lrz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,6 +21,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JzP-fa-4Dm">
+                    <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="sf1-dp-smV"/>
+                        <outlet property="delegate" destination="-1" id="7do-Tj-LyU"/>
+                    </connections>
+                </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkH-Hv-2Ad">
                     <rect key="frame" x="10" y="790" width="394" height="48"/>
                     <color key="backgroundColor" name="Main"/>
@@ -35,22 +45,21 @@
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addButtonAction:" destination="-1" eventType="touchUpInside" id="58z-Tw-Szk"/>
+                    </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JzP-fa-4Dm">
-                    <rect key="frame" x="10" y="44" width="394" height="692"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JzP-fa-4Dm" secondAttribute="trailing" constant="10" id="6aT-bW-yfg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JzP-fa-4Dm" secondAttribute="trailing" id="6aT-bW-yfg"/>
                 <constraint firstItem="JzP-fa-4Dm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9oI-V0-sFn"/>
+                <constraint firstItem="QkH-Hv-2Ad" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="VWY-JT-R8z"/>
                 <constraint firstItem="QkH-Hv-2Ad" firstAttribute="top" secondItem="JzP-fa-4Dm" secondAttribute="bottom" constant="54" id="ZNg-sX-tMS"/>
-                <constraint firstItem="JzP-fa-4Dm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="kCb-Uc-3Ai"/>
+                <constraint firstItem="JzP-fa-4Dm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kCb-Uc-3Ai"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QkH-Hv-2Ad" secondAttribute="bottom" constant="24" id="kjL-Cx-8fq"/>
-                <constraint firstItem="QkH-Hv-2Ad" firstAttribute="leading" secondItem="JzP-fa-4Dm" secondAttribute="leading" id="x96-L6-Fbc"/>
-                <constraint firstItem="QkH-Hv-2Ad" firstAttribute="trailing" secondItem="JzP-fa-4Dm" secondAttribute="trailing" id="zhB-dt-WzI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QkH-Hv-2Ad" secondAttribute="trailing" constant="10" id="us0-Zx-LPh"/>
             </constraints>
             <point key="canvasLocation" x="132" y="94"/>
         </view>

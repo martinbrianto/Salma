@@ -52,7 +52,7 @@ extension TransactionTextFieldTableViewCell {
         switch textfieldType {
         case .shippingPrice, .addressPostalCode, .customerPhoneNumber:
             textfield.keyboardType = .numberPad
-        case .product:
+        case .addProduct:
             chevronImg.isHidden = false
             textfield.isEnabled = false
         default:

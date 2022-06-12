@@ -26,6 +26,29 @@ struct TransactionModel {
     var shippingPrice: Float
     var priceSubTotal: Float
     var priceTotal: Float
+    var productTransactions: [ProductModel]?
+    
+    static func initEmpty() -> TransactionModel {
+        return TransactionModel(id: UUID(),
+                                status: .notPaid,
+                                dateCreated: nil,
+                                datePaid: nil,
+                                dateCompleted: nil,
+                                customerName: "",
+                                customerPhoneNumber: "",
+                                addressName: "",
+                                addressProvince: "",
+                                addressCity: "",
+                                addressDistrict: "",
+                                addressPostalCode: "",
+                                notes: "",
+                                expedition: "",
+                                shippingPrice: 0,
+                                priceSubTotal: 0,
+                                priceTotal: 0,
+                                productTransactions: nil)
+        
+    }
 }
 
 struct TransactionPrice {

@@ -13,5 +13,3 @@ struct StoreProfile{
     var location: String
     var phoneNumber: String
 }
-
-var productList: [ProductModel] = []

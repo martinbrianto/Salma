@@ -8,6 +8,8 @@
 import Foundation
 
 struct TransacationProduct {
+    var image: Data
+    var weight: Int
     var qty: Int
     var productName: String
     var price: Float

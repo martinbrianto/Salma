@@ -22,6 +22,8 @@ class TransactionTextFieldTableViewCell: UITableViewCell {
     @IBOutlet weak var chevronImg: UIImageView!
     
 
+    var textFieldInput: String?
+    var pageState: TransactionPageState?
     var textfieldType: TransactionTextfieldType? {
         didSet {
             if textfieldType != nil {
@@ -49,14 +51,30 @@ extension TransactionTextFieldTableViewCell {
         titleLabel.text = textfieldType?.tfTitle
         textfield.placeholder = textfieldType?.tfPlaceholder
         selectionStyle = .none
+        textfield.text = textFieldInput
         switch textfieldType {
         case .shippingPrice, .addressPostalCode, .customerPhoneNumber:
+            if pageState == .detail {
+                textfield.isEnabled = false
+                textfield.textColor = UIColor(named: "textFieldDisabled")
+            } else {
+                textfield.isEnabled = true
+                textfield.textColor = UIColor.darkText
+            }
             textfield.keyboardType = .numberPad
         case .addProduct:
+            textfield.text = ""
             chevronImg.isHidden = false
             textfield.isEnabled = false
         default:
-            break
+            if pageState == .detail {
+                textfield.isEnabled = false
+                textfield.textColor = UIColor(named: "textFieldDisabled")
+            } else {
+                textfield.isEnabled = true
+                textfield.textColor = UIColor.darkText
+            }
+            chevronImg.isHidden = true
         }
     }
 }

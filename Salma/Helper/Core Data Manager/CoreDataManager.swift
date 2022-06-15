@@ -419,7 +419,7 @@ struct CoreDataManager {
         }
         let transaction = NSManagedObject(entity: transactionEntity, insertInto: context)
         transaction.setValue(Date(), forKey: "date_created")
-        transaction.setValue(UUID(), forKey: "uuid")
+        transaction.setValue(transactionData.id, forKey: "uuid")
         transaction.setValue(transactionData.status.rawValue, forKey: "status")
         transaction.setValue(transactionData.customerName, forKey: "customer_name")
         transaction.setValue(transactionData.customerPhoneNumber, forKey: "customer_phone_number")
@@ -473,7 +473,15 @@ struct CoreDataManager {
         if let transaction = fetchTransaction(transactionID: transactionID) {
             // look for product in transaction, -1 reference count
             if let transactionProducts = transaction.transactionProducts {
-                for tp in transactionProducts.array as! [TransactionProduct] {
+                
+                var transationProductArr: [TransactionProduct] {
+                    let set = transactionProducts as? Set<TransactionProduct> ?? []
+                    return set.sorted {
+                        $0.name ?? "" < $1.name ?? ""
+                    }
+                }
+                
+                for tp in transationProductArr {
                     if let product = tp.product {
                         product.referenceCount -= 1
                         if product.referenceCount == 0 && !product.isActive {
@@ -636,11 +644,35 @@ struct CoreDataManager {
         }
     }
     
+    func addCustomProductsToTransaction(transactionID: UUID, productData: ProductModel) {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        
+        guard let productTransactionEntity = NSEntityDescription.entity(forEntityName: "TransactionProduct", in: context) else { return }
+        
+        if let transaction = fetchTransaction(transactionID: transactionID) {
+            let transactionProduct = NSManagedObject(entity: productTransactionEntity, insertInto: context)
+            transactionProduct.setValue(productData.image, forKey: "image")
+            transactionProduct.setValue(productData.name, forKey: "name")
+            transactionProduct.setValue(productData.weight, forKey: "weight")
+            transactionProduct.setValue(productData.price, forKey: "productPrice")
+            transactionProduct.setValue(productData.quantity, forKey: "productQuantity")
+            transaction.addToTransactionProducts(transactionProduct as! TransactionProduct)
+            
+        } else {
+            print("no transaction/product found")
+        }
+        do {
+            try context.save()
+        } catch {
+            print("\(error.localizedDescription)")
+        }
+    }
+    
     /* Call this function to fetch all transactionProduct with ID */
     func fetchAllProductsOfTransaction(transactionID: UUID) -> [ProductModel]? {
         lazy var productList: [ProductModel] = []
         if let transaction = CoreDataManager.shared.fetchTransaction(transactionID: transactionID) {
-            if let transactionProducts = transaction.transactionProducts?.array as? [TransactionProduct] {
+            if let transactionProducts = transaction.transactionProducts as? [TransactionProduct] {
                 for transactionProduct in transactionProducts {
                     productList.append(ProductModel(image: nil, id: transactionProduct.product?.uuid, name: transactionProduct.product?.name ?? "", price: transactionProduct.product?.price ?? 0, weight: transactionProduct.product?.weight ?? 0, quantity: transactionProduct.productQuantity))
                 }
@@ -650,53 +682,66 @@ struct CoreDataManager {
         return nil
     }
     
-    func fetchProductsOfTransaction(transactionID: UUID) -> [TransactionProduct]? {
+    func fetchProductsOfTransaction(transactionID: UUID) -> [ProductModel]? {
         lazy var productList: [ProductModel] = []
         if let transaction = CoreDataManager.shared.fetchTransaction(transactionID: transactionID) {
-            if let transactionProducts = transaction.transactionProducts?.array as? [TransactionProduct] {
-                return transactionProducts
+            guard let transaction = transaction.transactionProducts else { return [] }
+            var transationProductArr: [TransactionProduct] {
+                let set = transaction as? Set<TransactionProduct> ?? []
+                return set.sorted {
+                    $0.name ?? "" < $1.name ?? ""
+                }
             }
+            let productModelArr = transationProductArr.map { tp -> ProductModel in
+                if let productRef = tp.product {
+                    return ProductModel(image: productRef.image, id:productRef.uuid , name: productRef.name, price: tp.productPrice, weight: tp.weight, quantity: tp.productQuantity)
+                } else {
+                    return ProductModel(image: tp.image, id: nil, name: tp.name ?? "", price: tp.productPrice, weight: tp.weight, quantity: tp.productQuantity)
+                }
+                
+            }
+            return productModelArr
         }
         return nil
     }
     
-    /* Call this function to update transactionProduct quantity with ID */
-    func updateProductsOfTransactionQuantity(transactionID: UUID, productID: UUID, quantity: Int32) {
-        let context = CoreDataManager.shared.persistentContainer.viewContext
-        if let productTransactions = CoreDataManager.shared.fetchProductsOfTransaction(transactionID: transactionID) {
-            if let productTransaction = productTransactions.first(where: { $0.product?.uuid == productID }) {
-                productTransaction.productQuantity = quantity
-                do {
-                    try context.save()
-                } catch {
-                    print("\(error.localizedDescription)")
-                }
-            }
-        }
-    }
-    
-    /* Call this function to delete transactionProduct of a transaction */
-    func deleteProductsOfTransaction(transactionID: UUID, productID: UUID) {
-        let context = CoreDataManager.shared.persistentContainer.viewContext
-        if let productTransactions = CoreDataManager.shared.fetchProductsOfTransaction(transactionID: transactionID) {
-            if let productTransaction = productTransactions.first(where: { $0.product?.uuid == productID }) {
-                if let product = productTransaction.product {
-                    product.referenceCount -= 1
-                    if product.referenceCount == 0 && !product.isActive{
-                        do {
-                            context.delete(product)
-                        }
-                    }
-                }
-                do {
-                    context.delete(productTransaction)
-                }
-                do {
-                    try context.save()
-                } catch {
-                    print("\(error.localizedDescription)")
-                }
-            }
-        }
-    }
+//    /* Call this function to update transactionProduct quantity with ID */
+//    func updateProductsOfTransactionQuantity(transactionID: UUID, productID: UUID, quantity: Int32) {
+//        let context = CoreDataManager.shared.persistentContainer.viewContext
+//        if let productTransactions = CoreDataManager.shared.fetchProductsOfTransaction(transactionID: transactionID) {
+//            if let productTransaction = productTransactions.first(where: { $0.product?.uuid == productID }) {
+//                productTransaction.productQuantity = quantity
+//                do {
+//                    try context.save()
+//                } catch {
+//                    print("\(error.localizedDescription)")
+//                }
+//            }
+//        }
+//    }
+//
+//    /* Call this function to delete transactionProduct of a transaction */
+//    func deleteProductsOfTransaction(transactionID: UUID, productID: UUID) {
+//        let context = CoreDataManager.shared.persistentContainer.viewContext
+//        if let productTransactions = CoreDataManager.shared.fetchProductsOfTransaction(transactionID: transactionID) {
+//            if let productTransaction = productTransactions.first(where: { $0.product?.uuid == productID }) {
+//                if let product = productTransaction.product {
+//                    product.referenceCount -= 1
+//                    if product.referenceCount == 0 && !product.isActive{
+//                        do {
+//                            context.delete(product)
+//                        }
+//                    }
+//                }
+//                do {
+//                    context.delete(productTransaction)
+//                }
+//                do {
+//                    try context.save()
+//                } catch {
+//                    print("\(error.localizedDescription)")
+//                }
+//            }
+//        }
+//    }
 }

@@ -20,7 +20,7 @@ class TransactionPriceTableViewCell: UITableViewCell {
     @IBOutlet weak var shippingPriceLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
     
-    var transactionPriceData: TransactionPrice? {
+    var transactionPriceData: TransactionModel? {
         didSet {
             configureCell()
         }

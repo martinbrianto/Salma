@@ -58,8 +58,6 @@ class ProductTransactionViewController: UIViewController {
         productCount = viewModel.productData.filter {$0.quantity != 0}.count
         addButton.setTitle("Add (\(productCount))", for: .normal)
     }
-    
-    
 }
 
 extension ProductTransactionViewController: ProductAddViewControllerDelegate {

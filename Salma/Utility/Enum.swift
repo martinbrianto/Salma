@@ -105,7 +105,7 @@ enum TransactionTextfieldType: Int, CaseIterable {
         case .addressPostalCode:
             return "Postal code"
         case .productNote:
-            return "Additional notes"
+            return "Additional notes (optional)"
         case .shippingExpedition:
             return "Expedition"
         case .shippingPrice:

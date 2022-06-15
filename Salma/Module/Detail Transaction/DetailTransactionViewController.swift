@@ -17,7 +17,11 @@ class DetailTransactionViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Variables
-    private var pageState: TransactionPageState
+    private var pageState: TransactionPageState {
+        didSet {
+            setupPage()
+        }
+    }
     private let viewModel: DetailTransactionViewModel
     
     private enum TableViewSection: CaseIterable {
@@ -42,6 +46,7 @@ class DetailTransactionViewController: UIViewController {
     init(state: TransactionPageState, viewModel: DetailTransactionViewModel){
         self.pageState = state
         self.viewModel =  viewModel
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -58,6 +63,45 @@ class DetailTransactionViewController: UIViewController {
     }
 }
 
+private extension DetailTransactionViewController {
+    private func setupPage() {
+        DispatchQueue.main.async { [self] in
+        switch pageState {
+        case .add:
+            title = "Add New Transaction"
+            break
+        case .edit:
+            title = "Edit Transaction"
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(navbarRightActionButton))
+        case .detail:
+            title = "Transaction Details"
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Edit", style: .done, target: self, action: #selector(navbarRightActionButton))
+            }
+        }
+    }
+    
+    @objc private func navbarRightActionButton(sender: UIBarButtonItem) {
+       switch self.pageState {
+       case .add:
+           title = "Add Transaction"
+           break
+       case .edit:
+           //save
+           if viewModel.validateTransaction() {
+               guard let transactionID = viewModel.data.id else { return }
+               viewModel.updateTransaction(data: viewModel.data, id: transactionID)
+               pageState = .detail
+               tableView.reloadData()
+           } else {
+               print("update failed")
+           }
+       case .detail:
+           pageState = .edit
+           tableView.reloadData()
+       }
+   }
+}
+
 extension DetailTransactionViewController: ProductTransactionViewControllerDelegate {
     
     func updateProductData(products: [ProductModel]) {
@@ -69,21 +113,15 @@ extension DetailTransactionViewController: ProductTransactionViewControllerDeleg
         viewModel.didUpdateProduct = { [weak self] _ in
             guard let self = self else { return }
             self.tableView.reloadSections(IndexSet(integersIn: 2...2), with: .automatic)
+            //self.tableView.reloadData()
+            self.viewModel.countSubTotal()
+        }
+        
+        viewModel.didUpdatePriceData = { [weak self] _ in
+            guard let self = self else { return }
+            self.tableView.reloadSections(IndexSet(integersIn: 4...4), with: .automatic)
         }
     }
-    
-    
-    private func setupPage() {
-        switch pageState {
-        case .add:
-            title = "Add Transaction"
-        case .edit:
-            break
-        case .detail:
-            title = "Transaction Details"
-        }
-    }
-    
     
     private func registerNIB(){
         tableView.register(TransactionTextFieldTableViewCell.nib(), forCellReuseIdentifier: TransactionTextFieldTableViewCell.reuseID)
@@ -94,10 +132,15 @@ extension DetailTransactionViewController: ProductTransactionViewControllerDeleg
     }
     
     @objc func didTapCellButton(sender: UIButton) {
-        print("asdasdasd")
-
-        //Configure selected button or update model
+        if viewModel.validateTransaction() {
+            viewModel.saveTransaction()
+            navigationController?.popToRootViewController(animated: true)
+        } else {
+            print("ada yang error")
+        }
     }
+    
+    
 }
 
 // MARK: Tableview func
@@ -144,7 +187,7 @@ extension DetailTransactionViewController: UITableViewDataSource, UITableViewDel
         case .totalPrice:
             return viewModel.priceCell.count
         case .button:
-            return 1
+            return pageState == .add ? 1 : 0
         }
     }
     
@@ -153,14 +196,37 @@ extension DetailTransactionViewController: UITableViewDataSource, UITableViewDel
         case .customerData:
             let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTextFieldTableViewCell.reuseID) as! TransactionTextFieldTableViewCell
             cell.textfield.delegate = self
-            cell.textfieldType = viewModel.customerDataTextfield[indexPath.row]
+            cell.pageState = self.pageState
             cell.textfield.tag = viewModel.customerDataTextfield[indexPath.row].rawValue
+            switch viewModel.customerDataTextfield[indexPath.row] {
+            case .customerName:
+                cell.textFieldInput = viewModel.data.customerName
+            case .customerPhoneNumber:
+                cell.textFieldInput = viewModel.data.customerPhoneNumber
+            default:
+                break
+            }
+            cell.textfieldType = viewModel.customerDataTextfield[indexPath.row]
             return cell
         case .address:
             let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTextFieldTableViewCell.reuseID) as! TransactionTextFieldTableViewCell
             cell.textfield.delegate = self
-            cell.textfieldType = viewModel.addressTextfield[indexPath.row]
+            cell.pageState = self.pageState
             cell.textfield.tag = viewModel.addressTextfield[indexPath.row].rawValue
+            switch viewModel.addressTextfield[indexPath.row] {
+            case .addressName:
+                cell.textFieldInput = viewModel.data.addressName
+            case .addressProvince:
+                cell.textFieldInput = viewModel.data.addressProvince
+            case .addressCity:
+                cell.textFieldInput = viewModel.data.addressCity
+            case .addressDistrict:
+                cell.textFieldInput = viewModel.data.addressDistrict
+            case .addressPostalCode:
+                cell.textFieldInput = viewModel.data.addressPostalCode
+            default: break
+            }
+            cell.textfieldType = viewModel.addressTextfield[indexPath.row]
             return cell
         case .productDetails:
             switch viewModel.productTextfield[indexPath.row] {
@@ -171,26 +237,39 @@ extension DetailTransactionViewController: UITableViewDataSource, UITableViewDel
                 // choose product cell
             case viewModel.productTextfield.first:
                 let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTextFieldTableViewCell.reuseID) as! TransactionTextFieldTableViewCell
+                cell.pageState = self.pageState
                 cell.textfieldType = viewModel.productTextfield.first
                 return cell
                 // product notes cell
             case viewModel.productTextfield.last:
                 let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTextFieldTableViewCell.reuseID) as! TransactionTextFieldTableViewCell
+                cell.textfield.tag = viewModel.productTextfield.last?.rawValue ?? 8
+                cell.pageState = self.pageState
+                cell.textFieldInput = viewModel.data.notes
                 cell.textfieldType = viewModel.productTextfield.last
                 return cell
             default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTextFieldTableViewCell.reuseID) as! TransactionTextFieldTableViewCell
-
-                return cell
+                return UITableViewCell()
             }
         case .shippingDetails:
             let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTextFieldTableViewCell.reuseID) as! TransactionTextFieldTableViewCell
             cell.textfield.delegate = self
+            cell.pageState = self.pageState
+            cell.textfield.tag = viewModel.shippingTextfield[indexPath.row].rawValue
+            switch viewModel.shippingTextfield[indexPath.row] {
+            case .shippingExpedition:
+                cell.textFieldInput = viewModel.data.expedition
+            case .shippingPrice:
+                let input = viewModel.data.shippingPrice == 0 ? "" : "\(viewModel.data.shippingPrice)"
+                cell.textFieldInput = input
+            default: break
+            }
             cell.textfieldType = viewModel.shippingTextfield[indexPath.row]
-            cell.textfield.tag = viewModel.addressTextfield[indexPath.row].rawValue
+        
             return cell
         case .totalPrice:
                 let cell = tableView.dequeueReusableCell(withIdentifier: TransactionPriceTableViewCell.reuseID) as! TransactionPriceTableViewCell
+            cell.transactionPriceData = viewModel.data
                 return cell
         case .button:
             let buttonCell = tableView.dequeueReusableCell(withIdentifier: TransactionButtonTableViewCell.reuseID) as! TransactionButtonTableViewCell
@@ -207,13 +286,14 @@ extension DetailTransactionViewController: UITableViewDataSource, UITableViewDel
                 let viewModel = viewModel.productTransactionViewModel()
                 let vc = ProductTransactionViewController(viewModel: viewModel)
                 vc.delegate = self
-                self.navigationController?.pushViewController(vc, animated: true)
+                if pageState == .detail {
+                    break
+                } else {
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             default:
                 break
             }
-        case .button:
-            print("asdasd")
-            self.tableView.reloadData()
         default:
             break
         }
@@ -249,9 +329,36 @@ extension DetailTransactionViewController: UITableViewDataSource, UITableViewDel
 
 extension DetailTransactionViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.addTarget(self, action: #selector(valueChanged), for: .editingChanged)
+    }
+    
+    @objc private func valueChanged(_ textField: UITextField) {
         switch textField.tag {
-        case 0:
-            print(textField.text)
+        case TransactionTextfieldType.customerName.rawValue:
+            viewModel.data.customerName = textField.text ?? ""
+        case TransactionTextfieldType.customerPhoneNumber.rawValue:
+            viewModel.data.customerPhoneNumber = textField.text ?? ""
+        case TransactionTextfieldType.addressName.rawValue:
+            viewModel.data.addressName = textField.text ?? ""
+        case TransactionTextfieldType.addressProvince.rawValue:
+            viewModel.data.addressProvince = textField.text ?? ""
+        case TransactionTextfieldType.addressCity.rawValue:
+            viewModel.data.addressCity = textField.text ?? ""
+        case TransactionTextfieldType.addressDistrict.rawValue:
+            viewModel.data.addressDistrict = textField.text ?? ""
+        case TransactionTextfieldType.addressPostalCode.rawValue:
+            viewModel.data.addressPostalCode = textField.text ?? ""
+        case TransactionTextfieldType.productNote.rawValue:
+            viewModel.data.notes = textField.text ?? ""
+        case TransactionTextfieldType.shippingExpedition.rawValue:
+            viewModel.data.expedition = textField.text ?? ""
+        case TransactionTextfieldType.shippingPrice.rawValue:
+            viewModel.data.shippingPrice = Float(Int(textField.text ?? "") ?? 0)
+            viewModel.countTotal()
         default: break
         }
     }

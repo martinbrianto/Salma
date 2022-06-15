@@ -44,7 +44,7 @@
         <attribute name="shipping_price" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="status" attributeType="String"/>
         <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="transactionProducts" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="TransactionProduct" inverseName="ofTransaction" inverseEntity="TransactionProduct"/>
+        <relationship name="transactionProducts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TransactionProduct" inverseName="ofTransaction" inverseEntity="TransactionProduct"/>
     </entity>
     <entity name="TransactionProduct" representedClassName="TransactionProduct" syncable="YES">
         <attribute name="image" optional="YES" attributeType="Binary"/>

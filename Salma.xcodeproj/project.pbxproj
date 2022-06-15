@@ -50,6 +50,7 @@
 		E642D88D285321DC00F22258 /* DSFStepperView in Frameworks */ = {isa = PBXBuildFile; productRef = E642D88C285321DC00F22258 /* DSFStepperView */; };
 		E642D8902854D79700F22258 /* TransactionProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D88F2854D79700F22258 /* TransactionProduct+CoreDataProperties.swift */; };
 		E642D8922854EC8300F22258 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D8912854EC8300F22258 /* TransactionViewModel.swift */; };
+		E642D894285A3BCF00F22258 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D893285A3BCF00F22258 /* Transaction+CoreDataProperties.swift */; };
 		E643925428510A830087D621 /* ProductTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643925228510A830087D621 /* ProductTransactionViewController.swift */; };
 		E643925528510A830087D621 /* ProductTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E643925328510A830087D621 /* ProductTransactionViewController.xib */; };
 		E643925A28510B860087D621 /* TransactionListProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643925828510B860087D621 /* TransactionListProductTableViewCell.swift */; };
@@ -219,6 +220,7 @@
 		E642D88B2853217800F22258 /* DSFStepperView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DSFStepperView; sourceTree = "<group>"; };
 		E642D88F2854D79700F22258 /* TransactionProduct+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TransactionProduct+CoreDataProperties.swift"; path = "Salma/Helper/Core Data Manager/Managed Object Subclass/TransactionProduct+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E642D8912854EC8300F22258 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionViewModel.swift; path = "Salma/Helper/Core Data Manager/Managed Object Subclass/TransactionViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		E642D893285A3BCF00F22258 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Transaction+CoreDataProperties.swift"; path = "Salma/Helper/Core Data Manager/Managed Object Subclass/Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E643925228510A830087D621 /* ProductTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTransactionViewController.swift; sourceTree = "<group>"; };
 		E643925328510A830087D621 /* ProductTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTransactionViewController.xib; sourceTree = "<group>"; };
 		E643925828510B860087D621 /* TransactionListProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -636,6 +638,7 @@
 		E6545F102804499900A95A03 = {
 			isa = PBXGroup;
 			children = (
+				E642D893285A3BCF00F22258 /* Transaction+CoreDataProperties.swift */,
 				E642D88F2854D79700F22258 /* TransactionProduct+CoreDataProperties.swift */,
 				E642D88B2853217800F22258 /* DSFStepperView */,
 				E6545F1B2804499900A95A03 /* Salma */,
@@ -1186,6 +1189,7 @@
 				E62178DF284FC1A600A3EFC2 /* TransactionProductTableViewCell.swift in Sources */,
 				B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */,
 				E6CECC7C282589F200276B31 /* Profile+CoreDataProperties.swift in Sources */,
+				E642D894285A3BCF00F22258 /* Transaction+CoreDataProperties.swift in Sources */,
 				E6702DB428212215005F4DAC /* StoreProfile.swift in Sources */,
 				26D9D96128117B4800A8EA86 /* ProductAddViewController.swift in Sources */,
 				E6CECC80282589F200276B31 /* Transaction+CoreDataProperties.swift in Sources */,

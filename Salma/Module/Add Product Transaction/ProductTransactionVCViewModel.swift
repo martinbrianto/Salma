@@ -30,7 +30,7 @@ class ProductTransactionVCViewModel {
 
 extension ProductTransactionVCViewModel {
     func fetchProductData() {
-        let fetchedProducts = [ProductModel(name: "Product 1", price: 1, weight: 1, quantity: 0, isActive: nil),ProductModel(name: "Product 2", price: 1, weight: 1, quantity: 0, isActive: nil)]
+        let fetchedProducts = service.fetchAllProduct() ?? []
         var old = productData
         old.append(contentsOf: fetchedProducts)
         

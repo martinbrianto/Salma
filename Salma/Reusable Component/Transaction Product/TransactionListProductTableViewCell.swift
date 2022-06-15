@@ -28,6 +28,7 @@ class TransactionListProductTableViewCell: UITableViewCell {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
     
     @IBAction func addButtonAction(_ sender: Any) {
         self.addButton.isHidden = true
@@ -80,6 +81,7 @@ private extension TransactionListProductTableViewCell {
         productName.text = cellData.name
         productPrice.text = cellData.price.formattedToRp
         stepperView.numberValue = cellData.quantity as NSNumber?
+        productImage.image = getImageFromData(imageData: cellData.image)
     }
     
     private func addShadow(){
@@ -89,5 +91,12 @@ private extension TransactionListProductTableViewCell {
         cellBackgroundView.layer.shadowOpacity = 0.25
         cellBackgroundView.layer.shouldRasterize = true
         cellBackgroundView.layer.rasterizationScale = UIScreen.main.scale
+    }
+    
+    private func getImageFromData(imageData: Data?) -> UIImage? {
+        if let imageData = imageData {
+            return UIImage(data: imageData)
+        }
+        return nil
     }
 }

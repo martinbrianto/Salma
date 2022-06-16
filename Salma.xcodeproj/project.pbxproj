@@ -50,11 +50,11 @@
 		E642D8902854D79700F22258 /* TransactionProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D88F2854D79700F22258 /* TransactionProduct+CoreDataProperties.swift */; };
 		E642D8922854EC8300F22258 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D8912854EC8300F22258 /* TransactionViewModel.swift */; };
 		E642D894285A3BCF00F22258 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D893285A3BCF00F22258 /* Transaction+CoreDataProperties.swift */; };
-		E642D89B285B9A7300F22258 /* DSFStepperView in Frameworks */ = {isa = PBXBuildFile; productRef = E642D89A285B9A7300F22258 /* DSFStepperView */; };
 		E643925428510A830087D621 /* ProductTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643925228510A830087D621 /* ProductTransactionViewController.swift */; };
 		E643925528510A830087D621 /* ProductTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E643925328510A830087D621 /* ProductTransactionViewController.xib */; };
 		E643925A28510B860087D621 /* TransactionListProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643925828510B860087D621 /* TransactionListProductTableViewCell.swift */; };
 		E643925B28510B860087D621 /* TransactionListProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E643925928510B860087D621 /* TransactionListProductTableViewCell.xib */; };
+		E646D156285BA8F000620700 /* DSFStepperView in Frameworks */ = {isa = PBXBuildFile; productRef = E646D155285BA8F000620700 /* DSFStepperView */; };
 		E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F1C2804499900A95A03 /* AppDelegate.swift */; };
 		E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6545F1E2804499900A95A03 /* SceneDelegate.swift */; };
 		E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6545F252804499900A95A03 /* Salma.xcdatamodeld */; };
@@ -220,7 +220,6 @@
 		E642D88F2854D79700F22258 /* TransactionProduct+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TransactionProduct+CoreDataProperties.swift"; path = "Salma/Helper/Core Data Manager/Managed Object Subclass/TransactionProduct+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E642D8912854EC8300F22258 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionViewModel.swift; path = "Salma/Helper/Core Data Manager/Managed Object Subclass/TransactionViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		E642D893285A3BCF00F22258 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Transaction+CoreDataProperties.swift"; path = "Salma/Helper/Core Data Manager/Managed Object Subclass/Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E642D89C285B9AA000F22258 /* DSFStepperView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DSFStepperView; sourceTree = "<group>"; };
 		E643925228510A830087D621 /* ProductTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTransactionViewController.swift; sourceTree = "<group>"; };
 		E643925328510A830087D621 /* ProductTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTransactionViewController.xib; sourceTree = "<group>"; };
 		E643925828510B860087D621 /* TransactionListProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -299,7 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6702D60281D2FA4005F4DAC /* CloudKit.framework in Frameworks */,
-				E642D89B285B9A7300F22258 /* DSFStepperView in Frameworks */,
+				E646D156285BA8F000620700 /* DSFStepperView in Frameworks */,
 				E698706C2817167C002D73F2 /* IQKeyboardManagerSwift in Frameworks */,
 				E6702D5C281D20AC005F4DAC /* Alamofire in Frameworks */,
 			);
@@ -638,7 +637,6 @@
 		E6545F102804499900A95A03 = {
 			isa = PBXGroup;
 			children = (
-				E642D89C285B9AA000F22258 /* DSFStepperView */,
 				E642D893285A3BCF00F22258 /* Transaction+CoreDataProperties.swift */,
 				E642D88F2854D79700F22258 /* TransactionProduct+CoreDataProperties.swift */,
 				E6545F1B2804499900A95A03 /* Salma */,
@@ -974,7 +972,7 @@
 			packageProductDependencies = (
 				E698706B2817167C002D73F2 /* IQKeyboardManagerSwift */,
 				E6702D5B281D20AC005F4DAC /* Alamofire */,
-				E642D89A285B9A7300F22258 /* DSFStepperView */,
+				E646D155285BA8F000620700 /* DSFStepperView */,
 			);
 			productName = Salma;
 			productReference = E6545F192804499900A95A03 /* Salma.app */;
@@ -1071,7 +1069,7 @@
 			packageReferences = (
 				E698706A2817167C002D73F2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				E6702D5A281D20AC005F4DAC /* XCRemoteSwiftPackageReference "Alamofire" */,
-				E642D899285B9A7300F22258 /* XCRemoteSwiftPackageReference "DSFStepperView" */,
+				E646D154285BA8F000620700 /* XCRemoteSwiftPackageReference "DSFStepperView" */,
 			);
 			productRefGroup = E6545F1A2804499900A95A03 /* Products */;
 			projectDirPath = "";
@@ -1652,9 +1650,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E642D899285B9A7300F22258 /* XCRemoteSwiftPackageReference "DSFStepperView" */ = {
+		E646D154285BA8F000620700 /* XCRemoteSwiftPackageReference "DSFStepperView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dagronf/DSFStepperView";
+			repositoryURL = "https://github.com/martinbrianto/DSFStepperView";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -1679,9 +1677,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E642D89A285B9A7300F22258 /* DSFStepperView */ = {
+		E646D155285BA8F000620700 /* DSFStepperView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E642D899285B9A7300F22258 /* XCRemoteSwiftPackageReference "DSFStepperView" */;
+			package = E646D154285BA8F000620700 /* XCRemoteSwiftPackageReference "DSFStepperView" */;
 			productName = DSFStepperView;
 		};
 		E6702D5B281D20AC005F4DAC /* Alamofire */ = {

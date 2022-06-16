@@ -97,6 +97,6 @@ private extension TransactionListProductTableViewCell {
         if let imageData = imageData {
             return UIImage(data: imageData)
         }
-        return nil
+        return UIImage(named: "placeholder")
     }
 }

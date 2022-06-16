@@ -14,6 +14,6 @@ struct ProductModel {
     var name: String
     var price: Float
     var weight: Int32
-    var quantity: Int32?
+    var quantity: Int32
     var isActive: Bool?
 }

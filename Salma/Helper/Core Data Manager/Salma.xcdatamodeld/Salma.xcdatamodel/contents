@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CustomAutotext" representedClassName=".CustomAutotext" syncable="YES">
         <attribute name="messages" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
@@ -44,11 +44,14 @@
         <attribute name="shipping_price" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="status" attributeType="String"/>
         <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="transactionProducts" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="TransactionProduct" inverseName="ofTransaction" inverseEntity="TransactionProduct"/>
+        <relationship name="transactionProducts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TransactionProduct" inverseName="ofTransaction" inverseEntity="TransactionProduct"/>
     </entity>
     <entity name="TransactionProduct" representedClassName="TransactionProduct" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="productPrice" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="productQuantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="ofTransaction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Transaction" inverseName="transactionProducts" inverseEntity="Transaction"/>
         <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="ofTransactionProduct" inverseEntity="Product"/>
     </entity>
@@ -58,6 +61,6 @@
         <element name="Product" positionX="623.512451171875" positionY="52.47564697265625" width="128" height="163"/>
         <element name="Profile" positionX="-260.3363647460938" positionY="158.5518798828125" width="128" height="89"/>
         <element name="Transaction" positionX="165.006591796875" positionY="-82.43434143066406" width="128" height="299"/>
-        <element name="TransactionProduct" positionX="402.9671630859375" positionY="112.4483947753906" width="128" height="103"/>
+        <element name="TransactionProduct" positionX="402.9671630859375" positionY="112.4483947753906" width="128" height="134"/>
     </elements>
 </model>

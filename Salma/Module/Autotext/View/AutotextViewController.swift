@@ -18,7 +18,7 @@ class AutotextViewController: UIViewController {
     
     // MARK: - Variables
     private let viewModel = AutotextVCViewModel()
-    enum TableViewSection: CaseIterable {
+    private enum TableViewSection: CaseIterable {
         case transaction
         case custom
         

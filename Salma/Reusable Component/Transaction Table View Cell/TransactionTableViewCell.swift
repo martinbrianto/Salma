@@ -22,6 +22,7 @@ class TransactionTableViewCell: UITableViewCell {
     @IBOutlet weak var transactionPrice: UILabel!
     @IBOutlet weak var transactionStatusBackground: UIView!
     @IBOutlet weak var transactionStatusLabel: UILabel!
+    @IBOutlet weak var transactionDateLabel: UILabel!
     
     // MARK: - Variable
     var transactionData: TransactionModel? {
@@ -47,6 +48,7 @@ private extension TransactionTableViewCell {
         transactionPrice.text = transactionData.priceTotal.formattedToRp
         transactionName.text = transactionData.customerName
         transactionStatusLabel.text = transactionData.status.rawValue
+        transactionDateLabel.text = transactionData.dateCreated?.getFormattedDate(format: "dd MMM YYYY")
         switch transactionData.status {
         case .notPaid:
             transactionStatusLabel.textColor = UIColor(named: "Red")

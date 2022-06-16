@@ -2,7 +2,7 @@
 //  TransactionProduct+CoreDataProperties.swift
 //  Salma
 //
-//  Created by gratianus.brianto on 09/05/22.
+//  Created by gratianus.brianto on 11/06/22.
 //
 //
 
@@ -18,8 +18,11 @@ extension TransactionProduct {
 
     @NSManaged public var productPrice: Float
     @NSManaged public var productQuantity: Int32
+    @NSManaged public var image: Data?
+    @NSManaged public var name: String?
+    @NSManaged public var weight: Int32
     @NSManaged public var ofTransaction: Transaction?
-    @NSManaged public var product: Product
+    @NSManaged public var product: Product?
 
 }
 

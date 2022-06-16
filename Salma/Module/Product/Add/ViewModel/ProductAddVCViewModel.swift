@@ -13,10 +13,12 @@ class ProductAddVCViewModel {
     // MARK: - private
     private let service: CoreDataManager
     private(set) var data: ProductModel?
+    var productList: [ProductModel]
     
-    init(service: CoreDataManager = CoreDataManager.shared, data: ProductModel?){
+    init(service: CoreDataManager = CoreDataManager.shared, data: ProductModel?, productList: [ProductModel]){
         self.data = data
         self.service = service
+        self.productList = productList
     }
     
     // MARK: - Events

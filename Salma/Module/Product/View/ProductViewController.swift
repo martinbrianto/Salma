@@ -42,7 +42,7 @@ class ProductViewController: UIViewController {
      }
     
     @IBAction func addProductButtonAction(_ sender: Any) {
-        let viewController = ProductAddViewController(from: .add, viewModel: ProductAddVCViewModel(data: nil))
+        let viewController = ProductAddViewController(from: .add, viewModel: ProductAddVCViewModel(data: nil, productList: self.viewModel.fetchedData))
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

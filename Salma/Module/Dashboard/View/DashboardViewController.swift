@@ -59,6 +59,7 @@ class DashboardViewController: UIViewController {
     private func viewModelDidUpdate(){
         transactionTableView.reloadData()
         totalPenjualanLabel.text = viewModel.calculateTotalPenjualan().formattedToRp
+        
     }
     
     //TODO: error handling here

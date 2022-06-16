@@ -34,7 +34,7 @@ extension ProductVCVIewModel {
     }
     
     func productAddVCViewModel(index: Int) -> ProductAddVCViewModel{
-        let viewModel = ProductAddVCViewModel(data: self.fetchedData[index])
+        let viewModel = ProductAddVCViewModel(data: self.fetchedData[index],productList: self.fetchedData)
         return viewModel
     }
     

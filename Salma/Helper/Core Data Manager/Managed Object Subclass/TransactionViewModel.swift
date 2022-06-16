@@ -27,23 +27,30 @@ class TransactionViewModel {
 }
 
 extension TransactionViewModel {
+    
+    func fetchTransactionData() {
+        self.fetchedData = service.fetchAllTransaction() ?? []
+        didUpdate?(self)
+    }
+    
     func fetchProductData() {
-        var old = service.fetchAllTransaction() ?? []
+        let data = service.fetchAllTransaction() ?? []
         
-        self.fetchedData = old.map { transaction -> TransactionModel in
-            guard let id = transaction.id else { return TransactionModel.initEmpty() }
-            let productData = service.fetchProductsOfTransaction(transactionID: id)
-            var transactionWithProduct = transaction
-            transactionWithProduct.productTransactions = productData
-            return transactionWithProduct
-        }
-        //self.fetchedData = service.fetchAllTransaction() ?? []
+//        let data = old.map { transaction -> TransactionModel in
+//            guard let id = transaction.id else { return TransactionModel.initEmpty() }
+//            let productData = service.fetchProductsOfTransaction(transactionID: id)
+//            var transactionWithProduct = transaction
+//            transactionWithProduct.productTransactions = productData
+//            return transactionWithProduct
+//        }
+        
+        self.fetchedData = data
         
         didUpdate?(self)
     }
     
     func transactionDetailVCViewModel(index: Int) -> DetailTransactionViewModel{
-        let viewModel = DetailTransactionViewModel(data: self.fetchedData[index])
+        let viewModel = DetailTransactionViewModel(id: self.fetchedData[index].id)
         return viewModel
     }
     

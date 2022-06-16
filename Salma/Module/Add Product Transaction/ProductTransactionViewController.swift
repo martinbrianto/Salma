@@ -77,7 +77,6 @@ extension ProductTransactionViewController: UITableViewDataSource, UITableViewDe
     
     func updateQuantity(index: Int, quantity: Int32) {
         viewModel.updateQuantityOfProduct(index: index, quantity: quantity)
-        print(">>> \(viewModel.productData[index])")
         updateProductTotal()
     }
 

@@ -11,3 +11,8 @@ struct TransactionTextfield {
     var title: String
     var placeholder: String
 }
+
+struct TransactionButton {
+    var pageState: TransactionPageState
+    var transactionStatus: Status
+}

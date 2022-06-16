@@ -11,6 +11,7 @@ class DetailTransactionViewModel {
     // MARK: - Private
     private let service: CoreDataManager
     var data: TransactionModel
+    var transactionID: UUID?
     
     let customerDataTextfield: [TransactionTextfieldType] = [.customerName, .customerPhoneNumber]
     let addressTextfield: [TransactionTextfieldType] = [.addressName,.addressProvince, .addressCity,.addressDistrict,.addressPostalCode]
@@ -18,9 +19,10 @@ class DetailTransactionViewModel {
     var productTextfield: [TransactionTextfieldType] = [.addProduct, .productNote]
     let priceCell: [TransactionTextfieldType] = [.totalPrice]
     
-    init(service: CoreDataManager = CoreDataManager.shared, data: TransactionModel?){
-        if let data = data {
-            self.data = data
+    init(service: CoreDataManager = CoreDataManager.shared, id: UUID?){
+        if let id = id {
+            self.transactionID = id
+            self.data = service.fetchOneTransaction(transactionID: id) ?? .initEmpty()
         } else {
             self.data = .initEmpty()
         }
@@ -36,10 +38,22 @@ class DetailTransactionViewModel {
     var didSelect: ((TransactionModel) -> Void)?
     var didUpdateData: ((DetailTransactionViewModel?) -> Void)?
     var didUpdatePriceData: ((DetailTransactionViewModel?) -> Void)?
+    var didUpdateTransactionStatus: ((DetailTransactionViewModel?) -> Void)?
 }
 
 extension DetailTransactionViewModel {
     func fetchTransactionData() {
+        guard let transactionID = transactionID else { return }
+        
+        if let fetchedTransaction = service.fetchOneTransaction(transactionID: transactionID) {
+            let products = service.fetchProductsOfTransaction(transactionID: transactionID)
+            self.data = fetchedTransaction
+            self.data.productTransactions = products
+        }
+        setupProductCell()
+    }
+    
+    func setupProductCell(){
         productTextfield = [.addProduct]
         data.productTransactions?.forEach { _ in
             productTextfield.append(.productCell)
@@ -76,7 +90,7 @@ extension DetailTransactionViewModel {
     func addTransactionProduct(){
         guard let transactionID = data.id, let transactionProduct = data.productTransactions else { return }
         transactionProduct.forEach{ product in
-            guard let productQuantity = product.quantity else { return }
+            let productQuantity = product.quantity
             if let productID = product.id {
                 service.addProductsToTransaction(transactionID: transactionID, productID: productID, quantity: productQuantity)
             } else {
@@ -89,12 +103,14 @@ extension DetailTransactionViewModel {
     
     func updateTransaction(data: TransactionModel, id: UUID){
         service.updateTransaction(transactionID: id, transactionData: data)
-        self.data = data
-        didUpdateData?(self)
+        service.removeAllProductOfTransaction(transactionID: id)
+        addTransactionProduct()
+        fetchTransactionData()
     }
     
-    func deleteTransaction(id: UUID) {
-        service.deleteProduct(productID: id)
+    func deleteTransaction() {
+        guard let transactionID = transactionID else { return }
+        service.deleteTransaction(transactionID: transactionID)
         didDelete?(self)
     }
     
@@ -155,5 +171,18 @@ extension DetailTransactionViewModel {
     func productTransactionViewModel() -> ProductTransactionVCViewModel{
         let viewModel = ProductTransactionVCViewModel(products: data.productTransactions)
         return viewModel
+    }
+    
+    func setTransactionStatus(to: Status){
+        guard let id = data.id else {return}
+        switch to {
+        case .notPaid:
+            break
+        case .inProgress:
+            service.addTransactionPaidDate(transactionID: id)
+        case .completed:
+            service.addTransactionCompleteDate(transactionID: id)
+        }
+        fetchTransactionData()
     }
 }

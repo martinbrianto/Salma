@@ -74,7 +74,8 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
                     image: imageData,
                     name: productNameTextFieldView.textfieldView.text ?? "",
                     price: Float(productPriceTextFieldView.textfieldView.text ?? "0") ?? 0,
-                    weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0
+                    weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0,
+                    quantity: 0
                 )
                 if viewModel.productList.contains(where: { $0.name.lowercased() == productData.name.lowercased() }){
                     print("tai")
@@ -100,7 +101,7 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
                 break
             case .edit:
                 guard let productId = viewModel.data?.id else { return }
-                let productData = ProductModel(name: productNameTextFieldView.textfieldView.text ?? "", price: Float(productPriceTextFieldView.textfieldView.text ?? "0") ?? 0, weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0)
+                let productData = ProductModel(name: productNameTextFieldView.textfieldView.text ?? "", price: Float(productPriceTextFieldView.textfieldView.text ?? "0") ?? 0, weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0, quantity: 0)
                 viewModel.updateProduct(data: productData, id: productId)
             case .details:
                 AlertManager.shared.showDeleteAlertActionSheet(controller: self) { [weak self] _ in
@@ -310,7 +311,8 @@ extension ProductAddViewController: UITextFieldDelegate {
                     id: productId,
                     name: productNameTextFieldView.textfieldView.text ?? "",
                     price: Float(productPriceTextFieldView.textfieldView.text ?? "0") ?? 0,
-                    weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0
+                    weight: Int32(productWeightTextFieldView.textfieldView.text ?? "0") ?? 0,
+                    quantity: 0
                 )
                 viewModel.updateProduct(data: productData, id: productId)
                 productPageState = .details

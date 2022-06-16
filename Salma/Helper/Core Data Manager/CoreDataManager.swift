@@ -325,6 +325,7 @@ struct CoreDataManager {
                             name: product.name,
                             price: product.price,
                             weight: product.weight,
+                            quantity: 0,
                             isActive: product.isActive
                         )
                     )
@@ -351,6 +352,7 @@ struct CoreDataManager {
                     name: product.name,
                     price: product.price,
                     weight: product.weight,
+                    quantity: 0,
                     isActive: product.isActive
                 )
             }
@@ -506,9 +508,9 @@ struct CoreDataManager {
     func addTransactionCompleteDate(transactionID: UUID) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         if let transaction = fetchTransaction(transactionID: transactionID) {
+            transaction.status = Status.completed.rawValue
             transaction.date_completed = Date()
         }
-        
         do {
             try context.save()
         } catch {
@@ -520,9 +522,9 @@ struct CoreDataManager {
     func addTransactionPaidDate(transactionID: UUID) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         if let transaction = fetchTransaction(transactionID: transactionID) {
+            transaction.status = Status.inProgress.rawValue
             transaction.date_paid = Date()
         }
-        
         do {
             try context.save()
         } catch {
@@ -669,19 +671,6 @@ struct CoreDataManager {
     }
     
     /* Call this function to fetch all transactionProduct with ID */
-    func fetchAllProductsOfTransaction(transactionID: UUID) -> [ProductModel]? {
-        lazy var productList: [ProductModel] = []
-        if let transaction = CoreDataManager.shared.fetchTransaction(transactionID: transactionID) {
-            if let transactionProducts = transaction.transactionProducts as? [TransactionProduct] {
-                for transactionProduct in transactionProducts {
-                    productList.append(ProductModel(image: nil, id: transactionProduct.product?.uuid, name: transactionProduct.product?.name ?? "", price: transactionProduct.product?.price ?? 0, weight: transactionProduct.product?.weight ?? 0, quantity: transactionProduct.productQuantity))
-                }
-                return productList
-            }
-        }
-        return nil
-    }
-    
     func fetchProductsOfTransaction(transactionID: UUID) -> [ProductModel]? {
         lazy var productList: [ProductModel] = []
         if let transaction = CoreDataManager.shared.fetchTransaction(transactionID: transactionID) {
@@ -703,6 +692,19 @@ struct CoreDataManager {
             return productModelArr
         }
         return nil
+    }
+    
+    func removeAllProductOfTransaction(transactionID: UUID) {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        if let transaction = CoreDataManager.shared.fetchTransaction(transactionID: transactionID) {
+            guard let tp = transaction.transactionProducts else { return }
+            transaction.removeFromTransactionProducts(tp)
+            do {
+                try context.save()
+            } catch {
+                print("\(error.localizedDescription)")
+            }
+        }
     }
     
 //    /* Call this function to update transactionProduct quantity with ID */

@@ -22,7 +22,7 @@ class TransactionViewController: UIViewController {
         }
     }
     @IBAction func addButtonAction(_ sender: Any) {
-        let vc = DetailTransactionViewController(state: .add, viewModel: DetailTransactionViewModel(data: nil))
+        let vc = DetailTransactionViewController(state: .add, viewModel: DetailTransactionViewModel(id: nil))
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -34,6 +34,7 @@ class TransactionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNIB()
+        bindToViewModel()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,14 +44,14 @@ class TransactionViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.fetchProductData()
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        viewModel.fetchProductData()
     }
     
     private func bindToViewModel(){
         viewModel.didUpdate = { [weak self] _ in
             guard let self = self else { return }
-            self.transactionTableView.reloadData()
+                self.transactionTableView.reloadData()
         }
     }
 }

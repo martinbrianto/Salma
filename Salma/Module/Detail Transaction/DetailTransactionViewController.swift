@@ -119,8 +119,19 @@ extension DetailTransactionViewController: ProductTransactionViewControllerDeleg
         
         viewModel.didUpdatePriceData = { [weak self] _ in
             guard let self = self else { return }
-            self.tableView.reloadSections(IndexSet(integersIn: 4...4), with: .automatic)
+            self.tableView.reloadSections(IndexSet(integersIn: 4...4), with: .none)
         }
+        
+        viewModel.didUpdate = { [weak self] _ in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
+        
+        viewModel.didDelete  = { [weak self] _ in
+            guard let self = self else { return }
+            self.navigationController?.popViewController(animated: true)
+        }
+
     }
     
     private func registerNIB(){
@@ -132,12 +143,30 @@ extension DetailTransactionViewController: ProductTransactionViewControllerDeleg
     }
     
     @objc func didTapCellButton(sender: UIButton) {
-        if viewModel.validateTransaction() {
-            viewModel.saveTransaction()
-            navigationController?.popToRootViewController(animated: true)
-        } else {
-            print("ada yang error")
+        
+        switch pageState {
+            
+        case .add:
+            if viewModel.validateTransaction() {
+                viewModel.saveTransaction()
+                navigationController?.popToRootViewController(animated: true)
+            } else {
+                print("ada yang error")
+            }
+        case .edit:
+            viewModel.deleteTransaction()
+            break
+        case .detail:
+            switch viewModel.data.status {
+            case .notPaid:
+                viewModel.setTransactionStatus(to: .inProgress)
+            case .inProgress:
+                viewModel.setTransactionStatus(to: .completed)
+            case .completed:
+                break
+            }
         }
+        
     }
     
     
@@ -187,7 +216,7 @@ extension DetailTransactionViewController: UITableViewDataSource, UITableViewDel
         case .totalPrice:
             return viewModel.priceCell.count
         case .button:
-            return pageState == .add ? 1 : 0
+            return 1
         }
     }
     
@@ -243,6 +272,7 @@ extension DetailTransactionViewController: UITableViewDataSource, UITableViewDel
                 // product notes cell
             case viewModel.productTextfield.last:
                 let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTextFieldTableViewCell.reuseID) as! TransactionTextFieldTableViewCell
+                cell.textfield.delegate = self
                 cell.textfield.tag = viewModel.productTextfield.last?.rawValue ?? 8
                 cell.pageState = self.pageState
                 cell.textFieldInput = viewModel.data.notes
@@ -273,6 +303,7 @@ extension DetailTransactionViewController: UITableViewDataSource, UITableViewDel
                 return cell
         case .button:
             let buttonCell = tableView.dequeueReusableCell(withIdentifier: TransactionButtonTableViewCell.reuseID) as! TransactionButtonTableViewCell
+            buttonCell.state = TransactionButton(pageState: self.pageState, transactionStatus: viewModel.data.status)
             buttonCell.button.addTarget(self, action: #selector(didTapCellButton(sender:)), for: .touchUpInside)
             return buttonCell
         }

@@ -55,7 +55,9 @@ extension ProductTransactionVCViewModel {
     }
     
     func addCustomProduct(_ customProduct: ProductModel) {
-        self.productData.insert(customProduct, at: 0)
+        var cp = customProduct
+        cp.quantity = 1
+        self.productData.insert(cp, at: 0)
         cell.append(.product)
         didUpdateProduct?(self)
     }

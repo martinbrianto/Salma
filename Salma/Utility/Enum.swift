@@ -111,7 +111,7 @@ enum TransactionTextfieldType: Int, CaseIterable {
         case .shippingPrice:
             return "Shipping price"
         case .addProduct:
-            return "Product(s) chosen"
+            return "0 Product(s) chosen"
         default:
             return ""
         }

@@ -63,9 +63,13 @@ extension TransactionTextFieldTableViewCell {
             }
             textfield.keyboardType = .numberPad
         case .addProduct:
-            textfield.text = ""
             chevronImg.isHidden = false
             textfield.isEnabled = false
+            if pageState == .detail {
+                textfield.textColor = UIColor(named: "textFieldDisabled")
+            } else {
+                textfield.textColor = UIColor.darkText
+            }
         default:
             if pageState == .detail {
                 textfield.isEnabled = false

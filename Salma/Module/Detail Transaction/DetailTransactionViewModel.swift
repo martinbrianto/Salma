@@ -156,9 +156,11 @@ extension DetailTransactionViewModel {
     
     func countSubTotal(){
         guard let productTransaction = data.productTransactions else { return }
+        data.priceSubTotal = 0
         productTransaction.forEach{
             data.priceSubTotal += $0.price
         }
+        
         countTotal()
         didUpdatePriceData?(self)
     }

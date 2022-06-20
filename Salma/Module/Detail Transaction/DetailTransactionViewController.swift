@@ -75,7 +75,9 @@ private extension DetailTransactionViewController {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(navbarRightActionButton))
         case .detail:
             title = "Transaction Details"
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Edit", style: .done, target: self, action: #selector(navbarRightActionButton))
+            if !(viewModel.data.status == .completed) {
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Edit", style: .done, target: self, action: #selector(navbarRightActionButton))
+                }
             }
         }
     }
@@ -267,6 +269,13 @@ extension DetailTransactionViewController: UITableViewDataSource, UITableViewDel
             case viewModel.productTextfield.first:
                 let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTextFieldTableViewCell.reuseID) as! TransactionTextFieldTableViewCell
                 cell.pageState = self.pageState
+                if let productCount = viewModel.data.productTransactions?.count {
+                    if productCount == 0 {
+                        cell.textFieldInput = ""
+                    } else {
+                        cell.textFieldInput = "\(productCount) Product(s) Chosen"
+                    }
+                }
                 cell.textfieldType = viewModel.productTextfield.first
                 return cell
                 // product notes cell

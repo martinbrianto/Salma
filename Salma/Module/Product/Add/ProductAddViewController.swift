@@ -78,7 +78,7 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
                     quantity: 0
                 )
                 if viewModel.productList.contains(where: { $0.name.lowercased() == productData.name.lowercased() }){
-                    print("tai")
+                    AlertManager.shared.showAlert(controller: self, title: "Product already exist", message: "Product \(productData.name) is already exist")
                 } else {
                     viewModel.saveProduct(data: productData)
                 }
@@ -270,7 +270,7 @@ extension ProductAddViewController: UITextFieldDelegate {
         if (productNameTextFieldView.textfieldView.text ?? "").isEmpty {
             errorCount += 1
             productNameTextFieldView.errorMessage = "Product name must be filled!"
-        }else{
+        } else {
             productNameTextFieldView.errorMessage = nil
         }
         
@@ -286,7 +286,7 @@ extension ProductAddViewController: UITextFieldDelegate {
         if (productWeightTextFieldView.textfieldView.text ?? "").isEmpty {
             errorCount += 1
             productWeightTextFieldView.errorMessage = "Product weight must be filled!"
-        }else{
+        } else {
             productWeightTextFieldView.errorMessage = nil
         }
         

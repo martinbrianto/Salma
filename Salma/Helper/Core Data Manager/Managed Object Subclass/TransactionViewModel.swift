@@ -12,6 +12,7 @@ class TransactionViewModel {
     // MARK: - Private
     private let service: CoreDataManager
     private(set) var fetchedData: [TransactionModel] = []
+    private(set) var displayedData: [TransactionModel] = []
     private(set) var sortedFetchedData: [ProductModel] = []
     
     init(service: CoreDataManager = CoreDataManager.shared){
@@ -35,22 +36,42 @@ extension TransactionViewModel {
     
     func fetchProductData() {
         let data = service.fetchAllTransaction() ?? []
-        
-//        let data = old.map { transaction -> TransactionModel in
-//            guard let id = transaction.id else { return TransactionModel.initEmpty() }
-//            let productData = service.fetchProductsOfTransaction(transactionID: id)
-//            var transactionWithProduct = transaction
-//            transactionWithProduct.productTransactions = productData
-//            return transactionWithProduct
-//        }
-        
         self.fetchedData = data
-        
+        filterToAll()
         didUpdate?(self)
     }
     
-    func transactionDetailVCViewModel(index: Int) -> DetailTransactionViewModel{
-        let viewModel = DetailTransactionViewModel(id: self.fetchedData[index].id)
+    func filterToNotPaid() {
+        let filteredData = fetchedData.filter({
+            $0.status == .notPaid
+        })
+        displayedData = filteredData
+        didUpdate?(self)
+    }
+    
+    func filterToInProgress() {
+        let filteredData = fetchedData.filter({
+            $0.status == .inProgress
+        })
+        displayedData = filteredData
+        didUpdate?(self)
+    }
+    
+    func filterToCompleted() {
+        let filteredData = fetchedData.filter({
+            $0.status == .completed
+        })
+        displayedData = filteredData
+        didUpdate?(self)
+    }
+    
+    func filterToAll() {
+        displayedData = fetchedData
+        didUpdate?(self)
+    }
+    
+    func transactionDetailVCViewModel(index: Int) -> DetailTransactionViewModel {
+        let viewModel = DetailTransactionViewModel(id: self.displayedData[index].id)
         return viewModel
     }
     

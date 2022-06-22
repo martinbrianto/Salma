@@ -59,6 +59,7 @@ class DetailTransactionViewController: UIViewController {
         setupPage()
         registerNIB()
         bindToViewModel()
+        keyboardDismisser()
         viewModel.fetchTransactionData()
     }
 }
@@ -102,6 +103,12 @@ private extension DetailTransactionViewController {
            tableView.reloadData()
        }
    }
+    
+    private func keyboardDismisser(){
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+        tap.cancelsTouchesInView = false
+    }
 }
 
 extension DetailTransactionViewController: ProductTransactionViewControllerDelegate {
@@ -153,17 +160,26 @@ extension DetailTransactionViewController: ProductTransactionViewControllerDeleg
                 viewModel.saveTransaction()
                 navigationController?.popToRootViewController(animated: true)
             } else {
-                print("ada yang error")
+                AlertManager.shared.showAlert(controller: self, title: "Data Incomplete", message: "Some fields are empty")
             }
         case .edit:
-            viewModel.deleteTransaction()
+            AlertManager.shared.showDeleteAlertActionSheet(controller: self) { [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.deleteTransaction()
+            }
             break
         case .detail:
             switch viewModel.data.status {
             case .notPaid:
-                viewModel.setTransactionStatus(to: .inProgress)
+                AlertManager.shared.showConfirmationAlertActionSheet(controller: self, message: "Are you sure this transaction is paid?") { [weak self] _ in
+                    guard let self = self else { return }
+                    self.viewModel.setTransactionStatus(to: .inProgress)
+                }
             case .inProgress:
-                viewModel.setTransactionStatus(to: .completed)
+                AlertManager.shared.showConfirmationAlertActionSheet(controller: self, message: "Are you sure complete this transaction?") { [weak self] _ in
+                    guard let self = self else { return }
+                    self.viewModel.setTransactionStatus(to: .completed)
+                }
             case .completed:
                 break
             }
@@ -374,6 +390,42 @@ extension DetailTransactionViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.addTarget(self, action: #selector(valueChanged), for: .editingChanged)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField.tag {
+        case TransactionTextfieldType.customerName.rawValue:
+            let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! TransactionTextFieldTableViewCell
+            cell.textfield.becomeFirstResponder()
+        case TransactionTextfieldType.customerPhoneNumber.rawValue:
+            let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! TransactionTextFieldTableViewCell
+            cell.textfield.becomeFirstResponder()
+        case TransactionTextfieldType.addressName.rawValue:
+            let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 1)) as! TransactionTextFieldTableViewCell
+            cell.textfield.becomeFirstResponder()
+        case TransactionTextfieldType.addressProvince.rawValue:
+            let cell = tableView.cellForRow(at: IndexPath(row: 2, section: 1)) as! TransactionTextFieldTableViewCell
+            cell.textfield.becomeFirstResponder()
+        case TransactionTextfieldType.addressCity.rawValue:
+            let cell = tableView.cellForRow(at: IndexPath(row: 3, section: 1)) as! TransactionTextFieldTableViewCell
+            cell.textfield.becomeFirstResponder()
+        case TransactionTextfieldType.addressDistrict.rawValue:
+            let cell = tableView.cellForRow(at: IndexPath(row: 4, section: 1)) as! TransactionTextFieldTableViewCell
+            cell.textfield.becomeFirstResponder()
+        case TransactionTextfieldType.addressPostalCode.rawValue:
+            let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 2)) as! TransactionTextFieldTableViewCell
+            cell.textfield.becomeFirstResponder()
+        case TransactionTextfieldType.productNote.rawValue:
+            let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 3)) as! TransactionTextFieldTableViewCell
+            cell.textfield.becomeFirstResponder()
+        case TransactionTextfieldType.shippingExpedition.rawValue:
+            let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 3)) as! TransactionTextFieldTableViewCell
+            cell.textfield.becomeFirstResponder()
+        case TransactionTextfieldType.shippingPrice.rawValue:
+            break
+        default: break
+        }
+        return true
     }
     
     @objc private func valueChanged(_ textField: UITextField) {

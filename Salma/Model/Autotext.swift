@@ -12,3 +12,7 @@ struct Autotext {
     var messages: String
     var id: UUID?
 }
+
+let formatOrderTagData = ["#name", "#phoneNumber", "#streetAddress", "#province", "#city", "#district", "#postalCode", "#notes", "#expedition"]
+let defaultAutotextTagData = ["#storeName", "#storeURL", "#storeLocation", "#storePhoneNumber", "#customerName", "#customerPhoneNumber", "#customerAddress", "#products", "#shippingExpedition", "#shippingPrice", "#totalPrice"]
+let customAutotextTagData = ["#storeName", "#storeURL", "#storeLocation", "#storePhoneNumber"]

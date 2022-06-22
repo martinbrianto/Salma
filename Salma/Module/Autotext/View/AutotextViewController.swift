@@ -36,6 +36,7 @@ class AutotextViewController: UIViewController {
         super.viewDidLoad()
         setupPage()
         bindToViewModel()
+        //CoreDataManager.shared.saveDefaultAutotext(autotextData: Autotext(title: "Welcom", messages: "Halo selamat datang di #store-name. Ada yang bisa kami bantu?\n\n #store-nama\n#store-address\n#store-phone-number\n\n jangan lupa untuk visit website kami di #store-url"))
     }
     
     override func viewWillDisappear(_ animated: Bool) {

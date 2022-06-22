@@ -80,6 +80,8 @@
 		E698706C2817167C002D73F2 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E698706B2817167C002D73F2 /* IQKeyboardManagerSwift */; };
 		E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698717D28182B7D002D73F2 /* EnableKeyboardViewController.swift */; };
 		E698718028182B7D002D73F2 /* EnableKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */; };
+		E6B248C32861FF6100CBB9AF /* Atributika in Frameworks */ = {isa = PBXBuildFile; productRef = E6B248C22861FF6100CBB9AF /* Atributika */; };
+		E6B248C62862170200CBB9AF /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = E6B248C52862170200CBB9AF /* DropDown */; };
 		E6BC3437284E34F90076289C /* DetailTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BC3436284E34F90076289C /* DetailTransactionViewModel.swift */; };
 		E6BC3439284E37050076289C /* TransactionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BC3438284E37050076289C /* TransactionTextField.swift */; };
 		E6BC343D284E5EC40076289C /* TransactionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BC343B284E5EC40076289C /* TransactionButtonTableViewCell.swift */; };
@@ -298,6 +300,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6702D60281D2FA4005F4DAC /* CloudKit.framework in Frameworks */,
+				E6B248C62862170200CBB9AF /* DropDown in Frameworks */,
+				E6B248C32861FF6100CBB9AF /* Atributika in Frameworks */,
 				E646D156285BA8F000620700 /* DSFStepperView in Frameworks */,
 				E698706C2817167C002D73F2 /* IQKeyboardManagerSwift in Frameworks */,
 				E6702D5C281D20AC005F4DAC /* Alamofire in Frameworks */,
@@ -973,6 +977,8 @@
 				E698706B2817167C002D73F2 /* IQKeyboardManagerSwift */,
 				E6702D5B281D20AC005F4DAC /* Alamofire */,
 				E646D155285BA8F000620700 /* DSFStepperView */,
+				E6B248C22861FF6100CBB9AF /* Atributika */,
+				E6B248C52862170200CBB9AF /* DropDown */,
 			);
 			productName = Salma;
 			productReference = E6545F192804499900A95A03 /* Salma.app */;
@@ -1070,6 +1076,8 @@
 				E698706A2817167C002D73F2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				E6702D5A281D20AC005F4DAC /* XCRemoteSwiftPackageReference "Alamofire" */,
 				E646D154285BA8F000620700 /* XCRemoteSwiftPackageReference "DSFStepperView" */,
+				E6B248C12861FF6100CBB9AF /* XCRemoteSwiftPackageReference "Atributika" */,
+				E6B248C42862170200CBB9AF /* XCRemoteSwiftPackageReference "DropDown" */,
 			);
 			productRefGroup = E6545F1A2804499900A95A03 /* Products */;
 			projectDirPath = "";
@@ -1674,6 +1682,22 @@
 				minimumVersion = 6.5.0;
 			};
 		};
+		E6B248C12861FF6100CBB9AF /* XCRemoteSwiftPackageReference "Atributika" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/psharanda/Atributika";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		E6B248C42862170200CBB9AF /* XCRemoteSwiftPackageReference "DropDown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AssistoLab/DropDown";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1691,6 +1715,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E698706A2817167C002D73F2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		E6B248C22861FF6100CBB9AF /* Atributika */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6B248C12861FF6100CBB9AF /* XCRemoteSwiftPackageReference "Atributika" */;
+			productName = Atributika;
+		};
+		E6B248C52862170200CBB9AF /* DropDown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6B248C42862170200CBB9AF /* XCRemoteSwiftPackageReference "DropDown" */;
+			productName = DropDown;
 		};
 /* End XCSwiftPackageProductDependency section */
 

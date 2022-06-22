@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Atributika
+import DropDown
 
 class AutotextAddViewController: UIViewController {
     // MARK: - Outlets
@@ -47,6 +49,16 @@ class AutotextAddViewController: UIViewController {
     }
     
     // MARK: - Variable
+    private var dropDown: DropDown = {
+        let view = DropDown()
+        view.cellHeight = 50
+        view.separatorColor = .separator
+        DropDown.appearance().setupCornerRadius(14)
+        view.backgroundColor = UIColor.white
+        view.textColor = UIColor(named: "Main") ?? UIColor.darkText
+        return view
+    }()
+    private var isFormatOrder: Bool = false
     private let viewModel: AutotextAddVCViewModel
     private var textViewPlaceholder: String = "e.g. Barang Ready Stock, Silakan di order"
     private var pageState: AutotextPageState{
@@ -65,7 +77,9 @@ class AutotextAddViewController: UIViewController {
         setupPage()
         setupTextField()
         keyboardDismisser()
-        
+        if viewModel.data?.title == "Format Order" {
+            self.isFormatOrder = true
+        }
     }
     
     init(state pageState: AutotextPageState, viewModel: AutotextAddVCViewModel){
@@ -150,48 +164,52 @@ private extension AutotextAddViewController {
     
     private func setupPage(){
         DispatchQueue.main.async { [weak self] in
-            self?.title = "Add Autotext"
-            switch self?.pageState {
+            guard let self = self else { return }
+            self.title = "Add Autotext"
+            switch self.pageState {
         case .add:
-            self?.title = "Add Autotext"
+            self.title = "Add Autotext"
         case .editCustom:
-            self?.title = "Autotext Edit"
-            self?.button.isHidden = true
-            self?.autotextTitleTextField.isEnabled = true
-            self?.autotextMessageTextView.isEditable = true
-            self?.autotextMessageTextView.textColor = .darkText
-            self?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self?.navBarItemTapped))
+            self.title = "Autotext Edit"
+            self.button.isHidden = true
+            self.autotextTitleTextField.isEnabled = true
+            self.autotextMessageTextView.isEditable = true
+            let attributedText = self.autotextMessageTextView.text.styleAll(Style.font(UIFont(name: "HelveticaNeue", size: 16) ?? .systemFont(ofSize: 16))).styleHashtags(Style.foregroundColor(UIColor(named: "Main") ?? UIColor.darkText)).attributedString
+                self.autotextMessageTextView.attributedText = attributedText
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self.navBarItemTapped))
         case .editDefault:
-            self?.title = "Autotext Edit"
-            self?.button.isHidden = true
-            self?.autotextTitleTextField.isEnabled = true
-            self?.autotextMessageTextView.isEditable = true
-            self?.autotextMessageTextView.textColor = .darkText
-            self?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self?.navBarItemTapped))
+            self.title = "Autotext Edit"
+            self.button.isHidden = true
+                if self.isFormatOrder {
+                    self.autotextTitleTextField.isEnabled = false
+                } else {
+                    self.autotextTitleTextField.isEnabled = true
+                }
+            self.autotextMessageTextView.isEditable = true
+            let attributedText = self.autotextMessageTextView.text.styleAll(Style.font(UIFont(name: "HelveticaNeue", size: 16) ?? .systemFont(ofSize: 16))).styleHashtags(Style.foregroundColor(UIColor(named: "Main") ?? UIColor.darkText)).attributedString
+            self.autotextMessageTextView.attributedText = attributedText
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self.navBarItemTapped))
         case .detailCustom:
-            self?.viewModel.fetchAutotext()
-            self?.autotextMessageCharCounter.text = "\(self?.autotextMessageTextView.text.count ?? 0) / 2200"
-            self?.title = "Autotext Details"
-            self?.button.isHidden = false
-            self?.button.backgroundColor = .clear
-            self?.button.setTitle("Delete Autotext", for: .normal)
-            self?.button.setTitleColor(.red, for: .normal)
-            self?.button.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
-            self?.autotextTitleTextField.isEnabled = false
-            self?.autotextMessageTextView.isEditable = false
-            self?.autotextMessageTextView.textColor = UIColor(named: "textFieldDisabled")
-            self?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self?.navBarItemTapped))
+            self.viewModel.fetchAutotext()
+                self.autotextMessageCharCounter.text = "\(self.autotextMessageTextView.text.count ) / 2200"
+            self.title = "Autotext Details"
+            self.button.isHidden = false
+            self.button.backgroundColor = .clear
+            self.button.setTitle("Delete Autotext", for: .normal)
+            self.button.setTitleColor(.red, for: .normal)
+            self.button.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
+            self.autotextTitleTextField.isEnabled = false
+            self.autotextMessageTextView.isEditable = false
+            self.autotextMessageTextView.textColor = UIColor(named: "textFieldDisabled")
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self.navBarItemTapped))
         case .detailDefault:
-            self?.viewModel.fetchAutotext()
-            self?.autotextMessageCharCounter.text = "\(self?.autotextMessageTextView.text.count ?? 0) / 2200"
-            self?.title = "Autotext Details"
-            self?.autotextGuideLabel.isHidden = false
-            self?.autotextTitleTextField.isEnabled = false
-            self?.autotextMessageTextView.isEditable = false
-            self?.autotextMessageTextView.textColor = UIColor(named: "textFieldDisabled")
-            self?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self?.navBarItemTapped))
-            case .none:
-                break
+            self.viewModel.fetchAutotext()
+                self.autotextMessageCharCounter.text = "\(self.autotextMessageTextView.text.count ) / 2200"
+            self.title = "Autotext Details"
+            self.autotextTitleTextField.isEnabled = false
+            self.autotextMessageTextView.isEditable = false
+            self.autotextMessageTextView.textColor = UIColor(named: "textFieldDisabled")
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self.navBarItemTapped))
             }
         }
     }
@@ -207,7 +225,7 @@ private extension AutotextAddViewController {
             pageState = .detailCustom
         case .editDefault:
             guard let autotextId = viewModel.data?.id else { return }
-            let autoTextData = Autotext(title: autotextTitleTextField.textfieldView.text ?? "", messages: autotextMessageTextView.text ?? "")
+            let autoTextData = Autotext(title: autotextTitleTextField.textfieldView.text ?? "", messages: autotextMessageTextView.text ?? "", id: viewModel.data?.id)
             viewModel.updateAutotext(pageState: self.pageState, data: autoTextData, id: autotextId)
             pageState = .detailDefault
         case .detailCustom:
@@ -267,10 +285,63 @@ extension AutotextAddViewController: UITextFieldDelegate, UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         autotextMessageCharCounter.text = "\(autotextMessageTextView.text.count) / 2200"
+            if (characterBeforeCursor(textView) == "#") {
+                if let b = textView.selectedTextRange?.start {
+                    let pos: UITextPosition = b
+                    let rect = textView.caretRect(for: pos)
+                    let customView = UIView(frame: CGRect(x: rect.origin.x, y: rect.origin.y, width: 200, height: 0))
+                                textView.addSubview(customView)
+                    dropDown.anchorView = customView
+                    if isFormatOrder {
+                        dropDown.dataSource = formatOrderTagData
+                    } else {
+                        dropDown.dataSource = pageState == .editDefault ? defaultAutotextTagData : customAutotextTagData
+                    }
+                                // Action triggered on selection
+                                dropDown.selectionAction = { (index: Int, item: String) in
+                                    //remove Custom view as we no longer needed it.
+                                    customView.removeFromSuperview()
+                                    //Set your text accourding to selection from dropdown item.
+    
+                                        if let newPosition = textView.position(from: b, offset: -1) {
+                                            if let range = textView.textRange(from: newPosition, to: b) {
+                                                textView.replace(range, withText: "\(item) ")
+                                                if let newPos = textView.position(from: b, offset: item.count) {
+                                                    textView.selectedTextRange = textView.textRange(from: newPos, to: newPos)
+                                                }
+                                            }
+                                        }
+                                    
+                                }
+                    dropDown.show()
+                }
+            }
+        else {
+            dropDown.hide()
+        }
+        // coba kalo check hastagnya salah satu dari data #
+        if (characterBeforeCursor(textView) == " ") {
+            let attributedText = textView.text.styleAll(Style.font(UIFont(name: "HelveticaNeue", size: 16) ?? .systemFont(ofSize: 16))).styleHashtags(Style.foregroundColor(UIColor(named: "Main") ?? UIColor.darkText)).attributedString
+            textView.attributedText = attributedText
+        }
+        
+        
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
              return newText.count <= 2200
     }
+    
+    private func characterBeforeCursor(_ textView: UITextView) -> String? {
+            // get the cursor position
+            if let cursorRange = textView.selectedTextRange {
+                // get the position one character before the cursor start position
+                if let newPosition = textView.position(from: cursorRange.start, offset: -1) {
+                    let range = textView.textRange(from: newPosition, to: cursorRange.start)
+                    return textView.text(in: range!)
+                }
+            }
+            return nil
+        }
 }

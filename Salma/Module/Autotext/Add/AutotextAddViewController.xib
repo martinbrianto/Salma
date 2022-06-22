@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -29,7 +29,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RwD-x7-VLR">
                     <rect key="frame" x="16" y="68" width="382" height="683"/>
                     <subviews>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDg-Kt-cH5">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDg-Kt-cH5">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use # to automatically get data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1f3-Uz-HR3">
@@ -48,7 +48,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXW-cp-DTu">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="683"/>
+                            <rect key="frame" x="0.0" y="44" width="382" height="639"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwv-RC-ZfN" customClass="TextFieldView" customModule="Salma" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="382" height="96"/>
@@ -58,7 +58,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CuG-fq-XaL">
-                                    <rect key="frame" x="0.0" y="100" width="382" height="583"/>
+                                    <rect key="frame" x="0.0" y="100" width="382" height="539"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jg6-SJ-6gh">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="22"/>
@@ -83,10 +83,10 @@
                                             </constraints>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcK-0A-qHn">
-                                            <rect key="frame" x="0.0" y="30" width="382" height="545"/>
+                                            <rect key="frame" x="0.0" y="30" width="382" height="501"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="e.g. Barang Ready Stock, Silakan di order" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gdq-FZ-qDK">
-                                                    <rect key="frame" x="16" y="16" width="350" height="513"/>
+                                                    <rect key="frame" x="16" y="16" width="350" height="469"/>
                                                     <color key="textColor" red="0.72162061929999999" green="0.72143435479999996" blue="0.72941291330000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -101,7 +101,7 @@
                                             </constraints>
                                         </view>
                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KQ-YM-5fr">
-                                            <rect key="frame" x="0.0" y="575" width="382" height="20"/>
+                                            <rect key="frame" x="0.0" y="531" width="382" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="qVF-i1-Q7N"/>
                                             </constraints>

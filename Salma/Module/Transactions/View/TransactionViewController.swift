@@ -14,10 +14,18 @@ class TransactionViewController: UIViewController {
     @IBOutlet weak var transactionTableView: UITableView!
     @IBAction func segmentedControlDidChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-        case 0: print("ALL")
-        case 1 : print("NotPaid")
-        case 2 : print("InProgress")
-        case 3 : print("Completed")
+        case 0:
+            print("ALL")
+            viewModel.filterToAll()
+        case 1 :
+            print("NotPaid")
+            viewModel.filterToNotPaid()
+        case 2 :
+            print("InProgress")
+            viewModel.filterToInProgress()
+        case 3 :
+            print("Completed")
+            viewModel.filterToCompleted()
         default: break
         }
     }
@@ -64,18 +72,18 @@ private extension TransactionViewController {
 
 extension TransactionViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if viewModel.fetchedData.isEmpty {
+        if viewModel.displayedData.isEmpty {
             transactionTableView.isHidden = true
         } else {
             transactionTableView.isHidden = false
         }
-        return viewModel.fetchedData.count
+        return viewModel.displayedData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = transactionTableView.dequeueReusableCell(withIdentifier: TransactionTableViewCell.reuseID, for: indexPath) as! TransactionTableViewCell
         
-        cell.transactionData = viewModel.fetchedData[indexPath.row]
+        cell.transactionData = viewModel.displayedData[indexPath.row]
         
         return cell
     }

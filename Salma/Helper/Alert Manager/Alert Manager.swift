@@ -23,4 +23,23 @@ class AlertManager {
 
             controller.present(alert, animated: true, completion: nil )
         }
+    
+    func showConfirmationAlertActionSheet(controller: UIViewController, message: String ,onConfirmAction: @escaping ( (UIAlertAction) -> Void)) {
+            let alert = UIAlertController(title: "Confirmation", message: message, preferredStyle: .actionSheet)
+
+        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: onConfirmAction))
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+            controller.present(alert, animated: true, completion: nil )
+        }
+    
+    func showAlert(controller: UIViewController,title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                //Cancel Action
+            }))
+            controller.present(alert, animated: true, completion: nil)
+        }
 }

@@ -282,7 +282,8 @@ struct CoreDataManager {
                 }
             }
         } else {
-            print("No profile found")
+            print("No profile found, saving a new profile")
+            saveProfile(newProfile: newProfileData)
         }
     }
     

@@ -56,7 +56,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
+        lazy var secureAppGroupPersistentStoreURL : URL = {
+               let fileManager = FileManager.default
+               let groupDirectory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.salma")!
+               //xxxxx - is my real bundle identificator
+               return groupDirectory.appendingPathComponent("SharedData.sqlite")
+            }()
+        
         let container = NSPersistentContainer(name: "Salma")
+        container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: secureAppGroupPersistentStoreURL)]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

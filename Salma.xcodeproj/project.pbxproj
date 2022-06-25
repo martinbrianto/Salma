@@ -82,6 +82,21 @@
 		E698718028182B7D002D73F2 /* EnableKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */; };
 		E6B248C32861FF6100CBB9AF /* Atributika in Frameworks */ = {isa = PBXBuildFile; productRef = E6B248C22861FF6100CBB9AF /* Atributika */; };
 		E6B248C62862170200CBB9AF /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = E6B248C52862170200CBB9AF /* DropDown */; };
+		E6B24977286759CC00CBB9AF /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = E6B24976286759CC00CBB9AF /* KeyboardKit */; };
+		E6B2497928675C6F00CBB9AF /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = E6B2497828675C6F00CBB9AF /* KeyboardKit */; };
+		E6B2497B28675F1400CBB9AF /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2497A28675F1400CBB9AF /* KeyboardView.swift */; };
+		E6B2498D2867723C00CBB9AF /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2498C2867723C00CBB9AF /* ToolbarView.swift */; };
+		E6B2498E2867725600CBB9AF /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2498C2867723C00CBB9AF /* ToolbarView.swift */; };
+		E6B24997286776B200CBB9AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B24996286776B200CBB9AF /* Images.xcassets */; };
+		E6B2499828677A2500CBB9AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B24996286776B200CBB9AF /* Images.xcassets */; };
+		E6B2499A28677D2700CBB9AF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B2499928677D2700CBB9AF /* Colors.xcassets */; };
+		E6B2499B28677D3C00CBB9AF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B2499928677D2700CBB9AF /* Colors.xcassets */; };
+		E6B2499D2867815900CBB9AF /* AutotextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2499C2867815900CBB9AF /* AutotextView.swift */; };
+		E6B2499E2867816300CBB9AF /* AutotextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2499C2867815900CBB9AF /* AutotextView.swift */; };
+		E6B249A72867900900CBB9AF /* Salma.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6545F252804499900A95A03 /* Salma.xcdatamodeld */; };
+		E6B249A92867961E00CBB9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6545F282804499B00A95A03 /* Assets.xcassets */; };
+		E6B249AB2867962200CBB9AF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7E1DA3A2804990E006C9D27 /* Colors.xcassets */; };
+		E6B249AF28679E5400CBB9AF /* Keyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B249AE28679E5400CBB9AF /* Keyboard.storyboard */; };
 		E6BC3437284E34F90076289C /* DetailTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BC3436284E34F90076289C /* DetailTransactionViewModel.swift */; };
 		E6BC3439284E37050076289C /* TransactionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BC3438284E37050076289C /* TransactionTextField.swift */; };
 		E6BC343D284E5EC40076289C /* TransactionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BC343B284E5EC40076289C /* TransactionButtonTableViewCell.swift */; };
@@ -253,6 +268,13 @@
 		E69870652816D458002D73F2 /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
 		E698717D28182B7D002D73F2 /* EnableKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableKeyboardViewController.swift; sourceTree = "<group>"; };
 		E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnableKeyboardViewController.xib; sourceTree = "<group>"; };
+		E6B2497A28675F1400CBB9AF /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		E6B2498C2867723C00CBB9AF /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
+		E6B24996286776B200CBB9AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E6B2499928677D2700CBB9AF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E6B2499C2867815900CBB9AF /* AutotextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutotextView.swift; sourceTree = "<group>"; };
+		E6B249A82867923000CBB9AF /* SalmaKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SalmaKeyboard.entitlements; sourceTree = "<group>"; };
+		E6B249AE28679E5400CBB9AF /* Keyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Keyboard.storyboard; sourceTree = "<group>"; };
 		E6BC3436284E34F90076289C /* DetailTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewModel.swift; sourceTree = "<group>"; };
 		E6BC3438284E37050076289C /* TransactionTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTextField.swift; sourceTree = "<group>"; };
 		E6BC343B284E5EC40076289C /* TransactionButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionButtonTableViewCell.swift; sourceTree = "<group>"; };
@@ -303,6 +325,7 @@
 				E6B248C62862170200CBB9AF /* DropDown in Frameworks */,
 				E6B248C32861FF6100CBB9AF /* Atributika in Frameworks */,
 				E646D156285BA8F000620700 /* DSFStepperView in Frameworks */,
+				E6B24977286759CC00CBB9AF /* KeyboardKit in Frameworks */,
 				E698706C2817167C002D73F2 /* IQKeyboardManagerSwift in Frameworks */,
 				E6702D5C281D20AC005F4DAC /* Alamofire in Frameworks */,
 			);
@@ -326,6 +349,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6B2497928675C6F00CBB9AF /* KeyboardKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,8 +792,13 @@
 		E6702D66281D4894005F4DAC /* SalmaKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				E6B249A82867923000CBB9AF /* SalmaKeyboard.entitlements */,
+				E6B2498F2867766900CBB9AF /* Assets */,
+				E6B24989286771F900CBB9AF /* Views */,
 				E6702D67281D4894005F4DAC /* KeyboardViewController.swift */,
+				E6B2497A28675F1400CBB9AF /* KeyboardView.swift */,
 				E6702D69281D4894005F4DAC /* Info.plist */,
+				E6B249AE28679E5400CBB9AF /* Keyboard.storyboard */,
 			);
 			path = SalmaKeyboard;
 			sourceTree = "<group>";
@@ -845,6 +874,24 @@
 				E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */,
 			);
 			path = "Enable Keyboard";
+			sourceTree = "<group>";
+		};
+		E6B24989286771F900CBB9AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6B2498C2867723C00CBB9AF /* ToolbarView.swift */,
+				E6B2499C2867815900CBB9AF /* AutotextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E6B2498F2867766900CBB9AF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E6B24996286776B200CBB9AF /* Images.xcassets */,
+				E6B2499928677D2700CBB9AF /* Colors.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		E6BC343A284E5E9C0076289C /* Transaction Button */ = {
@@ -979,6 +1026,7 @@
 				E646D155285BA8F000620700 /* DSFStepperView */,
 				E6B248C22861FF6100CBB9AF /* Atributika */,
 				E6B248C52862170200CBB9AF /* DropDown */,
+				E6B24976286759CC00CBB9AF /* KeyboardKit */,
 			);
 			productName = Salma;
 			productReference = E6545F192804499900A95A03 /* Salma.app */;
@@ -1033,6 +1081,9 @@
 			dependencies = (
 			);
 			name = SalmaKeyboard;
+			packageProductDependencies = (
+				E6B2497828675C6F00CBB9AF /* KeyboardKit */,
+			);
 			productName = SalmaKeyboard;
 			productReference = E6702D65281D4894005F4DAC /* SalmaKeyboard.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1078,6 +1129,7 @@
 				E646D154285BA8F000620700 /* XCRemoteSwiftPackageReference "DSFStepperView" */,
 				E6B248C12861FF6100CBB9AF /* XCRemoteSwiftPackageReference "Atributika" */,
 				E6B248C42862170200CBB9AF /* XCRemoteSwiftPackageReference "DropDown" */,
+				E6B24975286759CC00CBB9AF /* XCRemoteSwiftPackageReference "KeyboardKit" */,
 			);
 			productRefGroup = E6545F1A2804499900A95A03 /* Products */;
 			projectDirPath = "";
@@ -1111,6 +1163,8 @@
 				E6F7F500281AD71100456635 /* Inter-Medium.ttf in Resources */,
 				E6F7F4FF281AD71100456635 /* Inter-Black.ttf in Resources */,
 				26D9D96228117B4800A8EA86 /* ProductAddViewController.xib in Resources */,
+				E6B2499B28677D3C00CBB9AF /* Colors.xcassets in Resources */,
+				E6B2499828677A2500CBB9AF /* Images.xcassets in Resources */,
 				269E3EE4281846660095C5A9 /* AutotextAddViewController.xib in Resources */,
 				B7E1DA3B2804990F006C9D27 /* Colors.xcassets in Resources */,
 				E68AF54C2848F24C0093FC15 /* DetailTransactionViewController.xib in Resources */,
@@ -1154,6 +1208,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6B249AB2867962200CBB9AF /* Colors.xcassets in Resources */,
+				E6B2499A28677D2700CBB9AF /* Colors.xcassets in Resources */,
+				E6B249AF28679E5400CBB9AF /* Keyboard.storyboard in Resources */,
+				E6B24997286776B200CBB9AF /* Images.xcassets in Resources */,
+				E6B249A92867961E00CBB9AF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1188,6 +1247,7 @@
 				E642D8902854D79700F22258 /* TransactionProduct+CoreDataProperties.swift in Sources */,
 				E6CECC84282589F200276B31 /* Product+CoreDataProperties.swift in Sources */,
 				E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */,
+				E6B2499E2867816300CBB9AF /* AutotextView.swift in Sources */,
 				E6FE836828118222000AD0C1 /* TextFieldView.swift in Sources */,
 				E6BC3437284E34F90076289C /* DetailTransactionViewModel.swift in Sources */,
 				E642D88128526C0F00F22258 /* ProductTransactionVCViewModel.swift in Sources */,
@@ -1215,6 +1275,7 @@
 				E62178E2284FCB9200A3EFC2 /* TransactionProduct.swift in Sources */,
 				E6BC343D284E5EC40076289C /* TransactionButtonTableViewCell.swift in Sources */,
 				E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */,
+				E6B2498E2867725600CBB9AF /* ToolbarView.swift in Sources */,
 				26E334AC282A9AE600FB1164 /* PriceTextFieldView.swift in Sources */,
 				E698705D2815C05E002D73F2 /* SettingTableViewCell.swift in Sources */,
 				B76E2AC62805AB61003E349F /* DashboardViewController.swift in Sources */,
@@ -1252,15 +1313,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6B249A72867900900CBB9AF /* Salma.xcdatamodeld in Sources */,
+				E6B2498D2867723C00CBB9AF /* ToolbarView.swift in Sources */,
 				E6CECBE4282186E600276B31 /* TransactionModel.swift in Sources */,
 				E6F1374228366543006540E5 /* Alert Manager.swift in Sources */,
 				E6CECC7B282589F200276B31 /* Profile+CoreDataClass.swift in Sources */,
 				E6702D75281D4943005F4DAC /* CoreDataManager.swift in Sources */,
 				E6CECC83282589F200276B31 /* Product+CoreDataClass.swift in Sources */,
 				E6CECC77282589F200276B31 /* CustomAutotext+CoreDataClass.swift in Sources */,
+				E6B2499D2867815900CBB9AF /* AutotextView.swift in Sources */,
 				E6CECC85282589F200276B31 /* Product+CoreDataProperties.swift in Sources */,
 				E6CECC7F282589F200276B31 /* Transaction+CoreDataClass.swift in Sources */,
 				E6CECC9128295C9A00276B31 /* Autotext.swift in Sources */,
+				E6B2497B28675F1400CBB9AF /* KeyboardView.swift in Sources */,
 				E6CECC79282589F200276B31 /* CustomAutotext+CoreDataProperties.swift in Sources */,
 				E6CECBE52821871400276B31 /* Enum.swift in Sources */,
 				E6CECC75282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift in Sources */,
@@ -1560,6 +1625,8 @@
 		E6702D6E281D4894005F4DAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_ENTITLEMENTS = SalmaKeyboard/SalmaKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 94RH8K67DD;
@@ -1578,13 +1645,15 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		E6702D6F281D4894005F4DAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_ENTITLEMENTS = SalmaKeyboard/SalmaKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 94RH8K67DD;
@@ -1603,7 +1672,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1698,6 +1767,14 @@
 				kind = branch;
 			};
 		};
+		E6B24975286759CC00CBB9AF /* XCRemoteSwiftPackageReference "KeyboardKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/KeyboardKit/KeyboardKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1725,6 +1802,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E6B248C42862170200CBB9AF /* XCRemoteSwiftPackageReference "DropDown" */;
 			productName = DropDown;
+		};
+		E6B24976286759CC00CBB9AF /* KeyboardKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6B24975286759CC00CBB9AF /* XCRemoteSwiftPackageReference "KeyboardKit" */;
+			productName = KeyboardKit;
+		};
+		E6B2497828675C6F00CBB9AF /* KeyboardKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6B24975286759CC00CBB9AF /* XCRemoteSwiftPackageReference "KeyboardKit" */;
+			productName = KeyboardKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

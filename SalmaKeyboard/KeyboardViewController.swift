@@ -9,13 +9,13 @@ import UIKit
 import KeyboardKit
 import SwiftUI
 
-class KeyboardViewController: UIInputViewController {
+class KeyboardViewController: KeyboardInputViewController {
     
     override func viewWillSetupKeyboard() {
         super.viewWillSetupKeyboard()
-        
+
         // Setup a demo-specific keyboard view
-        //setup(with: AutotextView())
+        setup(with: ToolbarView())
     }
     
     override func viewDidLoad() {

@@ -5,23 +5,39 @@
 //  Created by gratianus.brianto on 25/06/22.
 //
 
+import UIKit
 import SwiftUI
+import KeyboardKit
+import WebKit
 
 struct ToolbarView: View {
     @State var preselectedIndex = 0
+    let controller = KeyboardInputViewController.shared
     var body: some View {
         ZStack {
-            Color.gray.opacity(0.3).ignoresSafeArea()
+            Color.standardKeyboardBackground.ignoresSafeArea()
+            VStack(spacing: 0) {
             HStack(alignment: .center, spacing: 12) {
                 Image(uiImage: UIImage(named: "Logo")!)
+                    .onTapGesture {
+                        openUrl(url: URL(string: "SalmaApp://"))
+                    }
                 CustomSegmentedControl(preselectedIndex: $preselectedIndex, options: ["Keyboard", "Autotext", "Transaction"])
-                
             }
             .padding(12)
             .frame(height: 64, alignment: .center)
+            KeyboardView(preselectedIndex: $preselectedIndex)
+            }
         }
-        .frame(height: 64, alignment: .center)
-            
+    }
+    
+    func openUrl(url: URL?) {
+        let selector = sel_registerName("openURL:")
+        var responder = controller as UIResponder?
+        while let r = responder, !r.responds(to: selector) {
+            responder = r.next
+        }
+        _ = responder?.perform(selector, with: url)
     }
 }
 
@@ -39,11 +55,11 @@ struct CustomSegmentedControl: View {
                         .fill(color)
                         .cornerRadius(20)
                         .padding(0)
-                        .opacity(isSelected ? 1 : 0)
+                        .opacity(isSelected ? 1 : 0.0000001)
                         .onTapGesture {
                             withAnimation(.interactiveSpring(response: 0.2,
-                                                             dampingFraction: 2,
-                                                             blendDuration: 0.5)) {
+                                                             dampingFraction: 1,
+                                                             blendDuration: 0.2)) {
                                 preselectedIndex = index
                             }
                         }

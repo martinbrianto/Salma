@@ -26,18 +26,23 @@ struct KeyboardView: View {
     */
     
     @State private var text = "Text"
+    @Binding var preselectedIndex: Int
     
     // @ObservedObject private var context: KeyboardContext
     
     @EnvironmentObject private var context: KeyboardContext
     
     var body: some View {
-        VStack(spacing: 0) {
-            if context.keyboardType != .emojis {
-                //DemoAutocompleteToolbar()
+            switch preselectedIndex {
+            case 0:
+                SystemKeyboard()
+            case 1:
+                AutotextView()
+            case 2:
+                TransactionView()
+            default:
+                SystemKeyboard()
             }
-            SystemKeyboard()
-        }
     }
 }
 

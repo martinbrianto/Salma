@@ -8,6 +8,19 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
+    
+    func presentTabBar(withIndex: Int){
+        selectedIndex = withIndex
+    }
+    
+    func handleDeepLink(_ deepLink: DeepLink) {
+        switch deepLink {
+        case .addTransaction:
+            presentTabBar(withIndex: 3)
+        case .addAutotext:
+            presentTabBar(withIndex: 2)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +29,7 @@ class TabBarViewController: UITabBarController {
 }
 
 private extension TabBarViewController {
+    
     func setup(){
         if #available(iOS 13.0, *) {
            let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()

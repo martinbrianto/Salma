@@ -122,3 +122,8 @@ enum TransactionProductType {
     case addCustomButton
     case product
 }
+
+enum DeepLink: String {
+    case addTransaction = "addTransaction"
+    case addAutotext = "addAutotext"
+}

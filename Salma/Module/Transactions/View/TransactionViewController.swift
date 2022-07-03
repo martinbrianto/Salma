@@ -34,6 +34,11 @@ class TransactionViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    func deepLinkAddTrans(){
+        let vc = DetailTransactionViewController(state: .add, viewModel: DetailTransactionViewModel(id: nil))
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     // MARK: - Variables
     var transData: [TransactionModel] = []
     var viewModel: TransactionViewModel = TransactionViewModel()

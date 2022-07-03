@@ -158,7 +158,7 @@ extension DetailTransactionViewModel {
         guard let productTransaction = data.productTransactions else { return }
         data.priceSubTotal = 0
         productTransaction.forEach{
-            data.priceSubTotal += $0.price
+            data.priceSubTotal += $0.price * Float($0.quantity)
         }
         
         countTotal()

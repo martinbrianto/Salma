@@ -10,14 +10,62 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    func handleURL(_ url: URL){
+        
+    }
+    
+    func navigate(_ deeplink: DeepLink){
+        guard let tabBarController = window?.rootViewController as? TabBarViewController else { return }
+        
+        switch deeplink {
+        case .addTransaction:
+            tabBarController.handleDeepLink(deeplink)
+            if let vc = (tabBarController.selectedViewController as? UINavigationController)?.viewControllers.first {
+                let addVC = DetailTransactionViewController(state: .add, viewModel: DetailTransactionViewModel(id: nil))
+                vc.navigationController?.pushViewController(addVC, animated: true)
+            }
+        case .addAutotext:
+            if let vc = (tabBarController.selectedViewController as? UINavigationController)?.viewControllers.first {
+                let viewController = AutotextAddViewController(state: .add, viewModel: AutotextAddVCViewModel(data: nil))
+                vc.navigationController?.pushViewController(viewController, animated: true)
+            }
+        }
+    }
 
-
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        print(URLContexts)
+        guard let urlToOpen = URLContexts.first?.url else { return }
+        
+        guard let components = NSURLComponents(url: urlToOpen, resolvingAgainstBaseURL: true),
+              let host = components.host
+        else {
+            print("Invalid URL")
+            return
+        }
+        print("Components \(components)" )
+        guard let deepLink = DeepLink(rawValue: host) else {
+            print("Deeplink not found: \(host)")
+            return
+        }
+        
+        navigate(deepLink)
+        
+    }
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScence = (scene as? UIWindowScene) else { return }
         
+        if let didFirstLaunch = UserDefaults.standard.string(forKey: "didFirstLaunch"){
+            //app is already launched
+        } else {
+            //app is first launch
+            UserDefaults.standard.set(true, forKey: "didFirstLaunch")
+        }
+//        CoreDataManager.shared.saveDefaultAutotext(autotextData: Autotext(title: "Send Invoice", messages: "Terima kasih telah berbelanja di #storeName\n\nNama: #customerName\nNomor Telepon: #customerPhoneNumber\nAlamat Pengiriman: #customerAddress\nEkpedisi Pengiriman: #shippingExpedition\n\nProduk: \n#products\n\nTotal harga barang: #subTotalPrice\nOngkos kirim: #shippingPrice\nTotal yang harus dibayar: #totalPrice\n\nHarap mengirimkan bukti pembayaran kepada kami. Terima kasih banyak!"))
+//        CoreDataManager.shared.saveDefaultAutotext(autotextData: Autotext(title: "Format Order", messages: "Mohon mengisi format order ini\n\nNama:\nNomor Telepon:\n\nAlamat:\nKecamatan:\nKota:\nProvinsi:\nKode Pos:\n\nProduk:\n1.\n\nNote:\n\nEkspedisi Pengiriman:"))
         window = UIWindow(windowScene: windowScence)
         let viewController = TabBarViewController()
         window?.rootViewController = viewController

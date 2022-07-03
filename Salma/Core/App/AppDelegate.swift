@@ -13,6 +13,31 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let viewController = TabBarViewController()
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
+        
+        guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
+              let host = components.host
+        else {
+            print("Invalid URL")
+            return false
+        }
+        
+        print("Components \(components)" )
+        guard let deepLink = DeepLink(rawValue: host) else {
+            print("Deeplink not found: \(host)")
+            return false
+        }
+        
+        viewController.handleDeepLink(deepLink)
+        
+        return true
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -56,15 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        lazy var secureAppGroupPersistentStoreURL : URL = {
-               let fileManager = FileManager.default
-               let groupDirectory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.salma")!
-               //xxxxx - is my real bundle identificator
-               return groupDirectory.appendingPathComponent("SharedData.sqlite")
-            }()
-        
-        let container = NSPersistentContainer(name: "Salma")
-        container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: secureAppGroupPersistentStoreURL)]
+        let container = NSCustomPersistentContainer(name: "Salma")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

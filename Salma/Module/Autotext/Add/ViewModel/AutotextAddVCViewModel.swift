@@ -32,6 +32,7 @@ class AutotextAddVCViewModel {
 extension AutotextAddVCViewModel {
     func fetchAutotext(){
         if data != nil {
+            print(data)
             didUpdate?()
         }
     }

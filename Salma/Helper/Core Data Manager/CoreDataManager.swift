@@ -13,15 +13,15 @@ struct CoreDataManager {
     private init() {}
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Salma")
-        
-        container.loadPersistentStores { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+            let container = NSCustomPersistentContainer(name: "Salma")
+            
+            container.loadPersistentStores { (storeDescription, error) in
+                if let error = error as NSError? {
+                    fatalError("Unresolved error \(error), \(error.userInfo)")
+                }
             }
-        }
-        return container
-    }()
+            return container
+        }()
     
     func saveContext() {
         let context = CoreDataManager.shared.persistentContainer.viewContext
@@ -166,6 +166,40 @@ struct CoreDataManager {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let fetchRequest = DefaultAutotext.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "uuid == %@", "\(autotextID)")
+        do {
+            if let customAutotext = try context.fetch(fetchRequest).first {
+                let autotext = Autotext(title: customAutotext.title, messages: customAutotext.messages, id: customAutotext.uuid)
+                return autotext
+            } else {
+                return nil
+            }
+        } catch {
+            print("could not fetch \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    func fetchDefaultFormatOrder() -> Autotext? {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let fetchRequest = DefaultAutotext.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "title == 'Format Order'")
+        do {
+            if let customAutotext = try context.fetch(fetchRequest).first {
+                let autotext = Autotext(title: customAutotext.title, messages: customAutotext.messages, id: customAutotext.uuid)
+                return autotext
+            } else {
+                return nil
+            }
+        } catch {
+            print("could not fetch \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    func fetchDefaultSendInvoice() -> Autotext? {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let fetchRequest = DefaultAutotext.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "title == 'Send Invoice'")
         do {
             if let customAutotext = try context.fetch(fetchRequest).first {
                 let autotext = Autotext(title: customAutotext.title, messages: customAutotext.messages, id: customAutotext.uuid)

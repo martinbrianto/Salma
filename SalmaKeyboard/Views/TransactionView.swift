@@ -33,7 +33,7 @@ struct TransactionView: View {
     
     func fetchTransaction() {
         var list = [TransactionKeyboardModel(type: .addTransactionCell, transaction: .initEmpty())]
-        let transactionData: [TransactionKeyboardModel] = CoreDataManager.shared.fetchAllTransaction()?.compactMap {
+        let transactionData: [TransactionKeyboardModel] = CoreDataManager.shared.fetchAllTransactionExceptPaid()?.compactMap { 
             TransactionKeyboardModel(type: .transactionCell, transaction: $0)
         } ?? []
         list.append(contentsOf: transactionData)

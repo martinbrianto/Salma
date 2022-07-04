@@ -605,6 +605,45 @@ struct CoreDataManager {
         }
     }
     
+    func fetchAllTransactionExceptPaid() -> [TransactionModel]? {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let fetchRequest = Transaction.fetchRequest()
+        
+        do {
+            var transactionList: [TransactionModel] = []
+            let transactions = try context.fetch(fetchRequest)
+            for transaction in transactions {
+                if !(transaction.status == Status.completed.rawValue) {
+                    transactionList.append(
+                        TransactionModel(
+                            id: transaction.uuid,
+                            status: Status.init(rawValue: transaction.status) ?? .notPaid,
+                            dateCreated: transaction.date_created,
+                            datePaid: transaction.date_paid,
+                            dateCompleted: transaction.date_completed,
+                            customerName: transaction.customer_name,
+                            customerPhoneNumber: transaction.customer_phone_number,
+                            addressName: transaction.address_name,
+                            addressProvince: transaction.address_province,
+                            addressCity: transaction.address_city,
+                            addressDistrict: transaction.address_district,
+                            addressPostalCode: transaction.address_postal_code,
+                            notes: transaction.note,
+                            expedition: transaction.shipping_expedition,
+                            shippingPrice: transaction.shipping_price,
+                            priceSubTotal: transaction.price_subTotal,
+                            priceTotal: transaction.price_Total
+                        )
+                    )
+                }
+            }
+            return transactionList
+        } catch {
+            print("could not fetch \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
     func fetchTransaction(transactionID: UUID) -> Transaction? {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let fetchRequest = Transaction.fetchRequest()

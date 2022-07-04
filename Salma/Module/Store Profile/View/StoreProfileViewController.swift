@@ -27,6 +27,8 @@ class StoreProfileViewController: UIViewController {
                 phoneNumber: "\(phoneNumberTextField.textfieldView.text ?? "")"
             )
             viewModel.saveStoreProfile(profile)
+            let vc = EnableKeyboardViewController(from: .onboarding)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -125,12 +127,13 @@ extension StoreProfileViewController: UITextFieldDelegate {
     private func setupPage(){
         bindToViewModel()
         setupTextField()
-        title = "Store Profile"
+        
         switch entryPoint {
         case .onboarding:
             nextButton.isHidden = false
             titleLabel.isHidden = false
         case .settingPage:
+            title = "Store Profile"
             viewModel.fetchStoreProfile()
             isEditMode = false
         }

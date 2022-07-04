@@ -68,6 +68,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        CoreDataManager.shared.saveDefaultAutotext(autotextData: Autotext(title: "Format Order", messages: "Mohon mengisi format order ini\n\nNama:\nNomor Telepon:\n\nAlamat:\nKecamatan:\nKota:\nProvinsi:\nKode Pos:\n\nProduk:\n1.\n\nNote:\n\nEkspedisi Pengiriman:"))
         window = UIWindow(windowScene: windowScence)
         let viewController = TabBarViewController()
+        let vc = TabBarViewController()
+        let navigationController = UINavigationController(rootViewController: vc)
+        //let viewController = navigationController
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }

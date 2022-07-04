@@ -44,6 +44,8 @@
 		E62178E2284FCB9200A3EFC2 /* TransactionProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62178E1284FCB9200A3EFC2 /* TransactionProduct.swift */; };
 		E62178E6284FD2E600A3EFC2 /* TransactionPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62178E4284FD2E600A3EFC2 /* TransactionPriceTableViewCell.swift */; };
 		E62178E7284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E62178E5284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib */; };
+		E6266D7B287360570077FF29 /* CekOngkirViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6266D79287360570077FF29 /* CekOngkirViewController.swift */; };
+		E6266D7C287360570077FF29 /* CekOngkirViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6266D7A287360570077FF29 /* CekOngkirViewController.xib */; };
 		E642D87E285269A400F22258 /* AddCustomProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D87C285269A400F22258 /* AddCustomProductTableViewCell.swift */; };
 		E642D87F285269A400F22258 /* AddCustomProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E642D87D285269A400F22258 /* AddCustomProductTableViewCell.xib */; };
 		E642D88128526C0F00F22258 /* ProductTransactionVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D88028526C0F00F22258 /* ProductTransactionVCViewModel.swift */; };
@@ -139,6 +141,8 @@
 		E6CECC9028295C9A00276B31 /* Autotext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8F28295C9A00276B31 /* Autotext.swift */; };
 		E6CECC9128295C9A00276B31 /* Autotext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC8F28295C9A00276B31 /* Autotext.swift */; };
 		E6CECC94282AAA6600276B31 /* StoreProfileVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CECC93282AAA6600276B31 /* StoreProfileVCViewModel.swift */; };
+		E6D0F7052872163D0081E2C6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D0F7032872163D0081E2C6 /* WelcomeViewController.swift */; };
+		E6D0F7062872163D0081E2C6 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D0F7042872163D0081E2C6 /* WelcomeViewController.xib */; };
 		E6DCB2C5286E26A300639993 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2497A28675F1400CBB9AF /* KeyboardView.swift */; };
 		E6DCB2C7287063D200639993 /* CustomKeyboardActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DCB2C6287063D200639993 /* CustomKeyboardActionHandler.swift */; };
 		E6DCB2C8287063D200639993 /* CustomKeyboardActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DCB2C6287063D200639993 /* CustomKeyboardActionHandler.swift */; };
@@ -241,6 +245,8 @@
 		E62178E1284FCB9200A3EFC2 /* TransactionProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionProduct.swift; sourceTree = "<group>"; };
 		E62178E4284FD2E600A3EFC2 /* TransactionPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPriceTableViewCell.swift; sourceTree = "<group>"; };
 		E62178E5284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionPriceTableViewCell.xib; sourceTree = "<group>"; };
+		E6266D79287360570077FF29 /* CekOngkirViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CekOngkirViewController.swift; sourceTree = "<group>"; };
+		E6266D7A287360570077FF29 /* CekOngkirViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CekOngkirViewController.xib; sourceTree = "<group>"; };
 		E642D87C285269A400F22258 /* AddCustomProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomProductTableViewCell.swift; sourceTree = "<group>"; };
 		E642D87D285269A400F22258 /* AddCustomProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCustomProductTableViewCell.xib; sourceTree = "<group>"; };
 		E642D88028526C0F00F22258 /* ProductTransactionVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTransactionVCViewModel.swift; sourceTree = "<group>"; };
@@ -307,6 +313,8 @@
 		E6CECC8C28295B3100276B31 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E6CECC8F28295C9A00276B31 /* Autotext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autotext.swift; sourceTree = "<group>"; };
 		E6CECC93282AAA6600276B31 /* StoreProfileVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfileVCViewModel.swift; sourceTree = "<group>"; };
+		E6D0F7032872163D0081E2C6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		E6D0F7042872163D0081E2C6 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		E6DCB2C6287063D200639993 /* CustomKeyboardActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboardActionHandler.swift; sourceTree = "<group>"; };
 		E6DF7AA3282C00CA00A61D08 /* AutotextAddVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutotextAddVCViewModel.swift; sourceTree = "<group>"; };
 		E6DF7AA6282D513D00A61D08 /* AutotextVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AutotextVCViewModel.swift; path = Salma/Module/Autotext/Add/ViewModel/AutotextVCViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -535,24 +543,10 @@
 		B76E2AB32805AB61003E349F /* Cek Ongkir */ = {
 			isa = PBXGroup;
 			children = (
-				B76E2AB42805AB61003E349F /* ViewModel */,
-				B76E2AB52805AB61003E349F /* View */,
+				E6266D79287360570077FF29 /* CekOngkirViewController.swift */,
+				E6266D7A287360570077FF29 /* CekOngkirViewController.xib */,
 			);
 			path = "Cek Ongkir";
-			sourceTree = "<group>";
-		};
-		B76E2AB42805AB61003E349F /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		B76E2AB52805AB61003E349F /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		B76E2AB62805AB61003E349F /* Transactions */ = {
@@ -878,6 +872,7 @@
 		E698717B28182B48002D73F2 /* On Boarding */ = {
 			isa = PBXGroup;
 			children = (
+				E6D0F702287216270081E2C6 /* Welcome Page */,
 				E698717C28182B4E002D73F2 /* Enable Keyboard */,
 			);
 			path = "On Boarding";
@@ -927,6 +922,15 @@
 				E6CECC93282AAA6600276B31 /* StoreProfileVCViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E6D0F702287216270081E2C6 /* Welcome Page */ = {
+			isa = PBXGroup;
+			children = (
+				E6D0F7032872163D0081E2C6 /* WelcomeViewController.swift */,
+				E6D0F7042872163D0081E2C6 /* WelcomeViewController.xib */,
+			);
+			path = "Welcome Page";
 			sourceTree = "<group>";
 		};
 		E6DF7AA2282C00B300A61D08 /* ViewModel */ = {
@@ -1171,7 +1175,9 @@
 				E62178E7284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib in Resources */,
 				E6FE83612810362B000AD0C1 /* TransactionTableViewCell.xib in Resources */,
 				E6F7F502281AD71100456635 /* Inter-Bold.ttf in Resources */,
+				E6D0F7062872163D0081E2C6 /* WelcomeViewController.xib in Resources */,
 				26BE46E828181804005118BF /* AutotextTableViewCell.xib in Resources */,
+				E6266D7C287360570077FF29 /* CekOngkirViewController.xib in Resources */,
 				E69870642816CCDD002D73F2 /* StoreProfileViewController.xib in Resources */,
 				E6F7F4FD281AD71100456635 /* Inter-ExtraLight.ttf in Resources */,
 				26D9D9692816CFD200A8EA86 /* ProductTableViewCell.xib in Resources */,
@@ -1250,6 +1256,7 @@
 				E60A5B97284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.swift in Sources */,
 				E6CECC76282589F200276B31 /* CustomAutotext+CoreDataClass.swift in Sources */,
 				E6CECC7E282589F200276B31 /* Transaction+CoreDataClass.swift in Sources */,
+				E6D0F7052872163D0081E2C6 /* WelcomeViewController.swift in Sources */,
 				E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */,
 				26D9D9682816CFD200A8EA86 /* ProductTableViewCell.swift in Sources */,
 				E643925A28510B860087D621 /* TransactionListProductTableViewCell.swift in Sources */,
@@ -1301,6 +1308,7 @@
 				E6B2498E2867725600CBB9AF /* ToolbarView.swift in Sources */,
 				26E334AC282A9AE600FB1164 /* PriceTextFieldView.swift in Sources */,
 				E698705D2815C05E002D73F2 /* SettingTableViewCell.swift in Sources */,
+				E6266D7B287360570077FF29 /* CekOngkirViewController.swift in Sources */,
 				B76E2AC62805AB61003E349F /* DashboardViewController.swift in Sources */,
 				E642D87E285269A400F22258 /* AddCustomProductTableViewCell.swift in Sources */,
 				B76E2ACB2805AB61003E349F /* AutotextViewController.swift in Sources */,

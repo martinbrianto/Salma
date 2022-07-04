@@ -16,10 +16,16 @@ class EnableKeyboardViewController: UIViewController {
     
     @IBAction func openPreferencesAction(_ sender: Any) {
         print("insert Open Preferences Action")
+        if let url = URL.init(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(url)
+        }
     }
     
     @IBAction func skipButtonAction(_ sender: Any) {
         print("insert Skip Action")
+        let vc = TabBarViewController()
+        UIApplication.shared.windows.first?.rootViewController = vc
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
 
     // MARK: - Variables

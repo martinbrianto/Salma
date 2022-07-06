@@ -25,6 +25,7 @@ class EnableKeyboardViewController: UIViewController {
         print("insert Skip Action")
         let vc = TabBarViewController()
         setupFirstTimeAutotext()
+        UserDefaults.standard.set(true, forKey: "didFirstLaunch")
         UIApplication.shared.windows.first?.rootViewController = vc
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }

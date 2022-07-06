@@ -56,7 +56,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="lr0-68-7Ke"/>
                             </constraints>
-                            <color key="tintColor" name="Main"/>
+                            <color key="tintColor" name="AccentColor"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Get Started">
                                 <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
@@ -81,8 +81,8 @@
     </objects>
     <resources>
         <image name="welcome" width="295" height="263"/>
-        <namedColor name="Main">
-            <color red="0.29899999499320984" green="0.55800002813339233" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

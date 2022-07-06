@@ -58,18 +58,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScence = (scene as? UIWindowScene) else { return }
         
-        if UserDefaults.standard.string(forKey: "didFirstLaunch") != nil{
+        if UserDefaults.standard.bool(forKey: "didFirstLaunch") == true {
+            window = UIWindow(windowScene: windowScence)
+            let viewController = TabBarViewController()
+            window?.rootViewController = viewController
+            window?.makeKeyAndVisible()
+        } else {
             window = UIWindow(windowScene: windowScence)
             let viewController = WelcomeViewController()
             let navigationController = UINavigationController(rootViewController: viewController)
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
-        } else {
-            window = UIWindow(windowScene: windowScence)
-            let viewController = TabBarViewController()
-            window?.rootViewController = viewController
-            window?.makeKeyAndVisible()
-            UserDefaults.standard.set(true, forKey: "didFirstLaunch")
         }
     }
 

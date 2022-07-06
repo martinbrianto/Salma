@@ -60,4 +60,9 @@ extension DashboardVCViewModel {
         return storeProfile?.name ?? ""
     }
     
+    func transactionDetailVCViewModel(index: Int) -> DetailTransactionViewModel {
+            let viewModel = DetailTransactionViewModel(id: self.sortedFetchedData[index].id)
+            return viewModel
+    }
+    
 }

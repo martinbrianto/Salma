@@ -46,6 +46,19 @@
 		E62178E7284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E62178E5284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib */; };
 		E6266D7B287360570077FF29 /* CekOngkirViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6266D79287360570077FF29 /* CekOngkirViewController.swift */; };
 		E6266D7C287360570077FF29 /* CekOngkirViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6266D7A287360570077FF29 /* CekOngkirViewController.xib */; };
+		E6266D80287362A10077FF29 /* GetLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6266D7E287362A10077FF29 /* GetLocationViewController.swift */; };
+		E6266D81287362A10077FF29 /* GetLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6266D7F287362A10077FF29 /* GetLocationViewController.xib */; };
+		E6266D842873657D0077FF29 /* Network Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6266D832873657D0077FF29 /* Network Manager.swift */; };
+		E6266D86287366E10077FF29 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6266D85287366E10077FF29 /* Network.swift */; };
+		E6266D8828736BE50077FF29 /* singleLocationMock.json in Resources */ = {isa = PBXBuildFile; fileRef = E6266D8728736BE50077FF29 /* singleLocationMock.json */; };
+		E6266D8A28736BF80077FF29 /* couriersMock.json in Resources */ = {isa = PBXBuildFile; fileRef = E6266D8928736BF80077FF29 /* couriersMock.json */; };
+		E6266D8C2874A0F80077FF29 /* GetLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6266D8B2874A0F80077FF29 /* GetLocationViewModel.swift */; };
+		E6266D8E2874AFD30077FF29 /* CekOngkirViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6266D8D2874AFD30077FF29 /* CekOngkirViewModel.swift */; };
+		E6266D942874B1340077FF29 /* ShippingRateResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6266D922874B1340077FF29 /* ShippingRateResultViewController.swift */; };
+		E6266D952874B1340077FF29 /* ShippingRateResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6266D932874B1340077FF29 /* ShippingRateResultViewController.xib */; };
+		E6266D992874B1690077FF29 /* ShippingRateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6266D972874B1690077FF29 /* ShippingRateTableViewCell.swift */; };
+		E6266D9A2874B1690077FF29 /* ShippingRateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6266D982874B1690077FF29 /* ShippingRateTableViewCell.xib */; };
+		E6266D9C2874B9710077FF29 /* ShippingRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6266D9B2874B9710077FF29 /* ShippingRateViewModel.swift */; };
 		E642D87E285269A400F22258 /* AddCustomProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D87C285269A400F22258 /* AddCustomProductTableViewCell.swift */; };
 		E642D87F285269A400F22258 /* AddCustomProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E642D87D285269A400F22258 /* AddCustomProductTableViewCell.xib */; };
 		E642D88128526C0F00F22258 /* ProductTransactionVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642D88028526C0F00F22258 /* ProductTransactionVCViewModel.swift */; };
@@ -247,6 +260,19 @@
 		E62178E5284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionPriceTableViewCell.xib; sourceTree = "<group>"; };
 		E6266D79287360570077FF29 /* CekOngkirViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CekOngkirViewController.swift; sourceTree = "<group>"; };
 		E6266D7A287360570077FF29 /* CekOngkirViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CekOngkirViewController.xib; sourceTree = "<group>"; };
+		E6266D7E287362A10077FF29 /* GetLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationViewController.swift; sourceTree = "<group>"; };
+		E6266D7F287362A10077FF29 /* GetLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetLocationViewController.xib; sourceTree = "<group>"; };
+		E6266D832873657D0077FF29 /* Network Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Manager.swift"; sourceTree = "<group>"; };
+		E6266D85287366E10077FF29 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E6266D8728736BE50077FF29 /* singleLocationMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = singleLocationMock.json; sourceTree = "<group>"; };
+		E6266D8928736BF80077FF29 /* couriersMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = couriersMock.json; sourceTree = "<group>"; };
+		E6266D8B2874A0F80077FF29 /* GetLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationViewModel.swift; sourceTree = "<group>"; };
+		E6266D8D2874AFD30077FF29 /* CekOngkirViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CekOngkirViewModel.swift; sourceTree = "<group>"; };
+		E6266D922874B1340077FF29 /* ShippingRateResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingRateResultViewController.swift; sourceTree = "<group>"; };
+		E6266D932874B1340077FF29 /* ShippingRateResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShippingRateResultViewController.xib; sourceTree = "<group>"; };
+		E6266D972874B1690077FF29 /* ShippingRateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingRateTableViewCell.swift; sourceTree = "<group>"; };
+		E6266D982874B1690077FF29 /* ShippingRateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShippingRateTableViewCell.xib; sourceTree = "<group>"; };
+		E6266D9B2874B9710077FF29 /* ShippingRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingRateViewModel.swift; sourceTree = "<group>"; };
 		E642D87C285269A400F22258 /* AddCustomProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomProductTableViewCell.swift; sourceTree = "<group>"; };
 		E642D87D285269A400F22258 /* AddCustomProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCustomProductTableViewCell.xib; sourceTree = "<group>"; };
 		E642D88028526C0F00F22258 /* ProductTransactionVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTransactionVCViewModel.swift; sourceTree = "<group>"; };
@@ -543,7 +569,10 @@
 		B76E2AB32805AB61003E349F /* Cek Ongkir */ = {
 			isa = PBXGroup;
 			children = (
+				E6266D8F2874B0FD0077FF29 /* ShippingRateResult */,
+				E6266D7D287362930077FF29 /* Location */,
 				E6266D79287360570077FF29 /* CekOngkirViewController.swift */,
+				E6266D8D2874AFD30077FF29 /* CekOngkirViewModel.swift */,
 				E6266D7A287360570077FF29 /* CekOngkirViewController.xib */,
 			);
 			path = "Cek Ongkir";
@@ -647,6 +676,46 @@
 				E62178E5284FD2E600A3EFC2 /* TransactionPriceTableViewCell.xib */,
 			);
 			path = "Transaction Price Cell";
+			sourceTree = "<group>";
+		};
+		E6266D7D287362930077FF29 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				E6266D7E287362A10077FF29 /* GetLocationViewController.swift */,
+				E6266D7F287362A10077FF29 /* GetLocationViewController.xib */,
+				E6266D8B2874A0F80077FF29 /* GetLocationViewModel.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		E6266D822873656A0077FF29 /* Network Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E6266D832873657D0077FF29 /* Network Manager.swift */,
+				E6266D8728736BE50077FF29 /* singleLocationMock.json */,
+				E6266D8928736BF80077FF29 /* couriersMock.json */,
+			);
+			path = "Network Manager";
+			sourceTree = "<group>";
+		};
+		E6266D8F2874B0FD0077FF29 /* ShippingRateResult */ = {
+			isa = PBXGroup;
+			children = (
+				E6266D962874B1570077FF29 /* Cell */,
+				E6266D922874B1340077FF29 /* ShippingRateResultViewController.swift */,
+				E6266D932874B1340077FF29 /* ShippingRateResultViewController.xib */,
+				E6266D9B2874B9710077FF29 /* ShippingRateViewModel.swift */,
+			);
+			path = ShippingRateResult;
+			sourceTree = "<group>";
+		};
+		E6266D962874B1570077FF29 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E6266D972874B1690077FF29 /* ShippingRateTableViewCell.swift */,
+				E6266D982874B1690077FF29 /* ShippingRateTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		E643925128510A690087D621 /* Add Product Transaction */ = {
@@ -766,6 +835,7 @@
 				E6CECC8F28295C9A00276B31 /* Autotext.swift */,
 				E6BC3438284E37050076289C /* TransactionTextField.swift */,
 				E62178E1284FCB9200A3EFC2 /* TransactionProduct.swift */,
+				E6266D85287366E10077FF29 /* Network.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -773,6 +843,7 @@
 		E6545F5E2804531200A95A03 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E6266D822873656A0077FF29 /* Network Manager */,
 				E6F1373F28366529006540E5 /* Alert Manager */,
 				E6545F5F2804531A00A95A03 /* Core Data Manager */,
 			);
@@ -1181,8 +1252,10 @@
 				E69870642816CCDD002D73F2 /* StoreProfileViewController.xib in Resources */,
 				E6F7F4FD281AD71100456635 /* Inter-ExtraLight.ttf in Resources */,
 				26D9D9692816CFD200A8EA86 /* ProductTableViewCell.xib in Resources */,
+				E6266D9A2874B1690077FF29 /* ShippingRateTableViewCell.xib in Resources */,
 				B76E2ACA2805AB61003E349F /* AutotextViewController.xib in Resources */,
 				E698705E2815C05E002D73F2 /* SettingTableViewCell.xib in Resources */,
+				E6266D8A28736BF80077FF29 /* couriersMock.json in Resources */,
 				E6FE835B28102B13000AD0C1 /* SettingViewController.xib in Resources */,
 				E6F7F500281AD71100456635 /* Inter-Medium.ttf in Resources */,
 				E6F7F4FF281AD71100456635 /* Inter-Black.ttf in Resources */,
@@ -1199,9 +1272,12 @@
 				E6F7F505281AD71100456635 /* Inter-ExtraBold.ttf in Resources */,
 				B76E2AC02805AB61003E349F /* TabBarViewController.xib in Resources */,
 				B76E2AC32805AB61003E349F /* ProductViewController.xib in Resources */,
+				E6266D952874B1340077FF29 /* ShippingRateResultViewController.xib in Resources */,
 				B76E2AC42805AB61003E349F /* LaunchScreen.storyboard in Resources */,
 				E6FE836A28118477000AD0C1 /* TextFieldView.xib in Resources */,
 				E643925B28510B860087D621 /* TransactionListProductTableViewCell.xib in Resources */,
+				E6266D81287362A10077FF29 /* GetLocationViewController.xib in Resources */,
+				E6266D8828736BE50077FF29 /* singleLocationMock.json in Resources */,
 				E60A5B9B284B802000E1D92B /* TransactionViewCellHeaderView.xib in Resources */,
 				E6F7F503281AD71100456635 /* Inter-SemiBold.ttf in Resources */,
 				E6F7F504281AD71100456635 /* Inter-Thin.ttf in Resources */,
@@ -1248,11 +1324,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FE836328114F67000AD0C1 /* Formatter+Extension.swift in Sources */,
+				E6266D8C2874A0F80077FF29 /* GetLocationViewModel.swift in Sources */,
 				E6F1374128366543006540E5 /* Alert Manager.swift in Sources */,
 				E60A5BA1284B922B00E1D92B /* TransactionTextfieldHeaderView.swift in Sources */,
 				26E699DE282D514400846FE4 /* ProductAddVCViewModel.swift in Sources */,
 				E6CECC7A282589F200276B31 /* Profile+CoreDataClass.swift in Sources */,
 				E6545F272804499900A95A03 /* Salma.xcdatamodeld in Sources */,
+				E6266D80287362A10077FF29 /* GetLocationViewController.swift in Sources */,
 				E60A5B97284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.swift in Sources */,
 				E6CECC76282589F200276B31 /* CustomAutotext+CoreDataClass.swift in Sources */,
 				E6CECC7E282589F200276B31 /* Transaction+CoreDataClass.swift in Sources */,
@@ -1261,6 +1339,7 @@
 				26D9D9682816CFD200A8EA86 /* ProductTableViewCell.swift in Sources */,
 				E643925A28510B860087D621 /* TransactionListProductTableViewCell.swift in Sources */,
 				E68AF54B2848F24C0093FC15 /* DetailTransactionViewController.swift in Sources */,
+				E6266D8E2874AFD30077FF29 /* CekOngkirViewModel.swift in Sources */,
 				E6B249BA286A2E0B00CBB9AF /* TransactionView.swift in Sources */,
 				E69870662816D458002D73F2 /* Textfield.swift in Sources */,
 				E6DCB2C7287063D200639993 /* CustomKeyboardActionHandler.swift in Sources */,
@@ -1276,6 +1355,7 @@
 				E6CECC84282589F200276B31 /* Product+CoreDataProperties.swift in Sources */,
 				E698717F28182B7D002D73F2 /* EnableKeyboardViewController.swift in Sources */,
 				E6B2499E2867816300CBB9AF /* AutotextView.swift in Sources */,
+				E6266D942874B1340077FF29 /* ShippingRateResultViewController.swift in Sources */,
 				E6FE836828118222000AD0C1 /* TextFieldView.swift in Sources */,
 				E6BC3437284E34F90076289C /* DetailTransactionViewModel.swift in Sources */,
 				E642D88128526C0F00F22258 /* ProductTransactionVCViewModel.swift in Sources */,
@@ -1287,6 +1367,7 @@
 				E642D894285A3BCF00F22258 /* Transaction+CoreDataProperties.swift in Sources */,
 				E6702DB428212215005F4DAC /* StoreProfile.swift in Sources */,
 				26D9D96128117B4800A8EA86 /* ProductAddViewController.swift in Sources */,
+				E6266D842873657D0077FF29 /* Network Manager.swift in Sources */,
 				E6CECC80282589F200276B31 /* Transaction+CoreDataProperties.swift in Sources */,
 				E6DF7AA7282D513D00A61D08 /* AutotextVCViewModel.swift in Sources */,
 				E643925428510A830087D621 /* ProductTransactionViewController.swift in Sources */,
@@ -1295,11 +1376,13 @@
 				E6B249BF286B777F00CBB9AF /* TransactionDetailView.swift in Sources */,
 				E6CECC8A28281FD500276B31 /* TransactionProduct+CoreDataProperties.swift in Sources */,
 				B7E1DA4428049CE6006C9D27 /* Enum.swift in Sources */,
+				E6266D86287366E10077FF29 /* Network.swift in Sources */,
 				E62178E6284FD2E600A3EFC2 /* TransactionPriceTableViewCell.swift in Sources */,
 				E6CECC8828281FD500276B31 /* TransactionProduct+CoreDataClass.swift in Sources */,
 				26BE46E728181804005118BF /* AutotextTableViewCell.swift in Sources */,
 				E6FE835A28102B13000AD0C1 /* SettingViewController.swift in Sources */,
 				E69870632816CCDD002D73F2 /* StoreProfileViewController.swift in Sources */,
+				E6266D992874B1690077FF29 /* ShippingRateTableViewCell.swift in Sources */,
 				E6FE835528102773000AD0C1 /* TransactionModel.swift in Sources */,
 				B76E2AC12805AB61003E349F /* TabBarViewController.swift in Sources */,
 				E62178E2284FCB9200A3EFC2 /* TransactionProduct.swift in Sources */,
@@ -1316,6 +1399,7 @@
 				E6CECC74282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift in Sources */,
 				E6CECC82282589F200276B31 /* Product+CoreDataClass.swift in Sources */,
 				B76E2AC22805AB61003E349F /* ProductViewController.swift in Sources */,
+				E6266D9C2874B9710077FF29 /* ShippingRateViewModel.swift in Sources */,
 				E6BC3439284E37050076289C /* TransactionTextField.swift in Sources */,
 				E6545F1F2804499900A95A03 /* SceneDelegate.swift in Sources */,
 				E6CECC72282589F200276B31 /* DefaultAutotext+CoreDataClass.swift in Sources */,

@@ -93,6 +93,9 @@
                     <buttonConfiguration key="configuration" style="tinted" image="paperplane.fill" catalog="system" title="Cek Ongkos Kirim" imagePadding="5">
                         <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="cekOngkirAction:" destination="-1" eventType="touchUpInside" id="o96-Uu-FO4"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVy-YD-bRi" userLabel="Latest Transaction Stack">
                     <rect key="frame" x="16" y="302.5" width="382" height="31"/>

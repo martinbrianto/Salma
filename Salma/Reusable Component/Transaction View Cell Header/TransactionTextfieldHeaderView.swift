@@ -16,22 +16,44 @@ class TransactionTextfieldHeaderView: UITableViewHeaderFooterView {
         }
     
     // MARK: - Outlet
+    @IBOutlet weak var headerButton: UIButton!
     @IBOutlet weak var height: NSLayoutConstraint!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBAction func headerButtonAction(_ sender: Any) {
-        print("shit")
-    }
     
     var title: String? {
         didSet {
             setupHeader()
         }
     }
+    
+    var headerType: TransactionHeaderType? {
+        didSet {
+                setupHeader()
+        }
+    }
+    
+    var buttonAction: (()->())?
+    
     static let height: CGFloat = 28
 }
 
 extension TransactionTextfieldHeaderView {
     private func setupHeader(){
-        titleLabel.text = title
+        if let headerType = self.headerType {
+            headerButton.isHidden = true
+            switch headerType {
+            case .customerData:
+                titleLabel.text = headerType.rawValue
+            case .address:
+                titleLabel.text = headerType.rawValue
+            case .productDetails:
+                titleLabel.text = headerType.rawValue
+            case .shippingDetails:
+                headerButton.isHidden = false
+                titleLabel.text = headerType.rawValue
+            case .totalPrice:
+                titleLabel.text = headerType.rawValue
+            }
+        }
     }
 }

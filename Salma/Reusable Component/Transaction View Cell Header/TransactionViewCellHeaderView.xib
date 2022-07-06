@@ -22,10 +22,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4SO-Ur-4Qy">
-                            <rect key="frame" x="365" y="0.0" width="49" height="12"/>
+                            <rect key="frame" x="259" y="0.0" width="155" height="12"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="Check Shipping Price"/>
                             <connections>
                                 <action selector="headerButtonAction:" destination="-2" eventType="touchUpInside" id="MPW-V2-WiY"/>
                             </connections>
@@ -49,6 +49,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="headerButton" destination="4SO-Ur-4Qy" id="tKz-co-uNL"/>
                 <outlet property="titleLabel" destination="UP9-PR-NlY" id="w9B-SL-Reo"/>
             </connections>
             <point key="canvasLocation" x="108.69565217391305" y="-111.83035714285714"/>

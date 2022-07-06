@@ -44,6 +44,14 @@ enum TransactionPageState {
     case detail
 }
 
+enum TransactionHeaderType: String {
+    case customerData = "Customer Data"
+    case address = "Address"
+    case productDetails = "Product Details"
+    case shippingDetails = "Shipping Details"
+    case totalPrice = "Total Price"
+}
+
 enum TransactionTextfieldType: Int, CaseIterable {
     case customerName = 0
     case customerPhoneNumber = 1

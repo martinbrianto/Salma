@@ -111,7 +111,11 @@ private extension DetailTransactionViewController {
     }
 }
 
-extension DetailTransactionViewController: ProductTransactionViewControllerDelegate {
+extension DetailTransactionViewController: ProductTransactionViewControllerDelegate, CekOngkirViewControllerDelegate {
+    func fetchShippingRate(_ data: Pricing) {
+        viewModel.receiveShippingRate(shipping: data)
+    }
+    
     
     func updateProductData(products: [ProductModel]) {
         viewModel.receiveProductData(products: products)
@@ -129,6 +133,15 @@ extension DetailTransactionViewController: ProductTransactionViewControllerDeleg
         viewModel.didUpdatePriceData = { [weak self] _ in
             guard let self = self else { return }
             self.tableView.reloadSections(IndexSet(integersIn: 4...4), with: .none)
+        }
+        
+        viewModel.didUpdateShippingRate = { [weak self] _ in
+            guard let self = self else { return }
+            let expeditionCell = self.tableView.cellForRow(at: IndexPath(row: 0, section: 3)) as! TransactionTextFieldTableViewCell
+            expeditionCell.textfield.text = self.viewModel.data.expedition
+            let shippingPricecell = self.tableView.cellForRow(at: IndexPath(row: 1, section: 3)) as! TransactionTextFieldTableViewCell
+            shippingPricecell.textfield.text = "\(self.viewModel.data.shippingPrice)"
+            self.viewModel.countTotal()
         }
         
         viewModel.didUpdate = { [weak self] _ in
@@ -149,6 +162,13 @@ extension DetailTransactionViewController: ProductTransactionViewControllerDeleg
         tableView.register(TransactionButtonTableViewCell.nib(), forCellReuseIdentifier: TransactionButtonTableViewCell.reuseID)
         tableView.register(TransactionProductTableViewCell.nib(), forCellReuseIdentifier: TransactionProductTableViewCell.reuseID)
         tableView.register(TransactionPriceTableViewCell.nib(), forCellReuseIdentifier: TransactionPriceTableViewCell.reuseID)
+    }
+    
+    @objc func didTapCekOngkirButton(sender: UIButton) {
+        let cekOngkirViewModel = viewModel.cekOngkirViewModel()
+        let vc = CekOngkirViewController(viewModel: cekOngkirViewModel, entryPoint: .transaction)
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func didTapCellButton(sender: UIButton) {
@@ -201,19 +221,20 @@ extension DetailTransactionViewController: UITableViewDataSource, UITableViewDel
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: TransactionTextfieldHeaderView.reuseID) as! TransactionTextfieldHeaderView
         switch TableViewSection.getSection(section) {
         case .customerData:
-            header.title = "Customer Data"
+            header.headerType = .customerData
             return header
         case .address:
-            header.title = "Address"
+            header.headerType = .address
             return header
         case .productDetails:
-            header.title = "Product Details"
+            header.headerType = .productDetails
             return header
         case .shippingDetails:
-            header.title = "Shipping Details"
+            header.headerType = .shippingDetails
+            header.headerButton.addTarget(self, action: #selector(didTapCekOngkirButton(sender:)), for: .touchUpInside)
             return header
         case .totalPrice:
-            header.title = "Total Price"
+            header.headerType = .totalPrice
             return header
         case .button:
             return nil
@@ -449,7 +470,7 @@ extension DetailTransactionViewController: UITextFieldDelegate {
         case TransactionTextfieldType.shippingExpedition.rawValue:
             viewModel.data.expedition = textField.text ?? ""
         case TransactionTextfieldType.shippingPrice.rawValue:
-            viewModel.data.shippingPrice = Float(Int(textField.text ?? "") ?? 0)
+            viewModel.data.shippingPrice = Float(textField.text ?? "0") ?? 0
             viewModel.countTotal()
         default: break
         }

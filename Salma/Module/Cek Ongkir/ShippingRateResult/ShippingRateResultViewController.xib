@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShippingRateResultViewController" customModule="Salma" customModuleProvider="target">
+            <connections>
+                <outlet property="errorLabel" destination="rzY-aS-Prg" id="MfN-I5-BTP"/>
+                <outlet property="loadingIndicator" destination="da5-cq-cWf" id="Rog-aC-d0s"/>
+                <outlet property="tableView" destination="D53-ii-2SH" id="GLy-VJ-YGm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="da5-cq-cWf">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="D53-ii-2SH">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="1LV-Tn-baa"/>
+                        <outlet property="delegate" destination="-1" id="1g4-1p-YqT"/>
+                    </connections>
+                </tableView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid location, cannot get shipping rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzY-aS-Prg">
+                    <rect key="frame" x="53.5" y="437.5" width="307" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="rzY-aS-Prg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3e7-mt-Tg3"/>
+                <constraint firstItem="D53-ii-2SH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KMZ-EF-Nns"/>
+                <constraint firstItem="rzY-aS-Prg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="We7-TW-Uht"/>
+                <constraint firstItem="D53-ii-2SH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XY6-yJ-oXw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="D53-ii-2SH" secondAttribute="bottom" id="b5M-Ng-46O"/>
+                <constraint firstItem="da5-cq-cWf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dm1-am-gRx"/>
+                <constraint firstItem="da5-cq-cWf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="nRK-v3-Y5N"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="D53-ii-2SH" secondAttribute="trailing" id="pUm-P2-5qY"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="109"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

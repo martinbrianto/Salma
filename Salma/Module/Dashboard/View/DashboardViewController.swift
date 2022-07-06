@@ -19,6 +19,11 @@ class DashboardViewController: UIViewController {
         let viewController = SettingViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    @IBAction func cekOngkirAction(_ sender: Any) {
+        let viewModel = CekOngkirViewModel(data: nil)
+        let vc = CekOngkirViewController(viewModel: viewModel, entryPoint: .dashboard)
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     @IBAction func seeAllTransactionAction(_ sender: UIButton) {
         tabBarController?.selectedIndex = 3
@@ -105,7 +110,9 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO: goto product detail
+        let viewModel = viewModel.transactionDetailVCViewModel(index: indexPath.row)
+        let vc = DetailTransactionViewController(state: .detail, viewModel: viewModel)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     

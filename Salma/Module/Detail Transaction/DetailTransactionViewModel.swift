@@ -35,6 +35,7 @@ class DetailTransactionViewModel {
     var didDelete: ((DetailTransactionViewModel?) -> Void)?
     var didUpdate: ((DetailTransactionViewModel?) -> Void)?
     var didUpdateProduct: ((DetailTransactionViewModel?) -> Void)?
+    var didUpdateShippingRate: ((DetailTransactionViewModel?) -> Void)?
     var didSelect: ((TransactionModel) -> Void)?
     var didUpdateData: ((DetailTransactionViewModel?) -> Void)?
     var didUpdatePriceData: ((DetailTransactionViewModel?) -> Void)?
@@ -79,6 +80,12 @@ extension DetailTransactionViewModel {
         }
         productTextfield.append(.productNote)
         didUpdateProduct?(self)
+    }
+    
+    func receiveShippingRate(shipping: Pricing){
+        self.data.expedition = "\(shipping.courier_name) \(shipping.courier_service_name)"
+        self.data.shippingPrice = Float(shipping.price)
+        didUpdateShippingRate?(self)
     }
     
     func saveTransaction(){
@@ -168,6 +175,24 @@ extension DetailTransactionViewModel {
     func countTotal() {
         data.priceTotal = data.priceSubTotal + data.shippingPrice
         didUpdatePriceData?(self)
+    }
+    
+    func cekOngkirViewModel() -> CekOngkirViewModel {
+        let model = CekOngkirModel(
+            from: SingleArea(name: "home", postal_code: 42422),
+            to: SingleArea(
+                name: "\(self.data.addressDistrict), \(self.data.addressCity), \(self.data.addressProvince). \(self.data.addressPostalCode)",
+                postal_code: Int(self.data.addressPostalCode) ?? 0
+            ),
+            weight: getShippingWeight()
+        )
+        let viewModel = CekOngkirViewModel(data: model)
+        return viewModel
+    }
+    
+    func getShippingWeight() -> Int {
+        let weight = data.productTransactions?.reduce(0) { $0 + $1.weight} ?? 0
+        return Int(weight)
     }
     
     func productTransactionViewModel() -> ProductTransactionVCViewModel{

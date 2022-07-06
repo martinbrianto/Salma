@@ -11,7 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CekOngkirViewController" customModule="Salma" customModuleProvider="target">
             <connections>
+                <outlet property="fromTextfield" destination="yIp-BN-BM4" id="Pez-Vg-wIW"/>
+                <outlet property="toTextfield" destination="yTV-U9-pEa" id="189-Tu-d5T"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weightTextfield" destination="whS-ai-iF4" id="UoK-el-Vwv"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -62,6 +65,9 @@
                             <buttonConfiguration key="configuration" style="filled" title="Cek Ongkos Kirim">
                                 <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="cekOngkirbtnAction:" destination="-1" eventType="touchUpInside" id="mTG-t9-BHs"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

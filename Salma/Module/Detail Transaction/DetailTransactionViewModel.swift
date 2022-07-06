@@ -178,21 +178,34 @@ extension DetailTransactionViewModel {
     }
     
     func cekOngkirViewModel() -> CekOngkirViewModel {
-        let model = CekOngkirModel(
-            from: SingleArea(name: "home", postal_code: 42422),
-            to: SingleArea(
-                name: "\(self.data.addressDistrict), \(self.data.addressCity), \(self.data.addressProvince). \(self.data.addressPostalCode)",
-                postal_code: Int(self.data.addressPostalCode) ?? 0
-            ),
-            weight: getShippingWeight()
-        )
-        let viewModel = CekOngkirViewModel(data: model)
-        return viewModel
+        
+        if let postalCode = Int(data.addressPostalCode), !data.addressDistrict.isEmpty && !data.addressCity.isEmpty && !data.addressProvince.isEmpty {
+            let to = SingleArea(name: "\(data.addressDistrict), \(data.addressCity), \(data.addressProvince). \(postalCode)", postal_code: postalCode)
+            let viewModel = CekOngkirViewModel(from: getSellerLocation(), to: to, weight: getShippingWeight())
+            return viewModel
+        }
+        
+        if let postalCode = Int(data.addressPostalCode) {
+            let to = SingleArea(name: String(postalCode), postal_code: postalCode)
+            let viewModel = CekOngkirViewModel(from: getSellerLocation(), to: to, weight: getShippingWeight())
+            return viewModel
+        }
+        
+        
+        
+        return CekOngkirViewModel(from: getSellerLocation(), to: nil, weight: getShippingWeight())
     }
     
     func getShippingWeight() -> Int {
         let weight = data.productTransactions?.reduce(0) { $0 + $1.weight} ?? 0
         return Int(weight)
+    }
+    
+    func getSellerLocation() -> SingleArea? {
+        if let store = service.fetchStoreProfile() {
+            return SingleArea(name: store.location.name, postal_code: store.location.postal_code)
+        }
+        return nil
     }
     
     func productTransactionViewModel() -> ProductTransactionVCViewModel{

@@ -20,11 +20,12 @@ class StoreProfileViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButtonAction(_ sender: Any) {
         if validateTextField() {
+            guard let location = viewModel.fetchedLocation else {return}
             let profile = StoreProfile(
-                name: "\(storeNameTextField.textfieldView.text ?? "")",
-                URL: "\(storeURLTextField.textfieldView.text ?? "")",
-                location: "\(storeLocationTextField.textfieldView.text ?? "")",
-                phoneNumber: "\(phoneNumberTextField.textfieldView.text ?? "")"
+                name: storeNameTextField.textfieldView.text ?? "",
+                URL: storeURLTextField.textfieldView.text ?? "",
+                location: location,
+                phoneNumber: phoneNumberTextField.textfieldView.text ?? ""
             )
             viewModel.saveStoreProfile(profile)
             let vc = EnableKeyboardViewController(from: .onboarding)
@@ -83,7 +84,7 @@ class StoreProfileViewController: UIViewController {
     private func viewModelDidUpdate(){
         storeNameTextField.textfieldView.text = viewModel.fetchedData?.name
         storeURLTextField.textfieldView.text = viewModel.fetchedData?.URL
-        storeLocationTextField.textfieldView.text = viewModel.fetchedData?.location
+        storeLocationTextField.textfieldView.text = viewModel.fetchedData?.location.name
         phoneNumberTextField.textfieldView.text = viewModel.fetchedData?.phoneNumber
     }
     
@@ -107,14 +108,16 @@ private extension StoreProfileViewController {
     
     @objc private func saveTapped(){
         if validateTextField() {
-            let profile = StoreProfile(
-                name: "\(storeNameTextField.textfieldView.text ?? "")",
-                URL: "\(storeURLTextField.textfieldView.text ?? "")",
-                location: "\(storeLocationTextField.textfieldView.text ?? "")",
-                phoneNumber: "\(phoneNumberTextField.textfieldView.text ?? "")"
-            )
-            viewModel.updateStoreProfile(profile)
-            isEditMode = false
+            if let location = viewModel.fetchedLocation {
+                let profile = StoreProfile(
+                    name: storeNameTextField.textfieldView.text ?? "",
+                    URL: storeURLTextField.textfieldView.text ?? "",
+                    location: location,
+                    phoneNumber: phoneNumberTextField.textfieldView.text ?? ""
+                )
+                viewModel.updateStoreProfile(profile)
+                isEditMode = false
+            }
         }
     }
     
@@ -123,7 +126,17 @@ private extension StoreProfileViewController {
     }
 }
 
-extension StoreProfileViewController: UITextFieldDelegate {
+extension StoreProfileViewController: UITextFieldDelegate, GetLocationViewControllerDelegate {
+    func selectLocationTo(_ location: SingleArea) {
+        return
+    }
+    
+    
+    func selectLocationFrom(_ location: SingleArea) {
+        storeLocationTextField.textfieldView.text = location.name
+        viewModel.receiveStoreLocation(location: location)
+    }
+    
     private func setupPage(){
         bindToViewModel()
         setupTextField()
@@ -148,7 +161,15 @@ extension StoreProfileViewController: UITextFieldDelegate {
         storeNameTextField.textfieldData = Textfield(title: "Store Name", placeholder: "e.g. Store A")
         storeURLTextField.textfieldData = Textfield(title: "Store URL", placeholder: "https://")
         storeLocationTextField.textfieldData = Textfield(title: "Store Location", placeholder: "Store Address")
+        storeLocationTextField.textfieldView.addTarget(self, action: #selector(getSellerLocation), for: .touchDown)
         phoneNumberTextField.textfieldData = Textfield(title: "Phone Number", placeholder: "+62")
+    }
+    
+    @objc func getSellerLocation(){
+        let vc = GetLocationViewController(from: .from)
+        vc.modalPresentationStyle = .pageSheet
+        vc.delegate = self
+        self.present(vc, animated: true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

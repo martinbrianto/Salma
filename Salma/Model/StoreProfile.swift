@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct StoreProfile{
+struct StoreProfile {
     var name: String
     var URL: String
-    var location: String
+    var location: SingleArea
     var phoneNumber: String
 }

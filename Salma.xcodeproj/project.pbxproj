@@ -85,6 +85,8 @@
 		E6702D75281D4943005F4DAC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6702D73281D4943005F4DAC /* CoreDataManager.swift */; };
 		E6702DB428212215005F4DAC /* StoreProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6702DB328212215005F4DAC /* StoreProfile.swift */; };
 		E6702DB528212215005F4DAC /* StoreProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6702DB328212215005F4DAC /* StoreProfile.swift */; };
+		E67EBF19287601F800DE6857 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6266D85287366E10077FF29 /* Network.swift */; };
+		E67EBF1B2876090600DE6857 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67EBF1A2876090600DE6857 /* Profile+CoreDataProperties.swift */; };
 		E68AF54B2848F24C0093FC15 /* DetailTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68AF5492848F24C0093FC15 /* DetailTransactionViewController.swift */; };
 		E68AF54C2848F24C0093FC15 /* DetailTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68AF54A2848F24C0093FC15 /* DetailTransactionViewController.xib */; };
 		E698705D2815C05E002D73F2 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698705B2815C05E002D73F2 /* SettingTableViewCell.swift */; };
@@ -301,6 +303,7 @@
 		E6702D69281D4894005F4DAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6702D73281D4943005F4DAC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E6702DB328212215005F4DAC /* StoreProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfile.swift; sourceTree = "<group>"; };
+		E67EBF1A2876090600DE6857 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Profile+CoreDataProperties.swift"; path = "Salma/Helper/Core Data Manager/Managed Object Subclass/Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E68AF5492848F24C0093FC15 /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
 		E68AF54A2848F24C0093FC15 /* DetailTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTransactionViewController.xib; sourceTree = "<group>"; };
 		E698705B2815C05E002D73F2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -742,6 +745,7 @@
 		E6545F102804499900A95A03 = {
 			isa = PBXGroup;
 			children = (
+				E67EBF1A2876090600DE6857 /* Profile+CoreDataProperties.swift */,
 				E642D893285A3BCF00F22258 /* Transaction+CoreDataProperties.swift */,
 				E642D88F2854D79700F22258 /* TransactionProduct+CoreDataProperties.swift */,
 				E6545F1B2804499900A95A03 /* Salma */,
@@ -1387,6 +1391,7 @@
 				B76E2AC12805AB61003E349F /* TabBarViewController.swift in Sources */,
 				E62178E2284FCB9200A3EFC2 /* TransactionProduct.swift in Sources */,
 				E6BC343D284E5EC40076289C /* TransactionButtonTableViewCell.swift in Sources */,
+				E67EBF1B2876090600DE6857 /* Profile+CoreDataProperties.swift in Sources */,
 				E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */,
 				E6B2498E2867725600CBB9AF /* ToolbarView.swift in Sources */,
 				26E334AC282A9AE600FB1164 /* PriceTextFieldView.swift in Sources */,
@@ -1448,6 +1453,7 @@
 				E6B2497B28675F1400CBB9AF /* KeyboardView.swift in Sources */,
 				E6CECC79282589F200276B31 /* CustomAutotext+CoreDataProperties.swift in Sources */,
 				E6CECBE52821871400276B31 /* Enum.swift in Sources */,
+				E67EBF19287601F800DE6857 /* Network.swift in Sources */,
 				E6CECC75282589F200276B31 /* DefaultAutotext+CoreDataProperties.swift in Sources */,
 				E6CECC7D282589F200276B31 /* Profile+CoreDataProperties.swift in Sources */,
 				E6CECC8E28295B3100276B31 /* Product.swift in Sources */,

@@ -98,10 +98,15 @@ extension CekOngkirViewController: UITextFieldDelegate, GetLocationViewControlle
         weightTextfield.textfieldView.keyboardType = .numberPad
         fromTextfield.textfieldView.addTarget(self, action: #selector(getLocationFrom), for: .touchDown)
         toTextfield.textfieldView.addTarget(self, action: #selector(getLocationTo), for: .touchDown)
-        if let data = viewModel.data {
-            fromTextfield.textfieldView.text = data.from.name
-            toTextfield.textfieldView.text = data.to.name
-            weightTextfield.textfieldView.text = "\(data.weight)"
+        if let from = viewModel.from {
+            fromTextfield.textfieldView.text = from.name
+        }
+        if let to = viewModel.to {
+            toTextfield.textfieldView.text = to.name
+        }
+        
+        if let weight = viewModel.weight {
+            weightTextfield.textfieldView.text = String(weight)
         }
     }
     

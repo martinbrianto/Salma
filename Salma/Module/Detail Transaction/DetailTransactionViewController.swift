@@ -126,7 +126,6 @@ extension DetailTransactionViewController: ProductTransactionViewControllerDeleg
         viewModel.didUpdateProduct = { [weak self] _ in
             guard let self = self else { return }
             self.tableView.reloadSections(IndexSet(integersIn: 2...2), with: .automatic)
-            //self.tableView.reloadData()
             self.viewModel.countSubTotal()
         }
         

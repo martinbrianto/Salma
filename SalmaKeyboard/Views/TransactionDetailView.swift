@@ -122,7 +122,7 @@ extension TransactionDetailView {
             case .storeURL:
                 replacementData = storeData?.URL
             case .storeLocation:
-                replacementData = storeData?.location
+                replacementData = storeData?.location.name
             case .storePhoneNumber:
                 replacementData = storeData?.phoneNumber
             case .customerName:

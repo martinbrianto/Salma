@@ -2,7 +2,7 @@
 //  Profile+CoreDataProperties.swift
 //  Salma
 //
-//  Created by gratianus.brianto on 08/05/22.
+//  Created by gratianus.brianto on 07/07/22.
 //
 //
 
@@ -20,6 +20,7 @@ extension Profile {
     @NSManaged public var storeName: String
     @NSManaged public var storePhoneNumber: String
     @NSManaged public var storeURL: String
+    @NSManaged public var storePostalCode: Int32
 
 }
 

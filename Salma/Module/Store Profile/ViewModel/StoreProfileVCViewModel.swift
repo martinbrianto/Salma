@@ -12,6 +12,7 @@ class StoreProfileVCViewModel {
     // MARK: - Privates
     private let service: CoreDataManager
     private(set) var fetchedData: StoreProfile?
+    private(set) var fetchedLocation: SingleArea?
     
     init(service: CoreDataManager = CoreDataManager.shared){
         self.service = service
@@ -27,6 +28,7 @@ class StoreProfileVCViewModel {
 extension StoreProfileVCViewModel {
     func fetchStoreProfile() {
         self.fetchedData = service.fetchStoreProfile()
+        self.fetchedLocation = fetchedData?.location
         didUpdate?(self)
     }
     
@@ -36,5 +38,9 @@ extension StoreProfileVCViewModel {
     
     func saveStoreProfile(_ profileData: StoreProfile) {
         service.saveProfile(newProfile: profileData)
+    }
+    
+    func receiveStoreLocation(location: SingleArea){
+        self.fetchedLocation = location
     }
 }

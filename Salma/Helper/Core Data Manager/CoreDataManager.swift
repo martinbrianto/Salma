@@ -257,6 +257,7 @@ struct CoreDataManager {
         profile.setValue(newProfile.phoneNumber, forKey: "storePhoneNumber")
         profile.setValue(newProfile.URL, forKey: "storeURL")
         profile.setValue(newProfile.location, forKey: "storeLocation")
+        profile.setValue(newProfile.location.postal_code, forKey: "storePostalCode")
         
         do {
             try context.save()
@@ -275,7 +276,7 @@ struct CoreDataManager {
                 storeProfile = StoreProfile(
                     name: profile.storeName,
                     URL: profile.storeURL,
-                    location: profile.storeLocation,
+                    location: SingleArea(name: profile.storeLocation, postal_code: Int(profile.storePostalCode)),
                     phoneNumber: profile.storePhoneNumber
                 )
             }
@@ -308,7 +309,8 @@ struct CoreDataManager {
                 profile.setValue(newProfileData.name, forKey: "storeName")
                 profile.setValue(newProfileData.phoneNumber, forKey: "storePhoneNumber")
                 profile.setValue(newProfileData.URL, forKey: "storeURL")
-                profile.setValue(newProfileData.location, forKey: "storeLocation")
+                profile.setValue(newProfileData.location.name, forKey: "storeLocation")
+                profile.setValue(newProfileData.location.postal_code, forKey: "storePostalCode")
                 do {
                     try context.save()
                 } catch {

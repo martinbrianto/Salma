@@ -109,7 +109,7 @@ extension AutotextView {
                 case .storeURL:
                     data = storeData?.URL
                 case .storeLocation:
-                    data = storeData?.location
+                    data = storeData?.location.name
                 case .storePhoneNumber:
                     data = storeData?.phoneNumber
                 }

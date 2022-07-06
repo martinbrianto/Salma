@@ -20,8 +20,8 @@ class DashboardViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     @IBAction func cekOngkirAction(_ sender: Any) {
-        let viewModel = CekOngkirViewModel(data: nil)
-        let vc = CekOngkirViewController(viewModel: viewModel, entryPoint: .dashboard)
+        let vm = CekOngkirViewModel(from: viewModel.getSellerLocation(), to: nil, weight: nil)
+        let vc = CekOngkirViewController(viewModel: vm, entryPoint: .dashboard)
         navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -60,6 +60,13 @@ extension DashboardVCViewModel {
         return storeProfile?.name ?? ""
     }
     
+    func getSellerLocation() -> SingleArea? {
+        if let store = service.fetchStoreProfile() {
+            return SingleArea(name: store.location.name, postal_code: store.location.postal_code)
+        }
+        return nil
+    }
+    
     func transactionDetailVCViewModel(index: Int) -> DetailTransactionViewModel {
             let viewModel = DetailTransactionViewModel(id: self.sortedFetchedData[index].id)
             return viewModel

@@ -17,12 +17,14 @@ struct CekOngkirModel {
 class CekOngkirViewModel {
     private(set) var data: CekOngkirModel?
     
-    private var from: SingleArea?
-    private var to: SingleArea?
-    private var weight: Int?
+    private(set) var from: SingleArea?
+    private(set) var to: SingleArea?
+    private(set) var weight: Int?
     
-    init(data: CekOngkirModel?){
-        self.data = data
+    init(from: SingleArea?, to: SingleArea?, weight: Int?){
+        self.from = from
+        self.to = to
+        self.weight = weight
     }
     
     // MARK: - Events

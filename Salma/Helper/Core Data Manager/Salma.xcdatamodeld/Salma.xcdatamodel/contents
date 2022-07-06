@@ -24,6 +24,7 @@
         <attribute name="storeLocation" attributeType="String"/>
         <attribute name="storeName" attributeType="String"/>
         <attribute name="storePhoneNumber" attributeType="String"/>
+        <attribute name="storePostalCode" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="storeURL" attributeType="String"/>
     </entity>
     <entity name="Transaction" representedClassName=".Transaction" syncable="YES">
@@ -59,7 +60,7 @@
         <element name="CustomAutotext" positionX="-9" positionY="153" width="128" height="74"/>
         <element name="DefaultAutotext" positionX="-98.80108642578125" positionY="-0.8863525390625" width="128" height="88"/>
         <element name="Product" positionX="623.512451171875" positionY="52.47564697265625" width="128" height="163"/>
-        <element name="Profile" positionX="-260.3363647460938" positionY="158.5518798828125" width="128" height="89"/>
+        <element name="Profile" positionX="-260.3363647460938" positionY="158.5518798828125" width="128" height="104"/>
         <element name="Transaction" positionX="165.006591796875" positionY="-82.43434143066406" width="128" height="299"/>
         <element name="TransactionProduct" positionX="402.9671630859375" positionY="112.4483947753906" width="128" height="134"/>
     </elements>

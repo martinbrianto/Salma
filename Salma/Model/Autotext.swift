@@ -15,7 +15,7 @@ struct Autotext {
 
 let formatOrderTagData = ["#name", "#phoneNumber", "#streetAddress", "#province", "#city", "#district", "#postalCode", "#notes", "#expedition"]
 let defaultAutotextTagData = ["#storeName", "#storeURL", "#storeLocation", "#storePhoneNumber", "#customerName", "#customerPhoneNumber", "#customerAddress", "#products", "#shippingExpedition", "#shippingPrice", "#totalPrice"]
-let customAutotextTagData = ["#storeName", "#subTotalPrice", "#storeURL", "#storeLocation", "#storePhoneNumber"]
+let customAutotextTagData = ["#storeName", "#storeURL", "#storeLocation", "#storePhoneNumber"]
 
 enum defaultAutoTextTagData: String, Hashable, Equatable, CaseIterable {
     case storeName = "#storeName"

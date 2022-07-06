@@ -58,21 +58,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScence = (scene as? UIWindowScene) else { return }
         
-        if let didFirstLaunch = UserDefaults.standard.string(forKey: "didFirstLaunch"){
-            //app is already launched
+        if UserDefaults.standard.string(forKey: "didFirstLaunch") != nil{
+            window = UIWindow(windowScene: windowScence)
+            let viewController = WelcomeViewController()
+            let navigationController = UINavigationController(rootViewController: viewController)
+            window?.rootViewController = navigationController
+            window?.makeKeyAndVisible()
         } else {
-            //app is first launch
+            window = UIWindow(windowScene: windowScence)
+            let viewController = TabBarViewController()
+            window?.rootViewController = viewController
+            window?.makeKeyAndVisible()
             UserDefaults.standard.set(true, forKey: "didFirstLaunch")
         }
-//        CoreDataManager.shared.saveDefaultAutotext(autotextData: Autotext(title: "Send Invoice", messages: "Terima kasih telah berbelanja di #storeName\n\nNama: #customerName\nNomor Telepon: #customerPhoneNumber\nAlamat Pengiriman: #customerAddress\nEkpedisi Pengiriman: #shippingExpedition\n\nProduk: \n#products\n\nTotal harga barang: #subTotalPrice\nOngkos kirim: #shippingPrice\nTotal yang harus dibayar: #totalPrice\n\nHarap mengirimkan bukti pembayaran kepada kami. Terima kasih banyak!"))
-//        CoreDataManager.shared.saveDefaultAutotext(autotextData: Autotext(title: "Format Order", messages: "Mohon mengisi format order ini\n\nNama:\nNomor Telepon:\n\nAlamat:\nKecamatan:\nKota:\nProvinsi:\nKode Pos:\n\nProduk:\n1.\n\nNote:\n\nEkspedisi Pengiriman:"))
-        window = UIWindow(windowScene: windowScence)
-        let viewController = TabBarViewController()
-        let vc = TabBarViewController()
-        let navigationController = UINavigationController(rootViewController: vc)
-        //let viewController = navigationController
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

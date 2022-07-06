@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WNw-gd-Mvc">
-                    <rect key="frame" x="16" y="12" width="382" height="617"/>
+                    <rect key="frame" x="16" y="12" width="382" height="708"/>
                     <subviews>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6G-ho-r66">
                             <rect key="frame" x="0.0" y="-40" width="382" height="40"/>
@@ -75,11 +75,11 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoq-x2-fZZ">
-                            <rect key="frame" x="0.0" y="416" width="382" height="201"/>
+                            <rect key="frame" x="0.0" y="416" width="382" height="292"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysa-J3-5BX">
-                            <rect key="frame" x="0.0" y="617" width="382" height="48"/>
+                            <rect key="frame" x="0.0" y="708" width="382" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="hZu-3D-3o9"/>
                             </constraints>
@@ -100,7 +100,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WNw-gd-Mvc" secondAttribute="trailing" constant="16" id="ekj-kS-z3Z"/>
                 <constraint firstItem="WNw-gd-Mvc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="fUO-P8-KJK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WNw-gd-Mvc" secondAttribute="bottom" constant="107" id="kh5-P1-ajQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WNw-gd-Mvc" secondAttribute="bottom" constant="16" id="kh5-P1-ajQ"/>
                 <constraint firstItem="WNw-gd-Mvc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ohb-Yy-eSd"/>
             </constraints>
             <point key="canvasLocation" x="132" y="126"/>

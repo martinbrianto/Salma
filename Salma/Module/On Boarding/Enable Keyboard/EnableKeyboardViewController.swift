@@ -24,20 +24,34 @@ class EnableKeyboardViewController: UIViewController {
     @IBAction func skipButtonAction(_ sender: Any) {
         print("insert Skip Action")
         let vc = TabBarViewController()
-        setupFirstTimeAutotext()
+        //setupFirstTimeAutotext()
         UserDefaults.standard.set(true, forKey: "didFirstLaunch")
+        NSUbiquitousKeyValueStore().set(true, forKey: "didFirstLaunch")
         UIApplication.shared.windows.first?.rootViewController = vc
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
 
     // MARK: - Variables
     private var entryPoint: StoreProfilePageEntryPoint
+    private let fetchingVC = FetchingDataViewController()
     
     // MARK: - VC LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Enable Keyboard"
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchFromBackground), name: .NSPersistentStoreRemoteChange, object: nil)
+        CoreDataManager.shared.persistentContainer.loadPersistentStores { _, _ in
+            
+        }
         setupPage()
+    }
+    
+    @objc func fetchFromBackground(){
+        if let _ = CoreDataManager.shared.fetchStoreProfile() {
+            DispatchQueue.main.async {
+            self.fetchingVC.dismiss(animated: true)
+            }
+        }
     }
     
     init(from entryPoint: StoreProfilePageEntryPoint){
@@ -58,14 +72,15 @@ private extension EnableKeyboardViewController {
             titleLabel.isHidden = true
         case .settingPage:
             break
+        case .onboardingExistingUser:
+            skipButton.isHidden = false
+            titleLabel.isHidden = true
+            fetchingVC.modalPresentationStyle = .overCurrentContext
+            fetchingVC.modalTransitionStyle = .crossDissolve
+            fetchingVC.hidesBottomBarWhenPushed = true
+            self.present(fetchingVC, animated: true)
         }
     }
     
-    private func setupFirstTimeAutotext(){
-        CoreDataManager.shared.saveDefaultAutotext(autotextData: Autotext(title: "Send Invoice", messages: "Berikut kami kirimkan detail pesanan serta total yang harus dibayar\n\nNama: #customerName\nNomor Telepon: #customerPhoneNumber\nAlamat Pengiriman: #customerAddress\nEkpedisi Pengiriman: #shippingExpedition\n\nProduk: \n#products\n\nTotal harga barang: #subTotalPrice\nOngkos kirim: #shippingPrice\nTotal yang harus dibayar: #totalPrice\n\nPesanan akan segera di proses setelah mengirimkan bukti pembayaran ya, kak.\n\nTerima kasih!"))
-        CoreDataManager.shared.saveDefaultAutotext(autotextData: Autotext(title: "Format Order", messages: "Untuk melakukan pemesanan, mohon mengisi format order berikut\n\nNama:\nNomor Telepon:\n\nAlamat:\nKecamatan:\nKota:\nProvinsi:\nKode Pos:\n\nProduk yang dipesan:\n1.\n\nNote:\n\nEkspedisi Pengiriman:"))
-        CoreDataManager.shared.saveCustomAutotext(autotextData: Autotext(title: "Selamat Datang", messages: "Hai selamat datang di #storeName. Ada yang bisa kami bantu?"))
-        CoreDataManager.shared.saveCustomAutotext(autotextData: Autotext(title: "Reminder Pembayaran", messages: "Hi, jangan lupa untuk pengirimkan bukti pembayaran agar pesanan dapat segera di proses ya\n\nTerima kasih!"))
-        CoreDataManager.shared.saveCustomAutotext(autotextData: Autotext(title: "Terima Kasih", messages: "Terima kasih telah memesan di #storeName. Jika berkenan mohon untuk memberikan ulasan mengenai produk kami.\n\nJangan lupa untuk kunjungi kami di #storeURL"))
-    }
+    
 }

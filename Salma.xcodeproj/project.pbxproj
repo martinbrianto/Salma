@@ -87,6 +87,11 @@
 		E6702DB528212215005F4DAC /* StoreProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6702DB328212215005F4DAC /* StoreProfile.swift */; };
 		E67EBF19287601F800DE6857 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6266D85287366E10077FF29 /* Network.swift */; };
 		E67EBF1B2876090600DE6857 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67EBF1A2876090600DE6857 /* Profile+CoreDataProperties.swift */; };
+		E67EBF4228771BB700DE6857 /* CustomAutotext+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67EBF3F28771BB600DE6857 /* CustomAutotext+CoreDataProperties.swift */; };
+		E67EBF4328771BB700DE6857 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67EBF4028771BB600DE6857 /* Product+CoreDataProperties.swift */; };
+		E67EBF4428771BB700DE6857 /* DefaultAutotext+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67EBF4128771BB600DE6857 /* DefaultAutotext+CoreDataProperties.swift */; };
+		E67EBF482877601900DE6857 /* FetchingDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67EBF462877601900DE6857 /* FetchingDataViewController.swift */; };
+		E67EBF492877601900DE6857 /* FetchingDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E67EBF472877601900DE6857 /* FetchingDataViewController.xib */; };
 		E68AF54B2848F24C0093FC15 /* DetailTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68AF5492848F24C0093FC15 /* DetailTransactionViewController.swift */; };
 		E68AF54C2848F24C0093FC15 /* DetailTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68AF54A2848F24C0093FC15 /* DetailTransactionViewController.xib */; };
 		E698705D2815C05E002D73F2 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698705B2815C05E002D73F2 /* SettingTableViewCell.swift */; };
@@ -304,6 +309,11 @@
 		E6702D73281D4943005F4DAC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E6702DB328212215005F4DAC /* StoreProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfile.swift; sourceTree = "<group>"; };
 		E67EBF1A2876090600DE6857 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Profile+CoreDataProperties.swift"; path = "Salma/Helper/Core Data Manager/Managed Object Subclass/Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E67EBF3F28771BB600DE6857 /* CustomAutotext+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CustomAutotext+CoreDataProperties.swift"; path = "Salma/Helper/Core Data Manager/Managed Object Subclass/CustomAutotext+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E67EBF4028771BB600DE6857 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Product+CoreDataProperties.swift"; path = "Salma/Helper/Core Data Manager/Managed Object Subclass/Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E67EBF4128771BB600DE6857 /* DefaultAutotext+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DefaultAutotext+CoreDataProperties.swift"; path = "Salma/Helper/Core Data Manager/Managed Object Subclass/DefaultAutotext+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E67EBF462877601900DE6857 /* FetchingDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingDataViewController.swift; sourceTree = "<group>"; };
+		E67EBF472877601900DE6857 /* FetchingDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FetchingDataViewController.xib; sourceTree = "<group>"; };
 		E68AF5492848F24C0093FC15 /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
 		E68AF54A2848F24C0093FC15 /* DetailTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTransactionViewController.xib; sourceTree = "<group>"; };
 		E698705B2815C05E002D73F2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -745,6 +755,9 @@
 		E6545F102804499900A95A03 = {
 			isa = PBXGroup;
 			children = (
+				E67EBF3F28771BB600DE6857 /* CustomAutotext+CoreDataProperties.swift */,
+				E67EBF4028771BB600DE6857 /* Product+CoreDataProperties.swift */,
+				E67EBF4128771BB600DE6857 /* DefaultAutotext+CoreDataProperties.swift */,
 				E67EBF1A2876090600DE6857 /* Profile+CoreDataProperties.swift */,
 				E642D893285A3BCF00F22258 /* Transaction+CoreDataProperties.swift */,
 				E642D88F2854D79700F22258 /* TransactionProduct+CoreDataProperties.swift */,
@@ -907,6 +920,15 @@
 			path = "Managed Object Subclass";
 			sourceTree = "<group>";
 		};
+		E67EBF452877600000DE6857 /* Fetching Data */ = {
+			isa = PBXGroup;
+			children = (
+				E67EBF462877601900DE6857 /* FetchingDataViewController.swift */,
+				E67EBF472877601900DE6857 /* FetchingDataViewController.xib */,
+			);
+			path = "Fetching Data";
+			sourceTree = "<group>";
+		};
 		E68AF5482848F20F0093FC15 /* Detail Transaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -947,6 +969,7 @@
 		E698717B28182B48002D73F2 /* On Boarding */ = {
 			isa = PBXGroup;
 			children = (
+				E67EBF452877600000DE6857 /* Fetching Data */,
 				E6D0F702287216270081E2C6 /* Welcome Page */,
 				E698717C28182B4E002D73F2 /* Enable Keyboard */,
 			);
@@ -1275,6 +1298,7 @@
 				E60A5B98284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.xib in Resources */,
 				E6F7F505281AD71100456635 /* Inter-ExtraBold.ttf in Resources */,
 				B76E2AC02805AB61003E349F /* TabBarViewController.xib in Resources */,
+				E67EBF492877601900DE6857 /* FetchingDataViewController.xib in Resources */,
 				B76E2AC32805AB61003E349F /* ProductViewController.xib in Resources */,
 				E6266D952874B1340077FF29 /* ShippingRateResultViewController.xib in Resources */,
 				B76E2AC42805AB61003E349F /* LaunchScreen.storyboard in Resources */,
@@ -1353,6 +1377,7 @@
 				E6702D74281D4943005F4DAC /* CoreDataManager.swift in Sources */,
 				E6DF7AA4282C00CA00A61D08 /* AutotextAddVCViewModel.swift in Sources */,
 				E6CECC94282AAA6600276B31 /* StoreProfileVCViewModel.swift in Sources */,
+				E67EBF4228771BB700DE6857 /* CustomAutotext+CoreDataProperties.swift in Sources */,
 				E642D8922854EC8300F22258 /* TransactionViewModel.swift in Sources */,
 				E642D8902854D79700F22258 /* TransactionProduct+CoreDataProperties.swift in Sources */,
 				E6DCB2C5286E26A300639993 /* KeyboardView.swift in Sources */,
@@ -1364,6 +1389,7 @@
 				E6BC3437284E34F90076289C /* DetailTransactionViewModel.swift in Sources */,
 				E642D88128526C0F00F22258 /* ProductTransactionVCViewModel.swift in Sources */,
 				B7E1DA4628049CFC006C9D27 /* Constant.swift in Sources */,
+				E67EBF4328771BB700DE6857 /* Product+CoreDataProperties.swift in Sources */,
 				26E699E1282D517100846FE4 /* ProductVCViewModel.swift in Sources */,
 				E62178DF284FC1A600A3EFC2 /* TransactionProductTableViewCell.swift in Sources */,
 				B76E2A982805A905003E349F /* UIView+Extension.swift in Sources */,
@@ -1397,7 +1423,9 @@
 				26E334AC282A9AE600FB1164 /* PriceTextFieldView.swift in Sources */,
 				E698705D2815C05E002D73F2 /* SettingTableViewCell.swift in Sources */,
 				E6266D7B287360570077FF29 /* CekOngkirViewController.swift in Sources */,
+				E67EBF4428771BB700DE6857 /* DefaultAutotext+CoreDataProperties.swift in Sources */,
 				B76E2AC62805AB61003E349F /* DashboardViewController.swift in Sources */,
+				E67EBF482877601900DE6857 /* FetchingDataViewController.swift in Sources */,
 				E642D87E285269A400F22258 /* AddCustomProductTableViewCell.swift in Sources */,
 				B76E2ACB2805AB61003E349F /* AutotextViewController.swift in Sources */,
 				B76E2AC82805AB61003E349F /* TransactionViewController.swift in Sources */,

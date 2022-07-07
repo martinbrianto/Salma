@@ -27,8 +27,9 @@ class StoreProfileViewController: UIViewController {
                 location: location,
                 phoneNumber: phoneNumberTextField.textfieldView.text ?? ""
             )
-            viewModel.saveStoreProfile(profile)
+            viewModel.updateStoreProfile(profile)
             let vc = EnableKeyboardViewController(from: .onboarding)
+            setupFirstTimeAutotext()
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -149,6 +150,8 @@ extension StoreProfileViewController: UITextFieldDelegate, GetLocationViewContro
             title = "Store Profile"
             viewModel.fetchStoreProfile()
             isEditMode = false
+        case .onboardingExistingUser:
+            break
         }
     }
     
@@ -203,4 +206,13 @@ extension StoreProfileViewController: UITextFieldDelegate, GetLocationViewContro
         
         return errorCounter == 0 ? true : false
     }
+    
+    private func setupFirstTimeAutotext(){
+        CoreDataManager.shared.saveDefaultAutotext(autotextData: Autotext(title: "Send Invoice", messages: "Berikut kami kirimkan detail pesanan serta total yang harus dibayar\n\nNama: #customerName\nNomor Telepon: #customerPhoneNumber\nAlamat Pengiriman: #customerAddress\nEkpedisi Pengiriman: #shippingExpedition\n\nProduk: \n#products\n\nTotal harga barang: #subTotalPrice\nOngkos kirim: #shippingPrice\nTotal yang harus dibayar: #totalPrice\n\nPesanan akan segera di proses setelah mengirimkan bukti pembayaran ya, kak.\n\nTerima kasih!"))
+        CoreDataManager.shared.saveDefaultAutotext(autotextData: Autotext(title: "Format Order", messages: "Untuk melakukan pemesanan, mohon mengisi format order berikut\n\nNama:\nNomor Telepon:\n\nAlamat:\nKecamatan:\nKota:\nProvinsi:\nKode Pos:\n\nProduk yang dipesan:\n1.\n\nNote:\n\nEkspedisi Pengiriman:"))
+        CoreDataManager.shared.saveCustomAutotext(autotextData: Autotext(title: "Selamat Datang", messages: "Hai selamat datang di #storeName. Ada yang bisa kami bantu?"))
+        CoreDataManager.shared.saveCustomAutotext(autotextData: Autotext(title: "Reminder Pembayaran", messages: "Hi, jangan lupa untuk pengirimkan bukti pembayaran agar pesanan dapat segera di proses ya\n\nTerima kasih!"))
+        CoreDataManager.shared.saveCustomAutotext(autotextData: Autotext(title: "Terima Kasih", messages: "Terima kasih telah memesan di #storeName. Jika berkenan mohon untuk memberikan ulasan mengenai produk kami.\n\nJangan lupa untuk kunjungi kami di #storeURL"))
+    }
 }
+

@@ -2,7 +2,7 @@
 //  DefaultAutotext+CoreDataProperties.swift
 //  Salma
 //
-//  Created by gratianus.brianto on 08/05/22.
+//  Created by gratianus.brianto on 07/07/22.
 //
 //
 
@@ -16,9 +16,9 @@ extension DefaultAutotext {
         return NSFetchRequest<DefaultAutotext>(entityName: "DefaultAutotext")
     }
 
-    @NSManaged public var messages: String
-    @NSManaged public var title: String
-    @NSManaged public var uuid: UUID
+    @NSManaged public var messages: String?
+    @NSManaged public var title: String?
+    @NSManaged public var uuid: UUID?
 
 }
 

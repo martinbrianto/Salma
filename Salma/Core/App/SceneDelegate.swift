@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -57,18 +58,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScence = (scene as? UIWindowScene) else { return }
-        
-        if UserDefaults.standard.bool(forKey: "didFirstLaunch") == true {
-            window = UIWindow(windowScene: windowScence)
-            let viewController = TabBarViewController()
-            window?.rootViewController = viewController
-            window?.makeKeyAndVisible()
-        } else {
-            window = UIWindow(windowScene: windowScence)
-            let viewController = WelcomeViewController()
-            let navigationController = UINavigationController(rootViewController: viewController)
-            window?.rootViewController = navigationController
-            window?.makeKeyAndVisible()
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        //NSUbiquitousKeyValueStore().set(true, forKey: "didFirstLaunch")
+        if NSUbiquitousKeyValueStore().synchronize() {
+            if NSUbiquitousKeyValueStore().bool(forKey: "didFirstLaunch") == true {
+                if UserDefaults.standard.bool(forKey: "didFirstLaunch") == true {
+                    window = UIWindow(windowScene: windowScence)
+                    let viewController = TabBarViewController()
+                    window?.rootViewController = viewController
+                    window?.makeKeyAndVisible()
+                }else {
+                    window = UIWindow(windowScene: windowScence)
+                    let viewController = WelcomeViewController(from: .notFirstLaunch)
+                    let navigationController = UINavigationController(rootViewController: viewController)
+                    window?.rootViewController = navigationController
+                    window?.makeKeyAndVisible()
+                }
+                
+            } else {
+                window = UIWindow(windowScene: windowScence)
+                let viewController = WelcomeViewController(from: .firstLaunch)
+                let navigationController = UINavigationController(rootViewController: viewController)
+                window?.rootViewController = navigationController
+                window?.makeKeyAndVisible()
+            }
         }
     }
 
@@ -100,7 +114,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
 
         // Save changes in the application's managed object context when the application transitions to the background.
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        //(UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
 

@@ -2,7 +2,7 @@
 //  Product+CoreDataProperties.swift
 //  Salma
 //
-//  Created by gratianus.brianto on 09/05/22.
+//  Created by gratianus.brianto on 07/07/22.
 //
 //
 
@@ -17,12 +17,12 @@ extension Product {
     }
 
     @NSManaged public var image: Data?
-    @NSManaged public var name: String
-    @NSManaged public var price: Float
-    @NSManaged public var weight: Int32
-    @NSManaged public var uuid: UUID
     @NSManaged public var isActive: Bool
+    @NSManaged public var name: String?
+    @NSManaged public var price: Float
     @NSManaged public var referenceCount: Int32
+    @NSManaged public var uuid: UUID?
+    @NSManaged public var weight: Int32
     @NSManaged public var ofTransactionProduct: NSSet?
 
 }

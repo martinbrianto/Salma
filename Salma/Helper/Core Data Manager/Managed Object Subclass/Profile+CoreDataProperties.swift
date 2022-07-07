@@ -16,10 +16,10 @@ extension Profile {
         return NSFetchRequest<Profile>(entityName: "Profile")
     }
 
-    @NSManaged public var storeLocation: String
-    @NSManaged public var storeName: String
-    @NSManaged public var storePhoneNumber: String
-    @NSManaged public var storeURL: String
+    @NSManaged public var storeLocation: String?
+    @NSManaged public var storeName: String?
+    @NSManaged public var storePhoneNumber: String?
+    @NSManaged public var storeURL: String?
     @NSManaged public var storePostalCode: Int32
 
 }

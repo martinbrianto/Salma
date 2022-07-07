@@ -15,6 +15,7 @@ enum Status: String {
 
 enum StoreProfilePageEntryPoint {
     case onboarding
+    case onboardingExistingUser
     case settingPage
 }
 

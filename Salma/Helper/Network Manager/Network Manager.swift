@@ -39,7 +39,6 @@ extension NetworkManager {
         let url = BASE_URL+"/v1/maps/areas?countries=ID&input=\(encode ?? "")&type=single"
         let request = AF.request(url, method: .get, encoding: URLEncoding.default, headers: headers)
         request.responseDecodable(of: LocationResponse.self) { response in
-            debugPrint(response)
             if let data = response.value {
                 completion(data, nil)
             } else if let error = response.error {
@@ -52,7 +51,6 @@ extension NetworkManager {
         let url = BASE_URL+"/v1/rates/couriers"
         let request = AF.request(url, method: .post, parameters: parameter, encoder: JSONParameterEncoder.default, headers: headers)
         request.responseDecodable(of: ShippingResponse.self) { response in
-            debugPrint(response)
             if let data = response.value {
                 completion(data, nil)
             } else if let error = response.error {

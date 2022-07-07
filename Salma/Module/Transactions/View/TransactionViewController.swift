@@ -46,6 +46,7 @@ class TransactionViewController: UIViewController {
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchFromBackground), name: .NSPersistentStoreRemoteChange, object: nil)
         registerNIB()
         bindToViewModel()
     }
@@ -53,18 +54,26 @@ class TransactionViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated);
         super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        viewModel.fetchProductData()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchFromBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
+        viewModel.fetchData()
+    }
+    
+    @objc func fetchFromBackground(){
+        viewModel.fetchData()
     }
     
     private func bindToViewModel(){
         viewModel.didUpdate = { [weak self] _ in
             guard let self = self else { return }
+            DispatchQueue.main.async {
                 self.transactionTableView.reloadData()
+            }
         }
     }
 }

@@ -57,7 +57,6 @@ class TransactionListProductTableViewCell: UITableViewCell {
         selectionStyle = .none
         self.cancellable = self.stepperView.publishedValue.sink(receiveValue: { currentValue in
             if let c = currentValue {
-                print("stepper is currently at \(c)")
                 if c == 0 {
                     self.stepperView.isHidden = true
                     self.addButton.isHidden = false

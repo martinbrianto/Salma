@@ -35,6 +35,7 @@ class DashboardViewController: UIViewController {
     // MARK: - VC LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchFromBackground), name: .NSPersistentStoreRemoteChange, object: nil)
         viewModel = DashboardVCViewModel.init()
         configurePage()
     }
@@ -47,6 +48,12 @@ class DashboardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchFromBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
+        self.fetchData()
+    }
+    
+    
+    @objc func fetchFromBackground(){
         self.fetchData()
     }
     
@@ -62,9 +69,11 @@ class DashboardViewController: UIViewController {
     }
     
     private func viewModelDidUpdate(){
-        transactionTableView.reloadData()
-        totalPenjualanLabel.text = viewModel.calculateTotalPenjualan().formattedToRp
-        
+        DispatchQueue.main.async {
+            self.transactionTableView.reloadData()
+            self.totalPenjualanLabel.text = self.viewModel.calculateTotalPenjualan().formattedToRp
+            self.businessNameLabel.text = "Welcome, " + self.viewModel.getSellerProfileName()
+        }
     }
     
     //TODO: error handling here

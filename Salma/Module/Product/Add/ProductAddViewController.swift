@@ -93,7 +93,7 @@ class ProductAddViewController: UIViewController, UIImagePickerControllerDelegat
                     quantity: 0
                 )
                 if viewModel.productList.contains(where: { $0.name.lowercased() == productData.name.lowercased() }){
-                    print("tai")
+                    AlertManager.shared.showAlert(controller: self, title: "Product already exist", message: "Product \(productData.name) is already exist")
                 } else {
                     delegate?.addCustomProduct(product: productData)
                 }

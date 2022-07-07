@@ -32,16 +32,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0N-aU-cYL" userLabel="Top Stack View">
-                    <rect key="frame" x="16" y="60" width="382" height="31"/>
+                    <rect key="frame" x="16" y="60" width="382" height="36"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCu-MR-1nS">
-                            <rect key="frame" x="0.0" y="0.0" width="108.5" height="31"/>
+                            <rect key="frame" x="0.0" y="0.0" width="346" height="36"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAN-tF-gZw">
-                            <rect key="frame" x="108.5" y="0.0" width="273.5" height="31"/>
+                            <rect key="frame" x="346" y="0.0" width="36" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="fgM-uu-OWP"/>
+                                <constraint firstAttribute="width" constant="36" id="nii-ew-8PV"/>
+                            </constraints>
                             <state key="normal" title="Button" image="gearshape.fill" catalog="system"/>
                             <buttonConfiguration key="configuration" style="plain" image="gearshape.fill" catalog="system" title=""/>
                             <connections>
@@ -51,7 +55,7 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kid-zj-RYZ" userLabel="Total Penjualan">
-                    <rect key="frame" x="10" y="115" width="394" height="99.5"/>
+                    <rect key="frame" x="10" y="120" width="394" height="99.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qFp-ll-QTc" userLabel="Total Penjualan Stack">
                             <rect key="frame" x="12" y="16" width="370" height="67.5"/>
@@ -85,7 +89,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X70-JW-lHa">
-                    <rect key="frame" x="10" y="230.5" width="394" height="48"/>
+                    <rect key="frame" x="10" y="235.5" width="394" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="pMI-pT-vKx"/>
                     </constraints>
@@ -98,7 +102,7 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVy-YD-bRi" userLabel="Latest Transaction Stack">
-                    <rect key="frame" x="16" y="302.5" width="382" height="31"/>
+                    <rect key="frame" x="16" y="307.5" width="382" height="31"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest Transactions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49y-Mo-Gxt">
                             <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
@@ -117,7 +121,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OFQ-ub-gOR" userLabel="No Transaction Stack">
-                    <rect key="frame" x="62.5" y="542" width="289" height="124"/>
+                    <rect key="frame" x="62.5" y="544.5" width="289" height="124"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search Icon" translatesAutoresizingMaskIntoConstraints="NO" id="uqa-RJ-xn9">
                             <rect key="frame" x="120.5" y="0.0" width="48" height="48"/>
@@ -155,7 +159,7 @@
                     </constraints>
                 </stackView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5PX-KJ-RYD">
-                    <rect key="frame" x="0.0" y="345.5" width="414" height="516.5"/>
+                    <rect key="frame" x="0.0" y="350.5" width="414" height="511.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="bid-NB-ZLw"/>

@@ -19,6 +19,7 @@ class ProductViewController: UIViewController {
     // MARK: - VC LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchFromBackground), name: .NSPersistentStoreRemoteChange, object: nil)
         viewModel = ProductVCVIewModel.init()
         registerNIB()
     }
@@ -41,6 +42,10 @@ class ProductViewController: UIViewController {
          }
      }
     
+    @objc func fetchFromBackground(){
+        self.fetchData()
+    }
+    
     @IBAction func addProductButtonAction(_ sender: Any) {
         let viewController = ProductAddViewController(from: .add, viewModel: ProductAddVCViewModel(data: nil, productList: self.viewModel.fetchedData))
         self.navigationController?.pushViewController(viewController, animated: true)
@@ -58,7 +63,9 @@ class ProductViewController: UIViewController {
     }
     
     private func viewModelDidUpdate(){
-        productTableView.reloadData()
+        DispatchQueue.main.async {
+            self.productTableView.reloadData()
+        }
     }
     
     //TODO: error handling here

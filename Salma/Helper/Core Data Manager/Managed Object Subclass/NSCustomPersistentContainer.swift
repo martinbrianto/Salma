@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class NSCustomPersistentContainer: NSPersistentContainer {
+class NSCustomPersistentContainer: NSPersistentCloudKitContainer {
     
     override open class func defaultDirectoryURL() -> URL {
         var storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.salma")

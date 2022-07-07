@@ -12,9 +12,13 @@ struct CoreDataManager {
     static var shared = CoreDataManager()
     private init() {}
     
-    lazy var persistentContainer: NSPersistentContainer = {
-            let container = NSCustomPersistentContainer(name: "Salma")
-            
+    lazy var persistentContainer: NSPersistentCloudKitContainer = {
+        let container = NSCustomPersistentContainer(name: "Salma")
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        try? container.viewContext.setQueryGenerationFrom(.current)
+        let description = container.persistentStoreDescriptions.first
+        description?.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        description?.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
             container.loadPersistentStores { (storeDescription, error) in
                 if let error = error as NSError? {
                     fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -22,21 +26,6 @@ struct CoreDataManager {
             }
             return container
         }()
-    
-    func saveContext() {
-        let context = CoreDataManager.shared.persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let error = error as NSError
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        }
-    }
-    
-    // MARK: - Core Data Function
-    
     
     // MARK: - Autotext Custom
     func saveCustomAutotext(autotextData: Autotext){
@@ -75,7 +64,7 @@ struct CoreDataManager {
         fetchRequest.predicate = NSPredicate(format: "uuid == %@", "\(autotextID)")
         do {
             if let customAutotext = try context.fetch(fetchRequest).first {
-                let autotext = Autotext(title: customAutotext.title, messages: customAutotext.messages, id: customAutotext.uuid)
+                let autotext = Autotext(title: customAutotext.title ?? "", messages: customAutotext.messages ?? "", id: customAutotext.uuid)
                 return autotext
             } else {
                 return nil
@@ -93,7 +82,7 @@ struct CoreDataManager {
             let customAutotext = try context.fetch(fetchRequest)
             lazy var autotexts : [Autotext] = []
             for ca in customAutotext {
-                autotexts.append(Autotext(title: ca.title, messages: ca.messages, id: ca.uuid))
+                autotexts.append(Autotext(title: ca.title ?? "", messages: ca.messages ?? "", id: ca.uuid))
             }
             return autotexts
         } catch {
@@ -168,7 +157,7 @@ struct CoreDataManager {
         fetchRequest.predicate = NSPredicate(format: "uuid == %@", "\(autotextID)")
         do {
             if let customAutotext = try context.fetch(fetchRequest).first {
-                let autotext = Autotext(title: customAutotext.title, messages: customAutotext.messages, id: customAutotext.uuid)
+                let autotext = Autotext(title: customAutotext.title ?? "", messages: customAutotext.messages ?? "", id: customAutotext.uuid)
                 return autotext
             } else {
                 return nil
@@ -185,7 +174,7 @@ struct CoreDataManager {
         fetchRequest.predicate = NSPredicate(format: "title == 'Format Order'")
         do {
             if let customAutotext = try context.fetch(fetchRequest).first {
-                let autotext = Autotext(title: customAutotext.title, messages: customAutotext.messages, id: customAutotext.uuid)
+                let autotext = Autotext(title: customAutotext.title ?? "", messages: customAutotext.messages ?? "", id: customAutotext.uuid)
                 return autotext
             } else {
                 return nil
@@ -202,7 +191,7 @@ struct CoreDataManager {
         fetchRequest.predicate = NSPredicate(format: "title == 'Send Invoice'")
         do {
             if let customAutotext = try context.fetch(fetchRequest).first {
-                let autotext = Autotext(title: customAutotext.title, messages: customAutotext.messages, id: customAutotext.uuid)
+                let autotext = Autotext(title: customAutotext.title ?? "", messages: customAutotext.messages ?? "", id: customAutotext.uuid)
                 return autotext
             } else {
                 return nil
@@ -220,7 +209,7 @@ struct CoreDataManager {
             let customAutotext = try context.fetch(fetchRequest)
             lazy var autotexts : [Autotext] = []
             for ca in customAutotext {
-                autotexts.append(Autotext(title: ca.title, messages: ca.messages, id: ca.uuid))
+                autotexts.append(Autotext(title: ca.title ?? "", messages: ca.messages ?? "", id: ca.uuid))
             }
             return autotexts
         } catch {
@@ -256,7 +245,7 @@ struct CoreDataManager {
         profile.setValue(newProfile.name, forKey: "storeName")
         profile.setValue(newProfile.phoneNumber, forKey: "storePhoneNumber")
         profile.setValue(newProfile.URL, forKey: "storeURL")
-        profile.setValue(newProfile.location, forKey: "storeLocation")
+        profile.setValue(newProfile.location.name, forKey: "storeLocation")
         profile.setValue(newProfile.location.postal_code, forKey: "storePostalCode")
         
         do {
@@ -274,10 +263,10 @@ struct CoreDataManager {
         do {
             if let profile = try context.fetch(fetchRequest).first {
                 storeProfile = StoreProfile(
-                    name: profile.storeName,
-                    URL: profile.storeURL,
-                    location: SingleArea(name: profile.storeLocation, postal_code: Int(profile.storePostalCode)),
-                    phoneNumber: profile.storePhoneNumber
+                    name: profile.storeName ?? "",
+                    URL: profile.storeURL ?? "",
+                    location: SingleArea(name: profile.storeLocation ?? "", postal_code: Int(profile.storePostalCode)),
+                    phoneNumber: profile.storePhoneNumber ?? ""
                 )
             }
             
@@ -359,7 +348,7 @@ struct CoreDataManager {
                         ProductModel(
                             image: product.image,
                             id: product.uuid,
-                            name: product.name,
+                            name: product.name ?? "",
                             price: product.price,
                             weight: product.weight,
                             quantity: 0,
@@ -386,7 +375,7 @@ struct CoreDataManager {
                 productModel = ProductModel(
                     image: product.image,
                     id: product.uuid,
-                    name: product.name,
+                    name: product.name ?? "",
                     price: product.price,
                     weight: product.weight,
                     quantity: 0,
@@ -581,19 +570,19 @@ struct CoreDataManager {
                 transactionList.append(
                     TransactionModel(
                         id: transaction.uuid,
-                        status: Status.init(rawValue: transaction.status) ?? .notPaid,
+                        status: Status.init(rawValue: transaction.status ?? "Not Paid") ?? .notPaid,
                         dateCreated: transaction.date_created,
                         datePaid: transaction.date_paid,
                         dateCompleted: transaction.date_completed,
-                        customerName: transaction.customer_name,
-                        customerPhoneNumber: transaction.customer_phone_number,
-                        addressName: transaction.address_name,
-                        addressProvince: transaction.address_province,
-                        addressCity: transaction.address_city,
-                        addressDistrict: transaction.address_district,
-                        addressPostalCode: transaction.address_postal_code,
-                        notes: transaction.note,
-                        expedition: transaction.shipping_expedition,
+                        customerName: transaction.customer_name ?? "",
+                        customerPhoneNumber: transaction.customer_phone_number ?? "",
+                        addressName: transaction.address_name ?? "",
+                        addressProvince: transaction.address_province ?? "",
+                        addressCity: transaction.address_city ?? "",
+                        addressDistrict: transaction.address_district ?? "",
+                        addressPostalCode: transaction.address_postal_code ?? "",
+                        notes: transaction.note ?? "",
+                        expedition: transaction.shipping_expedition ?? "",
                         shippingPrice: transaction.shipping_price,
                         priceSubTotal: transaction.price_subTotal,
                         priceTotal: transaction.price_Total
@@ -619,19 +608,19 @@ struct CoreDataManager {
                     transactionList.append(
                         TransactionModel(
                             id: transaction.uuid,
-                            status: Status.init(rawValue: transaction.status) ?? .notPaid,
+                            status: Status.init(rawValue: transaction.status ?? "Not Paid") ?? .notPaid,
                             dateCreated: transaction.date_created,
                             datePaid: transaction.date_paid,
                             dateCompleted: transaction.date_completed,
-                            customerName: transaction.customer_name,
-                            customerPhoneNumber: transaction.customer_phone_number,
-                            addressName: transaction.address_name,
-                            addressProvince: transaction.address_province,
-                            addressCity: transaction.address_city,
-                            addressDistrict: transaction.address_district,
-                            addressPostalCode: transaction.address_postal_code,
-                            notes: transaction.note,
-                            expedition: transaction.shipping_expedition,
+                            customerName: transaction.customer_name ?? "",
+                            customerPhoneNumber: transaction.customer_phone_number ?? "",
+                            addressName: transaction.address_name ?? "",
+                            addressProvince: transaction.address_province ?? "",
+                            addressCity: transaction.address_city ?? "",
+                            addressDistrict: transaction.address_district ?? "",
+                            addressPostalCode: transaction.address_postal_code ?? "",
+                            notes: transaction.note ?? "",
+                            expedition: transaction.shipping_expedition ?? "",
                             shippingPrice: transaction.shipping_price,
                             priceSubTotal: transaction.price_subTotal,
                             priceTotal: transaction.price_Total
@@ -669,19 +658,19 @@ struct CoreDataManager {
             if let transaction = try context.fetch(fetchRequest).first {
                 let transactionModel = TransactionModel(
                     id: transaction.uuid,
-                    status: Status.init(rawValue: transaction.status) ?? .notPaid,
+                    status: Status.init(rawValue: transaction.status ?? "Not Paid") ?? .notPaid,
                     dateCreated: transaction.date_created,
                     datePaid: transaction.date_paid,
                     dateCompleted: transaction.date_completed,
-                    customerName: transaction.customer_name,
-                    customerPhoneNumber: transaction.customer_phone_number,
-                    addressName: transaction.address_name,
-                    addressProvince: transaction.address_province,
-                    addressCity: transaction.address_city,
-                    addressDistrict: transaction.address_district,
-                    addressPostalCode: transaction.address_postal_code,
+                    customerName: transaction.customer_name ?? "",
+                    customerPhoneNumber: transaction.customer_phone_number ?? "",
+                    addressName: transaction.address_name ?? "",
+                    addressProvince: transaction.address_province ?? "",
+                    addressCity: transaction.address_city ?? "",
+                    addressDistrict: transaction.address_district ?? "",
+                    addressPostalCode: transaction.address_postal_code ?? "",
                     notes: transaction.note,
-                    expedition: transaction.shipping_expedition,
+                    expedition: transaction.shipping_expedition ?? "",
                     shippingPrice: transaction.shipping_price,
                     priceSubTotal: transaction.price_subTotal,
                     priceTotal: transaction.price_Total
@@ -759,7 +748,7 @@ struct CoreDataManager {
             }
             let productModelArr = transationProductArr.map { tp -> ProductModel in
                 if let productRef = tp.product {
-                    return ProductModel(image: productRef.image, id:productRef.uuid , name: productRef.name, price: tp.productPrice, weight: tp.weight, quantity: tp.productQuantity)
+                    return ProductModel(image: productRef.image, id:productRef.uuid , name: productRef.name ?? "", price: tp.productPrice, weight: tp.weight, quantity: tp.productQuantity)
                 } else {
                     return ProductModel(image: tp.image, id: nil, name: tp.name ?? "", price: tp.productPrice, weight: tp.weight, quantity: tp.productQuantity)
                 }

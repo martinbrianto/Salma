@@ -34,7 +34,7 @@ extension TransactionViewModel {
         didUpdate?(self)
     }
     
-    func fetchProductData() {
+    func fetchData() {
         let data = service.fetchAllTransaction() ?? []
         self.fetchedData = data
         filterToAll()

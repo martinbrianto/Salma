@@ -179,12 +179,8 @@ private extension AutotextAddViewController {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self.navBarItemTapped))
         case .editDefault:
             self.title = "Autotext Edit"
+            self.autotextTitleTextField.isEnabled = false
             self.button.isHidden = true
-                if self.isFormatOrder {
-                    self.autotextTitleTextField.isEnabled = false
-                } else {
-                    self.autotextTitleTextField.isEnabled = true
-                }
             self.autotextMessageTextView.isEditable = true
             let attributedText = self.autotextMessageTextView.text.styleAll(Style.font(UIFont(name: "HelveticaNeue", size: 16) ?? .systemFont(ofSize: 16))).styleHashtags(Style.foregroundColor(UIColor(named: "Main") ?? UIColor.darkText)).attributedString
             self.autotextMessageTextView.attributedText = attributedText

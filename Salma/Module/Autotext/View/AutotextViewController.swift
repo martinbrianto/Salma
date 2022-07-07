@@ -36,7 +36,7 @@ class AutotextViewController: UIViewController {
         super.viewDidLoad()
         setupPage()
         bindToViewModel()
-        //CoreDataManager.shared.saveDefaultAutotext(autotextData: Autotext(title: "Welcom", messages: "Halo selamat datang di #store-name. Ada yang bisa kami bantu?\n\n #store-nama\n#store-address\n#store-phone-number\n\n jangan lupa untuk visit website kami di #store-url"))
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchFromBackground), name: .NSPersistentStoreRemoteChange, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -47,7 +47,12 @@ class AutotextViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.fetchAutotextList()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchFromBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    @objc func fetchFromBackground(){
+        viewModel.fetchAutotextList()
     }
     
     // MARK: - ViewModel
@@ -58,7 +63,9 @@ class AutotextViewController: UIViewController {
     }
     
     private func viewModeldidUpdate(){
-        autotextTableView.reloadData()
+        DispatchQueue.main.async {
+            self.autotextTableView.reloadData()
+        }
     }
 }
 

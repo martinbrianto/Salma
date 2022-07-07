@@ -2,7 +2,7 @@
 //  TransactionProduct+CoreDataProperties.swift
 //  Salma
 //
-//  Created by gratianus.brianto on 11/06/22.
+//  Created by gratianus.brianto on 07/07/22.
 //
 //
 
@@ -16,10 +16,10 @@ extension TransactionProduct {
         return NSFetchRequest<TransactionProduct>(entityName: "TransactionProduct")
     }
 
-    @NSManaged public var productPrice: Float
-    @NSManaged public var productQuantity: Int32
     @NSManaged public var image: Data?
     @NSManaged public var name: String?
+    @NSManaged public var productPrice: Float
+    @NSManaged public var productQuantity: Int32
     @NSManaged public var weight: Int32
     @NSManaged public var ofTransaction: Transaction?
     @NSManaged public var product: Product?

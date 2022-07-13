@@ -69,7 +69,7 @@ private extension EnableKeyboardViewController {
         switch entryPoint {
         case .onboarding:
             skipButton.isHidden = false
-            titleLabel.isHidden = true
+            titleLabel.isHidden = false
         case .settingPage:
             break
         case .onboardingExistingUser:

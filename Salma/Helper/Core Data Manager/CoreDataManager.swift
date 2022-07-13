@@ -694,6 +694,7 @@ struct CoreDataManager {
         
         if let transaction = fetchTransaction(transactionID: transactionID), let product = fetchProduct(productID: productID) {
             let transactionProduct = NSManagedObject(entity: productTransactionEntity, insertInto: context)
+            transactionProduct.setValue(product.weight, forKey: "weight")
             transactionProduct.setValue(product.price, forKey: "productPrice")
             transactionProduct.setValue(quantity, forKey: "productQuantity")
             transactionProduct.setValue(transaction, forKey: "ofTransaction")

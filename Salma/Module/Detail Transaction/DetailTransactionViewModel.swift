@@ -197,7 +197,7 @@ extension DetailTransactionViewModel {
     }
     
     func getShippingWeight() -> Int {
-        let weight = data.productTransactions?.reduce(0) { $0 + $1.weight} ?? 0
+        let weight = data.productTransactions?.reduce(0) { $0 + $1.weight * $1.quantity} ?? 0
         return Int(weight)
     }
     

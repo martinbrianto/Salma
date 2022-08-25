@@ -11,9 +11,11 @@ import CoreData
 class NSCustomPersistentContainer: NSPersistentCloudKitContainer {
     
     override open class func defaultDirectoryURL() -> URL {
-        var storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.salma")
-        storeURL = storeURL?.appendingPathComponent("Salma.sqlite")
-        return storeURL!
+        guard var storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.salma") else {
+            fatalError("Shared file container could not be created.")
+        }
+        storeURL = storeURL.appendingPathComponent("Salma.sqlite")
+        return storeURL
     }
 
 }

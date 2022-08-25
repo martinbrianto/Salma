@@ -8,6 +8,18 @@
 import Foundation
 import CoreData
 
+extension NSPersistentCloudKitContainer {
+
+    /// Called when a certain managed object context has been saved from an external process. It should also be called on the context's queue.
+    func viewContextDidSaveExternally() {
+        // `refreshAllObjects` only refreshes objects from which the cache is invalid. With a staleness intervall of -1 the cache never invalidates.
+        // We set the `stalenessInterval` to 0 to make sure that changes in the app extension get processed correctly.
+        viewContext.stalenessInterval = 0
+        viewContext.refreshAllObjects()
+        viewContext.stalenessInterval = -1
+    }
+}
+
 struct CoreDataManager {
     static var shared = CoreDataManager()
     private init() {}
@@ -15,7 +27,7 @@ struct CoreDataManager {
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
         let container = NSCustomPersistentContainer(name: "Salma")
         container.viewContext.automaticallyMergesChangesFromParent = true
-        try? container.viewContext.setQueryGenerationFrom(.current)
+        //try? container.viewContext.setQueryGenerationFrom(.current)
         let description = container.persistentStoreDescriptions.first
         description?.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
         description?.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)

@@ -47,7 +47,7 @@ extension DashboardVCViewModel {
     func sortLatestTransaction() {
         if !fetchedData.isEmpty {
             let firstTenElements = fetchedData.prefix(10)
-            self.sortedFetchedData = firstTenElements.sorted(by: {$0.dateCreated!.compare($1.dateCreated!) == .orderedAscending})
+            self.sortedFetchedData = firstTenElements.sorted(by: {$0.dateCreated!.compare($1.dateCreated!) == .orderedDescending})
         }
     }
     

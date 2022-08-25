@@ -49,6 +49,7 @@ class DashboardViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         NotificationCenter.default.addObserver(self, selector: #selector(fetchFromBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
+        CoreDataManager.shared.persistentContainer.viewContextDidSaveExternally()
         self.fetchData()
     }
     

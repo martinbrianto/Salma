@@ -43,7 +43,7 @@ private extension TransactionButtonTableViewCell{
             break
         case .edit:
             button.backgroundColor = .clear
-            button.setTitle("Delete Product", for: .normal)
+            button.setTitle("Delete Transaction", for: .normal)
             button.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
             button.setTitleColor(UIColor.red, for: .normal)
         case .detail:

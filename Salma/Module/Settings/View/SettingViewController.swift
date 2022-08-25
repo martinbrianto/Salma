@@ -83,7 +83,7 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
         case .profile:
             return "Profile"
         case .transaction:
-            return "Transaction"
+            return "Keyboard"
         }
     }
     

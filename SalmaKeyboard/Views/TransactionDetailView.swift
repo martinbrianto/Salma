@@ -76,6 +76,7 @@ struct TransactionDetailView: View {
                         Button(action: {
                             if let id = data.id {
                                 CoreDataManager.shared.addTransactionPaidDate(transactionID: id)
+                                CoreDataManager.shared.persistentContainer.viewContextDidSaveExternally()
                             }
                             self.data.status = .inProgress
                         }, label: {
@@ -88,6 +89,7 @@ struct TransactionDetailView: View {
                         Button(action: {
                             if let id = data.id {
                                 CoreDataManager.shared.addTransactionCompleteDate(transactionID: id)
+                                CoreDataManager.shared.persistentContainer.viewContextDidSaveExternally()
                             }
                             self.data.status = .completed
                         }, label: {

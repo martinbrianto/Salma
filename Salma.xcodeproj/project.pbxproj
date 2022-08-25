@@ -39,6 +39,7 @@
 		E60A5B98284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60A5B96284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.xib */; };
 		E60A5B9B284B802000E1D92B /* TransactionViewCellHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60A5B9A284B802000E1D92B /* TransactionViewCellHeaderView.xib */; };
 		E60A5BA1284B922B00E1D92B /* TransactionTextfieldHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60A5BA0284B922B00E1D92B /* TransactionTextfieldHeaderView.swift */; };
+		E6152FA628891C34005F8A34 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2498C2867723C00CBB9AF /* ToolbarView.swift */; };
 		E62178DF284FC1A600A3EFC2 /* TransactionProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62178DD284FC1A600A3EFC2 /* TransactionProductTableViewCell.swift */; };
 		E62178E0284FC1A600A3EFC2 /* TransactionProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E62178DE284FC1A600A3EFC2 /* TransactionProductTableViewCell.xib */; };
 		E62178E2284FCB9200A3EFC2 /* TransactionProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62178E1284FCB9200A3EFC2 /* TransactionProduct.swift */; };
@@ -108,7 +109,6 @@
 		E6B2497928675C6F00CBB9AF /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = E6B2497828675C6F00CBB9AF /* KeyboardKit */; };
 		E6B2497B28675F1400CBB9AF /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2497A28675F1400CBB9AF /* KeyboardView.swift */; };
 		E6B2498D2867723C00CBB9AF /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2498C2867723C00CBB9AF /* ToolbarView.swift */; };
-		E6B2498E2867725600CBB9AF /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2498C2867723C00CBB9AF /* ToolbarView.swift */; };
 		E6B24997286776B200CBB9AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B24996286776B200CBB9AF /* Images.xcassets */; };
 		E6B2499828677A2500CBB9AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B24996286776B200CBB9AF /* Images.xcassets */; };
 		E6B2499A28677D2700CBB9AF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B2499928677D2700CBB9AF /* Colors.xcassets */; };
@@ -860,6 +860,7 @@
 		E6545F5E2804531200A95A03 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E6A02E0528B0D69F0090C95F /* Notification Center */,
 				E6266D822873656A0077FF29 /* Network Manager */,
 				E6F1373F28366529006540E5 /* Alert Manager */,
 				E6545F5F2804531A00A95A03 /* Core Data Manager */,
@@ -983,6 +984,13 @@
 				E698717E28182B7D002D73F2 /* EnableKeyboardViewController.xib */,
 			);
 			path = "Enable Keyboard";
+			sourceTree = "<group>";
+		};
+		E6A02E0528B0D69F0090C95F /* Notification Center */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Notification Center";
 			sourceTree = "<group>";
 		};
 		E6B24989286771F900CBB9AF /* Views */ = {
@@ -1361,6 +1369,7 @@
 				E6266D80287362A10077FF29 /* GetLocationViewController.swift in Sources */,
 				E60A5B97284B6EDB00E1D92B /* TransactionTextFieldTableViewCell.swift in Sources */,
 				E6CECC76282589F200276B31 /* CustomAutotext+CoreDataClass.swift in Sources */,
+				E6152FA628891C34005F8A34 /* ToolbarView.swift in Sources */,
 				E6CECC7E282589F200276B31 /* Transaction+CoreDataClass.swift in Sources */,
 				E6D0F7052872163D0081E2C6 /* WelcomeViewController.swift in Sources */,
 				E6FE83602810362B000AD0C1 /* TransactionTableViewCell.swift in Sources */,
@@ -1419,7 +1428,6 @@
 				E6BC343D284E5EC40076289C /* TransactionButtonTableViewCell.swift in Sources */,
 				E67EBF1B2876090600DE6857 /* Profile+CoreDataProperties.swift in Sources */,
 				E6545F1D2804499900A95A03 /* AppDelegate.swift in Sources */,
-				E6B2498E2867725600CBB9AF /* ToolbarView.swift in Sources */,
 				26E334AC282A9AE600FB1164 /* PriceTextFieldView.swift in Sources */,
 				E698705D2815C05E002D73F2 /* SettingTableViewCell.swift in Sources */,
 				E6266D7B287360570077FF29 /* CekOngkirViewController.swift in Sources */,

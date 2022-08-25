@@ -75,10 +75,10 @@ private extension EnableKeyboardViewController {
         case .onboardingExistingUser:
             skipButton.isHidden = false
             titleLabel.isHidden = true
-            fetchingVC.modalPresentationStyle = .overCurrentContext
-            fetchingVC.modalTransitionStyle = .crossDissolve
-            fetchingVC.hidesBottomBarWhenPushed = true
-            self.present(fetchingVC, animated: true)
+//            fetchingVC.modalPresentationStyle = .overCurrentContext
+//            fetchingVC.modalTransitionStyle = .crossDissolve
+//            fetchingVC.hidesBottomBarWhenPushed = true
+//            self.present(fetchingVC, animated: true)
         }
     }
     
